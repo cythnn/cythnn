@@ -1,25 +1,27 @@
 import cython, math
 from numpy import float32, int32
-from nn cimport nn, saxpy, sdot
+from nn cimport saxpy, sdot
 import numpy as np
 cimport numpy as np
-ctypedef np.int32_t INT_t
-ctypedef np.float32_t REAL_t
+ctypedef np.int32_t cINT
+ctypedef np.float32_t cREAL
 
-from libc.stdlib cimport malloc, free
 from libc.string cimport memset
 
 cdef unsigned long long rand = 25214903917
 cdef int ONE = 1
-cdef float ONE_f = 1.0
+cdef int ZERO = 0
+cdef float fONE = 1.0
+cdef float fZERO = 0.0
 
-cdef REAL_t* toRArray(np.ndarray a):
-    return <REAL_t *>(np.PyArray_DATA(a))
+cdef cREAL* toRArray(np.ndarray a):
+    return <cREAL *>(np.PyArray_DATA(a))
 
-cdef INT_t* toIArray(np.ndarray a):
-    return <INT_t *>(np.PyArray_DATA(a))
+cdef cINT* toIArray(np.ndarray a):
+    return <cINT *>(np.PyArray_DATA(a))
 
 def pointtable(vocab, vectorsize, maxdepth):
+    print("start pointtable")
     vocsize = len(vocab)
     target = np.zeros((vocsize, maxdepth), dtype=int32)
     exp = np.zeros((vocsize, maxdepth), dtype=int32)
@@ -27,6 +29,7 @@ def pointtable(vocab, vectorsize, maxdepth):
         for idx, (l, w) in enumerate(word.innernodes):
             target[word.index][idx] = w.index
             exp[word.index][idx] = l
+    print("end pointtable")
     return target, exp
 
 class model:
@@ -45,9 +48,9 @@ class model:
         self.model_c = model_c(self)
 
 cdef class model_c:
-    cdef REAL_t *syn0, *syn1, *neu1e
+    cdef cREAL *syn0, *syn1, *neu1e
     cdef int windowsize, vectorsize, totalwords, cores, maxdepth
-    cdef INT_t *inner, *exp
+    cdef cINT *inner, *exp
     cdef float alpha
     def __init__(self, m):
         self.syn0 = toRArray(m.syn0)
@@ -68,8 +71,8 @@ def sg_py(id, model, sentence):
 cdef void sg(int id, model_c m, np.ndarray sen):
     cdef int sentencelength = len(sen)
     cdef unsigned long long next_random = 1;
-    cdef INT_t* sentence = toIArray(sen)
-    cdef REAL_t *neu1e = &(m.neu1e[id])
+    cdef cINT* sentence = toIArray(sen)
+    cdef cREAL *neu1e = &(m.neu1e[id])
     cdef int a, b, c, d, l1, l2, last_word, word, innernode, sentence_position
     cdef float f, g, alpha
 
@@ -101,7 +104,7 @@ cdef void sg(int id, model_c m, np.ndarray sen):
                         innernode = m.inner[word * m.maxdepth + d]
                         if innernode == 0: break
                     #print("break")
-                    saxpy(&m.vectorsize, &ONE_f, neu1e, &ONE, &(m.syn0[l1]), &ONE)
+                    saxpy(&m.vectorsize, &fONE, neu1e, &ONE, &(m.syn0[l1]), &ONE)
 
 
 

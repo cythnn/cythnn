@@ -1,8 +1,4 @@
-import cython
 from w2v import *
-from numpy import int32
-import numpy as np
-import cProfile
 from skipgram import sg_py, model
 
 if __name__ == "__main__":

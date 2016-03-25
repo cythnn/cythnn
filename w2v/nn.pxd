@@ -1,7 +1,8 @@
-cimport numpy as np
 import scipy.linalg.blas as fblas
+cimport numpy as np
 
-ctypedef np.float32_t REAL_t
+ctypedef np.float32_t cREAL
+ctypedef np.int32_t cINT
 
 cdef extern from "voidptr.h":
     void* PyCObject_AsVoidPtr(object obj)
@@ -19,10 +20,3 @@ cdef sdot_ptr sdot=<sdot_ptr>PyCObject_AsVoidPtr(fblas.sdot._cpointer)  # float 
 #cdef dsdot_ptr dsdot=<dsdot_ptr>PyCObject_AsVoidPtr(fblas.sdot._cpointer)  # double = dot(x, y)
 cdef snrm2_ptr snrm2=<snrm2_ptr>PyCObject_AsVoidPtr(fblas.snrm2._cpointer)  # sqrt(x^2)
 cdef sscal_ptr sscal=<sscal_ptr>PyCObject_AsVoidPtr(fblas.sscal._cpointer) # x = alpha * x
-
-
-cdef class nn:
-    cdef REAL_t** table
-    cdef int [:] rows
-    cdef int [:] columns
-    #def __init__(self, void[] *arr, int32_t[] rrows, int32_t[] ccolumns)
