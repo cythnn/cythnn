@@ -3,14 +3,16 @@ from collections import Counter
 from itertools import islice
 from tools.file import size
 
-# virtual soft partitioning of flat text files, a partition starts after the first whitespace
+# wraps a generator of words read from a flat text #file, within position #byterange
+# uses virtual soft partitioning of flat text files, a partition starts after the first whitespace
+# and the prior partition reads until the first word seperator after the boundary
 class WordStream:
-    def __init__(self, rnge=None, file=None):
+    def __init__(self, byterange=None, file=None):
         self.file = file
-        if file and rnge is None:
+        if file and byterange is None:
             self.range = range(0, size(file))
         else:
-            self.range = rnge
+            self.range = byterange
 
     def __iter__(self):
         with open(self.file, "r", buffering=100000) as f:
@@ -36,28 +38,33 @@ class WordStream:
                 else:
                     word += char
 
-def wordStreams(file, parts = 2, rnge = None):
-    if rnge is None:
-        rnge = size(file)
-    return [ WordStream(r, "../text8")
-            for r in chunkRange(rnge, parts)]
+#setup a list of #parts WordStream objects, that cover the given #byterange
+def wordStreams(file, parts = 2, byterange = None):
+    if byterange is None:
+        byterange = range(0, size(file))
+    return [WordStream(r, "../text8")
+            for r in chunkRange(byterange, parts)]
 
+#split range in #n consecutive sub-ranges
 def chunkRange(rnge, n):
     step = math.ceil(len(rnge) / n)
     return [ range(i, min(rnge.stop, i + step))
              for i in range(rnge.start, rnge.stop, step) ]
 
+#split the dictionary in #parts, to prepare for parallel processing
 def chunkDict(dict, parts = 2):
     size = math.ceil(len(dict) / parts)
     it = iter(dict.items())
     for i in range(0, len(dict), size):
         yield {k[0]:k[1] for k in islice(it, size)}
 
+#sort term-frequency pairs: freq DESC, term ASC
 def sortTermFreq(terms):
     terms.sort(key=lambda x: x[0])
     terms.sort(key=lambda x: -x[1])
     return terms
 
+#merge a list of term-frequency dictionaries
 def mergeDicts(dicts):
     first, *rest = dicts
     print(type(dicts[0]))
@@ -66,6 +73,7 @@ def mergeDicts(dicts):
         first += Counter(d)
     return first
 
+#return a term-frequncy dict of the given word-iterable
 def countWords(words):
     dict = {}
     for word in words:
@@ -75,5 +83,6 @@ def countWords(words):
             dict[word] = 1
     return dict
 
+#convert term-freq dictionary to list (for sorting)
 def toList(dict):
     return [ (x, y) for x, y in dict.items() ]

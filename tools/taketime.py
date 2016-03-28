@@ -1,5 +1,6 @@
 import time
 
+# times time to a function call
 def taketime(text=None):
     def wrap(f):
         def invoke_func(*args, **kwargs):
