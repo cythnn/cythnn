@@ -4,15 +4,12 @@ from tools.taketime import *
 from tools.file import *
 from functools import partial
 
-def m(stream):
-    return countWords(stream)
-
 @taketime("process")
 def process(file, cores = 2, parts = 2, rnge = None):
     pool = Pool(processes=cores)
-    wordstreams = wordStreams(file, rnge=rnge)
+    wordstreams = wordStreams(file, byterange=rnge)
 
-    tokens = pool.map(m, wordstreams)
+    tokens = pool.map(countWords, wordstreams)
     merged = mergeDicts(tokens)
     terms = toList(merged)
     terms = sortTermFreq(terms)
