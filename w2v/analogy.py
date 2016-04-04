@@ -1,4 +1,4 @@
-from w2v import *
+from w import *
 
 if __name__ == "__main__":
     vocab, solution = load("vecn.w", normalized=False)

@@ -1,8 +1,5 @@
-from multiprocessing import Pool
 from tools.worddict import *
-from tools.taketime import *
-from tools.file import *
-from functools import partial
+from tools.wordio import wordStreams
 
 @taketime("process")
 def process(file, cores = 2, parts = 2, byterange = None):
