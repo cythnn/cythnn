@@ -10,9 +10,11 @@ from numpy import int32, uint64, float32
 from tools.taketime import taketime
 from tools.worddict import Vocabulary, Word
 
+# normalize a vector (commonly used before comparing vectors)
 def normalize(w1):
    return (w1 / math.sqrt(sum([ w * w for w in w1 ])))
 
+# creates a solution space for a word2vec model, 2 weight matrices, initialized resp. random and with zeros
 def createW2V(model):
     if isinstance(model.vocab, Vocabulary):
         l = createMatrices([len(model.vocab), model.vectorsize, model.outputsize], [rand, zeros])
@@ -20,9 +22,12 @@ def createW2V(model):
         l = createMatrices([model.vocab, model.vectorsize, model.outputsize], [rand, zeros])
     model.solution = l if isinstance(l, list) else [l]
 
+# returns the embedding for a Word (to be looked up in model.vocab)
 def getVector(model, word):
     return model.solution[0][word.index]
 
+#creates a list of weight matrices, according to the given LAYER sizes, ordered input, h1, ..., output. The initialization
+# functions (always |LAYERS| - 1) are used to seed the weight matrices
 def createMatrices(sizes, init):
     layers = []
     for i in range(len(sizes) - 1):
@@ -33,9 +38,11 @@ def createMatrices(sizes, init):
         layers.append(init[i](sizes[i], sizes[i+1]))
     return layers
 
+# saves the embeddings from a trained solution in a model to file
 def save(fname, model, binary=False):
     s = sorted(model.vocab.items(), key=lambda x: x[1].index)
     if binary:
+        print("write binary")
         with open(fname, 'wb') as fout:
             fout.write(("%s %s\n" % (len(model.vocab), model.solution[-1].shape[0])).encode())
             for word, obj in s:
@@ -50,7 +57,7 @@ def save(fname, model, binary=False):
                 row = getVector(model, obj)
                 fout.write("%s %d %s\n" % (word, obj.count, ' '.join("%f" % val for val in row)))
 
-
+# loads the embeddings saved to file
 def load(fname, binary=False, normalized=False):
     with open(fname, 'r') as fin:
         header = fin.readline()
@@ -70,6 +77,7 @@ def load(fname, binary=False, normalized=False):
             vocab.total_words += count
         return vocab, solution
 
+# initializes a weight matrix between layers sized INPUT and OUTPUT with random numbers
 def rand(input, output):
     l = np.empty((input, output), dtype=float32)
     next_random = uint64(1)
@@ -78,17 +86,17 @@ def rand(input, output):
             with np.errstate(over='ignore'):
                 next_random = next_random * uint64(25214903917) + uint64(11);
             l[a, b] = ((next_random & uint64(65535)) / float32(65536) - 0.5) / output
-            if abs(l[a,b]) > 1:
-                print("fault w %d %d %f"%(a, b, l[a,b]))
     return l
 
+# initializes a weight matrix between layers sized INPUT and OUTPUT with uniform sampled random numbers
 def uniform(input, output):
     return np.random.uniform(-0.5 / output, 0.5 / output,
                              (input, output), dtype=float32)
 
+# creates a weight matrix between layers sized INPUT and OUTPUT without initialization
 def empty(input, output):
     return np.ndarray((input, output), dtype=float32)
 
-
+# creates a weight matrix between layers sized INPUT and OUTPUT setting all weights to 0
 def zeros(input, output):
     return np.zeros((input, output), dtype=float32)

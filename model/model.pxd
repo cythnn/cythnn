@@ -20,6 +20,8 @@ cdef extern from "voidptr.h":
 
 cdef inline float min_float(float a, float b) nogil: return a if a <= b else b
 cdef inline float max_float(float a, float b) nogil: return a if a >= b else b
+cdef inline int min_int(int a, int b) nogil: return a if a <= b else b
+cdef inline int max_int(int a, int b) nogil: return a if a >= b else b
 cdef inline float abs_float(float a) nogil: return a if a >= 0 else -a
 
 cdef inline cREAL* toRArray(np.ndarray a):

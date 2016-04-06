@@ -89,10 +89,17 @@ cdef void build_hierarchical_softmax2(model_c model, ndarray counts):
     free(ptable)
     free(rtable)
 
+# a crossover function that reads FEED as the last output from a python module that supplies an array of word-ids
+# with the wentback and wentpast numbers to indicate the number of words at the beginning/end of the array that are
+# only to be used as context for training but not to be trained themselves (to avoid overlap between chunks). The
+# pipeline then continues with processhs2 in Cython.
 def processhs(threadid, model, feed):
     words, wentback, wentpast = feed
     processhs2(threadid, model.model_c, words, wentback, wentpast)
 
+# converts the input array of word id's, into batches of int triples, each containing an observed
+# (target_word, inner_node, expected_value) that is used for learning embeddings using hierarchical softmax
+# This module also updates the number of processed words and the learning rate.
 cdef void processhs2(int threadid, model_c m, ndarray words, int wentback, int wentpast):
     cdef cINT *w = toIArray(words)
     cdef int wlength = len(words)
@@ -106,7 +113,7 @@ cdef void processhs2(int threadid, model_c m, ndarray words, int wentback, int w
     cdef cINT *p_inner
     cdef cBYTE *p_exp
     cdef int threads = m.cores
-    cdef int b, i, clower = 0, cupper = 0, wordsprocessed = 0
+    cdef int b, i, j, clower = 0, cupper = 0, wordsprocessed = 0
     cdef followme f = <followme>m.getNext(<void*>processhs2)
     print(f == NULL)
 
@@ -114,61 +121,55 @@ cdef void processhs2(int threadid, model_c m, ndarray words, int wentback, int w
     printf("alpha %f\n", alpha)  #if True:
     with nogil:
         for i in range(wlength):
-            if i < wentback or i >= wlength - wentpast: continue
-            word = w[i]
-            if word == 0: continue # end of sentence
-            wordsprocessed += 1
-            #fsync(fout)
-            next_random = next_random * rand + 11;
+            if i < wentback or i >= wlength - wentpast: continue # the word is outside the bounds of words that should be processed in this chunk
+
+            word = w[i]                                         # the word at the current position, which is used in the output layer
+            if word == 0: continue                              # but word is an end of sentence, so skip
+
+            wordsprocessed += 1                                 # keeps track of the number of processed words
+
+            next_random = next_random * rand + 11;              # sample a window size b =[0, windowsize]
             b = next_random % windowsize
-            clower = i - windowsize + b
-            if clower < 0: clower = 0
-            #printf("th %d i %d word %d\n", threadid, i, word)
-            cupper = i + windowsize + 1 - b
-            if cupper > wlength: cupper = wlength
-            #fprintf(fout, "%d %d %d\n", b, clower, cupper)
-            for c in range(clower, cupper):
-                #fprintf(fout, "aap")
+            clower = max_int(0, i - windowsize + b)
+            for j in range(clower, i):
+                if w[j] == 0:
+                    clower = j + 1
+            cupper = min_int(i + windowsize + 1 - b, wlength)
+            for j in range(i+1, cupper):
+                if w[j] == 0:
+                    cupper = j
+                    break                                       # clower and cupper are context bounds used, omitting end of sentence (0)
+
+            for c in range(clower, cupper):                     # c iterates of the positions of the context words, omitting the center
                 if c != i:
                     last_word = w[c]
-                    #fprintf(fout, "%d %d %d\n", last_word, innernodes, &(innernodes[word]))
-                    if last_word == 0: break
-                    p_inner = innernodes[word]
-                    #fprintf(fout, "%d %d\n", p_inner)
+
+                    p_inner = innernodes[word]                  # the context LAST_WORD is trained against the position of WORD in the tree
                     p_exp = exp[word]
-                    #fprintf(fout, "%d %d\n", p_inner, p_exp)
-                    #fprintf(fout, "aap %d %d", bindex, 1 if (p_inner == NULL) else 0)
+
                     while True:
-                        batch[bindex] = last_word
+                        batch[bindex] = last_word               # add a (last_word, inner, expected_value) triple to the list of observations
                         batch[bindex + 1] = p_inner[0]
                         batch[bindex + 2] = p_exp[0]
-                        #printf("sample %d %d %d\n", last_word, p_inner[0], p_exp[0])
                         bindex += 3
-                        if p_inner[0] == 0:
-                            break
-                        p_inner += 1
-                        p_exp += 1
-                    #printf("bindex %d %d %d\n", bindex, word, last_word)
-            #fprintf(fout, "noot\n")
-                    #fprintf(fout, "end %d", last_word)
-            if bindex > 99000 * windowsize:
-                printf("thread %d %d %f\n", threadid, bindex, alpha)
-                #for i in range(0, bindex, 3):
-                #    printf("%d %d %d\n", batch[i], batch[i+1], batch[i+2])
 
+                        if p_inner[0] == 0:                     # the last instance in the path is the root (id = 0)
+                            break
+                        p_inner += 1                            # move the pointers p_inner and p_exp one position down the list
+                        p_exp += 1
+
+            if bindex > 99000 * windowsize:                     # if the batch array is almost full, we push it to the learning module
                 f(threadid, m, batch, bindex, alpha)
-                printf("a %d", bindex)
-                m.progress[threadid] += wordsprocessed
-                wordsprocessed = 0
+
+                m.progress[threadid] += wordsprocessed          # update the number of processed words
+                wordsprocessed = 0                              # reset to batch array
                 bindex = 0
-                alpha = start_alpha * max_float(1.0 - m.getProgress(), 0.0001)
+                alpha = start_alpha * max_float(1.0 - m.getProgress(), 0.0001)  # update the learning rate
                 printf("alpha %f\n", alpha)
-        if bindex > 0:
-            #print(threadid, bindex, alpha)
+
+        if bindex > 0:                                          # the input is finished, so push the last batch to the learning module
             f(threadid, m, batch, bindex, alpha)
             m.progress[threadid] += wordsprocessed
-            #printf("b %d\n", bindex)
-            #bindex = 0
-            #print("done")
-        printf("end %d\n", threadid)
+
+        printf("end chunk thread %d\n", threadid)
 

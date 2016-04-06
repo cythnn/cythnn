@@ -65,6 +65,7 @@ class model:
             for t in threads:
                 t.join()
 
+    # the Cython version of the model, instantiated on first request, which should be after the vocabulary was build.
     def getModelC(self):
         if not hasattr(self, 'model_c'):
             self.setDebugTarget()
@@ -95,6 +96,7 @@ def learnThread(threadid, model, queue):
             break
         model.learn(threadid=threadid, feed=feed)
 
+# C version of the model, to allow nogil Cython modules to process efficiently while accessing the model
 cdef class model_c:
     def __init__(self, m):
         self.w = allocRP(len(m.solution))
@@ -115,8 +117,9 @@ cdef class model_c:
         self.iterations = m.iterations
         self.debugtarget = m.debugtarget
         self.sigmoidtable = self.createSigmoidTable()
-        self.pipelinec = allocVP(100)
+        self.pipelinec = allocVP(100)                   # pipeline of Cython modules to be processed
 
+    # adds a cyhthon module to the pipeline, note no type checking is done
     cdef void addPipeline(self, void *f):
         print("addPipeline", f == NULL)
         for i in range(100):
@@ -124,12 +127,15 @@ cdef class model_c:
                 self.pipelinec[i] = f
                 break
 
+    # returns the module that comes after ME in the pipeline, or the first if ME is not found and NULL if ME
+    # is the last module in the pipeline (the first is
+    # usually not stored in the pipeline, since it is called by the last module in the Python pipeline)
     cdef void* getNext(self, void *me):
         for i in range(100):
             if self.pipelinec[i] == me:
                 return self.pipelinec[i+1]
             elif self.pipelinec[i] == NULL:
-                return self.pipelinec[0]        # we assume that if a module is not in the pipeline, it was the first
+                return self.pipelinec[0]
 
     # fast lookup table for sigmoid activation function
     cdef cREAL* createSigmoidTable(self):
@@ -141,15 +147,18 @@ cdef class model_c:
             table[i] = e / float32(e + 1)
         return table
 
+    # returns a thread-safe vector for the given layer, 0 being the input and |layer|-1 being the output layer
     cdef cREAL *getLayer(self, int thread, int layer) nogil:
         if self.layer[thread * self.cores + layer] == NULL:
             size = self.getLayerSize(layer)
             self.layer[thread * self.cores + layer] = allocR(size)
         return self.layer[thread * self.cores + layer]
 
+    # returns the size of layer #layer
     cdef cINT getLayerSize(self, int layer) nogil:
         return self.w_input[layer] if layer < self.matrices else self.w_output[layer - 1]
 
+    # returns a float that contains is the fraction of words processed, for reporting and to adjust the learning rate
     cdef float getProgress(self) nogil:
         cdef int s = 0
         for i in range(self.cores):
