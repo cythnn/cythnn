@@ -15,31 +15,36 @@ def chunkRangeS(rnge, size):
     return [ range(i, min(rnge.stop, i + size))
              for i in range(rnge.start, rnge.stop, size) ]
 
+# reads the words that are in a flat text file, by a space or newline.
+# The byterange indicates thedesignated range of words to be read.
+# When the upper byterange boundary is set within a word or its first trailing word-separator
+# the word is considered to be part of the range, when the lower byterange boundary is set
+# within a word or its first trailing word-separator it is not.
+# when window is set, an attempt is made to read #window words before and after
+# the designated byterange, wentBack and wentPast indicate the number of words read before and
+# after the designated boundary (max #window)
 class WordStream:
-    def __init__(self, byterange=None, file=None, window = 0):
+    def __init__(self, byterange=None, file=None, windowsize = 0):
         self.file = file
         if file and byterange is None:
             self.range = range(0, size(file))
         else:
             self.range = byterange
-        self.window = window
-        self.wentBack = 0
-        self.wentPast = -1
+        self.windowsize = windowsize
 
     def readFirst(self, f, bytepos, end):
-        self.wentBack = 0
-        start = max(0, min(bytepos, bytepos - 100 * self.window))
-        end = max(bytepos, bytepos + 1000000)
+        start = max(0, min(bytepos, bytepos - 100 * self.windowsize))
+        end = min(end, bytepos + 1000000)
         if start > 0:
             f.seek(start)
         buffer = f.read(end - start)
         pos = bytepos - start
-        if self.window > self.wentBack and bytepos > 0:
-            while pos > 0 and self.window > self.wentBack:
+        if self.windowsize > self.wentBack and bytepos > 0:
+            while pos > 0 and self.windowsize > self.wentBack:
                 pos -= 1
                 if buffer[pos] == ' ' or buffer[pos] == '\n':
                     self.wentBack += 1
-                    if self.window == self.wentBack:
+                    if self.windowsize == self.wentBack:
                         buffer = buffer[pos+1:]
             if pos == 0:
                 self.wentBack += 1
@@ -53,6 +58,8 @@ class WordStream:
 
     def __iter__(self):
         buffer = ""
+        self.wentPast = -1
+        self.wentBack = 0
         with open(self.file, "r") as f:
             for chunk in chunkRangeS(self.range, 1000000):
                 if chunk.start == self.range.start and chunk.start > 0:
@@ -75,7 +82,7 @@ class WordStream:
                         for word in words[:-1]:
                             yield word
                         buffer = words[-1]
-            newbuf = f.read((self.window + 1) * 100)
+            newbuf = f.read((self.windowsize + 1) * 100)
             if not newbuf:
                 self.wentPast += 1
                 if len(buffer) > 0:
@@ -86,7 +93,7 @@ class WordStream:
                     for word in sentence.split(' '):
                         self.wentPast += 1
                         yield word
-                        if self.window <= self.wentPast:
+                        if self.windowsize <= self.wentPast:
                             return
                     self.wentPast += 1
                     yield '</s>'
@@ -94,10 +101,11 @@ class WordStream:
 
 #setup a list of #parts WordStream objects, that cover the given #byterange
 @taketime("wordstreams")
-def wordStreams(path, parts = 2, byterange = None, window = 0):
+def wordStreams(path, parts = 2, byterange = None, windowsize = 0):
     if byterange is None:
         byterange = range(0, size(path))
-    return [WordStream(r, path, window=window)
+    #print([ [w for w in WordStream(r, path, windowsize=windowsize)] for r in chunkRange(byterange, parts) ])
+    return [WordStream(r, path, windowsize=windowsize)
             for r in chunkRange(byterange, parts)]
 
 #split range in #n consecutive sub-ranges

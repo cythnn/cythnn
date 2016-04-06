@@ -1,15 +1,14 @@
 from distutils.core import setup
+from distutils.extension import Extension
 from Cython.Build import cythonize
 import numpy
-from setuptools import Extension
 
 ext_modules = [
-    Extension("tools.blas.blas",["tools/blas/blas.pyx"]),
-    Extension("tools.nnmodel.model", ["tools/nnmodel/model.pyx"]),
+    Extension("blas.blas",["blas/blas.pyx"]),
+    Extension("model.model", ["model/model.pyx"]),
     Extension("w2v.skipgram.skipgram", ["w2v/skipgram/skipgram.pyx"]),
-    Extension("tools.hs.hs", ["tools/hs/hs.pyx"]),
-    Extension("w2v.train.train", ["w2v/train/train.pyx"]),
-    Extension("w2v.tr2.train", ["w2v/tr2/train.pyx"]),
+    Extension("hs.hs", ["hs/hs.pyx"],),
+    Extension("w2vTrainer.train", ["w2vTrainer/train.pyx"]),
 ]
 
 setup(

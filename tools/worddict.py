@@ -1,4 +1,6 @@
 import os, math, re
+from queue import Queue
+
 import numpy as np
 from collections import Counter, defaultdict
 from itertools import islice
@@ -56,14 +58,27 @@ def countWords(words):
 def toList(dict):
     return [(x, y) for x, y in dict.items()]
 
-
-def build_vocab(wordstreams, MIN_TF=5, cores=2, parts=2):
-    pool = Pool(processes=cores)
-
-    tokens = pool.map(countWords, wordstreams)
+def build_vocab(model):
+    pool = Pool(processes=model.cores)
+    tokens = pool.map(countWords, model.input)
     merged = mergeDicts(tokens)
-    return Vocabulary(merged, MIN_TF)
+    model.vocab = Vocabulary(merged, model.mintf)
+    model.outputsize = len(model.vocab)
 
+
+# reads a stream of words and returns a list of its word id's
+# the window of the wordstream is set to match the model, to allow to retrieve #window words
+# before and after the designated range. When successful, wentBack and wentPast indicate the
+# number of words read before and after the designated range
+def readWordIds(threadid, model, feed):
+    feed.windowsize = model.windowsize
+    def genWords(str, vocab):
+        for term in str:
+            word = vocab.get(term)
+            if word is not None:
+                yield word.index
+
+    return np.fromiter(genWords(feed, model.vocab), dtype=int32), feed.wentBack, feed.wentPast
 
 @taketime("createHierarchicalSoftmaxTree")
 def createHierarchicalSoftmaxTree(vocab):
@@ -183,9 +198,6 @@ class Word:
         if not hasattr(self, 'normalized'):
             self.normalized = normalize(solution.syn0[self.index])
         return self.normalized
-
-    def getVector(self, solution):
-        return solution.matrix[0][self.index]
 
     def __str__(self):
         if hasattr(self, 'word'):

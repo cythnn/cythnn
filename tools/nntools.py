@@ -10,16 +10,18 @@ from numpy import int32, uint64, float32
 from tools.taketime import taketime
 from tools.worddict import Vocabulary, Word
 
-
 def normalize(w1):
    return (w1 / math.sqrt(sum([ w * w for w in w1 ])))
 
-def createW2V(vocab, vector_size):
-    if isinstance(vocab, Vocabulary):
-        l = createMatrices([len(vocab), vector_size, len(vocab) - 1], [rand, zeros])
+def createW2V(model):
+    if isinstance(model.vocab, Vocabulary):
+        l = createMatrices([len(model.vocab), model.vectorsize, model.outputsize], [rand, zeros])
     else:
-        l = createMatrices([vocab, vector_size, vocab - 1], [rand, zeros])
-    return Solution(l)
+        l = createMatrices([model.vocab, model.vectorsize, model.outputsize], [rand, zeros])
+    model.solution = l if isinstance(l, list) else [l]
+
+def getVector(model, word):
+    return model.solution[0][word.index]
 
 def createMatrices(sizes, init):
     layers = []
@@ -31,39 +33,21 @@ def createMatrices(sizes, init):
         layers.append(init[i](sizes[i], sizes[i+1]))
     return layers
 
-class Solution:
-    MAX_EXP = 6
-    EXP_TABLE = 1000
-
-    def __init__(self, matrix):
-        self.matrix = matrix if isinstance(matrix, list) else [matrix]
-        self.expTable = self.initExpTable()
-
-    def initExpTable(self):
-        # fout = open("log", "w")
-        table = np.empty((self.EXP_TABLE), float32)
-        for i in range(0, 1000):
-            e = math.exp(float32(2 * self.MAX_EXP * i / self.EXP_TABLE - self.MAX_EXP))
-            table[i] = e / float32(e + 1)
-            # fout.write("%d %.10f\n"%(i, table[i]))
-        # fout.close()
-        return table
-
-def save(fname, vocab, solution, binary=False):
-    s = sorted(vocab.items(), key=lambda x: x[1].index)
+def save(fname, model, binary=False):
+    s = sorted(model.vocab.items(), key=lambda x: x[1].index)
     if binary:
         with open(fname, 'wb') as fout:
-            fout.write(("%s %s\n" % (len(vocab), solution.matrix[-1].shape[0])).encode())
+            fout.write(("%s %s\n" % (len(model.vocab), model.solution[-1].shape[0])).encode())
             for word, obj in s:
-                row = obj.getVector(solution)
+                row = getVector(model, obj)
                 fout.write((word + " ").encode())
                 fout.write(struct.pack('%sf' % len(row), *row))
     else:
         print("write flat")
         with open(fname, 'w') as fout:
-            fout.write("%s %s\n" % (len(vocab), solution.matrix[-1].shape[0]))
+            fout.write("%s %s\n" % (len(model.vocab), model.solution[-1].shape[0]))
             for word, obj in s:
-                row = obj.getVector(solution)
+                row = getVector(model, obj)
                 fout.write("%s %d %s\n" % (word, obj.count, ' '.join("%f" % val for val in row)))
 
 
@@ -94,6 +78,8 @@ def rand(input, output):
             with np.errstate(over='ignore'):
                 next_random = next_random * uint64(25214903917) + uint64(11);
             l[a, b] = ((next_random & uint64(65535)) / float32(65536) - 0.5) / output
+            if abs(l[a,b]) > 1:
+                print("fault w %d %d %f"%(a, b, l[a,b]))
     return l
 
 def uniform(input, output):
