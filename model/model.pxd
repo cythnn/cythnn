@@ -79,5 +79,5 @@ cdef class model_c:
     cdef cREAL* createSigmoidTable(self)
     cdef float getProgress(self) nogil
     cdef void addPipeline(self, void *f)
-    cdef void* getPipeline(self, int index)
+    cdef void* getNext(self, void *me)
 

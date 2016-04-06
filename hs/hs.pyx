@@ -91,9 +91,9 @@ cdef void build_hierarchical_softmax2(model_c model, ndarray counts):
 
 def processhs(threadid, model, feed):
     words, wentback, wentpast = feed
-    processhs2(threadid, 0, model.model_c, words, wentback, wentpast)
+    processhs2(threadid, model.model_c, words, wentback, wentpast)
 
-cdef void processhs2(int threadid, int pipelineindex, model_c m, ndarray words, int wentback, int wentpast):
+cdef void processhs2(int threadid, model_c m, ndarray words, int wentback, int wentpast):
     cdef cINT *w = toIArray(words)
     cdef int wlength = len(words)
     cdef int windowsize = m.windowsize
@@ -107,7 +107,7 @@ cdef void processhs2(int threadid, int pipelineindex, model_c m, ndarray words, 
     cdef cBYTE *p_exp
     cdef int threads = m.cores
     cdef int b, i, clower = 0, cupper = 0, wordsprocessed = 0
-    cdef followme f = <followme>m.getPipeline(pipelineindex)
+    cdef followme f = <followme>m.getNext(<void*>processhs2)
     print(f == NULL)
 
     cdef float alpha = start_alpha * max_float( 1.0 - m.getProgress(), 0.0001 )
@@ -156,7 +156,7 @@ cdef void processhs2(int threadid, int pipelineindex, model_c m, ndarray words, 
                 #for i in range(0, bindex, 3):
                 #    printf("%d %d %d\n", batch[i], batch[i+1], batch[i+2])
 
-                f(threadid, pipelineindex+1, m, batch, bindex, alpha)
+                f(threadid, m, batch, bindex, alpha)
                 printf("a %d", bindex)
                 m.progress[threadid] += wordsprocessed
                 wordsprocessed = 0
@@ -165,7 +165,7 @@ cdef void processhs2(int threadid, int pipelineindex, model_c m, ndarray words, 
                 printf("alpha %f\n", alpha)
         if bindex > 0:
             #print(threadid, bindex, alpha)
-            f(threadid, pipelineindex+1, m, batch, bindex, alpha)
+            f(threadid, m, batch, bindex, alpha)
             m.progress[threadid] += wordsprocessed
             #printf("b %d\n", bindex)
             #bindex = 0

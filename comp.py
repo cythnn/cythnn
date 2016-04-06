@@ -6,7 +6,6 @@ import numpy
 ext_modules = [
     Extension("blas.blas",["blas/blas.pyx"]),
     Extension("model.model", ["model/model.pyx"]),
-    Extension("w2v.skipgram.skipgram", ["w2v/skipgram/skipgram.pyx"]),
     Extension("hs.hs", ["hs/hs.pyx"],),
     Extension("w2vTrainer.train", ["w2vTrainer/train.pyx"]),
 ]

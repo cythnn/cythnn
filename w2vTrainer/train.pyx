@@ -20,9 +20,7 @@ cpdef addTrainW2V(model):
 
 @cython.boundscheck(False)  # turn off bounds-checking for entire function
 @cython.wraparound(False)  # turn off negative index wrapping for entire function
-cdef void trainW2V(int threadid, int pipelineindex, model_c model,
-                      cINT *samples, int length, float alpha) nogil:
-    printf("aap\n")
+cdef void trainW2V(int threadid, model_c model, cINT *samples, int length, float alpha) nogil:
     cdef int i, j, last_word, exp, inner, l1, l2, previousword
     cdef int vectorsize = model.getLayerSize(1)
     cdef cREAL* sigmoidtable = model.sigmoidtable

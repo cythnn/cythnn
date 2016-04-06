@@ -19,16 +19,16 @@ cdef cREAL fZERO = 0.0
 # For the learning pipeline a c-projection of this model is made to be passed through the pipeline.
 class model:
     def __init__(self, alpha,
-                 input, pybuild, pipeline, pipelinec,
+                 input, build, pipeline, pipelinec,
                  mintf=1, cores=1, windowsize=5, iterations=1, debugtarget=None, **kwargs):
         self.__dict__.update(kwargs)
         self.windowsize = windowsize        # windowsize used for w2v models
         self.start_alpha = alpha            # initial learning rate
         self.iterations = iterations        # number of times to iterate over the corpus
         self.mintf = mintf                  # minimal collection frequency for terms to be used
-        self.pybuild = pybuild              # (partial) function to construct the solution space
-        self.pipeline = pipeline            # (partial) function to construct the solution space
-        self.pipelinec = pipelinec          # (partial) function to construct the solution space
+        self.build = build                  # functions called with (model) to construct the model
+        self.pipeline = pipeline            # python functions that process the input word generator
+        self.pipelinec = pipelinec          # cython functions that complete the pipeline
         self.cores = cores                  # number of cores to use in multithreading mode
         self.input = input                  # reusable list of generators that generate input, used twice to build the
                                             # vocabulary and reused to learn the model
@@ -37,7 +37,7 @@ class model:
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
     def run(self):
-        for f in self.pybuild:
+        for f in self.build:
             f(self)
         for f in self.pipelinec:
             f(self)
@@ -124,8 +124,12 @@ cdef class model_c:
                 self.pipelinec[i] = f
                 break
 
-    cdef void* getPipeline(self, int index):
-        return self.pipelinec[index]
+    cdef void* getNext(self, void *me):
+        for i in range(100):
+            if self.pipelinec[i] == me:
+                return self.pipelinec[i+1]
+            elif self.pipelinec[i] == NULL:
+                return self.pipelinec[0]        # we assume that if a module is not in the pipeline, it was the first
 
     # fast lookup table for sigmoid activation function
     cdef cREAL* createSigmoidTable(self):
