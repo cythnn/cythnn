@@ -34,7 +34,7 @@ def sortTermFreq(terms):
 
 
 # merge a list of term-frequency dictionaries
-@taketime("mergedicts")
+#@taketime("mergedicts")
 def mergeDicts(dicts):
     first, *rest = dicts
     first = Counter(first)
@@ -59,17 +59,19 @@ def toList(dict):
     return [(x, y) for x, y in dict.items()]
 
 def build_vocab(model):
-    pool = Pool(processes=model.cores)
-    tokens = pool.map(countWords, model.input)
-    merged = mergeDicts(tokens)
-    model.vocab = Vocabulary(merged, model.mintf)
-    model.outputsize = len(model.vocab)
-
+    if not hasattr(model, 'vocab'):
+        pool = Pool(processes=model.cores)
+        tokens = pool.map(countWords, model.input)
+        merged = mergeDicts(tokens)
+        model.vocab = Vocabulary(merged, model.mintf)
+        model.outputsize = len(model.vocab)
+        print("vocabulary build")
 
 # reads a stream of words and returns a list of its word id's
 # the window of the wordstream is set to match the model, to allow to retrieve #window words
 # before and after the designated range. When successful, wentBack and wentPast indicate the
 # number of words read before and after the designated range
+@taketime("readWordIds")
 def readWordIds(threadid, model, feed):
     feed.windowsize = model.windowsize
     def genWords(str, vocab):
@@ -79,65 +81,6 @@ def readWordIds(threadid, model, feed):
                 yield word.index
 
     return np.fromiter(genWords(feed, model.vocab), dtype=int32), feed.wentBack, feed.wentPast
-
-@taketime("createHierarchicalSoftmaxTree")
-def createHierarchicalSoftmaxTree(vocab):
-    newnodes = []
-    pos1 = len(vocab) - 1
-    pos2 = 0
-
-    for a in range(len(vocab) - 1):
-        if pos1 >= 0:
-            if pos2 >= len(newnodes) or vocab[pos1].count < newnodes[pos2].count:
-                left = vocab[pos1]
-                pos1 -= 1
-            else:
-                left = newnodes[pos2];
-                pos2 += 1
-        else:
-            left = newnodes[pos2]
-            pos2 += 1
-        if pos1 >= 0:
-            if pos2 >= len(newnodes) or vocab[pos1].count < newnodes[pos2].count:
-                right = vocab[pos1]
-                pos1 -= 1
-            else:
-                right = newnodes[pos2]
-                pos2 += 1
-        else:
-            right = newnodes[pos2]
-            pos2 += 1
-        newnode = Word(left.count + right.count, index=len(vocab) - a - 2)
-        left.parent = newnode
-        right.parent = newnode
-        # print("merge %d -> %d %d"%(newnode.index, left.index, right.index))
-        right.isRight = True
-        newnodes.append(newnode)
-
-    for word in vocab:
-        w = word.parent
-        path_length, leftright, nodes = 0, [word.isRight], []
-        while hasattr(w, 'index') and w.index > 0:
-            nodes.append(w)
-            leftright.append(w.isRight)
-            w = w.parent
-        nodes.append(w)
-        leftright.reverse()
-        nodes.reverse()
-        word.innernodes = [(l, n) for l, n in zip(leftright, nodes)]
-        # print(word.word, [ (y.index, int(x)) for (x, y) in word.innernodes ])
-
-@taketime("pointtable")
-def pointtable(vocab, vectorsize, maxdepth):
-    vocsize = len(vocab)
-    target = np.zeros((vocsize, maxdepth), dtype=int32)
-    exp = np.zeros((vocsize, maxdepth), dtype=int8)
-    for word in vocab.values():
-        for idx, (l, w) in enumerate(word.innernodes):
-            target[word.index][idx] = w.index
-            exp[word.index][idx] = l
-    return target, exp
-
 
 class Vocabulary(defaultdict):
     def __init__(self, vocab, MIN_TF):
