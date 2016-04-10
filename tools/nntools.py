@@ -24,18 +24,6 @@ def createW2V(model):
         l = createMatrices([model.vocab, model.vectorsize, model.outputsize], [2, 0])
     model.setSolution(l if isinstance(l, list) else [l])
 
-#creates a list of weight matrices, according to the given LAYER sizes, ordered input, h1, ..., output. The initialization
-# functions (always |LAYERS| - 1) are used to seed the weight matrices
-def createMatrices(sizes, init):
-    layers = []
-    for i in range(len(sizes) - 1):
-        if len(init) <= i:
-            init.append(None)
-        if init[i] is None:
-            init[i] = zeros
-        layers.append(init[i](sizes[i], sizes[i+1]))
-    return layers
-
 # saves the embeddings from a trained solution in a model to file
 def save(fname, model, binary=False):
     s = sorted(model.vocab.items(), key=lambda x: x[1].index)
