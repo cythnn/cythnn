@@ -14,7 +14,7 @@ def doTrain():
     return model(alpha = 0.025, vectorsize=100,
                  input = wordStreams("data/test", byterange=None, parts=4),
                  build=[ build_vocab, build_hs_tree, createW2V ],
-                 pipeline=[ convertWordIds, contextWindow, trainSGHS ],
+                 pipeline=[ convertWordIds, contextWindow, trainSkipgramHS ],
                  mintf=1, cores=2, windowsize=1, iterations=1)
 
 def doTestSkipgramHS(byterange=None):
