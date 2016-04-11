@@ -1,6 +1,7 @@
 cimport numpy as np
 from libc.stdlib cimport malloc, free
 from libc.stdio cimport printf
+from libc.string cimport memset
 
 ctypedef np.int32_t cINT
 ctypedef np.uint8_t cBYTE
@@ -44,6 +45,11 @@ cdef inline cREAL** allocRP(int size) nogil:
 # allocate memory for an array of int32
 cdef inline cINT* allocI(int size) nogil:
     return <cINT*>malloc(size * sizeof(cINT))
+
+cdef inline cINT* allocZeros(int size) nogil:
+    cdef cINT *zeros = allocI(size)
+    memset(zeros, 0, size * sizeof(cINT))
+    return zeros
 
 # allocate memory for an array of int32*
 cdef inline cINT** allocIP(int size) nogil:
@@ -89,7 +95,11 @@ cdef class modelc:
     cdef int windowsize         # window size of the context used for learning W2V
     cdef int vectorsize         # size of the embeddings learned
     cdef int totalwords         # number of word occurrences in the corpus
+
     cdef cINT *progress         # progress, per core
+    cdef cINT *currentpartsize
+    cdef cINT *partsdone
+    cdef cINT parts
     cdef int cores              # number of cores/threads used
     cdef int vocsize            # number of unique words in the corpus
     cdef int iterations         # number of passes made over the corpus for learning

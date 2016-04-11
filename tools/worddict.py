@@ -94,12 +94,12 @@ class Vocabulary(defaultdict):
                 words.append(Word(count, word=word, index=len(words)))
         #createHierarchicalSoftmaxTree(words)
 
-        total_words = 0
+        totalwords = 0
         for word in words:
             self.__setitem__(word.word, word)
-            total_words += word.count
+            totalwords += word.count
         self.sorted = words
-        self.total_words = total_words
+        self.totalwords = totalwords
 
     def lookup_words(self, sentence):
         result = []

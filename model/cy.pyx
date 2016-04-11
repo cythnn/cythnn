@@ -51,14 +51,18 @@ class model:
         # when there is only one core or one input, run in single mode,
         # otherwise run multithreaded, learning the model in parallel.
         # The current version requires the cores to be on a single machine with shared memory.
-        if len(self.input) == 1 or self.cores == 1:
+        if self.cores * len(self.input) == 1 or self.cores == 1:
+            print("running in single thread mode")
             for input in self.input:
                 self.pipe[0].feed(input)
         else:
             threads = []
-            queue = Queue(len(self.input))
-            for i in self.input:
-                queue.put(i)
+            print("running multithreadeded cores %d parts %d iterations %d"%(self.cores, len(self.input), self.iterations))
+            queue = Queue(self.iterations * len(self.input))
+            for it in range(self.iterations):
+                for i in range(len(self.input)):
+                    queue.put(self.input[ (i + it) % len(self.input) ])
+
             for i in range(self.cores):
                 t = threading.Thread(target=learnThread, args=(i, self, queue))
                 t.daemon = True
@@ -98,6 +102,7 @@ def learnThread(threadid, model, queue):
     while True:
         try:
             input = queue.get(False)
+            print("learnThread pull input thread", threadid)
             learn(input)
         except Empty:
             break
@@ -108,9 +113,13 @@ def learnThread(threadid, model, queue):
 # model parameters can be taken from the py-model in the _init_ of a pipe module.
 cdef class modelc:
     def __init__(self, m):
+        print("initializing modelc")
         self.model = m                                  # links back to the py-model
-        self.progress = toIArray(m.progress)            # used to register progress per thread
-        self.totalwords = m.vocab.total_words           # assumed to be the number of words to be processed (for progress)
+        self.currentpartsize = allocZeros(m.cores)
+        self.progress = allocZeros(m.cores)
+        self.partsdone = allocZeros(m.cores)
+        self.parts = len(m.input) * m.iterations
+        self.totalwords = m.vocab.totalwords           # assumed to be the number of words to be processed (for progress)
         self.windowsize = m.windowsize
         self.vocsize = len(m.vocab)
         self.cores = m.cores
@@ -159,9 +168,16 @@ cdef class modelc:
     cdef cINT getLayerSize(self, int layer) nogil:
         return self.w_input[layer] if layer < self.matrices else self.w_output[layer - 1]
 
-    # returns a float that contains is the fraction of words processed, for reporting and to adjust the learning rate
+ # returns a float that contains is the fraction of words processed, for reporting and to adjust the learning rate
     cdef float getProgress(self) nogil:
-        cdef int s = 0
+        cdef int partsfinished = 0, currentcompleted = 0, activecores = 0
+        cdef cREAL currentsize = 0
         for i in range(self.cores):
-            s += self.progress[i]
-        return s / float(self.totalwords)
+            if self.currentpartsize[i] > 0:
+                currentsize += self.currentpartsize[i]
+                currentcompleted += self.progress[i]
+                activecores += 1
+            partsfinished += self.partsdone[i]
+        if currentsize > 0:
+            return (partsfinished + activecores * currentcompleted / currentsize) / (self.parts)
+        return partsfinished / <float>self.parts

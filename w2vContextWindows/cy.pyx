@@ -3,6 +3,7 @@ from pipe.cy cimport cypipe
 from numpy import int32, uint64
 from model.cy cimport *
 from libc.string cimport memset
+from libc.math cimport sqrt
 
 import numpy as np
 cimport numpy as np
@@ -15,9 +16,17 @@ cdef cULONGLONG rand = uint64(25214903917)
 # is truncated over sentence boundaries (wordid = 0).
 cdef class contextWindow(cypipe):
     def __init__(self, threadid, model):
+        cdef int i
         cypipe.__init__(self, threadid, model)
         self.random = threadid
         self.windowsize = model.windowsize
+        self.vocabularysize = len(model.vocab)
+        self.sample = model.sample if hasattr(model, 'sample') else 0
+        self.totalwords = model.vocab.totalwords
+        if self.sample > 0:
+            self.corpusfrequency = allocI(self.vocabularysize)
+            for i in range(1, self.vocabularysize):
+                self.corpusfrequency[i] = model.vocab.sorted[i].count
 
     cdef void bindToCypipe(self, cypipe predecessor):
         predecessor.bind(self, <void*>self.process)
@@ -31,6 +40,7 @@ cdef class contextWindow(cypipe):
 
     def feed(self, input):
         words, wentback, wentpast = input
+        print("ConvertWindows", self.threadid, len(words), wentback, wentpast)
         self.feed2process(words, wentback, wentpast)
 
     cdef void feed2process(self, ndarray wordids, int wentback, int wentpast):
@@ -42,19 +52,41 @@ cdef class contextWindow(cypipe):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, int length, int wentback, int wentpast) nogil:
-        cdef int b, i, pos
+        cdef int b, i, pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
         cdef int first_word = 0, next_newline
+        cdef float psampledout
 
         cdef cINT *clower = allocI(length)
         cdef cINT *cupper = allocI(length)
         memset(clower, 0, length)
         memset(cupper, 0, length)
 
-        for i in range(wentback):
+        # downsample frequent terms
+        if self.sample > 0:
+            for pos in range(length):
+                word = words[pos]
+                if word != 0: # don't downsample end of sentence
+                    psampledout = (sqrt(self.corpusfrequency[word] / (self.sample * self.totalwords)) + 1) * (self.sample * self.totalwords) / self.corpusfrequency[word];
+                    self.random = self.random * rand + 11;
+                    if psampledout < (self.random & 0xFFFF) / 65536.0:
+                        if pos < wentback:
+                            downsampleback += 1
+                        if pos > length - wentpast:
+                            wentpast -= 1
+                        downsamplelength += 1
+                        continue
+
+                words[pos_downsampled] = words[pos]
+                pos_downsampled += 1
+            wentback -= downsampleback
+            length -= downsamplelength
+
+        for i in range(wentback):                         # find the first word in the first sentence
             if words[i] == 0:                             # sentence boundary
                 first_word = i + 1
         pos = wentback                                    # pos is the next word position to try as window center
-        while pos < length - wentpast:                   # first_word and next_newline determine sentence boundaries
+
+        while pos < length - wentpast:                    # first_word and next_newline determine sentence boundaries
             next_newline = length
             for i in range(pos, length - wentpast):
                 if words[i] == 0:
@@ -69,7 +101,11 @@ cdef class contextWindow(cypipe):
                     pos += 1
             pos = next_newline + 1
             first_word = pos
+        self.modelc.currentpartsize[self.threadid] = length
         self.successorMethod(self.successor, words, clower, cupper, length)  # emit the sample
+        self.modelc.partsdone[self.threadid] = self.modelc.partsdone[self.threadid] + 1
+        self.modelc.currentpartsize[self.threadid] = 0
+        self.modelc.progress[self.threadid] = 0
         free(clower)
         free(cupper)
 

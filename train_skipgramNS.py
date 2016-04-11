@@ -1,0 +1,34 @@
+from convertWordIds.py import convertWordIds
+from tools.taketime import taketime
+from w2vContextWindows.cy import contextWindow
+from w2vSkipgramNS.cy import trainSkipgramNS
+from model.cy import model
+from tools.nntools import createW2V, save
+from tools.worddict import build_vocab
+from tools.wordio import wordStreams
+
+def doTestSkipgramNS(byterange=None):
+    return model(alpha=0.025, vectorsize=100,
+                 input=wordStreams("data/text8", byterange=byterange, parts=2),
+                 build=[ build_vocab, createW2V ],
+                 pipeline=[ convertWordIds, contextWindow, trainSkipgramNS ],
+                 mintf=5, cores=2, windowsize=5, iterations=1, negative=5)
+
+@taketime("run")
+def time(m):
+    m.run()
+
+if __name__ == "__main__":
+    #m = doTestSkipgramHS()  #for w, word in vocab.items():
+    #m = doTestSkipgramHS( byterange=range(1000000) ) # specify byterange to truncate the input
+    #m = doTestCbowHS()  #for w, word in vocab.items():
+    m = doTestSkipgramNS()  #for w, word in vocab.items():
+    #m = doTrain() #tiny example to experiment on
+
+    time(m)
+
+    save("results/vectors.sgns", m)
+    save("results/vectors.sgns.bin", m, binary=True)
+
+    print("done")
+

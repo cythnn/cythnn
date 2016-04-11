@@ -10,6 +10,10 @@ cdef class contextWindow(cypipe):
     cdef outputMethod successorMethod
     cdef int windowsize
     cdef cULONGLONG random
+    cdef int vocabularysize
+    cdef cREAL sample
+    cdef long totalwords
+    cdef cINT* corpusfrequency
 
     cdef void feed2process(self, ndarray wordids, int wentback, int wentpast)
 

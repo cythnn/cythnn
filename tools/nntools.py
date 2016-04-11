@@ -24,6 +24,10 @@ def createW2V(model):
         l = createMatrices([model.vocab, model.vectorsize, model.outputsize], [2, 0])
     model.setSolution(l if isinstance(l, list) else [l])
 
+# returns the embedding for a Word (to be looked up in model.vocab)
+def getVector(model, word):
+    return model.solution[0][word.index]
+
 # saves the embeddings from a trained solution in a model to file
 def save(fname, model, binary=False):
     s = sorted(model.vocab.items(), key=lambda x: x[1].index)

@@ -14,6 +14,7 @@ ext_modules = [
     Extension("w2vSkipgramHS.cy", ["w2vSkipgramHS/cy.pyx"]),
     Extension("w2vSkipgramNS.cy", ["w2vSkipgramNS/cy.pyx"]),
     Extension("w2vCbowHS.cy", ["w2vCbowHS/cy.pyx"]),
+    Extension("w2vCbowNS.cy", ["w2vCbowNS/cy.pyx"]),
 ]
 
 setup(
