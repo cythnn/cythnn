@@ -62,8 +62,8 @@ cdef class contextWindow(cypipe):
 
         cdef cINT *clower = allocI(length)
         cdef cINT *cupper = allocI(length)
-        memset(clower, 0, length)
-        memset(cupper, 0, length)
+        memset(clower, 0, sizeof(cINT) * length)
+        memset(cupper, 0, sizeof(cINT) * length)
 
         # downsample frequent terms
         if self.sample > 0:

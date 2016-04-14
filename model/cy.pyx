@@ -4,6 +4,7 @@ from queue import Queue, Empty
 import cython, math
 from numpy import float32, int32
 from blas.cy cimport sdot, saxpy
+from libc.stdio cimport *
 from pipe.cy import cypipe
 
 from tools.taketime import taketime
@@ -17,6 +18,9 @@ cdef int ONE = 1
 cdef int ZERO = 0
 cdef cREAL fONE = 1.0
 cdef cREAL fZERO = 0.0
+
+# disable output buffering on stdout
+setvbuf (stdout, NULL, _IONBF, 0);
 
 # contains the configuration for the network, the solution space (to be used after training) and can build the
 # processing pipeline to learn the model.
