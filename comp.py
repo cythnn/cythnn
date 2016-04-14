@@ -5,6 +5,7 @@ import numpy
 
 ext_modules = [
     Extension("blas.cy",["blas/cy.pyx"]),
+    Extension("tokyo",["tokyo/tokyo.pyx"]),
     Extension("matrix.cy",["matrix/cy.pyx"]),
     Extension("model.cy", ["model/cy.pyx"]),
     Extension("pipe.cy", ["pipe/cy.pyx"]),

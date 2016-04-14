@@ -46,7 +46,7 @@ cdef class trainSkipgramHS(cypipe):
         cdef cINT *p_inner
         cdef cBYTE *p_exp
         cdef cREAL f, g
-        cdef int debug = 1
+        cdef int debug = 0
 
         for i in range(length):
             if debug: printf("th %d process i %d length %d\n", self.threadid, i, length)
@@ -60,11 +60,15 @@ cdef class trainSkipgramHS(cypipe):
                     # initialize hidden layer, to aggregate updates for the current last_word
                     memset(self.hiddenlayer, 0, self.vectorsize * 4)
 
+                    if debug: printf("th %d past hiddenlayer\n", self.threadid)
+
                     p_inner = self.innernodes[word]          # points to list of inner nodes for word is HS
                     p_exp = self.expected[word]                   # points to expected value for inner node (left=0, right=1)
+                    if debug: printf("th %d past inner exp\n", self.threadid)
                     while True:
                         inner = p_inner[0]              # iterate over the inner nodes, until the root (inner = 0)
                         exp = p_exp[0]
+                        if debug: printf("th %d past set inner exp\n", self.threadid)
 
                         # index for last_word in weight matrix w0, inner node in w1
                         l0 = last_word * self.vectorsize
