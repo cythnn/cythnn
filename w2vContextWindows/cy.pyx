@@ -44,18 +44,18 @@ cdef class contextWindow(cypipe):
         self.feed2process(words, wentback, wentpast)
 
     cdef void feed2process(self, ndarray wordids, int wentback, int wentpast):
-        print("feed2Process")
+        print("feed2Process\n")
         cdef cINT *words = toIArray(wordids)
         cdef int length = len(wordids)
         with nogil:
-            printf("feed2Process 2")
+            printf("feed2Process 2\n")
             self.process(words, length, wentback, wentpast)
-            printf("feed2Process 3")
+            printf("feed2Process 3\n")
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, int length, int wentback, int wentpast) nogil:
-        printf("ContextWindows")
+        printf("ContextWindows\n")
         cdef int b, i, pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
         cdef int first_word = 0, next_newline
         cdef float psampledout
@@ -106,9 +106,9 @@ cdef class contextWindow(cypipe):
             pos = next_newline + 1
             first_word = pos
         self.modelc.currentpartsize[self.threadid] = length
-        printf("ContextWindows 2")
+        printf("ContextWindows 2\n")
         self.successorMethod(self.successor, words, clower, cupper, length)  # emit the sample
-        printf("ContextWindows 3")
+        printf("ContextWindows 3\n")
         self.modelc.partsdone[self.threadid] = self.modelc.partsdone[self.threadid] + 1
         self.modelc.currentpartsize[self.threadid] = 0
         self.modelc.progress[self.threadid] = 0

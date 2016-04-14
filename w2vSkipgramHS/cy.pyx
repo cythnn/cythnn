@@ -46,12 +46,16 @@ cdef class trainSkipgramHS(cypipe):
         cdef cINT *p_inner
         cdef cBYTE *p_exp
         cdef cREAL f, g
+        cdef int debug = 1
 
         for i in range(length):
+            if debug: printf("th %d process i %d length %d\n", self.threadid, i, length)
             word = words[i]
             for j in range(clower[i], cupper[i]):
                 if i != j:
+                    if debug: printf("th %d process j %d low %d up %d\n", self.threadid, j, clower[i], cupper[i])
                     last_word = words[j]
+                    if debug: printf("th %d process word %d last_word %d\n", self.threadid, word, last_word)
 
                     # initialize hidden layer, to aggregate updates for the current last_word
                     memset(self.hiddenlayer, 0, self.vectorsize * 4)
@@ -66,6 +70,7 @@ cdef class trainSkipgramHS(cypipe):
                         l0 = last_word * self.vectorsize
                         l1 = inner * self.vectorsize
 
+                        if debug: printf("th %d pi %d pe %d l0 %d l1 %d\n", self.threadid, p_inner, p_exp, l0, l1)
                         # energy emitted to inner tree node (output layer)
                         f = sdot( &self.vectorsize, &(self.w0[l0]), &iONE, &(self.w1[l1]), &iONE)
 
@@ -74,11 +79,12 @@ cdef class trainSkipgramHS(cypipe):
                             # compute the gradient * alpha
                             g = self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))]
                             g = (1 - exp - g) * self.alpha
-
+                            if debug: printf("th %d f %f g %f\n", self.threadid, f, g)
                             # update the inner node (appears only once in a path)
                             # then add update to hidden layer
                             saxpy( &self.vectorsize, &g, &(self.w1[l1]), &iONE, self.hiddenlayer, &iONE)
                             saxpy( &self.vectorsize, &g, &(self.w0[l0]), &iONE, &(self.w1[l1]), &iONE)
+                            if debug: printf("th %d past dot", self.threadid)
 
                         # check if we backpropagated against the root (inner=0)
                         # if so this was the last inner node for last_word and the
@@ -96,4 +102,4 @@ cdef class trainSkipgramHS(cypipe):
                 self.modelc.progress[self.threadid] = self.modelc.progress[self.threadid] + self.wordsprocessed
                 self.alpha = self.modelc.alpha * max_float(1.0 - self.modelc.getProgress(), 0.0001)
                 self.wordsprocessed = 0
-                printf("alpha %d %f\n", self.threadid, self.alpha)
+                printf("th %d alpha %f\n", self.threadid, self.alpha)
