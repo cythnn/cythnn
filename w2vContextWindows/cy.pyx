@@ -52,8 +52,7 @@ cdef class contextWindow(cypipe):
             self.process(words, length, wentback, wentpast)
             printf("feed2Process 3")
 
-
-@cython.boundscheck(False)
+    @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, int length, int wentback, int wentpast) nogil:
         printf("ContextWindows")
