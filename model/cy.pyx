@@ -181,3 +181,4 @@ cdef class modelc:
         if currentsize > 0:
             return (partsfinished + activecores * currentcompleted / currentsize) / (self.parts)
         return partsfinished / <float>self.parts
+
