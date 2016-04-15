@@ -3,7 +3,7 @@ from queue import Queue, Empty
 
 import cython, math
 from numpy import float32, int32
-from blas.cy cimport sdot, saxpy
+#from blas.cy cimport sdot, saxpy
 from libc.stdio cimport *
 from pipe.cy import cypipe
 
