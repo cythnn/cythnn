@@ -5,7 +5,9 @@ from model.cy cimport *
 
 from numpy import int32, uint64
 from libc.string cimport memset
-from tokyo cimport sdot_, saxpy_
+#from blas.cy cimport sdot, saxpy
+from tokyo.tokyo cimport saxpy_ as saxpy
+from tokyo.tokyo cimport sdot_ as sdot
 
 import numpy as np
 cimport numpy as np
@@ -76,7 +78,7 @@ cdef class trainSkipgramHS(cypipe):
 
                         if debug: printf("th %d pi %d pe %d l0 %d l1 %d\n", self.threadid, p_inner, p_exp, l0, l1)
                         # energy emitted to inner tree node (output layer)
-                        f = sdot( &self.vectorsize, &(self.w0[l0]), &iONE, &(self.w1[l1]), &iONE)
+                        f = sdot( self.vectorsize, &self.w0[l0], iONE, &self.w1[l1], iONE)
 
                         # commonly, when g=0 or g=1 there is nothing to train
                         if f >= -self.MAX_SIGMOID and f <= self.MAX_SIGMOID:
@@ -86,15 +88,15 @@ cdef class trainSkipgramHS(cypipe):
                             if debug: printf("th %d f %f g %f\n", self.threadid, f, g)
                             # update the inner node (appears only once in a path)
                             # then add update to hidden layer
-                            saxpy( &self.vectorsize, &g, &(self.w1[l1]), &iONE, self.hiddenlayer, &iONE)
-                            saxpy( &self.vectorsize, &g, &(self.w0[l0]), &iONE, &(self.w1[l1]), &iONE)
+                            saxpy( self.vectorsize, g, &self.w1[l1], iONE, self.hiddenlayer, iONE)
+                            saxpy( self.vectorsize, g, &self.w0[l0], iONE, &self.w1[l1], iONE)
                             if debug: printf("th %d past dot", self.threadid)
 
                         # check if we backpropagated against the root (inner=0)
                         # if so this was the last inner node for last_word and the
                         # hidden layer must be updated to the embedding of the last_word
                         if inner == 0:
-                            saxpy( &self.vectorsize, &fONE, self.hiddenlayer, &iONE, &(self.w0[l0]), &iONE)
+                            saxpy( self.vectorsize, fONE, self.hiddenlayer, iONE, &self.w0[l0], iONE)
                             break
                         else:
                             p_inner += 1    # otherwise traverse pointers up the tree to the next inner node
