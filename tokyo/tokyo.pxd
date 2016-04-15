@@ -36,16 +36,16 @@ cdef extern from "cblas.h":
     ###########################################################################
 
     # Swap vectors: x <-> y
-    void   lib_sswap  "cblas_sswap"(int M, float  *x, int dx, float  *y, int dy)
-    void   lib_dswap  "cblas_dswap"(int M, double *x, int dx, double *y, int dy)
+    void   lib_sswap  "cblas_sswap"(int M, float  *x, int dx, float  *y, int dy) nogil
+    void   lib_dswap  "cblas_dswap"(int M, double *x, int dx, double *y, int dy) nogil
 
     # Scale a vector: x <- alpha*x
-    void   lib_sscal  "cblas_sscal"(int N, float  alpha, float  *x, int dx)
-    void   lib_dscal  "cblas_dscal"(int N, double alpha, double *x, int dx)
+    void   lib_sscal  "cblas_sscal"(int N, float  alpha, float  *x, int dx) nogil
+    void   lib_dscal  "cblas_dscal"(int N, double alpha, double *x, int dx) nogil
 
     # Copy a vector: y <- x
-    void   lib_scopy  "cblas_scopy"(int N, float  *x, int dx, float  *y, int dy)
-    void   lib_dcopy  "cblas_dcopy"(int N, double *x, int dx, double *y, int dy)
+    void   lib_scopy  "cblas_scopy"(int N, float  *x, int dx, float  *y, int dy) nogil
+    void   lib_dcopy  "cblas_dcopy"(int N, double *x, int dx, double *y, int dy) nogil
 
     # Combined multiply/add: y <- alpha*x + y
     void   lib_saxpy  "cblas_saxpy"(int N, float  alpha, float  *x, int dx,
@@ -179,13 +179,6 @@ cdef double dasum_(int N, double *x, int dx) nogil
 cdef int isamax_(int N, float *x, int dx) nogil
 
 cdef int idamax_(int N, double *x, int dx) nogil
-
-# Generate a Givens plane rotation: [a,b,c,s] <- rotg(a,b).
-cdef np.ndarray srotg_(float a, float b) nogil
-cdef np.ndarray srotg(float a, float b) nogil
-
-cdef np.ndarray drotg_(double a, double b) nogil
-cdef np.ndarray drotg(double a, double b) nogil
 
 ###########################################
 #

@@ -3,7 +3,31 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "depends": []
+        "depends": [
+            "/Users/iloen/anaconda/lib/python3.5/site-packages/numpy/core/include/numpy/arrayobject.h",
+            "/Users/iloen/anaconda/lib/python3.5/site-packages/numpy/core/include/numpy/ufuncobject.h",
+            "/usr/include/stdio.h",
+            "/usr/include/stdlib.h",
+            "/usr/include/string.h"
+        ],
+        "extra_compile_args": [
+            "-O2"
+        ],
+        "extra_link_args": [
+            "-Wl,-O1",
+            "-Wl,--as-needed"
+        ],
+        "include_dirs": [
+            "/usr/include",
+            "/System/Library/Frameworks/vecLib.framework/Versions/A/Headers",
+            "/Users/iloen/anaconda/lib/python3.5/site-packages/numpy/core/include"
+        ],
+        "libraries": [
+            "blas"
+        ],
+        "library_dirs": [
+            "/usr/lib"
+        ]
     }
 }
 END: Cython Metadata */
@@ -242,8 +266,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__tokyo
-#define __PYX_HAVE_API__tokyo
+#define __PYX_HAVE__tokyo__tokyo
+#define __PYX_HAVE_API__tokyo__tokyo
 #include "string.h"
 #include "stdio.h"
 #include "stdlib.h"
@@ -479,12 +503,12 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "tokyo/tokyo.pyx",
   "__init__.pxd",
+  "tokyo/tokyo.pyx",
   "type.pxd",
 };
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":725
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":725
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -493,7 +517,7 @@ static const char *__pyx_f[] = {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":726
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":726
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -502,7 +526,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":727
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":727
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -511,7 +535,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":728
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":728
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -520,7 +544,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":732
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":732
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -529,7 +553,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":733
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":733
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -538,7 +562,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":734
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":734
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -547,7 +571,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":735
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":735
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -556,7 +580,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":739
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":739
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -565,7 +589,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":740
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":740
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -574,7 +598,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":749
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":749
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -583,7 +607,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":750
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":750
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -592,7 +616,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":751
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":751
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -601,7 +625,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":753
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":753
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -610,7 +634,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":754
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":754
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -619,7 +643,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":755
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":755
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -628,7 +652,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":757
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":757
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -637,7 +661,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":758
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":758
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -646,7 +670,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":760
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":760
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -655,7 +679,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":761
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":761
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -664,7 +688,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":762
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":762
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -695,7 +719,7 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
 /*--- Type declarations ---*/
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":764
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":764
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -704,7 +728,7 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":765
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":765
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -713,7 +737,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":766
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":766
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -722,7 +746,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":768
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":768
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -730,20 +754,6 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
-struct __pyx_opt_args_5tokyo_srot;
-
-/* "tokyo.pyx":266
- *     lib_srot(N, x, dx, y, dy, c, s)
- * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-struct __pyx_opt_args_5tokyo_srot {
-  int __pyx_n;
-  int dx;
-  int dy;
-};
 
 /* --- Runtime support code (head) --- */
 #ifndef CYTHON_REFNANNY
@@ -836,21 +846,6 @@ static CYTHON_INLINE void __Pyx_ErrFetch(PyObject **type, PyObject **value, PyOb
 
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
-static void __Pyx_WriteUnraisable(const char *name, int clineno,
-                                  int lineno, const char *filename,
-                                  int full_traceback, int nogil);
-
-#define __Pyx_SetItemInt(o, i, v, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_SetItemInt_Fast(o, (Py_ssize_t)i, v, is_list, wraparound, boundscheck) :\
-    (is_list ? (PyErr_SetString(PyExc_IndexError, "list assignment index out of range"), -1) :\
-               __Pyx_SetItemInt_Generic(o, to_py_func(i), v)))
-static CYTHON_INLINE int __Pyx_SetItemInt_Generic(PyObject *o, PyObject *j, PyObject *v);
-static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObject *v,
-                                               int is_list, int wraparound, int boundscheck);
-
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
-
 #if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
 static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
     PyObject *value;
@@ -877,6 +872,8 @@ static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index);
 
 static CYTHON_INLINE void __Pyx_RaiseNoneNotIterableError(void);
 
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
+
 typedef struct {
     int code_line;
     PyCodeObject* code_object;
@@ -893,14 +890,6 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object);
 
 static void __Pyx_AddTraceback(const char *funcname, int c_line,
                                int py_line, const char *filename);
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value);
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_Py_intptr_t(Py_intptr_t value);
-
-static CYTHON_INLINE unsigned int __Pyx_PyInt_As_unsigned_int(PyObject *);
 
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -1004,6 +993,10 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value);
+
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
+
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
 static int __Pyx_check_binary_version(void);
@@ -1054,31 +1047,11 @@ static PyTypeObject *__pyx_ptype_5numpy_ndarray = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, char *, char *, int *); /*proto*/
 
-/* Module declarations from 'tokyo' */
-static PyArrayObject *__pyx_f_5tokyo_srotg_(float, float); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_drotg_(double, double); /*proto*/
-static void __pyx_f_5tokyo_sgemv5(float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *); /*proto*/
-static void __pyx_f_5tokyo_dgemv5(double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *); /*proto*/
-static void __pyx_f_5tokyo_sger4(float, PyArrayObject *, PyArrayObject *, PyArrayObject *); /*proto*/
-static void __pyx_f_5tokyo_dger4(double, PyArrayObject *, PyArrayObject *, PyArrayObject *); /*proto*/
-static void __pyx_f_5tokyo_sgemm5(float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *); /*proto*/
-static void __pyx_f_5tokyo_dgemm5(double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_smnewempty(int, int); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_dmnewempty(int, int); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_svnewempty(int); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_dvnewempty(int); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_smnewzero(int, int); /*proto*/
-static PyArrayObject *__pyx_f_5tokyo_dmnewzero(int, int); /*proto*/
-static void __pyx_f_5tokyo_srotmg_(float *, float *, float *, float, float *); /*proto*/
-static void __pyx_f_5tokyo_drotmg_(double *, double *, double *, double, double *); /*proto*/
-static void __pyx_f_5tokyo_srot_(int, float *, int, float *, int, float, float); /*proto*/
-static void __pyx_f_5tokyo_drot_(int, double *, int, double *, int, double, double); /*proto*/
-static void __pyx_f_5tokyo_srotm_(int, float *, int, float *, int, float *); /*proto*/
-static void __pyx_f_5tokyo_drotm_(int, double *, int, double *, int, double *); /*proto*/
-#define __Pyx_MODULE_NAME "tokyo"
-int __pyx_module_is_main_tokyo = 0;
+/* Module declarations from 'tokyo.tokyo' */
+#define __Pyx_MODULE_NAME "tokyo.tokyo"
+int __pyx_module_is_main_tokyo__tokyo = 0;
 
-/* Implementation of 'tokyo' */
+/* Implementation of 'tokyo.tokyo' */
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_RuntimeError;
@@ -1104,91 +1077,23 @@ static char __pyx_k_test[] = "__test__";
 static char __pyx_k_range[] = "range";
 static char __pyx_k_ValueError[] = "ValueError";
 static char __pyx_k_RuntimeError[] = "RuntimeError";
-static char __pyx_k_A_rows_y_rows[] = "A rows != y rows";
-static char __pyx_k_X_rows_Y_rows[] = "X rows != Y rows";
-static char __pyx_k_x_rows_A_rows[] = "x rows != A rows";
-static char __pyx_k_x_rows_y_rows[] = "x rows != y rows";
-static char __pyx_k_A_columns_B_rows[] = "A columns != B rows";
-static char __pyx_k_A_columns_x_rows[] = "A columns != x rows";
-static char __pyx_k_A_rows_C_columns[] = "A rows != C columns";
-static char __pyx_k_B_columns_C_rows[] = "B columns != C rows";
-static char __pyx_k_y_rows_A_columns[] = "y rows != A columns";
-static char __pyx_k_A_is_not_a_matrix[] = "A is not a matrix";
-static char __pyx_k_A_is_not_a_vector[] = "A is not a vector";
-static char __pyx_k_B_is_not_a_matrix[] = "B is not a matrix";
-static char __pyx_k_C_is_not_a_matrix[] = "C is not a matrix";
-static char __pyx_k_x_is_not_a_vector[] = "x is not a vector";
-static char __pyx_k_y_is_not_a_vector[] = "y is not a vector";
-static char __pyx_k_X_columns_Y_columns[] = "X columns != Y columns";
-static char __pyx_k_param_is_not_a_vector[] = "param is not a vector";
-static char __pyx_k_A_is_not_of_type_float[] = "A is not of type float";
-static char __pyx_k_B_is_not_of_type_float[] = "B is not of type float";
-static char __pyx_k_C_is_not_of_type_float[] = "C is not of type float";
-static char __pyx_k_X_is_not_of_type_float[] = "X is not of type float";
-static char __pyx_k_Y_is_not_of_type_float[] = "Y is not of type float";
-static char __pyx_k_x_is_not_of_type_float[] = "x is not of type float";
-static char __pyx_k_y_is_not_of_type_float[] = "y is not of type float";
-static char __pyx_k_A_is_not_of_type_double[] = "A is not of type double";
-static char __pyx_k_B_is_not_of_type_double[] = "B is not of type double";
-static char __pyx_k_C_is_not_of_type_double[] = "C is not of type double";
-static char __pyx_k_X_is_not_of_type_double[] = "X is not of type double";
-static char __pyx_k_Y_is_not_of_type_double[] = "Y is not of type double";
-static char __pyx_k_x_is_not_of_type_double[] = "x is not of type double";
-static char __pyx_k_y_is_not_of_type_double[] = "y is not of type double";
-static char __pyx_k_param_is_not_of_type_float[] = "param is not of type float";
 static char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C contiguous";
-static char __pyx_k_param_is_not_of_type_double[] = "param is not of type double";
-static char __pyx_k_param_must_have_length_at_least[] = "param must have length at least 5";
 static char __pyx_k_unknown_dtype_code_in_numpy_pxd[] = "unknown dtype code in numpy.pxd (%d)";
 static char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";
 static char __pyx_k_Non_native_byte_order_not_suppor[] = "Non-native byte order not supported";
 static char __pyx_k_ndarray_is_not_Fortran_contiguou[] = "ndarray is not Fortran contiguous";
 static char __pyx_k_Format_string_allocated_too_shor_2[] = "Format string allocated too short.";
-static PyObject *__pyx_kp_s_A_columns_B_rows;
-static PyObject *__pyx_kp_s_A_columns_x_rows;
-static PyObject *__pyx_kp_s_A_is_not_a_matrix;
-static PyObject *__pyx_kp_s_A_is_not_a_vector;
-static PyObject *__pyx_kp_s_A_is_not_of_type_double;
-static PyObject *__pyx_kp_s_A_is_not_of_type_float;
-static PyObject *__pyx_kp_s_A_rows_C_columns;
-static PyObject *__pyx_kp_s_A_rows_y_rows;
-static PyObject *__pyx_kp_s_B_columns_C_rows;
-static PyObject *__pyx_kp_s_B_is_not_a_matrix;
-static PyObject *__pyx_kp_s_B_is_not_of_type_double;
-static PyObject *__pyx_kp_s_B_is_not_of_type_float;
-static PyObject *__pyx_kp_s_C_is_not_a_matrix;
-static PyObject *__pyx_kp_s_C_is_not_of_type_double;
-static PyObject *__pyx_kp_s_C_is_not_of_type_float;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor_2;
 static PyObject *__pyx_kp_u_Non_native_byte_order_not_suppor;
 static PyObject *__pyx_n_s_RuntimeError;
 static PyObject *__pyx_n_s_ValueError;
-static PyObject *__pyx_kp_s_X_columns_Y_columns;
-static PyObject *__pyx_kp_s_X_is_not_of_type_double;
-static PyObject *__pyx_kp_s_X_is_not_of_type_float;
-static PyObject *__pyx_kp_s_X_rows_Y_rows;
-static PyObject *__pyx_kp_s_Y_is_not_of_type_double;
-static PyObject *__pyx_kp_s_Y_is_not_of_type_float;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_kp_u_ndarray_is_not_C_contiguous;
 static PyObject *__pyx_kp_u_ndarray_is_not_Fortran_contiguou;
-static PyObject *__pyx_kp_s_param_is_not_a_vector;
-static PyObject *__pyx_kp_s_param_is_not_of_type_double;
-static PyObject *__pyx_kp_s_param_is_not_of_type_float;
-static PyObject *__pyx_kp_s_param_must_have_length_at_least;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
-static PyObject *__pyx_kp_s_x_is_not_a_vector;
-static PyObject *__pyx_kp_s_x_is_not_of_type_double;
-static PyObject *__pyx_kp_s_x_is_not_of_type_float;
-static PyObject *__pyx_kp_s_x_rows_A_rows;
-static PyObject *__pyx_kp_s_x_rows_y_rows;
-static PyObject *__pyx_kp_s_y_is_not_a_vector;
-static PyObject *__pyx_kp_s_y_is_not_of_type_double;
-static PyObject *__pyx_kp_s_y_is_not_of_type_float;
-static PyObject *__pyx_kp_s_y_rows_A_columns;
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static PyObject *__pyx_tuple_;
@@ -1197,6498 +1102,861 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
-static PyObject *__pyx_tuple__7;
-static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_tuple__11;
-static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__13;
-static PyObject *__pyx_tuple__14;
-static PyObject *__pyx_tuple__15;
-static PyObject *__pyx_tuple__16;
-static PyObject *__pyx_tuple__17;
-static PyObject *__pyx_tuple__18;
-static PyObject *__pyx_tuple__19;
-static PyObject *__pyx_tuple__20;
-static PyObject *__pyx_tuple__21;
-static PyObject *__pyx_tuple__22;
-static PyObject *__pyx_tuple__23;
-static PyObject *__pyx_tuple__24;
-static PyObject *__pyx_tuple__25;
-static PyObject *__pyx_tuple__26;
-static PyObject *__pyx_tuple__27;
-static PyObject *__pyx_tuple__28;
-static PyObject *__pyx_tuple__29;
-static PyObject *__pyx_tuple__30;
-static PyObject *__pyx_tuple__31;
-static PyObject *__pyx_tuple__32;
-static PyObject *__pyx_tuple__33;
-static PyObject *__pyx_tuple__34;
-static PyObject *__pyx_tuple__35;
-static PyObject *__pyx_tuple__36;
-static PyObject *__pyx_tuple__37;
-static PyObject *__pyx_tuple__38;
-static PyObject *__pyx_tuple__39;
-static PyObject *__pyx_tuple__40;
-static PyObject *__pyx_tuple__41;
-static PyObject *__pyx_tuple__42;
-static PyObject *__pyx_tuple__43;
-static PyObject *__pyx_tuple__44;
-static PyObject *__pyx_tuple__45;
-static PyObject *__pyx_tuple__46;
-static PyObject *__pyx_tuple__47;
-static PyObject *__pyx_tuple__48;
-static PyObject *__pyx_tuple__49;
-static PyObject *__pyx_tuple__50;
-static PyObject *__pyx_tuple__51;
-static PyObject *__pyx_tuple__52;
-static PyObject *__pyx_tuple__53;
-static PyObject *__pyx_tuple__54;
-static PyObject *__pyx_tuple__55;
-static PyObject *__pyx_tuple__56;
-static PyObject *__pyx_tuple__57;
-static PyObject *__pyx_tuple__58;
-static PyObject *__pyx_tuple__59;
-static PyObject *__pyx_tuple__60;
-static PyObject *__pyx_tuple__61;
-static PyObject *__pyx_tuple__62;
-static PyObject *__pyx_tuple__63;
-static PyObject *__pyx_tuple__64;
-static PyObject *__pyx_tuple__65;
-static PyObject *__pyx_tuple__66;
-static PyObject *__pyx_tuple__67;
-static PyObject *__pyx_tuple__68;
-static PyObject *__pyx_tuple__69;
-static PyObject *__pyx_tuple__70;
-static PyObject *__pyx_tuple__71;
-static PyObject *__pyx_tuple__72;
-static PyObject *__pyx_tuple__73;
-static PyObject *__pyx_tuple__74;
-static PyObject *__pyx_tuple__75;
-static PyObject *__pyx_tuple__76;
-static PyObject *__pyx_tuple__77;
-static PyObject *__pyx_tuple__78;
-static PyObject *__pyx_tuple__79;
-static PyObject *__pyx_tuple__80;
-static PyObject *__pyx_tuple__81;
-static PyObject *__pyx_tuple__82;
-static PyObject *__pyx_tuple__83;
-static PyObject *__pyx_tuple__84;
-static PyObject *__pyx_tuple__85;
-static PyObject *__pyx_tuple__86;
-static PyObject *__pyx_tuple__87;
-static PyObject *__pyx_tuple__88;
-static PyObject *__pyx_tuple__89;
-static PyObject *__pyx_tuple__90;
-static PyObject *__pyx_tuple__91;
-static PyObject *__pyx_tuple__92;
-static PyObject *__pyx_tuple__93;
-static PyObject *__pyx_tuple__94;
-static PyObject *__pyx_tuple__95;
-static PyObject *__pyx_tuple__96;
-static PyObject *__pyx_tuple__97;
-static PyObject *__pyx_tuple__98;
-static PyObject *__pyx_tuple__99;
-static PyObject *__pyx_tuple__100;
-static PyObject *__pyx_tuple__101;
-static PyObject *__pyx_tuple__102;
-static PyObject *__pyx_tuple__103;
-static PyObject *__pyx_tuple__104;
-static PyObject *__pyx_tuple__105;
-static PyObject *__pyx_tuple__106;
-static PyObject *__pyx_tuple__107;
-static PyObject *__pyx_tuple__108;
-static PyObject *__pyx_tuple__109;
-static PyObject *__pyx_tuple__110;
-static PyObject *__pyx_tuple__111;
-static PyObject *__pyx_tuple__112;
-static PyObject *__pyx_tuple__113;
-static PyObject *__pyx_tuple__114;
-static PyObject *__pyx_tuple__115;
-static PyObject *__pyx_tuple__116;
-static PyObject *__pyx_tuple__117;
-static PyObject *__pyx_tuple__118;
-static PyObject *__pyx_tuple__119;
-static PyObject *__pyx_tuple__120;
-static PyObject *__pyx_tuple__121;
-static PyObject *__pyx_tuple__122;
-static PyObject *__pyx_tuple__123;
-static PyObject *__pyx_tuple__124;
-static PyObject *__pyx_tuple__125;
-static PyObject *__pyx_tuple__126;
-static PyObject *__pyx_tuple__127;
-static PyObject *__pyx_tuple__128;
-static PyObject *__pyx_tuple__129;
-static PyObject *__pyx_tuple__130;
-static PyObject *__pyx_tuple__131;
-static PyObject *__pyx_tuple__132;
-static PyObject *__pyx_tuple__133;
-static PyObject *__pyx_tuple__134;
-static PyObject *__pyx_tuple__135;
-static PyObject *__pyx_tuple__136;
-static PyObject *__pyx_tuple__137;
-static PyObject *__pyx_tuple__138;
-static PyObject *__pyx_tuple__139;
-static PyObject *__pyx_tuple__140;
-static PyObject *__pyx_tuple__141;
-static PyObject *__pyx_tuple__142;
-static PyObject *__pyx_tuple__143;
-static PyObject *__pyx_tuple__144;
-static PyObject *__pyx_tuple__145;
-static PyObject *__pyx_tuple__146;
-static PyObject *__pyx_tuple__147;
-static PyObject *__pyx_tuple__148;
-static PyObject *__pyx_tuple__149;
-static PyObject *__pyx_tuple__150;
-static PyObject *__pyx_tuple__151;
-static PyObject *__pyx_tuple__152;
-static PyObject *__pyx_tuple__153;
-static PyObject *__pyx_tuple__154;
-static PyObject *__pyx_tuple__155;
-static PyObject *__pyx_tuple__156;
-static PyObject *__pyx_tuple__157;
-static PyObject *__pyx_tuple__158;
-static PyObject *__pyx_tuple__159;
-static PyObject *__pyx_tuple__160;
-static PyObject *__pyx_tuple__161;
-static PyObject *__pyx_tuple__162;
-static PyObject *__pyx_tuple__163;
-static PyObject *__pyx_tuple__164;
-static PyObject *__pyx_tuple__165;
-static PyObject *__pyx_tuple__166;
-static PyObject *__pyx_tuple__167;
-static PyObject *__pyx_tuple__168;
-static PyObject *__pyx_tuple__169;
-static PyObject *__pyx_tuple__170;
-static PyObject *__pyx_tuple__171;
-static PyObject *__pyx_tuple__172;
-static PyObject *__pyx_tuple__173;
-static PyObject *__pyx_tuple__174;
-static PyObject *__pyx_tuple__175;
-static PyObject *__pyx_tuple__176;
-static PyObject *__pyx_tuple__177;
-static PyObject *__pyx_tuple__178;
-static PyObject *__pyx_tuple__179;
-static PyObject *__pyx_tuple__180;
-static PyObject *__pyx_tuple__181;
-static PyObject *__pyx_tuple__182;
-static PyObject *__pyx_tuple__183;
-static PyObject *__pyx_tuple__184;
-static PyObject *__pyx_tuple__185;
-static PyObject *__pyx_tuple__186;
-static PyObject *__pyx_tuple__187;
-static PyObject *__pyx_tuple__188;
-static PyObject *__pyx_tuple__189;
-static PyObject *__pyx_tuple__190;
-static PyObject *__pyx_tuple__191;
-static PyObject *__pyx_tuple__192;
-static PyObject *__pyx_tuple__193;
-static PyObject *__pyx_tuple__194;
-static PyObject *__pyx_tuple__195;
-static PyObject *__pyx_tuple__196;
 
-/* "tokyo.pyx":15
+/* "tokyo/tokyo.pyx":15
  * 
  * # vector swap: x <-> y
- * cdef void sswap_(int M, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void sswap_(int M, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_sswap(M, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_sswap_(int __pyx_v_M, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sswap_", 0);
+static void __pyx_f_5tokyo_5tokyo_sswap_(int __pyx_v_M, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":16
+  /* "tokyo/tokyo.pyx":16
  * # vector swap: x <-> y
- * cdef void sswap_(int M, float *x, int dx, float *y, int dy):
+ * cdef void sswap_(int M, float *x, int dx, float *y, int dy) nogil:
  *     lib_sswap(M, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void sswap(np.ndarray x, np.ndarray y):
+ * cdef void dswap_(int M, double *x, int dx, double *y, int dy) nogil:
  */
   cblas_sswap(__pyx_v_M, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":15
+  /* "tokyo/tokyo.pyx":15
  * 
  * # vector swap: x <-> y
- * cdef void sswap_(int M, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void sswap_(int M, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_sswap(M, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":18
+/* "tokyo/tokyo.pyx":18
  *     lib_sswap(M, x, dx, y, dy)
  * 
- * cdef void sswap(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_sswap(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sswap", 0);
-
-  /* "tokyo.pyx":19
- * 
- * cdef void sswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":20
- * cdef void sswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":21
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":22
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":23
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":22
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":24
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":25
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sswap(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 25; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 25; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":24
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- * 
- */
-  }
-
-  /* "tokyo.pyx":27
- *         raise ValueError("y is not of type float")
- * 
- *     lib_sswap(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_sswap((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":18
- *     lib_sswap(M, x, dx, y, dy)
- * 
- * cdef void sswap(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sswap", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":30
- * 
- * 
- * cdef void dswap_(int M, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void dswap_(int M, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_dswap(M, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_dswap_(int __pyx_v_M, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dswap_", 0);
+static void __pyx_f_5tokyo_5tokyo_dswap_(int __pyx_v_M, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":31
+  /* "tokyo/tokyo.pyx":19
  * 
- * cdef void dswap_(int M, double *x, int dx, double *y, int dy):
+ * cdef void dswap_(int M, double *x, int dx, double *y, int dy) nogil:
  *     lib_dswap(M, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void dswap(np.ndarray x, np.ndarray y):
+ * # scalar vector multiply: x *= alpha
  */
   cblas_dswap(__pyx_v_M, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":30
+  /* "tokyo/tokyo.pyx":18
+ *     lib_sswap(M, x, dx, y, dy)
  * 
- * 
- * cdef void dswap_(int M, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void dswap_(int M, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_dswap(M, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":33
- *     lib_dswap(M, x, dx, y, dy)
- * 
- * cdef void dswap(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_dswap(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dswap", 0);
-
-  /* "tokyo.pyx":34
- * 
- * cdef void dswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":35
- * cdef void dswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":36
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":37
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":38
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":37
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":39
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_dswap(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":40
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dswap(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":39
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_dswap(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":41
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     lib_dswap(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)             # <<<<<<<<<<<<<<
+/* "tokyo/tokyo.pyx":22
  * 
  * # scalar vector multiply: x *= alpha
- */
-  cblas_dswap((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":33
- *     lib_dswap(M, x, dx, y, dy)
- * 
- * cdef void dswap(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dswap", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":44
- * 
- * # scalar vector multiply: x *= alpha
- * cdef void sscal_(int N, float alpha, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef void sscal_(int N, float alpha, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     lib_sscal(N, alpha, x, dx)
  * 
  */
 
-static void __pyx_f_5tokyo_sscal_(int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sscal_", 0);
+static void __pyx_f_5tokyo_5tokyo_sscal_(int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx) {
 
-  /* "tokyo.pyx":45
+  /* "tokyo/tokyo.pyx":23
  * # scalar vector multiply: x *= alpha
- * cdef void sscal_(int N, float alpha, float *x, int dx):
+ * cdef void sscal_(int N, float alpha, float *x, int dx) nogil:
  *     lib_sscal(N, alpha, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef void sscal(float alpha, np.ndarray x):
+ * cdef void dscal_(int N, double alpha, double *x, int dx) nogil:
  */
   cblas_sscal(__pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx);
 
-  /* "tokyo.pyx":44
+  /* "tokyo/tokyo.pyx":22
  * 
  * # scalar vector multiply: x *= alpha
- * cdef void sscal_(int N, float alpha, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef void sscal_(int N, float alpha, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     lib_sscal(N, alpha, x, dx)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":47
+/* "tokyo/tokyo.pyx":25
  *     lib_sscal(N, alpha, x, dx)
  * 
- * cdef void sscal(float alpha, np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-static void __pyx_f_5tokyo_sscal(float __pyx_v_alpha, PyArrayObject *__pyx_v_x) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sscal", 0);
-
-  /* "tokyo.pyx":48
- * 
- * cdef void sscal(float alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":49
- * cdef void sscal(float alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     lib_sscal(x.shape[0], alpha, <float*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":50
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     lib_sscal(x.shape[0], alpha, <float*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":49
- * cdef void sscal(float alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     lib_sscal(x.shape[0], alpha, <float*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":51
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     lib_sscal(x.shape[0], alpha, <float*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_sscal((__pyx_v_x->dimensions[0]), __pyx_v_alpha, ((float *)__pyx_v_x->data), 1);
-
-  /* "tokyo.pyx":47
- *     lib_sscal(N, alpha, x, dx)
- * 
- * cdef void sscal(float alpha, np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sscal", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":54
- * 
- * 
- * cdef void dscal_(int N, double alpha, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef void dscal_(int N, double alpha, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     lib_dscal(N, alpha, x, dx)
  * 
  */
 
-static void __pyx_f_5tokyo_dscal_(int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dscal_", 0);
+static void __pyx_f_5tokyo_5tokyo_dscal_(int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx) {
 
-  /* "tokyo.pyx":55
+  /* "tokyo/tokyo.pyx":26
  * 
- * cdef void dscal_(int N, double alpha, double *x, int dx):
+ * cdef void dscal_(int N, double alpha, double *x, int dx) nogil:
  *     lib_dscal(N, alpha, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef void dscal(double alpha, np.ndarray x):
+ * # vector copy: y <- x
  */
   cblas_dscal(__pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx);
 
-  /* "tokyo.pyx":54
+  /* "tokyo/tokyo.pyx":25
+ *     lib_sscal(N, alpha, x, dx)
  * 
- * 
- * cdef void dscal_(int N, double alpha, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef void dscal_(int N, double alpha, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     lib_dscal(N, alpha, x, dx)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":57
- *     lib_dscal(N, alpha, x, dx)
- * 
- * cdef void dscal(double alpha, np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-static void __pyx_f_5tokyo_dscal(double __pyx_v_alpha, PyArrayObject *__pyx_v_x) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dscal", 0);
-
-  /* "tokyo.pyx":58
- * 
- * cdef void dscal(double alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":59
- * cdef void dscal(double alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     lib_dscal(x.shape[0], alpha, <double*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":60
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dscal(x.shape[0], alpha, <double*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":59
- * cdef void dscal(double alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     lib_dscal(x.shape[0], alpha, <double*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":61
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     lib_dscal(x.shape[0], alpha, <double*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_dscal((__pyx_v_x->dimensions[0]), __pyx_v_alpha, ((double *)__pyx_v_x->data), 1);
-
-  /* "tokyo.pyx":57
- *     lib_dscal(N, alpha, x, dx)
- * 
- * cdef void dscal(double alpha, np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dscal", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":65
+/* "tokyo/tokyo.pyx":29
  * 
  * # vector copy: y <- x
- * cdef void scopy_(int N, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void scopy_(int N, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_scopy(N, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_scopy_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("scopy_", 0);
+static void __pyx_f_5tokyo_5tokyo_scopy_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":66
+  /* "tokyo/tokyo.pyx":30
  * # vector copy: y <- x
- * cdef void scopy_(int N, float *x, int dx, float *y, int dy):
+ * cdef void scopy_(int N, float *x, int dx, float *y, int dy) nogil:
  *     lib_scopy(N, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void scopy(np.ndarray x, np.ndarray y):
+ * cdef void dcopy_(int N, double *x, int dx, double *y, int dy) nogil:
  */
   cblas_scopy(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":65
+  /* "tokyo/tokyo.pyx":29
  * 
  * # vector copy: y <- x
- * cdef void scopy_(int N, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void scopy_(int N, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_scopy(N, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":68
+/* "tokyo/tokyo.pyx":32
  *     lib_scopy(N, x, dx, y, dy)
  * 
- * cdef void scopy(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_scopy(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("scopy", 0);
-
-  /* "tokyo.pyx":69
- * 
- * cdef void scopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":70
- * cdef void scopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":71
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":72
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":73
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":72
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":74
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     lib_scopy(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":75
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     lib_scopy(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":74
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     lib_scopy(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":76
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- *     lib_scopy(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_scopy((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":68
- *     lib_scopy(N, x, dx, y, dy)
- * 
- * cdef void scopy(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.scopy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":79
- * 
- * 
- * cdef void dcopy_(int N, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void dcopy_(int N, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_dcopy(N, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_dcopy_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dcopy_", 0);
+static void __pyx_f_5tokyo_5tokyo_dcopy_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":80
+  /* "tokyo/tokyo.pyx":33
  * 
- * cdef void dcopy_(int N, double *x, int dx, double *y, int dy):
+ * cdef void dcopy_(int N, double *x, int dx, double *y, int dy) nogil:
  *     lib_dcopy(N, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void dcopy(np.ndarray x, np.ndarray y):
+ * # vector addition: y += alpha*x
  */
   cblas_dcopy(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":79
+  /* "tokyo/tokyo.pyx":32
+ *     lib_scopy(N, x, dx, y, dy)
  * 
- * 
- * cdef void dcopy_(int N, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void dcopy_(int N, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_dcopy(N, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":82
- *     lib_dcopy(N, x, dx, y, dy)
- * 
- * cdef void dcopy(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_dcopy(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dcopy", 0);
-
-  /* "tokyo.pyx":83
- * 
- * cdef void dcopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":84
- * cdef void dcopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":85
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":86
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":87
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":86
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":88
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_dcopy(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":89
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dcopy(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":88
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_dcopy(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":90
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     lib_dcopy(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_dcopy((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":82
- *     lib_dcopy(N, x, dx, y, dy)
- * 
- * cdef void dcopy(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dcopy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":94
+/* "tokyo/tokyo.pyx":36
  * 
  * # vector addition: y += alpha*x
- * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_saxpy(N, alpha, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_saxpy_(int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("saxpy_", 0);
+static void __pyx_f_5tokyo_5tokyo_saxpy_(int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":95
+  /* "tokyo/tokyo.pyx":37
  * # vector addition: y += alpha*x
- * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy):
+ * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy) nogil:
  *     lib_saxpy(N, alpha, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):
+ * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy) nogil:
  */
   cblas_saxpy(__pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":94
+  /* "tokyo/tokyo.pyx":36
  * 
  * # vector addition: y += alpha*x
- * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void saxpy_(int N, float alpha, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_saxpy(N, alpha, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":97
+/* "tokyo/tokyo.pyx":39
  *     lib_saxpy(N, alpha, x, dx, y, dy)
  * 
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_saxpy(float __pyx_v_alpha, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("saxpy", 0);
-
-  /* "tokyo.pyx":98
- * 
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":99
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":100
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":101
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":102
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":101
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":103
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     lib_saxpy(x.shape[0], alpha, <float*>x.data, 1, <float*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":104
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     lib_saxpy(x.shape[0], alpha, <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":103
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     lib_saxpy(x.shape[0], alpha, <float*>x.data, 1, <float*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":105
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- *     lib_saxpy(x.shape[0], alpha, <float*>x.data, 1, <float*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_saxpy((__pyx_v_x->dimensions[0]), __pyx_v_alpha, ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":97
- *     lib_saxpy(N, alpha, x, dx, y, dy)
- * 
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.saxpy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":108
- * 
- * 
- * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_daxpy(N, alpha, x, dx, y, dy)
  * 
  */
 
-static void __pyx_f_5tokyo_daxpy_(int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("daxpy_", 0);
+static void __pyx_f_5tokyo_5tokyo_daxpy_(int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":109
+  /* "tokyo/tokyo.pyx":40
  * 
- * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy):
+ * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy) nogil:
  *     lib_daxpy(N, alpha, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):
+ * # vector dot product: x'y
  */
   cblas_daxpy(__pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":108
+  /* "tokyo/tokyo.pyx":39
+ *     lib_saxpy(N, alpha, x, dx, y, dy)
  * 
- * 
- * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef void daxpy_(int N, double alpha, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     lib_daxpy(N, alpha, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":111
- *     lib_daxpy(N, alpha, x, dx, y, dy)
- * 
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_daxpy(double __pyx_v_alpha, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("daxpy", 0);
-
-  /* "tokyo.pyx":112
- * 
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":113
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":114
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 114; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 114; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":115
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":116
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 116; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 116; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":115
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":117
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_daxpy(x.shape[0], alpha, <double*>x.data, 1, <double*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":118
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_daxpy(x.shape[0], alpha, <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 118; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 118; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":117
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     lib_daxpy(x.shape[0], alpha, <double*>x.data, 1, <double*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":119
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     lib_daxpy(x.shape[0], alpha, <double*>x.data, 1, <double*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_daxpy((__pyx_v_x->dimensions[0]), __pyx_v_alpha, ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":111
- *     lib_daxpy(N, alpha, x, dx, y, dy)
- * 
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.daxpy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":123
+/* "tokyo/tokyo.pyx":43
  * 
  * # vector dot product: x'y
- * cdef float sdot_(int N, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef float sdot_(int N, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     return lib_sdot(N, x, dx, y, dy)
  * 
  */
 
-static float __pyx_f_5tokyo_sdot_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
+static float __pyx_f_5tokyo_5tokyo_sdot_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy) {
   float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sdot_", 0);
 
-  /* "tokyo.pyx":124
+  /* "tokyo/tokyo.pyx":44
  * # vector dot product: x'y
- * cdef float sdot_(int N, float *x, int dx, float *y, int dy):
+ * cdef float sdot_(int N, float *x, int dx, float *y, int dy) nogil:
  *     return lib_sdot(N, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef float sdot(np.ndarray x, np.ndarray y):
+ * cdef double ddot_(int N, double *x, int dx, double *y, int dy) nogil:
  */
   __pyx_r = cblas_sdot(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":123
+  /* "tokyo/tokyo.pyx":43
  * 
  * # vector dot product: x'y
- * cdef float sdot_(int N, float *x, int dx, float *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef float sdot_(int N, float *x, int dx, float *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     return lib_sdot(N, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":126
+/* "tokyo/tokyo.pyx":46
  *     return lib_sdot(N, x, dx, y, dy)
  * 
- * cdef float sdot(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static float __pyx_f_5tokyo_sdot(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sdot", 0);
-
-  /* "tokyo.pyx":127
- * 
- * cdef float sdot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":128
- * cdef float sdot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":129
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":130
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":131
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":130
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":132
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     return lib_sdot(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":133
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_sdot(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":132
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     return lib_sdot(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":134
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- *     return lib_sdot(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_sdot((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":126
- *     return lib_sdot(N, x, dx, y, dy)
- * 
- * cdef float sdot(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sdot", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":137
- * 
- * 
- * cdef double ddot_(int N, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef double ddot_(int N, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     return lib_ddot(N, x, dx, y, dy)
  * 
  */
 
-static double __pyx_f_5tokyo_ddot_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
+static double __pyx_f_5tokyo_5tokyo_ddot_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy) {
   double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("ddot_", 0);
 
-  /* "tokyo.pyx":138
+  /* "tokyo/tokyo.pyx":47
  * 
- * cdef double ddot_(int N, double *x, int dx, double *y, int dy):
+ * cdef double ddot_(int N, double *x, int dx, double *y, int dy) nogil:
  *     return lib_ddot(N, x, dx, y, dy)             # <<<<<<<<<<<<<<
  * 
- * cdef double ddot(np.ndarray x, np.ndarray y):
+ * # Euclidean norm:  ||x||_2
  */
   __pyx_r = cblas_ddot(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":137
+  /* "tokyo/tokyo.pyx":46
+ *     return lib_sdot(N, x, dx, y, dy)
  * 
- * 
- * cdef double ddot_(int N, double *x, int dx, double *y, int dy):             # <<<<<<<<<<<<<<
+ * cdef double ddot_(int N, double *x, int dx, double *y, int dy) nogil:             # <<<<<<<<<<<<<<
  *     return lib_ddot(N, x, dx, y, dy)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":140
- *     return lib_ddot(N, x, dx, y, dy)
- * 
- * cdef double ddot(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static double __pyx_f_5tokyo_ddot(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("ddot", 0);
-
-  /* "tokyo.pyx":141
- * 
- * cdef double ddot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":142
- * cdef double ddot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 142; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 142; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":143
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__42, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":144
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":145
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__43, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":144
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":146
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     return lib_ddot(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":147
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_ddot(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__44, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":146
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     return lib_ddot(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":148
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     return lib_ddot(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_ddot((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":140
- *     return lib_ddot(N, x, dx, y, dy)
- * 
- * cdef double ddot(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.ddot", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":152
+/* "tokyo/tokyo.pyx":50
  * 
  * # Euclidean norm:  ||x||_2
- * cdef float snrm2_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef float snrm2_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_snrm2(N, x, dx)
  * 
  */
 
-static float __pyx_f_5tokyo_snrm2_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
+static float __pyx_f_5tokyo_5tokyo_snrm2_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
   float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("snrm2_", 0);
 
-  /* "tokyo.pyx":153
+  /* "tokyo/tokyo.pyx":51
  * # Euclidean norm:  ||x||_2
- * cdef float snrm2_(int N, float *x, int dx):
+ * cdef float snrm2_(int N, float *x, int dx) nogil:
  *     return lib_snrm2(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef float snrm2(np.ndarray x):
+ * cdef double dnrm2_(int N, double *x, int dx) nogil:
  */
   __pyx_r = cblas_snrm2(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":152
+  /* "tokyo/tokyo.pyx":50
  * 
  * # Euclidean norm:  ||x||_2
- * cdef float snrm2_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef float snrm2_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_snrm2(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":155
+/* "tokyo/tokyo.pyx":53
  *     return lib_snrm2(N, x, dx)
  * 
- * cdef float snrm2(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-static float __pyx_f_5tokyo_snrm2(PyArrayObject *__pyx_v_x) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("snrm2", 0);
-
-  /* "tokyo.pyx":156
- * 
- * cdef float snrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__45, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":157
- * cdef float snrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_snrm2(x.shape[0], <float*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":158
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_snrm2(x.shape[0], <float*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__46, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":157
- * cdef float snrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_snrm2(x.shape[0], <float*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":159
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     return lib_snrm2(x.shape[0], <float*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_snrm2((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":155
- *     return lib_snrm2(N, x, dx)
- * 
- * cdef float snrm2(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.snrm2", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":162
- * 
- * 
- * cdef double dnrm2_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef double dnrm2_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_dnrm2(N, x, dx)
  * 
  */
 
-static double __pyx_f_5tokyo_dnrm2_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
+static double __pyx_f_5tokyo_5tokyo_dnrm2_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
   double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dnrm2_", 0);
 
-  /* "tokyo.pyx":163
+  /* "tokyo/tokyo.pyx":54
  * 
- * cdef double dnrm2_(int N, double *x, int dx):
+ * cdef double dnrm2_(int N, double *x, int dx) nogil:
  *     return lib_dnrm2(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef double dnrm2(np.ndarray x):
+ * # sum of absolute values: ||x||_1
  */
   __pyx_r = cblas_dnrm2(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":162
+  /* "tokyo/tokyo.pyx":53
+ *     return lib_snrm2(N, x, dx)
  * 
- * 
- * cdef double dnrm2_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef double dnrm2_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_dnrm2(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":165
- *     return lib_dnrm2(N, x, dx)
- * 
- * cdef double dnrm2(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-static double __pyx_f_5tokyo_dnrm2(PyArrayObject *__pyx_v_x) {
-  double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dnrm2", 0);
-
-  /* "tokyo.pyx":166
- * 
- * cdef double dnrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":167
- * cdef double dnrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_dnrm2(x.shape[0], <double*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":168
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_dnrm2(x.shape[0], <double*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":167
- * cdef double dnrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_dnrm2(x.shape[0], <double*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":169
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     return lib_dnrm2(x.shape[0], <double*>x.data, 1)             # <<<<<<<<<<<<<<
+/* "tokyo/tokyo.pyx":57
  * 
  * # sum of absolute values: ||x||_1
- */
-  __pyx_r = cblas_dnrm2((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":165
- *     return lib_dnrm2(N, x, dx)
- * 
- * cdef double dnrm2(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dnrm2", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":172
- * 
- * # sum of absolute values: ||x||_1
- * cdef float sasum_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef float sasum_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_sasum(N, x, dx)
  * 
  */
 
-static float __pyx_f_5tokyo_sasum_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
+static float __pyx_f_5tokyo_5tokyo_sasum_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
   float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sasum_", 0);
 
-  /* "tokyo.pyx":173
+  /* "tokyo/tokyo.pyx":58
  * # sum of absolute values: ||x||_1
- * cdef float sasum_(int N, float *x, int dx):
+ * cdef float sasum_(int N, float *x, int dx) nogil:
  *     return lib_sasum(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef float sasum(np.ndarray x):
+ * cdef double dasum_(int N, double *x, int dx) nogil:
  */
   __pyx_r = cblas_sasum(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":172
+  /* "tokyo/tokyo.pyx":57
  * 
  * # sum of absolute values: ||x||_1
- * cdef float sasum_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef float sasum_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_sasum(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":175
+/* "tokyo/tokyo.pyx":60
  *     return lib_sasum(N, x, dx)
  * 
- * cdef float sasum(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-static float __pyx_f_5tokyo_sasum(PyArrayObject *__pyx_v_x) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sasum", 0);
-
-  /* "tokyo.pyx":176
- * 
- * cdef float sasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__49, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":177
- * cdef float sasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_sasum(x.shape[0], <float*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":178
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_sasum(x.shape[0], <float*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":177
- * cdef float sasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_sasum(x.shape[0], <float*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":179
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     return lib_sasum(x.shape[0], <float*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_sasum((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":175
- *     return lib_sasum(N, x, dx)
- * 
- * cdef float sasum(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sasum", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":182
- * 
- * 
- * cdef double dasum_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef double dasum_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_dasum(N, x, dx)
  * 
  */
 
-static double __pyx_f_5tokyo_dasum_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
+static double __pyx_f_5tokyo_5tokyo_dasum_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
   double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dasum_", 0);
 
-  /* "tokyo.pyx":183
+  /* "tokyo/tokyo.pyx":61
  * 
- * cdef double dasum_(int N, double *x, int dx):
+ * cdef double dasum_(int N, double *x, int dx) nogil:
  *     return lib_dasum(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef double dasum(np.ndarray x):
+ * # index of maximum absolute value element
  */
   __pyx_r = cblas_dasum(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":182
+  /* "tokyo/tokyo.pyx":60
+ *     return lib_sasum(N, x, dx)
  * 
- * 
- * cdef double dasum_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef double dasum_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_dasum(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":185
- *     return lib_dasum(N, x, dx)
- * 
- * cdef double dasum(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-static double __pyx_f_5tokyo_dasum(PyArrayObject *__pyx_v_x) {
-  double __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dasum", 0);
-
-  /* "tokyo.pyx":186
- * 
- * cdef double dasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 186; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 186; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":187
- * cdef double dasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_dasum(x.shape[0], <double*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":188
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_dasum(x.shape[0], <double*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 188; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 188; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":187
- * cdef double dasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_dasum(x.shape[0], <double*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":189
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     return lib_dasum(x.shape[0], <double*>x.data, 1)             # <<<<<<<<<<<<<<
+/* "tokyo/tokyo.pyx":64
  * 
  * # index of maximum absolute value element
- */
-  __pyx_r = cblas_dasum((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":185
- *     return lib_dasum(N, x, dx)
- * 
- * cdef double dasum(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dasum", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":192
- * 
- * # index of maximum absolute value element
- * cdef int isamax_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef int isamax_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_isamax(N, x, dx)
  * 
  */
 
-static int __pyx_f_5tokyo_isamax_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
+static int __pyx_f_5tokyo_5tokyo_isamax_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx) {
   int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("isamax_", 0);
 
-  /* "tokyo.pyx":193
+  /* "tokyo/tokyo.pyx":65
  * # index of maximum absolute value element
- * cdef int isamax_(int N, float *x, int dx):
+ * cdef int isamax_(int N, float *x, int dx) nogil:
  *     return lib_isamax(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef int isamax(np.ndarray x):
+ * cdef int idamax_(int N, double *x, int dx) nogil:
  */
   __pyx_r = cblas_isamax(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":192
+  /* "tokyo/tokyo.pyx":64
  * 
  * # index of maximum absolute value element
- * cdef int isamax_(int N, float *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef int isamax_(int N, float *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_isamax(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":195
+/* "tokyo/tokyo.pyx":67
  *     return lib_isamax(N, x, dx)
  * 
- * cdef int isamax(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-
-static int __pyx_f_5tokyo_isamax(PyArrayObject *__pyx_v_x) {
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("isamax", 0);
-
-  /* "tokyo.pyx":196
- * 
- * cdef int isamax(np.ndarray x):
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_isamax(x.shape[0], <float*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":197
- * cdef int isamax(np.ndarray x):
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_isamax(x.shape[0], <float*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":196
- * 
- * cdef int isamax(np.ndarray x):
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     return lib_isamax(x.shape[0], <float*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":198
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     return lib_isamax(x.shape[0], <float*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_isamax((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":195
- *     return lib_isamax(N, x, dx)
- * 
- * cdef int isamax(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.isamax", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":201
- * 
- * 
- * cdef int idamax_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef int idamax_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_idamax(N, x, dx)
  * 
  */
 
-static int __pyx_f_5tokyo_idamax_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
+static int __pyx_f_5tokyo_5tokyo_idamax_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx) {
   int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("idamax_", 0);
 
-  /* "tokyo.pyx":202
+  /* "tokyo/tokyo.pyx":68
  * 
- * cdef int idamax_(int N, double *x, int dx):
+ * cdef int idamax_(int N, double *x, int dx) nogil:
  *     return lib_idamax(N, x, dx)             # <<<<<<<<<<<<<<
  * 
- * cdef int idamax(np.ndarray x):
+ * # Generate a modified Givens plane rotation.
  */
   __pyx_r = cblas_idamax(__pyx_v_N, __pyx_v_x, __pyx_v_dx);
   goto __pyx_L0;
 
-  /* "tokyo.pyx":201
+  /* "tokyo/tokyo.pyx":67
+ *     return lib_isamax(N, x, dx)
  * 
- * 
- * cdef int idamax_(int N, double *x, int dx):             # <<<<<<<<<<<<<<
+ * cdef int idamax_(int N, double *x, int dx) nogil:             # <<<<<<<<<<<<<<
  *     return lib_idamax(N, x, dx)
  * 
  */
 
   /* function exit code */
   __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "tokyo.pyx":204
- *     return lib_idamax(N, x, dx)
- * 
- * cdef int idamax(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-static int __pyx_f_5tokyo_idamax(PyArrayObject *__pyx_v_x) {
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("idamax", 0);
-
-  /* "tokyo.pyx":205
- * 
- * cdef int idamax(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__54, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":206
- * cdef int idamax(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_idamax(x.shape[0], <double*>x.data, 1)
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":207
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_idamax(x.shape[0], <double*>x.data, 1)
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__55, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":206
- * cdef int idamax(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     return lib_idamax(x.shape[0], <double*>x.data, 1)
- */
-  }
-
-  /* "tokyo.pyx":208
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     return lib_idamax(x.shape[0], <double*>x.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_r = cblas_idamax((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1);
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":204
- *     return lib_idamax(N, x, dx)
- * 
- * cdef int idamax(np.ndarray x):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.idamax", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":212
- * 
- * # Generate a Givens plane rotation: [a,b,c,s] <- rotg(a,b).
- * cdef np.ndarray srotg_(float a, float b):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray x = svnewempty(4)
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0
- */
-
-static PyArrayObject *__pyx_f_5tokyo_srotg_(float __pyx_v_a, float __pyx_v_b) {
-  PyArrayObject *__pyx_v_x = 0;
-  float __pyx_v_aa;
-  float __pyx_v_bb;
-  float __pyx_v_c;
-  float __pyx_v_s;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("srotg_", 0);
-
-  /* "tokyo.pyx":213
- * # Generate a Givens plane rotation: [a,b,c,s] <- rotg(a,b).
- * cdef np.ndarray srotg_(float a, float b):
- *     cdef np.ndarray x = svnewempty(4)             # <<<<<<<<<<<<<<
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_srotg(&aa, &bb, &c, &s)
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_svnewempty(4)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 213; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_x = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":214
- * cdef np.ndarray srotg_(float a, float b):
- *     cdef np.ndarray x = svnewempty(4)
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0             # <<<<<<<<<<<<<<
- *     lib_srotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- */
-  __pyx_v_aa = __pyx_v_a;
-  __pyx_v_bb = __pyx_v_b;
-  __pyx_v_c = 0.0;
-  __pyx_v_s = 0.0;
-
-  /* "tokyo.pyx":215
- *     cdef np.ndarray x = svnewempty(4)
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_srotg(&aa, &bb, &c, &s)             # <<<<<<<<<<<<<<
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- *     return x
- */
-  cblas_srotg((&__pyx_v_aa), (&__pyx_v_bb), (&__pyx_v_c), (&__pyx_v_s));
-
-  /* "tokyo.pyx":216
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_srotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s             # <<<<<<<<<<<<<<
- *     return x
- * 
- */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_aa); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 0, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_bb); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 1, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_c); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 2, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_s); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 3, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":217
- *     lib_srotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- *     return x             # <<<<<<<<<<<<<<
- * 
- * cdef np.ndarray srotg(float a, float b):
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_x));
-  __pyx_r = __pyx_v_x;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":212
- * 
- * # Generate a Givens plane rotation: [a,b,c,s] <- rotg(a,b).
- * cdef np.ndarray srotg_(float a, float b):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray x = svnewempty(4)
- *     cdef float aa = a, bb = b, c = 0.0, s = 0.0
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.srotg_", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_x);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":219
- *     return x
- * 
- * cdef np.ndarray srotg(float a, float b):             # <<<<<<<<<<<<<<
- *     return srotg_(a, b)
- * 
- */
-
-static PyArrayObject *__pyx_f_5tokyo_srotg(float __pyx_v_a, float __pyx_v_b) {
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("srotg", 0);
-
-  /* "tokyo.pyx":220
- * 
- * cdef np.ndarray srotg(float a, float b):
- *     return srotg_(a, b)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_srotg_(__pyx_v_a, __pyx_v_b)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 220; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":219
- *     return x
- * 
- * cdef np.ndarray srotg(float a, float b):             # <<<<<<<<<<<<<<
- *     return srotg_(a, b)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.srotg", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":223
- * 
- * 
- * cdef np.ndarray drotg_(double a, double b):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray x = dvnewempty(4)
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0
- */
-
-static PyArrayObject *__pyx_f_5tokyo_drotg_(double __pyx_v_a, double __pyx_v_b) {
-  PyArrayObject *__pyx_v_x = 0;
-  double __pyx_v_aa;
-  double __pyx_v_bb;
-  double __pyx_v_c;
-  double __pyx_v_s;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("drotg_", 0);
-
-  /* "tokyo.pyx":224
- * 
- * cdef np.ndarray drotg_(double a, double b):
- *     cdef np.ndarray x = dvnewempty(4)             # <<<<<<<<<<<<<<
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_drotg(&aa, &bb, &c, &s)
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_dvnewempty(4)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_x = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":225
- * cdef np.ndarray drotg_(double a, double b):
- *     cdef np.ndarray x = dvnewempty(4)
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0             # <<<<<<<<<<<<<<
- *     lib_drotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- */
-  __pyx_v_aa = __pyx_v_a;
-  __pyx_v_bb = __pyx_v_b;
-  __pyx_v_c = 0.0;
-  __pyx_v_s = 0.0;
-
-  /* "tokyo.pyx":226
- *     cdef np.ndarray x = dvnewempty(4)
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_drotg(&aa, &bb, &c, &s)             # <<<<<<<<<<<<<<
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- *     return x
- */
-  cblas_drotg((&__pyx_v_aa), (&__pyx_v_bb), (&__pyx_v_c), (&__pyx_v_s));
-
-  /* "tokyo.pyx":227
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0
- *     lib_drotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s             # <<<<<<<<<<<<<<
- *     return x
- * 
- */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_aa); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 0, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_bb); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 1, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_c); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 2, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_s); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_x), 3, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":228
- *     lib_drotg(&aa, &bb, &c, &s)
- *     x[0] = aa ; x[1] = bb ; x[2] = c ; x[3] = s
- *     return x             # <<<<<<<<<<<<<<
- * 
- * cdef np.ndarray drotg(double a, double b):
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_x));
-  __pyx_r = __pyx_v_x;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":223
- * 
- * 
- * cdef np.ndarray drotg_(double a, double b):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray x = dvnewempty(4)
- *     cdef double aa = a, bb = b, c = 0.0, s = 0.0
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.drotg_", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_x);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":230
- *     return x
- * 
- * cdef np.ndarray drotg(double a, double b):             # <<<<<<<<<<<<<<
- *     return drotg_(a, b)
- * 
- */
-
-static PyArrayObject *__pyx_f_5tokyo_drotg(double __pyx_v_a, double __pyx_v_b) {
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("drotg", 0);
-
-  /* "tokyo.pyx":231
- * 
- * cdef np.ndarray drotg(double a, double b):
- *     return drotg_(a, b)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_drotg_(__pyx_v_a, __pyx_v_b)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":230
- *     return x
- * 
- * cdef np.ndarray drotg(double a, double b):             # <<<<<<<<<<<<<<
- *     return drotg_(a, b)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.drotg", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":235
+/* "tokyo/tokyo.pyx":71
  * 
  * # Generate a modified Givens plane rotation.
- * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param):             # <<<<<<<<<<<<<<
+ * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_srotmg(d1, d2, x, y, param)
  * 
  */
 
-static void __pyx_f_5tokyo_srotmg_(float *__pyx_v_d1, float *__pyx_v_d2, float *__pyx_v_x, float __pyx_v_y, float *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("srotmg_", 0);
+static void __pyx_f_5tokyo_5tokyo_srotmg_(float *__pyx_v_d1, float *__pyx_v_d2, float *__pyx_v_x, float __pyx_v_y, float *__pyx_v_param) {
 
-  /* "tokyo.pyx":236
+  /* "tokyo/tokyo.pyx":72
  * # Generate a modified Givens plane rotation.
- * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param):
+ * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param) nogil:
  *     lib_srotmg(d1, d2, x, y, param)             # <<<<<<<<<<<<<<
  * 
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):
+ * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param) nogil:
  */
   cblas_srotmg(__pyx_v_d1, __pyx_v_d2, __pyx_v_x, __pyx_v_y, __pyx_v_param);
 
-  /* "tokyo.pyx":235
+  /* "tokyo/tokyo.pyx":71
  * 
  * # Generate a modified Givens plane rotation.
- * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param):             # <<<<<<<<<<<<<<
+ * cdef void srotmg_(float *d1, float *d2, float *x, float y, float *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_srotmg(d1, d2, x, y, param)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":238
+/* "tokyo/tokyo.pyx":74
  *     lib_srotmg(d1, d2, x, y, param)
  * 
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- */
-
-static PyObject *__pyx_f_5tokyo_srotmg(float __pyx_v_d1, float __pyx_v_d2, float __pyx_v_x, float __pyx_v_y, PyArrayObject *__pyx_v_param) {
-  float __pyx_v_d1_;
-  float __pyx_v_d2_;
-  float __pyx_v_x_;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("srotmg", 0);
-
-  /* "tokyo.pyx":239
- * 
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_t_1 = ((__pyx_v_param->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__56, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":240
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = (((__pyx_v_param->dimensions[0]) < 5) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":241
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__57, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":240
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":242
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type float")
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- */
-  __pyx_t_1 = ((__pyx_v_param->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":243
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")             # <<<<<<<<<<<<<<
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- *     srotmg_(&d1_, &d2_, &x_, y, <float *>param.data)
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__58, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":242
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type float")
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- */
-  }
-
-  /* "tokyo.pyx":244
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- *     cdef float d1_ = d1, d2_ = d2, x_ = x             # <<<<<<<<<<<<<<
- *     srotmg_(&d1_, &d2_, &x_, y, <float *>param.data)
- *     return (d1_, d2_, x_, param)
- */
-  __pyx_v_d1_ = __pyx_v_d1;
-  __pyx_v_d2_ = __pyx_v_d2;
-  __pyx_v_x_ = __pyx_v_x;
-
-  /* "tokyo.pyx":245
- *         raise ValueError("param is not of type float")
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- *     srotmg_(&d1_, &d2_, &x_, y, <float *>param.data)             # <<<<<<<<<<<<<<
- *     return (d1_, d2_, x_, param)
- * 
- */
-  __pyx_f_5tokyo_srotmg_((&__pyx_v_d1_), (&__pyx_v_d2_), (&__pyx_v_x_), __pyx_v_y, ((float *)__pyx_v_param->data));
-
-  /* "tokyo.pyx":246
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- *     srotmg_(&d1_, &d2_, &x_, y, <float *>param.data)
- *     return (d1_, d2_, x_, param)             # <<<<<<<<<<<<<<
- * 
- * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param):
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_d1_); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_d2_); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_x_); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_4);
-  __Pyx_INCREF(((PyObject *)__pyx_v_param));
-  __Pyx_GIVEREF(((PyObject *)__pyx_v_param));
-  PyTuple_SET_ITEM(__pyx_t_5, 3, ((PyObject *)__pyx_v_param));
-  __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_4 = 0;
-  __pyx_r = ((PyObject*)__pyx_t_5);
-  __pyx_t_5 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":238
- *     lib_srotmg(d1, d2, x, y, param)
- * 
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("tokyo.srotmg", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":248
- *     return (d1_, d2_, x_, param)
- * 
- * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param):             # <<<<<<<<<<<<<<
+ * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_drotmg(d1, d2, x, y, param)
  * 
  */
 
-static void __pyx_f_5tokyo_drotmg_(double *__pyx_v_d1, double *__pyx_v_d2, double *__pyx_v_x, double __pyx_v_y, double *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("drotmg_", 0);
+static void __pyx_f_5tokyo_5tokyo_drotmg_(double *__pyx_v_d1, double *__pyx_v_d2, double *__pyx_v_x, double __pyx_v_y, double *__pyx_v_param) {
 
-  /* "tokyo.pyx":249
+  /* "tokyo/tokyo.pyx":75
  * 
- * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param):
+ * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param) nogil:
  *     lib_drotmg(d1, d2, x, y, param)             # <<<<<<<<<<<<<<
  * 
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):
+ * # Apply a Givens plane rotation.
  */
   cblas_drotmg(__pyx_v_d1, __pyx_v_d2, __pyx_v_x, __pyx_v_y, __pyx_v_param);
 
-  /* "tokyo.pyx":248
- *     return (d1_, d2_, x_, param)
+  /* "tokyo/tokyo.pyx":74
+ *     lib_srotmg(d1, d2, x, y, param)
  * 
- * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param):             # <<<<<<<<<<<<<<
+ * cdef void drotmg_(double *d1, double *d2, double *x, double y, double *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_drotmg(d1, d2, x, y, param)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":251
- *     lib_drotmg(d1, d2, x, y, param)
- * 
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- */
-
-static PyObject *__pyx_f_5tokyo_drotmg(double __pyx_v_d1, double __pyx_v_d2, double __pyx_v_x, double __pyx_v_y, PyArrayObject *__pyx_v_param) {
-  double __pyx_v_d1_;
-  double __pyx_v_d2_;
-  double __pyx_v_x_;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("drotmg", 0);
-
-  /* "tokyo.pyx":252
- * 
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_t_1 = ((__pyx_v_param->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__59, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":253
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = (((__pyx_v_param->dimensions[0]) < 5) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":254
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__60, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":253
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":255
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type double")
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- */
-  __pyx_t_1 = ((__pyx_v_param->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":256
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")             # <<<<<<<<<<<<<<
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- *     drotmg_(&d1_, &d2_, &x_, y, <double *>param.data)
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__61, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":255
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type double")
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- */
-  }
-
-  /* "tokyo.pyx":257
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- *     cdef double d1_ = d1, d2_ = d2, x_ = x             # <<<<<<<<<<<<<<
- *     drotmg_(&d1_, &d2_, &x_, y, <double *>param.data)
- *     return (d1, d2, x, param)
- */
-  __pyx_v_d1_ = __pyx_v_d1;
-  __pyx_v_d2_ = __pyx_v_d2;
-  __pyx_v_x_ = __pyx_v_x;
-
-  /* "tokyo.pyx":258
- *         raise ValueError("param is not of type double")
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- *     drotmg_(&d1_, &d2_, &x_, y, <double *>param.data)             # <<<<<<<<<<<<<<
- *     return (d1, d2, x, param)
- * 
- */
-  __pyx_f_5tokyo_drotmg_((&__pyx_v_d1_), (&__pyx_v_d2_), (&__pyx_v_x_), __pyx_v_y, ((double *)__pyx_v_param->data));
-
-  /* "tokyo.pyx":259
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- *     drotmg_(&d1_, &d2_, &x_, y, <double *>param.data)
- *     return (d1, d2, x, param)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_d1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_d2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_x); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_4);
-  __Pyx_INCREF(((PyObject *)__pyx_v_param));
-  __Pyx_GIVEREF(((PyObject *)__pyx_v_param));
-  PyTuple_SET_ITEM(__pyx_t_5, 3, ((PyObject *)__pyx_v_param));
-  __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_4 = 0;
-  __pyx_r = ((PyObject*)__pyx_t_5);
-  __pyx_t_5 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":251
- *     lib_drotmg(d1, d2, x, y, param)
- * 
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("tokyo.drotmg", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":263
+/* "tokyo/tokyo.pyx":78
  * 
  * # Apply a Givens plane rotation.
- * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s):             # <<<<<<<<<<<<<<
+ * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s) nogil:             # <<<<<<<<<<<<<<
  *     lib_srot(N, x, dx, y, dy, c, s)
  * 
  */
 
-static void __pyx_f_5tokyo_srot_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float __pyx_v_c, float __pyx_v_s) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("srot_", 0);
+static void __pyx_f_5tokyo_5tokyo_srot_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float __pyx_v_c, float __pyx_v_s) {
 
-  /* "tokyo.pyx":264
+  /* "tokyo/tokyo.pyx":79
  * # Apply a Givens plane rotation.
- * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s):
+ * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s) nogil:
  *     lib_srot(N, x, dx, y, dy, c, s)             # <<<<<<<<<<<<<<
  * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):
+ * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s) nogil:
  */
   cblas_srot(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_c, __pyx_v_s);
 
-  /* "tokyo.pyx":263
+  /* "tokyo/tokyo.pyx":78
  * 
  * # Apply a Givens plane rotation.
- * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s):             # <<<<<<<<<<<<<<
+ * cdef void srot_(int N, float *x, int dx, float *y, int dy, float c, float s) nogil:             # <<<<<<<<<<<<<<
  *     lib_srot(N, x, dx, y, dy, c, s)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":266
+/* "tokyo/tokyo.pyx":81
  *     lib_srot(N, x, dx, y, dy, c, s)
  * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_srot(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, float __pyx_v_c, float __pyx_v_s, struct __pyx_opt_args_5tokyo_srot *__pyx_optional_args) {
-  int __pyx_v_dx = ((int)1);
-  int __pyx_v_dy = ((int)1);
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("srot", 0);
-  if (__pyx_optional_args) {
-    if (__pyx_optional_args->__pyx_n > 0) {
-      __pyx_v_dx = __pyx_optional_args->dx;
-      if (__pyx_optional_args->__pyx_n > 1) {
-        __pyx_v_dy = __pyx_optional_args->dy;
-      }
-    }
-  }
-
-  /* "tokyo.pyx":267
- * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__62, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":268
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__63, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 268; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 268; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":269
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__64, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":270
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":271
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__65, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":270
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":272
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":273
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)
- *     return
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__66, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 273; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 273; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":272
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)
- */
-  }
-
-  /* "tokyo.pyx":274
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)             # <<<<<<<<<<<<<<
- *     return
- * 
- */
-  __pyx_f_5tokyo_srot_((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), __pyx_v_dx, ((float *)__pyx_v_y->data), __pyx_v_dy, __pyx_v_c, __pyx_v_s);
-
-  /* "tokyo.pyx":275
- *         raise ValueError("y is not of type float")
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)
- *     return             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":266
- *     lib_srot(N, x, dx, y, dy, c, s)
- * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.srot", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":278
- * 
- * 
- * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s):             # <<<<<<<<<<<<<<
+ * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s) nogil:             # <<<<<<<<<<<<<<
  *     lib_drot(N, x, dx, y, dy, c, s)
  * 
  */
 
-static void __pyx_f_5tokyo_drot_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double __pyx_v_c, double __pyx_v_s) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("drot_", 0);
+static void __pyx_f_5tokyo_5tokyo_drot_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double __pyx_v_c, double __pyx_v_s) {
 
-  /* "tokyo.pyx":279
+  /* "tokyo/tokyo.pyx":82
  * 
- * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s):
+ * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s) nogil:
  *     lib_drot(N, x, dx, y, dy, c, s)             # <<<<<<<<<<<<<<
  * 
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):
+ * # Apply a modified Givens plane rotation.
  */
   cblas_drot(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_c, __pyx_v_s);
 
-  /* "tokyo.pyx":278
+  /* "tokyo/tokyo.pyx":81
+ *     lib_srot(N, x, dx, y, dy, c, s)
  * 
- * 
- * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s):             # <<<<<<<<<<<<<<
+ * cdef void drot_(int N, double *x, int dx, double *y, int dy, double c, double s) nogil:             # <<<<<<<<<<<<<<
  *     lib_drot(N, x, dx, y, dy, c, s)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":281
- *     lib_drot(N, x, dx, y, dy, c, s)
- * 
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_drot(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, double __pyx_v_c, double __pyx_v_s) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("drot", 0);
-
-  /* "tokyo.pyx":282
- * 
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__67, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":283
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__68, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":284
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__69, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 284; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 284; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":285
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":286
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__70, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":285
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":287
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":288
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)
- *     return
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__71, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":287
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)
- */
-  }
-
-  /* "tokyo.pyx":289
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)             # <<<<<<<<<<<<<<
- *     return
- * 
- */
-  __pyx_f_5tokyo_drot_((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1, __pyx_v_c, __pyx_v_s);
-
-  /* "tokyo.pyx":290
- *         raise ValueError("y is not of type double")
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)
- *     return             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":281
- *     lib_drot(N, x, dx, y, dy, c, s)
- * 
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.drot", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":294
+/* "tokyo/tokyo.pyx":85
  * 
  * # Apply a modified Givens plane rotation.
- * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param):             # <<<<<<<<<<<<<<
+ * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_srotm(N, x, dx, y, dy, param)
  * 
  */
 
-static void __pyx_f_5tokyo_srotm_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("srotm_", 0);
+static void __pyx_f_5tokyo_5tokyo_srotm_(int __pyx_v_N, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float *__pyx_v_param) {
 
-  /* "tokyo.pyx":295
+  /* "tokyo/tokyo.pyx":86
  * # Apply a modified Givens plane rotation.
- * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param):
+ * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param) nogil:
  *     lib_srotm(N, x, dx, y, dy, param)             # <<<<<<<<<<<<<<
  * 
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):
+ * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param) nogil:
  */
   cblas_srotm(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_param);
 
-  /* "tokyo.pyx":294
+  /* "tokyo/tokyo.pyx":85
  * 
  * # Apply a modified Givens plane rotation.
- * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param):             # <<<<<<<<<<<<<<
+ * cdef void srotm_(int N, float *x, int dx, float *y, int dy, float *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_srotm(N, x, dx, y, dy, param)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":297
+/* "tokyo/tokyo.pyx":88
  *     lib_srotm(N, x, dx, y, dy, param)
  * 
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_srotm(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("srotm", 0);
-
-  /* "tokyo.pyx":298
- * 
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__72, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":299
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__73, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":300
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- */
-  __pyx_t_1 = ((__pyx_v_param->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__74, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":301
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__75, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":302
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = (((__pyx_v_param->dimensions[0]) < 5) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":303
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__76, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":302
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":304
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_param->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":305
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__77, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":304
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":306
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":307
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__78, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":306
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- */
-  }
-
-  /* "tokyo.pyx":308
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     srotm_(x.shape[0], <float *>x.data, 1,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":309
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     srotm_(x.shape[0], <float *>x.data, 1,
- *                        <float *>y.data, 1, <float *>param.data)
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__79, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":308
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type float")
- *     srotm_(x.shape[0], <float *>x.data, 1,
- */
-  }
-
-  /* "tokyo.pyx":310
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- *     srotm_(x.shape[0], <float *>x.data, 1,             # <<<<<<<<<<<<<<
- *                        <float *>y.data, 1, <float *>param.data)
- *     return
- */
-  __pyx_f_5tokyo_srotm_((__pyx_v_x->dimensions[0]), ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1, ((float *)__pyx_v_param->data));
-
-  /* "tokyo.pyx":312
- *     srotm_(x.shape[0], <float *>x.data, 1,
- *                        <float *>y.data, 1, <float *>param.data)
- *     return             # <<<<<<<<<<<<<<
- * 
- * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param):
- */
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":297
- *     lib_srotm(N, x, dx, y, dy, param)
- * 
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.srotm", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":314
- *     return
- * 
- * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param):             # <<<<<<<<<<<<<<
+ * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_drotm(N, x, dx, y, dy, param)
  * 
  */
 
-static void __pyx_f_5tokyo_drotm_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("drotm_", 0);
+static void __pyx_f_5tokyo_5tokyo_drotm_(int __pyx_v_N, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double *__pyx_v_param) {
 
-  /* "tokyo.pyx":315
+  /* "tokyo/tokyo.pyx":89
  * 
- * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param):
+ * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param) nogil:
  *     lib_drotm(N, x, dx, y, dy, param)             # <<<<<<<<<<<<<<
  * 
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):
+ * ##########################################################################
  */
   cblas_drotm(__pyx_v_N, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_param);
 
-  /* "tokyo.pyx":314
- *     return
+  /* "tokyo/tokyo.pyx":88
+ *     lib_srotm(N, x, dx, y, dy, param)
  * 
- * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param):             # <<<<<<<<<<<<<<
+ * cdef void drotm_(int N, double *x, int dx, double *y, int dy, double *param) nogil:             # <<<<<<<<<<<<<<
  *     lib_drotm(N, x, dx, y, dy, param)
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":317
- *     lib_drotm(N, x, dx, y, dy, param)
- * 
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-static void __pyx_f_5tokyo_drotm(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_param) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("drotm", 0);
-
-  /* "tokyo.pyx":318
- * 
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__80, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":319
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__81, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":320
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__82, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":321
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = (((__pyx_v_param->dimensions[0]) < 5) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":322
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__83, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":321
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:             # <<<<<<<<<<<<<<
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":323
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_param->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":324
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__84, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 324; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 324; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":323
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":325
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":326
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__85, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":325
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- */
-  }
-
-  /* "tokyo.pyx":327
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     drotm_(x.shape[0], <double *>x.data, 1,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-
-    /* "tokyo.pyx":328
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     drotm_(x.shape[0], <double *>x.data, 1,
- *                        <double *>y.data, 1, <double *>param.data)
- */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__86, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-    /* "tokyo.pyx":327
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:             # <<<<<<<<<<<<<<
- *         raise ValueError("y is not of type double")
- *     drotm_(x.shape[0], <double *>x.data, 1,
- */
-  }
-
-  /* "tokyo.pyx":329
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- *     drotm_(x.shape[0], <double *>x.data, 1,             # <<<<<<<<<<<<<<
- *                        <double *>y.data, 1, <double *>param.data)
- *     return
- */
-  __pyx_f_5tokyo_drotm_((__pyx_v_x->dimensions[0]), ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1, ((double *)__pyx_v_param->data));
-
-  /* "tokyo.pyx":331
- *     drotm_(x.shape[0], <double *>x.data, 1,
- *                        <double *>y.data, 1, <double *>param.data)
- *     return             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":317
- *     lib_drotm(N, x, dx, y, dy, param)
- * 
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.drotm", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":344
+/* "tokyo/tokyo.pyx":101
  * # single precison
  * 
  * cdef void sgemv_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, int M, int N,             # <<<<<<<<<<<<<<
  *                     float alpha, float *A, int lda, float *x, int dx,
- *                     float beta, float *y, int dy):
+ *                     float beta, float *y, int dy) nogil:
  */
 
-static void __pyx_f_5tokyo_sgemv_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, int __pyx_v_M, int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_A, int __pyx_v_lda, float *__pyx_v_x, int __pyx_v_dx, float __pyx_v_beta, float *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sgemv_", 0);
+static void __pyx_f_5tokyo_5tokyo_sgemv_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, int __pyx_v_M, int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_A, int __pyx_v_lda, float *__pyx_v_x, int __pyx_v_dx, float __pyx_v_beta, float *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":347
+  /* "tokyo/tokyo.pyx":104
  *                     float alpha, float *A, int lda, float *x, int dx,
- *                     float beta, float *y, int dy):
+ *                     float beta, float *y, int dy) nogil:
  *     lib_sgemv(Order, TransA, M, N, alpha, A, lda, x, dx, beta, y, dy)             # <<<<<<<<<<<<<<
  * 
- * 
+ * # double precision
  */
   cblas_sgemv(__pyx_v_Order, __pyx_v_TransA, __pyx_v_M, __pyx_v_N, __pyx_v_alpha, __pyx_v_A, __pyx_v_lda, __pyx_v_x, __pyx_v_dx, __pyx_v_beta, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":344
+  /* "tokyo/tokyo.pyx":101
  * # single precison
  * 
  * cdef void sgemv_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, int M, int N,             # <<<<<<<<<<<<<<
  *                     float alpha, float *A, int lda, float *x, int dx,
- *                     float beta, float *y, int dy):
+ *                     float beta, float *y, int dy) nogil:
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":350
- * 
- * 
- * cdef void sgemv6(CBLAS_TRANSPOSE TransA, float alpha, np.ndarray A,             # <<<<<<<<<<<<<<
- *                       np.ndarray x, float beta, np.ndarray y):
- * 
- */
-
-static void __pyx_f_5tokyo_sgemv6(enum CBLAS_TRANSPOSE __pyx_v_TransA, float __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, float __pyx_v_beta, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemv6", 0);
-
-  /* "tokyo.pyx":353
- *                       np.ndarray x, float beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__87, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 353; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 353; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":354
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__88, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":355
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__89, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 355; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 355; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":356
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__90, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":357
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_x->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__91, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 357; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 357; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":358
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__92, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 358; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 358; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":359
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__93, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":360
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <float*>A.data,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__94, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 360; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 360; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":362
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- *     lib_sgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <float*>A.data,             # <<<<<<<<<<<<<<
- *                A.shape[1], <float*>x.data, 1, beta, <float*>y.data, 1)
- * 
- */
-  cblas_sgemv(CblasRowMajor, __pyx_v_TransA, (__pyx_v_A->dimensions[0]), (__pyx_v_A->dimensions[1]), __pyx_v_alpha, ((float *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((float *)__pyx_v_x->data), 1, __pyx_v_beta, ((float *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":350
- * 
- * 
- * cdef void sgemv6(CBLAS_TRANSPOSE TransA, float alpha, np.ndarray A,             # <<<<<<<<<<<<<<
- *                       np.ndarray x, float beta, np.ndarray y):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sgemv6", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":366
- * 
- * 
- * cdef void sgemv5(float alpha, np.ndarray A, np.ndarray x, float beta, np.ndarray y):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_sgemv5(float __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, float __pyx_v_beta, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemv5", 0);
-
-  /* "tokyo.pyx":368
- * cdef void sgemv5(float alpha, np.ndarray A, np.ndarray x, float beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__95, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 368; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 368; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":369
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__96, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":370
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__97, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 370; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 370; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":371
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__98, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 371; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 371; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":372
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_x->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__99, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 372; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 372; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":373
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__100, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 373; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 373; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":374
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__101, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":375
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__102, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 375; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 375; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":377
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- *     lib_sgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,             # <<<<<<<<<<<<<<
- *             <float*>A.data, A.shape[1], <float*>x.data, 1, beta, <float*>y.data, 1)
- * 
- */
-  cblas_sgemv(CblasRowMajor, CblasNoTrans, (__pyx_v_A->dimensions[0]), (__pyx_v_A->dimensions[1]), __pyx_v_alpha, ((float *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((float *)__pyx_v_x->data), 1, __pyx_v_beta, ((float *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":366
- * 
- * 
- * cdef void sgemv5(float alpha, np.ndarray A, np.ndarray x, float beta, np.ndarray y):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sgemv5", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":381
- * 
- * 
- * cdef void sgemv3(np.ndarray A, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     sgemv5(1.0, A, x, 0.0, y)
- * 
- */
-
-static void __pyx_f_5tokyo_sgemv3(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sgemv3", 0);
-
-  /* "tokyo.pyx":382
- * 
- * cdef void sgemv3(np.ndarray A, np.ndarray x, np.ndarray y):
- *     sgemv5(1.0, A, x, 0.0, y)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_f_5tokyo_sgemv5(1.0, __pyx_v_A, __pyx_v_x, 0.0, __pyx_v_y);
-
-  /* "tokyo.pyx":381
- * 
- * 
- * cdef void sgemv3(np.ndarray A, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     sgemv5(1.0, A, x, 0.0, y)
- * 
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":385
- * 
- * 
- * cdef np.ndarray sgemv(np.ndarray A, np.ndarray x):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray y = svnewempty(A.shape[0])
- *     sgemv5(1.0, A, x, 0.0, y)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_sgemv(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x) {
-  PyArrayObject *__pyx_v_y = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemv", 0);
-
-  /* "tokyo.pyx":386
- * 
- * cdef np.ndarray sgemv(np.ndarray A, np.ndarray x):
- *     cdef np.ndarray y = svnewempty(A.shape[0])             # <<<<<<<<<<<<<<
- *     sgemv5(1.0, A, x, 0.0, y)
- *     return y
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_svnewempty((__pyx_v_A->dimensions[0]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 386; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_y = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":387
- * cdef np.ndarray sgemv(np.ndarray A, np.ndarray x):
- *     cdef np.ndarray y = svnewempty(A.shape[0])
- *     sgemv5(1.0, A, x, 0.0, y)             # <<<<<<<<<<<<<<
- *     return y
- * 
- */
-  __pyx_f_5tokyo_sgemv5(1.0, __pyx_v_A, __pyx_v_x, 0.0, __pyx_v_y);
-
-  /* "tokyo.pyx":388
- *     cdef np.ndarray y = svnewempty(A.shape[0])
- *     sgemv5(1.0, A, x, 0.0, y)
- *     return y             # <<<<<<<<<<<<<<
- * 
- * # double precision
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_y));
-  __pyx_r = __pyx_v_y;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":385
- * 
- * 
- * cdef np.ndarray sgemv(np.ndarray A, np.ndarray x):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray y = svnewempty(A.shape[0])
- *     sgemv5(1.0, A, x, 0.0, y)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.sgemv", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_y);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":392
+/* "tokyo/tokyo.pyx":108
  * # double precision
  * 
  * cdef void dgemv_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, int M, int N,             # <<<<<<<<<<<<<<
  *                     double alpha, double *A, int lda, double *x, int dx,
- *                     double beta, double *y, int dy):
+ *                     double beta, double *y, int dy) nogil:
  */
 
-static void __pyx_f_5tokyo_dgemv_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, int __pyx_v_M, int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_A, int __pyx_v_lda, double *__pyx_v_x, int __pyx_v_dx, double __pyx_v_beta, double *__pyx_v_y, int __pyx_v_dy) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dgemv_", 0);
+static void __pyx_f_5tokyo_5tokyo_dgemv_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, int __pyx_v_M, int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_A, int __pyx_v_lda, double *__pyx_v_x, int __pyx_v_dx, double __pyx_v_beta, double *__pyx_v_y, int __pyx_v_dy) {
 
-  /* "tokyo.pyx":395
+  /* "tokyo/tokyo.pyx":111
  *                     double alpha, double *A, int lda, double *x, int dx,
- *                     double beta, double *y, int dy):
+ *                     double beta, double *y, int dy) nogil:
  *     lib_dgemv(Order, TransA, M, N, alpha, A, lda, x, dx, beta, y, dy)             # <<<<<<<<<<<<<<
  * 
- * 
+ * #
  */
   cblas_dgemv(__pyx_v_Order, __pyx_v_TransA, __pyx_v_M, __pyx_v_N, __pyx_v_alpha, __pyx_v_A, __pyx_v_lda, __pyx_v_x, __pyx_v_dx, __pyx_v_beta, __pyx_v_y, __pyx_v_dy);
 
-  /* "tokyo.pyx":392
+  /* "tokyo/tokyo.pyx":108
  * # double precision
  * 
  * cdef void dgemv_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, int M, int N,             # <<<<<<<<<<<<<<
  *                     double alpha, double *A, int lda, double *x, int dx,
- *                     double beta, double *y, int dy):
+ *                     double beta, double *y, int dy) nogil:
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":398
- * 
- * 
- * cdef void dgemv6(CBLAS_TRANSPOSE TransA, double alpha, np.ndarray A,             # <<<<<<<<<<<<<<
- *                       np.ndarray x, double beta, np.ndarray y):
- * 
- */
-
-static void __pyx_f_5tokyo_dgemv6(enum CBLAS_TRANSPOSE __pyx_v_TransA, double __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, double __pyx_v_beta, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemv6", 0);
-
-  /* "tokyo.pyx":401
- *                       np.ndarray x, double beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__103, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":402
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__104, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":403
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__105, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 403; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 403; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":404
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__106, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 404; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 404; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":405
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_x->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__107, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 405; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 405; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":406
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__108, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 406; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 406; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":407
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__109, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 407; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 407; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":408
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <double*>A.data,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__110, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 408; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 408; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":410
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- *     lib_dgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <double*>A.data,             # <<<<<<<<<<<<<<
- *                A.shape[1], <double*>x.data, 1, beta, <double*>y.data, 1)
- * 
- */
-  cblas_dgemv(CblasRowMajor, __pyx_v_TransA, (__pyx_v_A->dimensions[0]), (__pyx_v_A->dimensions[1]), __pyx_v_alpha, ((double *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((double *)__pyx_v_x->data), 1, __pyx_v_beta, ((double *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":398
- * 
- * 
- * cdef void dgemv6(CBLAS_TRANSPOSE TransA, double alpha, np.ndarray A,             # <<<<<<<<<<<<<<
- *                       np.ndarray x, double beta, np.ndarray y):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dgemv6", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":414
- * 
- * 
- * cdef void dgemv5(double alpha, np.ndarray A, np.ndarray x, double beta, np.ndarray y):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_dgemv5(double __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, double __pyx_v_beta, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemv5", 0);
-
-  /* "tokyo.pyx":416
- * cdef void dgemv5(double alpha, np.ndarray A, np.ndarray x, double beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__111, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 416; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 416; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":417
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__112, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":418
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__113, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 418; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 418; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":419
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__114, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 419; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 419; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":420
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_x->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__115, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":421
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__116, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 421; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 421; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":422
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__117, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":423
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__118, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 423; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 423; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":425
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- *     lib_dgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,             # <<<<<<<<<<<<<<
- *             <double*>A.data, A.shape[1], <double*>x.data, 1, beta, <double*>y.data, 1)
- * 
- */
-  cblas_dgemv(CblasRowMajor, CblasNoTrans, (__pyx_v_A->dimensions[0]), (__pyx_v_A->dimensions[1]), __pyx_v_alpha, ((double *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((double *)__pyx_v_x->data), 1, __pyx_v_beta, ((double *)__pyx_v_y->data), 1);
-
-  /* "tokyo.pyx":414
- * 
- * 
- * cdef void dgemv5(double alpha, np.ndarray A, np.ndarray x, double beta, np.ndarray y):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dgemv5", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":429
- * 
- * 
- * cdef void dgemv3(np.ndarray A, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     dgemv5(1.0, A, x, 0.0, y)
- * 
- */
-
-static void __pyx_f_5tokyo_dgemv3(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dgemv3", 0);
-
-  /* "tokyo.pyx":430
- * 
- * cdef void dgemv3(np.ndarray A, np.ndarray x, np.ndarray y):
- *     dgemv5(1.0, A, x, 0.0, y)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_f_5tokyo_dgemv5(1.0, __pyx_v_A, __pyx_v_x, 0.0, __pyx_v_y);
-
-  /* "tokyo.pyx":429
- * 
- * 
- * cdef void dgemv3(np.ndarray A, np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     dgemv5(1.0, A, x, 0.0, y)
- * 
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":433
- * 
- * 
- * cdef np.ndarray dgemv(np.ndarray A, np.ndarray x):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray y = dvnewempty(A.shape[0])
- *     dgemv5(1.0, A, x, 0.0, y)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dgemv(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_x) {
-  PyArrayObject *__pyx_v_y = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemv", 0);
-
-  /* "tokyo.pyx":434
- * 
- * cdef np.ndarray dgemv(np.ndarray A, np.ndarray x):
- *     cdef np.ndarray y = dvnewempty(A.shape[0])             # <<<<<<<<<<<<<<
- *     dgemv5(1.0, A, x, 0.0, y)
- *     return y
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_dvnewempty((__pyx_v_A->dimensions[0]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 434; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_y = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":435
- * cdef np.ndarray dgemv(np.ndarray A, np.ndarray x):
- *     cdef np.ndarray y = dvnewempty(A.shape[0])
- *     dgemv5(1.0, A, x, 0.0, y)             # <<<<<<<<<<<<<<
- *     return y
- * 
- */
-  __pyx_f_5tokyo_dgemv5(1.0, __pyx_v_A, __pyx_v_x, 0.0, __pyx_v_y);
-
-  /* "tokyo.pyx":436
- *     cdef np.ndarray y = dvnewempty(A.shape[0])
- *     dgemv5(1.0, A, x, 0.0, y)
- *     return y             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_y));
-  __pyx_r = __pyx_v_y;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":433
- * 
- * 
- * cdef np.ndarray dgemv(np.ndarray A, np.ndarray x):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray y = dvnewempty(A.shape[0])
- *     dgemv5(1.0, A, x, 0.0, y)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dgemv", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_y);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":449
+/* "tokyo/tokyo.pyx":123
  * # single precision
  * 
  * cdef void sger_(CBLAS_ORDER Order, int M, int N, float alpha, float *x, int dx,             # <<<<<<<<<<<<<<
- *                 float *y, int dy, float *A, int lda):
+ *                 float *y, int dy, float *A, int lda) nogil:
  * 
  */
 
-static void __pyx_f_5tokyo_sger_(enum CBLAS_ORDER __pyx_v_Order, int __pyx_v_M, int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float *__pyx_v_A, int __pyx_v_lda) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sger_", 0);
+static void __pyx_f_5tokyo_5tokyo_sger_(enum CBLAS_ORDER __pyx_v_Order, int __pyx_v_M, int __pyx_v_N, float __pyx_v_alpha, float *__pyx_v_x, int __pyx_v_dx, float *__pyx_v_y, int __pyx_v_dy, float *__pyx_v_A, int __pyx_v_lda) {
 
-  /* "tokyo.pyx":452
- *                 float *y, int dy, float *A, int lda):
+  /* "tokyo/tokyo.pyx":126
+ *                 float *y, int dy, float *A, int lda) nogil:
  * 
  *     lib_sger(Order, M, N, alpha, x, dx, y, dy, A, lda)             # <<<<<<<<<<<<<<
  * 
- * 
+ * # double precision
  */
   cblas_sger(__pyx_v_Order, __pyx_v_M, __pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_A, __pyx_v_lda);
 
-  /* "tokyo.pyx":449
+  /* "tokyo/tokyo.pyx":123
  * # single precision
  * 
  * cdef void sger_(CBLAS_ORDER Order, int M, int N, float alpha, float *x, int dx,             # <<<<<<<<<<<<<<
- *                 float *y, int dy, float *A, int lda):
+ *                 float *y, int dy, float *A, int lda) nogil:
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":455
- * 
- * 
- * cdef void sger4(float alpha, np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_sger4(float __pyx_v_alpha, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_A) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sger4", 0);
-
-  /* "tokyo.pyx":457
- * cdef void sger4(float alpha, np.ndarray x, np.ndarray y, np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__119, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 457; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 457; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":458
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__120, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 458; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 458; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":459
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__121, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 459; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 459; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":460
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")             # <<<<<<<<<<<<<<
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_A->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__122, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 460; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 460; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":461
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_y->dimensions[0]) != (__pyx_v_A->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__123, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 461; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 461; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":462
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__124, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 462; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 462; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":463
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__125, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 463; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 463; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":464
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sger(CblasRowMajor, x.shape[0], y.shape[0], alpha,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__126, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 464; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 464; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":466
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- *     lib_sger(CblasRowMajor, x.shape[0], y.shape[0], alpha,             # <<<<<<<<<<<<<<
- *               <float*>x.data, 1, <float*>y.data, 1, <float*>A.data, A.shape[1])
- * 
- */
-  cblas_sger(CblasRowMajor, (__pyx_v_x->dimensions[0]), (__pyx_v_y->dimensions[0]), __pyx_v_alpha, ((float *)__pyx_v_x->data), 1, ((float *)__pyx_v_y->data), 1, ((float *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]));
-
-  /* "tokyo.pyx":455
- * 
- * 
- * cdef void sger4(float alpha, np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sger4", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":470
- * 
- * 
- * cdef void sger3(np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- *     sger4(1.0, x, y, A)
- * 
- */
-
-static void __pyx_f_5tokyo_sger3(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_A) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sger3", 0);
-
-  /* "tokyo.pyx":471
- * 
- * cdef void sger3(np.ndarray x, np.ndarray y, np.ndarray A):
- *     sger4(1.0, x, y, A)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_f_5tokyo_sger4(1.0, __pyx_v_x, __pyx_v_y, __pyx_v_A);
-
-  /* "tokyo.pyx":470
- * 
- * 
- * cdef void sger3(np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- *     sger4(1.0, x, y, A)
- * 
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":474
- * 
- * 
- * cdef np.ndarray sger(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray A = smnewzero(x.shape[0], y.shape[0])
- *     sger4(1.0, x, y, A)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_sger(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  PyArrayObject *__pyx_v_A = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sger", 0);
-
-  /* "tokyo.pyx":475
- * 
- * cdef np.ndarray sger(np.ndarray x, np.ndarray y):
- *     cdef np.ndarray A = smnewzero(x.shape[0], y.shape[0])             # <<<<<<<<<<<<<<
- *     sger4(1.0, x, y, A)
- *     return A
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_smnewzero((__pyx_v_x->dimensions[0]), (__pyx_v_y->dimensions[0]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 475; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_A = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":476
- * cdef np.ndarray sger(np.ndarray x, np.ndarray y):
- *     cdef np.ndarray A = smnewzero(x.shape[0], y.shape[0])
- *     sger4(1.0, x, y, A)             # <<<<<<<<<<<<<<
- *     return A
- * 
- */
-  __pyx_f_5tokyo_sger4(1.0, __pyx_v_x, __pyx_v_y, __pyx_v_A);
-
-  /* "tokyo.pyx":477
- *     cdef np.ndarray A = smnewzero(x.shape[0], y.shape[0])
- *     sger4(1.0, x, y, A)
- *     return A             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_A));
-  __pyx_r = __pyx_v_A;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":474
- * 
- * 
- * cdef np.ndarray sger(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray A = smnewzero(x.shape[0], y.shape[0])
- *     sger4(1.0, x, y, A)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.sger", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_A);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":482
+/* "tokyo/tokyo.pyx":130
  * # double precision
  * 
  * cdef void dger_(CBLAS_ORDER Order, int M, int N, double alpha, double *x, int dx,             # <<<<<<<<<<<<<<
- *                 double *y, int dy, double *A, int lda):
+ *                 double *y, int dy, double *A, int lda) nogil:
  * 
  */
 
-static void __pyx_f_5tokyo_dger_(enum CBLAS_ORDER __pyx_v_Order, int __pyx_v_M, int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double *__pyx_v_A, int __pyx_v_lda) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dger_", 0);
+static void __pyx_f_5tokyo_5tokyo_dger_(enum CBLAS_ORDER __pyx_v_Order, int __pyx_v_M, int __pyx_v_N, double __pyx_v_alpha, double *__pyx_v_x, int __pyx_v_dx, double *__pyx_v_y, int __pyx_v_dy, double *__pyx_v_A, int __pyx_v_lda) {
 
-  /* "tokyo.pyx":485
- *                 double *y, int dy, double *A, int lda):
+  /* "tokyo/tokyo.pyx":133
+ *                 double *y, int dy, double *A, int lda) nogil:
  * 
  *     lib_dger(Order, M, N, alpha, x, dx, y, dy, A, lda)             # <<<<<<<<<<<<<<
  * 
- * 
+ * ##########################################################################
  */
   cblas_dger(__pyx_v_Order, __pyx_v_M, __pyx_v_N, __pyx_v_alpha, __pyx_v_x, __pyx_v_dx, __pyx_v_y, __pyx_v_dy, __pyx_v_A, __pyx_v_lda);
 
-  /* "tokyo.pyx":482
+  /* "tokyo/tokyo.pyx":130
  * # double precision
  * 
  * cdef void dger_(CBLAS_ORDER Order, int M, int N, double alpha, double *x, int dx,             # <<<<<<<<<<<<<<
- *                 double *y, int dy, double *A, int lda):
+ *                 double *y, int dy, double *A, int lda) nogil:
  * 
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":488
- * 
- * 
- * cdef void dger4(double alpha, np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_dger4(double __pyx_v_alpha, PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_A) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dger4", 0);
-
-  /* "tokyo.pyx":490
- * cdef void dger4(double alpha, np.ndarray x, np.ndarray y, np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__127, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 490; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 490; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":491
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__128, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 491; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 491; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":492
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- */
-  __pyx_t_1 = ((__pyx_v_y->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__129, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 492; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 492; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":493
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")             # <<<<<<<<<<<<<<
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_x->dimensions[0]) != (__pyx_v_A->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__130, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 493; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 493; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":494
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_y->dimensions[0]) != (__pyx_v_A->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__131, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 494; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 494; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":495
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__132, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 495; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 495; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":496
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__133, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 496; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 496; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":497
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dger(CblasRowMajor, x.shape[0], y.shape[0], alpha,
- */
-  __pyx_t_1 = ((__pyx_v_y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__134, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 497; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 497; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":499
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- *     lib_dger(CblasRowMajor, x.shape[0], y.shape[0], alpha,             # <<<<<<<<<<<<<<
- *               <double*>x.data, 1, <double*>y.data, 1, <double*>A.data, A.shape[1])
- * 
- */
-  cblas_dger(CblasRowMajor, (__pyx_v_x->dimensions[0]), (__pyx_v_y->dimensions[0]), __pyx_v_alpha, ((double *)__pyx_v_x->data), 1, ((double *)__pyx_v_y->data), 1, ((double *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]));
-
-  /* "tokyo.pyx":488
- * 
- * 
- * cdef void dger4(double alpha, np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dger4", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":503
- * 
- * 
- * cdef void dger3(np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- *     dger4(1.0, x, y, A)
- * 
- */
-
-static void __pyx_f_5tokyo_dger3(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_A) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dger3", 0);
-
-  /* "tokyo.pyx":504
- * 
- * cdef void dger3(np.ndarray x, np.ndarray y, np.ndarray A):
- *     dger4(1.0, x, y, A)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_f_5tokyo_dger4(1.0, __pyx_v_x, __pyx_v_y, __pyx_v_A);
-
-  /* "tokyo.pyx":503
- * 
- * 
- * cdef void dger3(np.ndarray x, np.ndarray y, np.ndarray A):             # <<<<<<<<<<<<<<
- *     dger4(1.0, x, y, A)
- * 
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":507
- * 
- * 
- * cdef np.ndarray dger(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray A = dmnewzero(x.shape[0], y.shape[0])
- *     dger4(1.0, x, y, A)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dger(PyArrayObject *__pyx_v_x, PyArrayObject *__pyx_v_y) {
-  PyArrayObject *__pyx_v_A = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dger", 0);
-
-  /* "tokyo.pyx":508
- * 
- * cdef np.ndarray dger(np.ndarray x, np.ndarray y):
- *     cdef np.ndarray A = dmnewzero(x.shape[0], y.shape[0])             # <<<<<<<<<<<<<<
- *     dger4(1.0, x, y, A)
- *     return A
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_dmnewzero((__pyx_v_x->dimensions[0]), (__pyx_v_y->dimensions[0]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 508; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_A = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":509
- * cdef np.ndarray dger(np.ndarray x, np.ndarray y):
- *     cdef np.ndarray A = dmnewzero(x.shape[0], y.shape[0])
- *     dger4(1.0, x, y, A)             # <<<<<<<<<<<<<<
- *     return A
- * 
- */
-  __pyx_f_5tokyo_dger4(1.0, __pyx_v_x, __pyx_v_y, __pyx_v_A);
-
-  /* "tokyo.pyx":510
- *     cdef np.ndarray A = dmnewzero(x.shape[0], y.shape[0])
- *     dger4(1.0, x, y, A)
- *     return A             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_A));
-  __pyx_r = __pyx_v_A;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":507
- * 
- * 
- * cdef np.ndarray dger(np.ndarray x, np.ndarray y):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray A = dmnewzero(x.shape[0], y.shape[0])
- *     dger4(1.0, x, y, A)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dger", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_A);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":528
+/* "tokyo/tokyo.pyx":149
  * # single precision
  * 
  * cdef void sgemm_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
  *                  int M, int N, int K, float alpha, float *A, int lda, float *B,
- *                  int ldb, float beta, float *C, int ldc):
+ *                  int ldb, float beta, float *C, int ldc) nogil:
  */
 
-static void __pyx_f_5tokyo_sgemm_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, int __pyx_v_M, int __pyx_v_N, int __pyx_v_K, float __pyx_v_alpha, float *__pyx_v_A, int __pyx_v_lda, float *__pyx_v_B, int __pyx_v_ldb, float __pyx_v_beta, float *__pyx_v_C, int __pyx_v_ldc) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sgemm_", 0);
+static void __pyx_f_5tokyo_5tokyo_sgemm_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, int __pyx_v_M, int __pyx_v_N, int __pyx_v_K, float __pyx_v_alpha, float *__pyx_v_A, int __pyx_v_lda, float *__pyx_v_B, int __pyx_v_ldb, float __pyx_v_beta, float *__pyx_v_C, int __pyx_v_ldc) {
 
-  /* "tokyo.pyx":532
- *                  int ldb, float beta, float *C, int ldc):
+  /* "tokyo/tokyo.pyx":153
+ *                  int ldb, float beta, float *C, int ldc) nogil:
  * 
  *     lib_sgemm(Order, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc)             # <<<<<<<<<<<<<<
  * 
- * 
+ * # matrix times matrix: C = alpha * A   B   + beta * C
  */
   cblas_sgemm(__pyx_v_Order, __pyx_v_TransA, __pyx_v_TransB, __pyx_v_M, __pyx_v_N, __pyx_v_K, __pyx_v_alpha, __pyx_v_A, __pyx_v_lda, __pyx_v_B, __pyx_v_ldb, __pyx_v_beta, __pyx_v_C, __pyx_v_ldc);
 
-  /* "tokyo.pyx":528
+  /* "tokyo/tokyo.pyx":149
  * # single precision
  * 
  * cdef void sgemm_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
  *                  int M, int N, int K, float alpha, float *A, int lda, float *B,
- *                  int ldb, float beta, float *C, int ldc):
+ *                  int ldb, float beta, float *C, int ldc) nogil:
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":535
- * 
- * 
- * cdef void sgemm7(CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
- *                   float alpha, np.ndarray A, np.ndarray B, float beta, np.ndarray C):
- * 
- */
-
-static void __pyx_f_5tokyo_sgemm7(enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, float __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, float __pyx_v_beta, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemm7", 0);
-
-  /* "tokyo.pyx":538
- *                   float alpha, np.ndarray A, np.ndarray B, float beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__135, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 538; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 538; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":539
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_t_1 = ((__pyx_v_B->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__136, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 539; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 539; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":540
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_t_1 = ((__pyx_v_C->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__137, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 540; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 540; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":541
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_C->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__138, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 541; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 541; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":542
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_B->dimensions[1]) != (__pyx_v_C->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__139, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 542; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 542; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":543
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_B->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__140, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 543; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 543; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":544
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__141, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 544; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 544; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":545
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_B->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__142, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":546
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],
- */
-  __pyx_t_1 = ((__pyx_v_C->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__143, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":548
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- *     lib_sgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],             # <<<<<<<<<<<<<<
- *                alpha, <float*>A.data, A.shape[1], <float*>B.data, B.shape[1],
- *                beta, <float*>C.data, C.shape[1])
- */
-  cblas_sgemm(CblasRowMajor, __pyx_v_TransA, __pyx_v_TransB, (__pyx_v_C->dimensions[0]), (__pyx_v_C->dimensions[1]), (__pyx_v_B->dimensions[0]), __pyx_v_alpha, ((float *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((float *)__pyx_v_B->data), (__pyx_v_B->dimensions[1]), __pyx_v_beta, ((float *)__pyx_v_C->data), (__pyx_v_C->dimensions[1]));
-
-  /* "tokyo.pyx":535
- * 
- * 
- * cdef void sgemm7(CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
- *                   float alpha, np.ndarray A, np.ndarray B, float beta, np.ndarray C):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sgemm7", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":553
- * 
- * 
- * cdef void sgemm5(float alpha, np.ndarray A, np.ndarray B,             # <<<<<<<<<<<<<<
- *                       float beta, np.ndarray C):
- * 
- */
-
-static void __pyx_f_5tokyo_sgemm5(float __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, float __pyx_v_beta, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemm5", 0);
-
-  /* "tokyo.pyx":556
- *                       float beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__144, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 556; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 556; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":557
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_t_1 = ((__pyx_v_B->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__145, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 557; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 557; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":558
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_t_1 = ((__pyx_v_C->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__146, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 558; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 558; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":559
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_C->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__147, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 559; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 559; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":560
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_B->dimensions[1]) != (__pyx_v_C->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__148, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 560; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 560; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":561
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_B->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__149, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 561; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 561; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":562
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__150, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 562; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 562; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":563
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_B->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__151, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":564
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],
- */
-  __pyx_t_1 = ((__pyx_v_C->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__152, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 564; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 564; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":566
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- *     lib_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],             # <<<<<<<<<<<<<<
- *                B.shape[0], alpha, <float*>A.data, A.shape[1], <float*>B.data,
- *                B.shape[1], beta, <float*>C.data, C.shape[1])
- */
-  cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, (__pyx_v_C->dimensions[0]), (__pyx_v_C->dimensions[1]), (__pyx_v_B->dimensions[0]), __pyx_v_alpha, ((float *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((float *)__pyx_v_B->data), (__pyx_v_B->dimensions[1]), __pyx_v_beta, ((float *)__pyx_v_C->data), (__pyx_v_C->dimensions[1]));
-
-  /* "tokyo.pyx":553
- * 
- * 
- * cdef void sgemm5(float alpha, np.ndarray A, np.ndarray B,             # <<<<<<<<<<<<<<
- *                       float beta, np.ndarray C):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.sgemm5", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":571
- * 
- * 
- * cdef void sgemm3(np.ndarray A, np.ndarray B, np.ndarray C): sgemm5(1.0, A, B, 0.0, C)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-
-static void __pyx_f_5tokyo_sgemm3(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sgemm3", 0);
-  __pyx_f_5tokyo_sgemm5(1.0, __pyx_v_A, __pyx_v_B, 0.0, __pyx_v_C);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":574
- * 
- * 
- * cdef np.ndarray sgemm(np.ndarray A, np.ndarray B):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray C = smnewempty(A.shape[0], B.shape[1])
- *     sgemm5(1.0, A, B, 0.0, C)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_sgemm(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B) {
-  PyArrayObject *__pyx_v_C = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sgemm", 0);
-
-  /* "tokyo.pyx":575
- * 
- * cdef np.ndarray sgemm(np.ndarray A, np.ndarray B):
- *     cdef np.ndarray C = smnewempty(A.shape[0], B.shape[1])             # <<<<<<<<<<<<<<
- *     sgemm5(1.0, A, B, 0.0, C)
- *     return C
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_smnewempty((__pyx_v_A->dimensions[0]), (__pyx_v_B->dimensions[1]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 575; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_C = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":576
- * cdef np.ndarray sgemm(np.ndarray A, np.ndarray B):
- *     cdef np.ndarray C = smnewempty(A.shape[0], B.shape[1])
- *     sgemm5(1.0, A, B, 0.0, C)             # <<<<<<<<<<<<<<
- *     return C
- * 
- */
-  __pyx_f_5tokyo_sgemm5(1.0, __pyx_v_A, __pyx_v_B, 0.0, __pyx_v_C);
-
-  /* "tokyo.pyx":577
- *     cdef np.ndarray C = smnewempty(A.shape[0], B.shape[1])
- *     sgemm5(1.0, A, B, 0.0, C)
- *     return C             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_C));
-  __pyx_r = __pyx_v_C;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":574
- * 
- * 
- * cdef np.ndarray sgemm(np.ndarray A, np.ndarray B):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray C = smnewempty(A.shape[0], B.shape[1])
- *     sgemm5(1.0, A, B, 0.0, C)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.sgemm", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_C);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":587
+/* "tokyo/tokyo.pyx":162
  * # double precision
  * 
  * cdef void dgemm_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
  *                  int M, int N, int K, double alpha, double *A, int lda, double *B,
- *                  int ldb, double beta, double *C, int ldc):
+ *                  int ldb, double beta, double *C, int ldc) nogil:
  */
 
-static void __pyx_f_5tokyo_dgemm_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, int __pyx_v_M, int __pyx_v_N, int __pyx_v_K, double __pyx_v_alpha, double *__pyx_v_A, int __pyx_v_lda, double *__pyx_v_B, int __pyx_v_ldb, double __pyx_v_beta, double *__pyx_v_C, int __pyx_v_ldc) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dgemm_", 0);
+static void __pyx_f_5tokyo_5tokyo_dgemm_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, int __pyx_v_M, int __pyx_v_N, int __pyx_v_K, double __pyx_v_alpha, double *__pyx_v_A, int __pyx_v_lda, double *__pyx_v_B, int __pyx_v_ldb, double __pyx_v_beta, double *__pyx_v_C, int __pyx_v_ldc) {
 
-  /* "tokyo.pyx":591
- *                  int ldb, double beta, double *C, int ldc):
+  /* "tokyo/tokyo.pyx":166
+ *                  int ldb, double beta, double *C, int ldc) nogil:
  * 
  *     lib_dgemm(Order, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc)             # <<<<<<<<<<<<<<
  * 
@@ -7696,1819 +1964,18 @@ static void __pyx_f_5tokyo_dgemm_(enum CBLAS_ORDER __pyx_v_Order, enum CBLAS_TRA
  */
   cblas_dgemm(__pyx_v_Order, __pyx_v_TransA, __pyx_v_TransB, __pyx_v_M, __pyx_v_N, __pyx_v_K, __pyx_v_alpha, __pyx_v_A, __pyx_v_lda, __pyx_v_B, __pyx_v_ldb, __pyx_v_beta, __pyx_v_C, __pyx_v_ldc);
 
-  /* "tokyo.pyx":587
+  /* "tokyo/tokyo.pyx":162
  * # double precision
  * 
  * cdef void dgemm_(CBLAS_ORDER Order, CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
  *                  int M, int N, int K, double alpha, double *A, int lda, double *B,
- *                  int ldb, double beta, double *C, int ldc):
+ *                  int ldb, double beta, double *C, int ldc) nogil:
  */
 
   /* function exit code */
-  __Pyx_RefNannyFinishContext();
 }
 
-/* "tokyo.pyx":594
- * 
- * 
- * cdef void dgemm7(CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
- *                   double alpha, np.ndarray A, np.ndarray B, double beta, np.ndarray C):
- * 
- */
-
-static void __pyx_f_5tokyo_dgemm7(enum CBLAS_TRANSPOSE __pyx_v_TransA, enum CBLAS_TRANSPOSE __pyx_v_TransB, double __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, double __pyx_v_beta, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemm7", 0);
-
-  /* "tokyo.pyx":597
- *                   double alpha, np.ndarray A, np.ndarray B, double beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__153, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 597; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 597; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":598
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_t_1 = ((__pyx_v_B->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__154, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 598; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 598; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":599
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_t_1 = ((__pyx_v_C->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__155, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 599; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 599; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":600
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_C->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__156, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 600; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 600; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":601
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_B->dimensions[1]) != (__pyx_v_C->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__157, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 601; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 601; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":602
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_B->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__158, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 602; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 602; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":603
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__159, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 603; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 603; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":604
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_B->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__160, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 604; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 604; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":605
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],
- */
-  __pyx_t_1 = ((__pyx_v_C->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__161, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 605; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 605; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":607
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- *     lib_dgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],             # <<<<<<<<<<<<<<
- *                alpha, <double*>A.data, A.shape[1], <double*>B.data, B.shape[1],
- *                beta, <double*>C.data, C.shape[1])
- */
-  cblas_dgemm(CblasRowMajor, __pyx_v_TransA, __pyx_v_TransB, (__pyx_v_C->dimensions[0]), (__pyx_v_C->dimensions[1]), (__pyx_v_B->dimensions[0]), __pyx_v_alpha, ((double *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((double *)__pyx_v_B->data), (__pyx_v_B->dimensions[1]), __pyx_v_beta, ((double *)__pyx_v_C->data), (__pyx_v_C->dimensions[1]));
-
-  /* "tokyo.pyx":594
- * 
- * 
- * cdef void dgemm7(CBLAS_TRANSPOSE TransA, CBLAS_TRANSPOSE TransB,             # <<<<<<<<<<<<<<
- *                   double alpha, np.ndarray A, np.ndarray B, double beta, np.ndarray C):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dgemm7", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":612
- * 
- * 
- * cdef void dgemm5(double alpha, np.ndarray A, np.ndarray B,             # <<<<<<<<<<<<<<
- *                       double beta, np.ndarray C):
- * 
- */
-
-static void __pyx_f_5tokyo_dgemm5(double __pyx_v_alpha, PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, double __pyx_v_beta, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemm5", 0);
-
-  /* "tokyo.pyx":615
- *                       double beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__162, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":616
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_t_1 = ((__pyx_v_B->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__163, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 616; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 616; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":617
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_t_1 = ((__pyx_v_C->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__164, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 617; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 617; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":618
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[0]) != (__pyx_v_C->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__165, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 618; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 618; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":619
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_B->dimensions[1]) != (__pyx_v_C->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__166, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 619; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 619; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":620
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_A->dimensions[1]) != (__pyx_v_B->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__167, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 620; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 620; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":621
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__168, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 621; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 621; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":622
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_B->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__169, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 622; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 622; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":623
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],
- */
-  __pyx_t_1 = ((__pyx_v_C->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__170, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 623; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 623; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":625
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- *     lib_dgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],             # <<<<<<<<<<<<<<
- *                B.shape[0], alpha, <double*>A.data, A.shape[1], <double*>B.data,
- *                B.shape[1], beta, <double*>C.data, C.shape[1])
- */
-  cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, (__pyx_v_C->dimensions[0]), (__pyx_v_C->dimensions[1]), (__pyx_v_B->dimensions[0]), __pyx_v_alpha, ((double *)__pyx_v_A->data), (__pyx_v_A->dimensions[1]), ((double *)__pyx_v_B->data), (__pyx_v_B->dimensions[1]), __pyx_v_beta, ((double *)__pyx_v_C->data), (__pyx_v_C->dimensions[1]));
-
-  /* "tokyo.pyx":612
- * 
- * 
- * cdef void dgemm5(double alpha, np.ndarray A, np.ndarray B,             # <<<<<<<<<<<<<<
- *                       double beta, np.ndarray C):
- * 
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dgemm5", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":630
- * 
- * 
- * cdef void dgemm3(np.ndarray A, np.ndarray B, np.ndarray C):             # <<<<<<<<<<<<<<
- *     dgemm5(1.0, A, B, 0.0, C)
- * 
- */
-
-static void __pyx_f_5tokyo_dgemm3(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B, PyArrayObject *__pyx_v_C) {
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dgemm3", 0);
-
-  /* "tokyo.pyx":631
- * 
- * cdef void dgemm3(np.ndarray A, np.ndarray B, np.ndarray C):
- *     dgemm5(1.0, A, B, 0.0, C)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_f_5tokyo_dgemm5(1.0, __pyx_v_A, __pyx_v_B, 0.0, __pyx_v_C);
-
-  /* "tokyo.pyx":630
- * 
- * 
- * cdef void dgemm3(np.ndarray A, np.ndarray B, np.ndarray C):             # <<<<<<<<<<<<<<
- *     dgemm5(1.0, A, B, 0.0, C)
- * 
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":634
- * 
- * 
- * cdef np.ndarray dgemm(np.ndarray A, np.ndarray B):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray C = dmnewempty(A.shape[0], B.shape[1])
- *     dgemm5(1.0, A, B, 0.0, C)
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dgemm(PyArrayObject *__pyx_v_A, PyArrayObject *__pyx_v_B) {
-  PyArrayObject *__pyx_v_C = 0;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dgemm", 0);
-
-  /* "tokyo.pyx":635
- * 
- * cdef np.ndarray dgemm(np.ndarray A, np.ndarray B):
- *     cdef np.ndarray C = dmnewempty(A.shape[0], B.shape[1])             # <<<<<<<<<<<<<<
- *     dgemm5(1.0, A, B, 0.0, C)
- *     return C
- */
-  __pyx_t_1 = ((PyObject *)__pyx_f_5tokyo_dmnewempty((__pyx_v_A->dimensions[0]), (__pyx_v_B->dimensions[1]))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 635; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_C = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":636
- * cdef np.ndarray dgemm(np.ndarray A, np.ndarray B):
- *     cdef np.ndarray C = dmnewempty(A.shape[0], B.shape[1])
- *     dgemm5(1.0, A, B, 0.0, C)             # <<<<<<<<<<<<<<
- *     return C
- * 
- */
-  __pyx_f_5tokyo_dgemm5(1.0, __pyx_v_A, __pyx_v_B, 0.0, __pyx_v_C);
-
-  /* "tokyo.pyx":637
- *     cdef np.ndarray C = dmnewempty(A.shape[0], B.shape[1])
- *     dgemm5(1.0, A, B, 0.0, C)
- *     return C             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_INCREF(((PyObject *)__pyx_v_C));
-  __pyx_r = __pyx_v_C;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":634
- * 
- * 
- * cdef np.ndarray dgemm(np.ndarray A, np.ndarray B):             # <<<<<<<<<<<<<<
- *     cdef np.ndarray C = dmnewempty(A.shape[0], B.shape[1])
- *     dgemm5(1.0, A, B, 0.0, C)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dgemm", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_C);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":647
- * 
- * # Create a new empty single precision matrix
- * cdef np.ndarray smnewempty(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-static PyArrayObject *__pyx_f_5tokyo_smnewempty(int __pyx_v_M, int __pyx_v_N) {
-  npy_intp __pyx_v_length[2];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("smnewempty", 0);
-
-  /* "tokyo.pyx":649
- * cdef np.ndarray smnewempty(int M, int N):
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_EMPTY(2, length, np.NPY_FLOAT, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-  (__pyx_v_length[1]) = __pyx_v_N;
-
-  /* "tokyo.pyx":650
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_EMPTY(2, length, np.NPY_FLOAT, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 650; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":651
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_EMPTY(2, length, np.NPY_FLOAT, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_EMPTY(2, __pyx_v_length, NPY_FLOAT, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 651; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 651; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":647
- * 
- * # Create a new empty single precision matrix
- * cdef np.ndarray smnewempty(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.smnewempty", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":655
- * 
- * # Create a new empty double precision matrix
- * cdef np.ndarray dmnewempty(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dmnewempty(int __pyx_v_M, int __pyx_v_N) {
-  npy_intp __pyx_v_length[2];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dmnewempty", 0);
-
-  /* "tokyo.pyx":657
- * cdef np.ndarray dmnewempty(int M, int N):
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_EMPTY(2, length, np.NPY_DOUBLE, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-  (__pyx_v_length[1]) = __pyx_v_N;
-
-  /* "tokyo.pyx":658
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_EMPTY(2, length, np.NPY_DOUBLE, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 658; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":659
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_EMPTY(2, length, np.NPY_DOUBLE, 0)             # <<<<<<<<<<<<<<
- * 
- * # Create a new empty single precision vector
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_EMPTY(2, __pyx_v_length, NPY_DOUBLE, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 659; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 659; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":655
- * 
- * # Create a new empty double precision matrix
- * cdef np.ndarray dmnewempty(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dmnewempty", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":662
- * 
- * # Create a new empty single precision vector
- * cdef np.ndarray svnewempty(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-static PyArrayObject *__pyx_f_5tokyo_svnewempty(int __pyx_v_M) {
-  npy_intp __pyx_v_length[1];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("svnewempty", 0);
-
-  /* "tokyo.pyx":664
- * cdef np.ndarray svnewempty(int M):
- *     cdef np.npy_intp length[1]
- *     length[0] = M             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_EMPTY(1, length, np.NPY_FLOAT, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-
-  /* "tokyo.pyx":665
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_EMPTY(1, length, np.NPY_FLOAT, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 665; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":666
- *     length[0] = M
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_EMPTY(1, length, np.NPY_FLOAT, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_EMPTY(1, __pyx_v_length, NPY_FLOAT, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":662
- * 
- * # Create a new empty single precision vector
- * cdef np.ndarray svnewempty(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.svnewempty", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":670
- * 
- * # Create a new empty double precision vector
- * cdef np.ndarray dvnewempty(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dvnewempty(int __pyx_v_M) {
-  npy_intp __pyx_v_length[1];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dvnewempty", 0);
-
-  /* "tokyo.pyx":672
- * cdef np.ndarray dvnewempty(int M):
- *     cdef np.npy_intp length[1]
- *     length[0] = M             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_EMPTY(1, length, np.NPY_DOUBLE, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-
-  /* "tokyo.pyx":673
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_EMPTY(1, length, np.NPY_DOUBLE, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 673; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":674
- *     length[0] = M
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_EMPTY(1, length, np.NPY_DOUBLE, 0)             # <<<<<<<<<<<<<<
- * 
- * # Create a new zeroed single precision matrix
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_EMPTY(1, __pyx_v_length, NPY_DOUBLE, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 674; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 674; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":670
- * 
- * # Create a new empty double precision vector
- * cdef np.ndarray dvnewempty(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dvnewempty", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":677
- * 
- * # Create a new zeroed single precision matrix
- * cdef np.ndarray smnewzero(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-static PyArrayObject *__pyx_f_5tokyo_smnewzero(int __pyx_v_M, int __pyx_v_N) {
-  npy_intp __pyx_v_length[2];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("smnewzero", 0);
-
-  /* "tokyo.pyx":679
- * cdef np.ndarray smnewzero(int M, int N):
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_ZEROS(2, length, np.NPY_FLOAT, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-  (__pyx_v_length[1]) = __pyx_v_N;
-
-  /* "tokyo.pyx":680
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_ZEROS(2, length, np.NPY_FLOAT, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 680; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":681
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_ZEROS(2, length, np.NPY_FLOAT, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_ZEROS(2, __pyx_v_length, NPY_FLOAT, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 681; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 681; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":677
- * 
- * # Create a new zeroed single precision matrix
- * cdef np.ndarray smnewzero(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.smnewzero", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":685
- * 
- * # Create a new zeroed double precision matrix
- * cdef np.ndarray dmnewzero(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dmnewzero(int __pyx_v_M, int __pyx_v_N) {
-  npy_intp __pyx_v_length[2];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dmnewzero", 0);
-
-  /* "tokyo.pyx":687
- * cdef np.ndarray dmnewzero(int M, int N):
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_ZEROS(2, length, np.NPY_DOUBLE, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-  (__pyx_v_length[1]) = __pyx_v_N;
-
-  /* "tokyo.pyx":688
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_ZEROS(2, length, np.NPY_DOUBLE, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 688; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":689
- *     length[0] = M; length[1] = N
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_ZEROS(2, length, np.NPY_DOUBLE, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_ZEROS(2, __pyx_v_length, NPY_DOUBLE, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 689; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 689; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":685
- * 
- * # Create a new zeroed double precision matrix
- * cdef np.ndarray dmnewzero(int M, int N):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[2]
- *     length[0] = M; length[1] = N
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dmnewzero", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":693
- * 
- * # Create a new zeroed single precision vector
- * cdef np.ndarray svnewzero(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-static PyArrayObject *__pyx_f_5tokyo_svnewzero(int __pyx_v_M) {
-  npy_intp __pyx_v_length[1];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("svnewzero", 0);
-
-  /* "tokyo.pyx":695
- * cdef np.ndarray svnewzero(int M):
- *     cdef np.npy_intp length[1]
- *     length[0] = M             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_ZEROS(1, length, np.NPY_FLOAT, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-
-  /* "tokyo.pyx":696
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_ZEROS(1, length, np.NPY_FLOAT, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 696; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":697
- *     length[0] = M
- *     Py_INCREF(np.NPY_FLOAT) # This is apparently necessary
- *     return PyArray_ZEROS(1, length, np.NPY_FLOAT, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_ZEROS(1, __pyx_v_length, NPY_FLOAT, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 697; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 697; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":693
- * 
- * # Create a new zeroed single precision vector
- * cdef np.ndarray svnewzero(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.svnewzero", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":701
- * 
- * # Create a new zeroed double precision vector
- * cdef np.ndarray dvnewzero(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-static PyArrayObject *__pyx_f_5tokyo_dvnewzero(int __pyx_v_M) {
-  npy_intp __pyx_v_length[1];
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dvnewzero", 0);
-
-  /* "tokyo.pyx":703
- * cdef np.ndarray dvnewzero(int M):
- *     cdef np.npy_intp length[1]
- *     length[0] = M             # <<<<<<<<<<<<<<
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_ZEROS(1, length, np.NPY_DOUBLE, 0)
- */
-  (__pyx_v_length[0]) = __pyx_v_M;
-
-  /* "tokyo.pyx":704
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary             # <<<<<<<<<<<<<<
- *     return PyArray_ZEROS(1, length, np.NPY_DOUBLE, 0)
- * 
- */
-  __pyx_t_1 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 704; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  Py_INCREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "tokyo.pyx":705
- *     length[0] = M
- *     Py_INCREF(np.NPY_DOUBLE) # This is apparently necessary
- *     return PyArray_ZEROS(1, length, np.NPY_DOUBLE, 0)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyArray_ZEROS(1, __pyx_v_length, NPY_DOUBLE, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 705; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 705; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "tokyo.pyx":701
- * 
- * # Create a new zeroed double precision vector
- * cdef np.ndarray dvnewzero(int M):             # <<<<<<<<<<<<<<
- *     cdef np.npy_intp length[1]
- *     length[0] = M
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("tokyo.dvnewzero", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "tokyo.pyx":709
- * 
- * # Set a matrix to all zeros: must be floats in contiguous memory.
- * cdef void smsetzero(np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_smsetzero(PyArrayObject *__pyx_v_A) {
-  float *__pyx_v_ptr;
-  CYTHON_UNUSED unsigned int __pyx_v_i;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  npy_intp __pyx_t_3;
-  unsigned int __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("smsetzero", 0);
-
-  /* "tokyo.pyx":711
- * cdef void smsetzero(np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__171, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 711; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 711; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":712
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef float *ptr = <float*>A.data
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__172, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":714
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- * 
- *     cdef float *ptr = <float*>A.data             # <<<<<<<<<<<<<<
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):
- */
-  __pyx_v_ptr = ((float *)__pyx_v_A->data);
-
-  /* "tokyo.pyx":716
- *     cdef float *ptr = <float*>A.data
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):             # <<<<<<<<<<<<<<
- *         ptr[0] = 0.0
- *         ptr += 1
- */
-  __pyx_t_3 = ((__pyx_v_A->dimensions[0]) * (__pyx_v_A->dimensions[1]));
-  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-    __pyx_v_i = __pyx_t_4;
-
-    /* "tokyo.pyx":717
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):
- *         ptr[0] = 0.0             # <<<<<<<<<<<<<<
- *         ptr += 1
- * 
- */
-    (__pyx_v_ptr[0]) = 0.0;
-
-    /* "tokyo.pyx":718
- *     for i in range(A.shape[0]*A.shape[1]):
- *         ptr[0] = 0.0
- *         ptr += 1             # <<<<<<<<<<<<<<
- * 
- * # Set a matrix to all zeros: must be doubles in contiguous memory.
- */
-    __pyx_v_ptr = (__pyx_v_ptr + 1);
-  }
-
-  /* "tokyo.pyx":709
- * 
- * # Set a matrix to all zeros: must be floats in contiguous memory.
- * cdef void smsetzero(np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.smsetzero", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":721
- * 
- * # Set a matrix to all zeros: must be doubles in contiguous memory.
- * cdef void dmsetzero(np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_dmsetzero(PyArrayObject *__pyx_v_A) {
-  double *__pyx_v_ptr;
-  CYTHON_UNUSED unsigned int __pyx_v_i;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  npy_intp __pyx_t_3;
-  unsigned int __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dmsetzero", 0);
-
-  /* "tokyo.pyx":723
- * cdef void dmsetzero(np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_A->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__173, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 723; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 723; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":724
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef double *ptr = <double*>A.data
- */
-  __pyx_t_1 = ((__pyx_v_A->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__174, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 724; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 724; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":726
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- * 
- *     cdef double *ptr = <double*>A.data             # <<<<<<<<<<<<<<
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):
- */
-  __pyx_v_ptr = ((double *)__pyx_v_A->data);
-
-  /* "tokyo.pyx":728
- *     cdef double *ptr = <double*>A.data
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):             # <<<<<<<<<<<<<<
- *         ptr[0] = 0.0
- *         ptr += 1
- */
-  __pyx_t_3 = ((__pyx_v_A->dimensions[0]) * (__pyx_v_A->dimensions[1]));
-  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-    __pyx_v_i = __pyx_t_4;
-
-    /* "tokyo.pyx":729
- *     cdef unsigned int i
- *     for i in range(A.shape[0]*A.shape[1]):
- *         ptr[0] = 0.0             # <<<<<<<<<<<<<<
- *         ptr += 1
- * 
- */
-    (__pyx_v_ptr[0]) = 0.0;
-
-    /* "tokyo.pyx":730
- *     for i in range(A.shape[0]*A.shape[1]):
- *         ptr[0] = 0.0
- *         ptr += 1             # <<<<<<<<<<<<<<
- * 
- * 
- */
-    __pyx_v_ptr = (__pyx_v_ptr + 1);
-  }
-
-  /* "tokyo.pyx":721
- * 
- * # Set a matrix to all zeros: must be doubles in contiguous memory.
- * cdef void dmsetzero(np.ndarray A):             # <<<<<<<<<<<<<<
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dmsetzero", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":734
- * 
- * # Set a vector to all zeros: ust be floats in contiguous memory.
- * cdef void svsetzero(np.ndarray x):             # <<<<<<<<<<<<<<
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- */
-
-static void __pyx_f_5tokyo_svsetzero(PyArrayObject *__pyx_v_x) {
-  float *__pyx_v_ptr;
-  CYTHON_UNUSED unsigned int __pyx_v_i;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  npy_intp __pyx_t_3;
-  unsigned int __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("svsetzero", 0);
-
-  /* "tokyo.pyx":736
- * cdef void svsetzero(np.ndarray x):
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__175, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 736; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 736; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":737
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef float *ptr = <float*>x.data
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__176, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 737; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 737; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":739
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- * 
- *     cdef float *ptr = <float*>x.data             # <<<<<<<<<<<<<<
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):
- */
-  __pyx_v_ptr = ((float *)__pyx_v_x->data);
-
-  /* "tokyo.pyx":741
- *     cdef float *ptr = <float*>x.data
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):             # <<<<<<<<<<<<<<
- *         ptr[0] = 0.0
- *         ptr += 1
- */
-  __pyx_t_3 = (__pyx_v_x->dimensions[0]);
-  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-    __pyx_v_i = __pyx_t_4;
-
-    /* "tokyo.pyx":742
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):
- *         ptr[0] = 0.0             # <<<<<<<<<<<<<<
- *         ptr += 1
- * 
- */
-    (__pyx_v_ptr[0]) = 0.0;
-
-    /* "tokyo.pyx":743
- *     for i in range(x.shape[0]):
- *         ptr[0] = 0.0
- *         ptr += 1             # <<<<<<<<<<<<<<
- * 
- * # Set a vector to all zeros: ust be doubles in contiguous memory.
- */
-    __pyx_v_ptr = (__pyx_v_ptr + 1);
-  }
-
-  /* "tokyo.pyx":734
- * 
- * # Set a vector to all zeros: ust be floats in contiguous memory.
- * cdef void svsetzero(np.ndarray x):             # <<<<<<<<<<<<<<
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.svsetzero", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":746
- * 
- * # Set a vector to all zeros: ust be doubles in contiguous memory.
- * cdef void dvsetzero(np.ndarray x):             # <<<<<<<<<<<<<<
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- */
-
-static void __pyx_f_5tokyo_dvsetzero(PyArrayObject *__pyx_v_x) {
-  double *__pyx_v_ptr;
-  CYTHON_UNUSED unsigned int __pyx_v_i;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  npy_intp __pyx_t_3;
-  unsigned int __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dvsetzero", 0);
-
-  /* "tokyo.pyx":748
- * cdef void dvsetzero(np.ndarray x):
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_x->nd != 1) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__177, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 748; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 748; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":749
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef double *ptr = <double*>x.data
- */
-  __pyx_t_1 = ((__pyx_v_x->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__178, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 749; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 749; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":751
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- * 
- *     cdef double *ptr = <double*>x.data             # <<<<<<<<<<<<<<
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):
- */
-  __pyx_v_ptr = ((double *)__pyx_v_x->data);
-
-  /* "tokyo.pyx":753
- *     cdef double *ptr = <double*>x.data
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):             # <<<<<<<<<<<<<<
- *         ptr[0] = 0.0
- *         ptr += 1
- */
-  __pyx_t_3 = (__pyx_v_x->dimensions[0]);
-  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-    __pyx_v_i = __pyx_t_4;
-
-    /* "tokyo.pyx":754
- *     cdef unsigned int i
- *     for i in range(x.shape[0]):
- *         ptr[0] = 0.0             # <<<<<<<<<<<<<<
- *         ptr += 1
- * 
- */
-    (__pyx_v_ptr[0]) = 0.0;
-
-    /* "tokyo.pyx":755
- *     for i in range(x.shape[0]):
- *         ptr[0] = 0.0
- *         ptr += 1             # <<<<<<<<<<<<<<
- * 
- * 
- */
-    __pyx_v_ptr = (__pyx_v_ptr + 1);
-  }
-
-  /* "tokyo.pyx":746
- * 
- * # Set a vector to all zeros: ust be doubles in contiguous memory.
- * cdef void dvsetzero(np.ndarray x):             # <<<<<<<<<<<<<<
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dvsetzero", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":761
- * # Y += a * X
- * # single precision
- * cdef void smaxpy(float alpha, np.ndarray X, np.ndarray Y):             # <<<<<<<<<<<<<<
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_smaxpy(float __pyx_v_alpha, PyArrayObject *__pyx_v_X, PyArrayObject *__pyx_v_Y) {
-  unsigned int __pyx_v_N;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("smaxpy", 0);
-
-  /* "tokyo.pyx":763
- * cdef void smaxpy(float alpha, np.ndarray X, np.ndarray Y):
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- */
-  __pyx_t_1 = ((__pyx_v_X->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__179, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 763; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 763; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":764
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- */
-  __pyx_t_1 = ((__pyx_v_Y->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__180, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 764; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 764; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":765
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")             # <<<<<<<<<<<<<<
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_X->dimensions[0]) != (__pyx_v_Y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__181, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 765; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 765; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":766
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")             # <<<<<<<<<<<<<<
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")
- */
-  __pyx_t_1 = (((__pyx_v_X->dimensions[1]) != (__pyx_v_Y->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__182, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 766; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 766; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":767
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")             # <<<<<<<<<<<<<<
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_X->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__183, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 767; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 767; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":768
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- */
-  __pyx_t_1 = ((__pyx_v_Y->descr->type_num != NPY_FLOAT) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__184, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 768; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 768; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":770
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]             # <<<<<<<<<<<<<<
- * 
- *     lib_saxpy(N, alpha, <float*>X.data, 1, <float*>Y.data, 1)
- */
-  __pyx_v_N = ((__pyx_v_X->dimensions[0]) * (__pyx_v_X->dimensions[1]));
-
-  /* "tokyo.pyx":772
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- * 
- *     lib_saxpy(N, alpha, <float*>X.data, 1, <float*>Y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_saxpy(__pyx_v_N, __pyx_v_alpha, ((float *)__pyx_v_X->data), 1, ((float *)__pyx_v_Y->data), 1);
-
-  /* "tokyo.pyx":761
- * # Y += a * X
- * # single precision
- * cdef void smaxpy(float alpha, np.ndarray X, np.ndarray Y):             # <<<<<<<<<<<<<<
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.smaxpy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "tokyo.pyx":778
- * # Y += a * X
- * # double precision
- * cdef void dmaxpy(double alpha, np.ndarray X, np.ndarray Y):             # <<<<<<<<<<<<<<
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-static void __pyx_f_5tokyo_dmaxpy(double __pyx_v_alpha, PyArrayObject *__pyx_v_X, PyArrayObject *__pyx_v_Y) {
-  unsigned int __pyx_v_N;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("dmaxpy", 0);
-
-  /* "tokyo.pyx":780
- * cdef void dmaxpy(double alpha, np.ndarray X, np.ndarray Y):
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- */
-  __pyx_t_1 = ((__pyx_v_X->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__185, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 780; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 780; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":781
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- */
-  __pyx_t_1 = ((__pyx_v_Y->nd != 2) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__186, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 781; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 781; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":782
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")             # <<<<<<<<<<<<<<
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_X->dimensions[0]) != (__pyx_v_Y->dimensions[0])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__187, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 782; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 782; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":783
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")             # <<<<<<<<<<<<<<
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")
- */
-  __pyx_t_1 = (((__pyx_v_X->dimensions[1]) != (__pyx_v_Y->dimensions[1])) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__188, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 783; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 783; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":784
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")             # <<<<<<<<<<<<<<
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")
- * 
- */
-  __pyx_t_1 = ((__pyx_v_X->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__189, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 784; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 784; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":785
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- */
-  __pyx_t_1 = ((__pyx_v_Y->descr->type_num != NPY_DOUBLE) != 0);
-  if (__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__190, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 785; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 785; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-
-  /* "tokyo.pyx":787
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]             # <<<<<<<<<<<<<<
- * 
- *     lib_daxpy(N, alpha, <double*>X.data, 1, <double*>Y.data, 1)
- */
-  __pyx_v_N = ((__pyx_v_X->dimensions[0]) * (__pyx_v_X->dimensions[1]));
-
-  /* "tokyo.pyx":789
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- * 
- *     lib_daxpy(N, alpha, <double*>X.data, 1, <double*>Y.data, 1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  cblas_daxpy(__pyx_v_N, __pyx_v_alpha, ((double *)__pyx_v_X->data), 1, ((double *)__pyx_v_Y->data), 1);
-
-  /* "tokyo.pyx":778
- * # Y += a * X
- * # double precision
- * cdef void dmaxpy(double alpha, np.ndarray X, np.ndarray Y):             # <<<<<<<<<<<<<<
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- */
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_WriteUnraisable("tokyo.dmaxpy", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-}
-
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":197
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":197
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -9558,7 +2025,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_GIVEREF(__pyx_v_info->obj);
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":203
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":203
  *             # of flags
  * 
  *             if info == NULL: return             # <<<<<<<<<<<<<<
@@ -9571,7 +2038,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L0;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":206
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":206
  * 
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -9580,7 +2047,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":207
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":207
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -9589,7 +2056,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":209
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":209
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)
  * 
  *             ndim = PyArray_NDIM(self)             # <<<<<<<<<<<<<<
@@ -9598,7 +2065,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_ndim = PyArray_NDIM(__pyx_v_self);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":211
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":211
  *             ndim = PyArray_NDIM(self)
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -9608,7 +2075,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":212
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":212
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 copy_shape = 1             # <<<<<<<<<<<<<<
@@ -9617,7 +2084,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_copy_shape = 1;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":211
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":211
  *             ndim = PyArray_NDIM(self)
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -9627,7 +2094,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L4;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":214
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":214
  *                 copy_shape = 1
  *             else:
  *                 copy_shape = 0             # <<<<<<<<<<<<<<
@@ -9639,7 +2106,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L4:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9653,7 +2120,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":217
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":217
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -9664,7 +2131,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L6_bool_binop_done:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9673,20 +2140,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":218
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":218
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__191, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    {__pyx_filename = __pyx_f[1]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9695,7 +2162,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9709,7 +2176,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L9_bool_binop_done;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":221
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":221
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -9720,7 +2187,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L9_bool_binop_done:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9729,20 +2196,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":222
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":222
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__192, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    {__pyx_filename = __pyx_f[1]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -9751,7 +2218,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":224
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":224
  *                 raise ValueError(u"ndarray is not Fortran contiguous")
  * 
  *             info.buf = PyArray_DATA(self)             # <<<<<<<<<<<<<<
@@ -9760,7 +2227,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->buf = PyArray_DATA(__pyx_v_self);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":225
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":225
  * 
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim             # <<<<<<<<<<<<<<
@@ -9769,7 +2236,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->ndim = __pyx_v_ndim;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":226
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":226
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if copy_shape:             # <<<<<<<<<<<<<<
@@ -9779,7 +2246,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (__pyx_v_copy_shape != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":229
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":229
  *                 # Allocate new buffer for strides and shape info.
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)             # <<<<<<<<<<<<<<
@@ -9788,7 +2255,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)malloc((((sizeof(Py_ssize_t)) * ((size_t)__pyx_v_ndim)) * 2)));
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":230
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":230
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim             # <<<<<<<<<<<<<<
@@ -9797,7 +2264,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->shape = (__pyx_v_info->strides + __pyx_v_ndim);
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":231
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":231
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):             # <<<<<<<<<<<<<<
@@ -9808,7 +2275,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
       __pyx_v_i = __pyx_t_5;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":232
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":232
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]             # <<<<<<<<<<<<<<
@@ -9817,7 +2284,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
       (__pyx_v_info->strides[__pyx_v_i]) = (PyArray_STRIDES(__pyx_v_self)[__pyx_v_i]);
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":233
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":233
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]
  *                     info.shape[i] = PyArray_DIMS(self)[i]             # <<<<<<<<<<<<<<
@@ -9827,7 +2294,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       (__pyx_v_info->shape[__pyx_v_i]) = (PyArray_DIMS(__pyx_v_self)[__pyx_v_i]);
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":226
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":226
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if copy_shape:             # <<<<<<<<<<<<<<
@@ -9837,7 +2304,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L11;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":235
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":235
  *                     info.shape[i] = PyArray_DIMS(self)[i]
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)             # <<<<<<<<<<<<<<
@@ -9847,7 +2314,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->strides = ((Py_ssize_t *)PyArray_STRIDES(__pyx_v_self));
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":236
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":236
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)             # <<<<<<<<<<<<<<
@@ -9858,7 +2325,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L11:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":237
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":237
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -9867,7 +2334,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->suboffsets = NULL;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":238
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":238
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)             # <<<<<<<<<<<<<<
@@ -9876,7 +2343,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->itemsize = PyArray_ITEMSIZE(__pyx_v_self);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":239
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":239
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)
  *             info.readonly = not PyArray_ISWRITEABLE(self)             # <<<<<<<<<<<<<<
@@ -9885,7 +2352,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->readonly = (!(PyArray_ISWRITEABLE(__pyx_v_self) != 0));
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":242
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":242
  * 
  *             cdef int t
  *             cdef char* f = NULL             # <<<<<<<<<<<<<<
@@ -9894,7 +2361,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_f = NULL;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":243
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":243
  *             cdef int t
  *             cdef char* f = NULL
  *             cdef dtype descr = self.descr             # <<<<<<<<<<<<<<
@@ -9906,7 +2373,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_descr = ((PyArray_Descr *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":246
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":246
  *             cdef int offset
  * 
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)             # <<<<<<<<<<<<<<
@@ -9915,7 +2382,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_hasfields = PyDataType_HASFIELDS(__pyx_v_descr);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":248
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":248
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)
  * 
  *             if not hasfields and not copy_shape:             # <<<<<<<<<<<<<<
@@ -9933,7 +2400,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_L15_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":250
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":250
  *             if not hasfields and not copy_shape:
  *                 # do not call releasebuffer
  *                 info.obj = None             # <<<<<<<<<<<<<<
@@ -9946,7 +2413,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_DECREF(__pyx_v_info->obj);
     __pyx_v_info->obj = Py_None;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":248
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":248
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)
  * 
  *             if not hasfields and not copy_shape:             # <<<<<<<<<<<<<<
@@ -9956,7 +2423,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L14;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":253
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":253
  *             else:
  *                 # need to call releasebuffer
  *                 info.obj = self             # <<<<<<<<<<<<<<
@@ -9972,7 +2439,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L14:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":255
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":255
  *                 info.obj = self
  * 
  *             if not hasfields:             # <<<<<<<<<<<<<<
@@ -9982,7 +2449,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = ((!(__pyx_v_hasfields != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":256
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":256
  * 
  *             if not hasfields:
  *                 t = descr.type_num             # <<<<<<<<<<<<<<
@@ -9992,7 +2459,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_4 = __pyx_v_descr->type_num;
     __pyx_v_t = __pyx_t_4;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10012,7 +2479,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     }
     __pyx_L20_next_or:;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":258
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -10029,7 +2496,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_1 = __pyx_t_2;
     __pyx_L19_bool_binop_done:;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10038,20 +2505,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     if (__pyx_t_1) {
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":259
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__193, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      {__pyx_filename = __pyx_f[1]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10060,7 +2527,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":260
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":260
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"             # <<<<<<<<<<<<<<
@@ -10072,7 +2539,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_b;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":261
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":261
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"             # <<<<<<<<<<<<<<
@@ -10083,7 +2550,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_B;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":262
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":262
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"             # <<<<<<<<<<<<<<
@@ -10094,7 +2561,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_h;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":263
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":263
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"             # <<<<<<<<<<<<<<
@@ -10105,7 +2572,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_H;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":264
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":264
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"             # <<<<<<<<<<<<<<
@@ -10116,7 +2583,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_i;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":265
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":265
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"             # <<<<<<<<<<<<<<
@@ -10127,7 +2594,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_I;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":266
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":266
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"             # <<<<<<<<<<<<<<
@@ -10138,7 +2605,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_l;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":267
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":267
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"             # <<<<<<<<<<<<<<
@@ -10149,7 +2616,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_L;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":268
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":268
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"             # <<<<<<<<<<<<<<
@@ -10160,7 +2627,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_q;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":269
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":269
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"             # <<<<<<<<<<<<<<
@@ -10171,7 +2638,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Q;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":270
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"             # <<<<<<<<<<<<<<
@@ -10182,7 +2649,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_f;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":271
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":271
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"             # <<<<<<<<<<<<<<
@@ -10193,7 +2660,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_d;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":272
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"             # <<<<<<<<<<<<<<
@@ -10204,7 +2671,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_g;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":273
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":273
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"             # <<<<<<<<<<<<<<
@@ -10215,7 +2682,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zf;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":274
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"             # <<<<<<<<<<<<<<
@@ -10226,7 +2693,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zd;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":275
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":275
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"             # <<<<<<<<<<<<<<
@@ -10237,7 +2704,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zg;
       break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":276
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -10249,33 +2716,33 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       default:
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":278
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":278
  *                 elif t == NPY_OBJECT:      f = "O"
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
  *                 info.format = f
  *                 return
  */
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_t); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_t); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyUnicode_Format(__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyUnicode_Format(__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_t_3, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_t_3, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      {__pyx_filename = __pyx_f[1]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       break;
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":279
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":279
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f             # <<<<<<<<<<<<<<
@@ -10284,7 +2751,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = __pyx_v_f;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":280
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f
  *                 return             # <<<<<<<<<<<<<<
@@ -10294,7 +2761,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":255
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":255
  *                 info.obj = self
  * 
  *             if not hasfields:             # <<<<<<<<<<<<<<
@@ -10303,7 +2770,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":282
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":282
  *                 return
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)             # <<<<<<<<<<<<<<
@@ -10313,7 +2780,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->format = ((char *)malloc(0xFF));
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":283
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":283
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment             # <<<<<<<<<<<<<<
@@ -10322,7 +2789,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     (__pyx_v_info->format[0]) = '^';
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":284
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":284
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0             # <<<<<<<<<<<<<<
@@ -10331,17 +2798,17 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_offset = 0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":285
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":285
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0
  *                 f = _util_dtypestring(descr, info.format + 1,             # <<<<<<<<<<<<<<
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  */
-    __pyx_t_7 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 0xFF), (&__pyx_v_offset)); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 0xFF), (&__pyx_v_offset)); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_v_f = __pyx_t_7;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":288
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":288
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  *                 f[0] = c'\0' # Terminate format string             # <<<<<<<<<<<<<<
@@ -10351,7 +2818,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     (__pyx_v_f[0]) = '\x00';
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":197
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":197
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -10383,7 +2850,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":290
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -10407,7 +2874,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__releasebuffer__", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":291
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":291
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -10417,7 +2884,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (PyArray_HASFIELDS(__pyx_v_self) != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":292
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":292
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)             # <<<<<<<<<<<<<<
@@ -10426,7 +2893,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     free(__pyx_v_info->format);
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":291
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":291
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -10435,7 +2902,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":293
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -10445,7 +2912,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":294
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":294
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 stdlib.free(info.strides)             # <<<<<<<<<<<<<<
@@ -10454,7 +2921,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     free(__pyx_v_info->strides);
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":293
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -10463,7 +2930,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":290
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -10475,7 +2942,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":770
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":770
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -10492,7 +2959,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":771
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":771
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -10500,13 +2967,13 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
  * cdef inline object PyArray_MultiIterNew2(a, b):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyArray_MultiIterNew(1, ((void *)__pyx_v_a)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 771; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyArray_MultiIterNew(1, ((void *)__pyx_v_a)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 771; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":770
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":770
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -10525,7 +2992,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":773
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":773
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -10542,7 +3009,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":774
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":774
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -10550,13 +3017,13 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyArray_MultiIterNew(2, ((void *)__pyx_v_a), ((void *)__pyx_v_b)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 774; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyArray_MultiIterNew(2, ((void *)__pyx_v_a), ((void *)__pyx_v_b)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 774; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":773
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":773
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -10575,7 +3042,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":776
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":776
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -10592,7 +3059,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":777
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":777
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -10600,13 +3067,13 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyArray_MultiIterNew(3, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 777; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyArray_MultiIterNew(3, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 777; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":776
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":776
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -10625,7 +3092,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":779
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":779
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -10642,7 +3109,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":780
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":780
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -10650,13 +3117,13 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyArray_MultiIterNew(4, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c), ((void *)__pyx_v_d)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 780; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyArray_MultiIterNew(4, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c), ((void *)__pyx_v_d)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 780; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":779
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":779
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -10675,7 +3142,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":782
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":782
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -10692,7 +3159,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":783
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":783
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -10700,13 +3167,13 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyArray_MultiIterNew(5, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c), ((void *)__pyx_v_d), ((void *)__pyx_v_e)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 783; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyArray_MultiIterNew(5, ((void *)__pyx_v_a), ((void *)__pyx_v_b), ((void *)__pyx_v_c), ((void *)__pyx_v_d), ((void *)__pyx_v_e)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 783; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":782
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":782
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -10725,7 +3192,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":785
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":785
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -10757,7 +3224,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_util_dtypestring", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":790
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":790
  * 
  *     cdef dtype child
  *     cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -10766,7 +3233,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":791
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":791
  *     cdef dtype child
  *     cdef int endian_detector = 1
  *     cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -10775,7 +3242,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":794
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -10784,21 +3251,21 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   if (unlikely(__pyx_v_descr->names == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    {__pyx_filename = __pyx_f[1]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __pyx_t_1 = __pyx_v_descr->names; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
   for (;;) {
     if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
     #if CYTHON_COMPILING_IN_CPYTHON
-    __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     #else
-    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 794; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_XDECREF_SET(__pyx_v_childname, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":795
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":795
  * 
  *     for childname in descr.names:
  *         fields = descr.fields[childname]             # <<<<<<<<<<<<<<
@@ -10807,15 +3274,15 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     if (unlikely(__pyx_v_descr->fields == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      {__pyx_filename = __pyx_f[1]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
-    __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_descr->fields, __pyx_v_childname); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_descr->fields, __pyx_v_childname); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_3);
-    if (!(likely(PyTuple_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_3)->tp_name), 0))) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!(likely(PyTuple_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_3)->tp_name), 0))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 795; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_XDECREF_SET(__pyx_v_fields, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":796
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":796
  *     for childname in descr.names:
  *         fields = descr.fields[childname]
  *         child, new_offset = fields             # <<<<<<<<<<<<<<
@@ -10832,7 +3299,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        {__pyx_filename = __pyx_f[1]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0); 
@@ -10840,51 +3307,51 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_4);
       #else
-      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       #endif
     } else {
-      __Pyx_RaiseNoneNotIterableError(); {__pyx_filename = __pyx_f[1]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_RaiseNoneNotIterableError(); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_dtype))))) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_dtype))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 796; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_XDECREF_SET(__pyx_v_child, ((PyArray_Descr *)__pyx_t_3));
     __pyx_t_3 = 0;
     __Pyx_XDECREF_SET(__pyx_v_new_offset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":798
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":798
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  */
-    __pyx_t_4 = __Pyx_PyInt_From_int((__pyx_v_offset[0])); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyInt_From_int((__pyx_v_offset[0])); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyNumber_Subtract(__pyx_v_new_offset, __pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PyNumber_Subtract(__pyx_v_new_offset, __pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 798; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = ((((__pyx_v_end - __pyx_v_f) - ((int)__pyx_t_5)) < 15) != 0);
     if (__pyx_t_6) {
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":799
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__194, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":798
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":798
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -10893,7 +3360,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10913,7 +3380,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L8_next_or:;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":802
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":802
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -10930,7 +3397,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = __pyx_t_7;
     __pyx_L7_bool_binop_done:;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10939,20 +3406,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     if (__pyx_t_6) {
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":803
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__195, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      {__pyx_filename = __pyx_f[1]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -10961,7 +3428,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":813
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":813
  * 
  *         # Output padding bytes
  *         while offset[0] < new_offset:             # <<<<<<<<<<<<<<
@@ -10969,15 +3436,15 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  *             f += 1
  */
     while (1) {
-      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_offset[0])); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_offset[0])); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_new_offset, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_v_new_offset, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 813; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_6) break;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":814
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":814
  *         # Output padding bytes
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte             # <<<<<<<<<<<<<<
@@ -10986,7 +3453,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       (__pyx_v_f[0]) = 0x78;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":815
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":815
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte
  *             f += 1             # <<<<<<<<<<<<<<
@@ -10995,7 +3462,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":816
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":816
  *             f[0] = 120 # "x"; pad byte
  *             f += 1
  *             offset[0] += 1             # <<<<<<<<<<<<<<
@@ -11006,7 +3473,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + 1);
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":818
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":818
  *             offset[0] += 1
  * 
  *         offset[0] += child.itemsize             # <<<<<<<<<<<<<<
@@ -11016,7 +3483,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_8 = 0;
     (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + __pyx_v_child->elsize);
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":820
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":820
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -11026,19 +3493,19 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((!(PyDataType_HASFIELDS(__pyx_v_child) != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":821
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * 
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num             # <<<<<<<<<<<<<<
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")
  */
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_child->type_num); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 821; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_child->type_num); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 821; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_XDECREF_SET(__pyx_v_t, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":822
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":822
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -11048,20 +3515,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __pyx_t_6 = (((__pyx_v_end - __pyx_v_f) < 5) != 0);
       if (__pyx_t_6) {
 
-        /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":823
+        /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__196, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_Raise(__pyx_t_4, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        {__pyx_filename = __pyx_f[1]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-        /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":822
+        /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":822
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -11070,252 +3537,252 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":826
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":826
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"             # <<<<<<<<<<<<<<
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_BYTE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_BYTE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 826; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 98;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":827
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"             # <<<<<<<<<<<<<<
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_UBYTE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_UBYTE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 827; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 66;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":828
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":828
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"             # <<<<<<<<<<<<<<
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_SHORT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_SHORT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 828; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x68;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":829
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":829
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"             # <<<<<<<<<<<<<<
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_USHORT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_USHORT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 829; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 72;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":830
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":830
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"             # <<<<<<<<<<<<<<
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_INT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_INT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 830; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x69;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":831
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":831
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"             # <<<<<<<<<<<<<<
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_UINT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_UINT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 831; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 73;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":832
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":832
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"             # <<<<<<<<<<<<<<
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONG); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONG); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 832; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x6C;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":833
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":833
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"             # <<<<<<<<<<<<<<
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_ULONG); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_ULONG); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 833; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 76;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":834
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":834
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"             # <<<<<<<<<<<<<<
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONGLONG); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONGLONG); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 834; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x71;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":835
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":835
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"             # <<<<<<<<<<<<<<
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_ULONGLONG); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_ULONGLONG); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 835; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 81;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":836
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":836
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"             # <<<<<<<<<<<<<<
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_FLOAT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x66;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":837
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":837
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"             # <<<<<<<<<<<<<<
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_DOUBLE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 837; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x64;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":838
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":838
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"             # <<<<<<<<<<<<<<
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONGDOUBLE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_LONGDOUBLE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 838; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 0x67;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":839
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":839
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf             # <<<<<<<<<<<<<<
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CFLOAT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CFLOAT); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 839; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 90;
@@ -11324,18 +3791,18 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":840
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":840
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd             # <<<<<<<<<<<<<<
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CDOUBLE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CDOUBLE); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 840; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 90;
@@ -11344,18 +3811,18 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":841
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":841
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg             # <<<<<<<<<<<<<<
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CLONGDOUBLE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_CLONGDOUBLE); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_t, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 841; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 90;
@@ -11364,25 +3831,25 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":842
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":842
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"             # <<<<<<<<<<<<<<
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  */
-      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_OBJECT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyInt_From_enum__NPY_TYPES(NPY_OBJECT); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_t, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 842; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_6) {
         (__pyx_v_f[0]) = 79;
         goto __pyx_L15;
       }
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":844
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":844
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -11390,23 +3857,23 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  *         else:
  */
       /*else*/ {
-        __pyx_t_3 = PyUnicode_Format(__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_v_t); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = PyUnicode_Format(__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_v_t); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_Raise(__pyx_t_3, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        {__pyx_filename = __pyx_f[1]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 844; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __pyx_L15:;
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":845
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":845
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *             f += 1             # <<<<<<<<<<<<<<
@@ -11415,7 +3882,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":820
+      /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":820
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -11425,7 +3892,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       goto __pyx_L13;
     }
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":849
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":849
  *             # Cython ignores struct boundary information ("T{...}"),
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)             # <<<<<<<<<<<<<<
@@ -11433,12 +3900,12 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  * 
  */
     /*else*/ {
-      __pyx_t_9 = __pyx_f_5numpy__util_dtypestring(__pyx_v_child, __pyx_v_f, __pyx_v_end, __pyx_v_offset); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 849; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = __pyx_f_5numpy__util_dtypestring(__pyx_v_child, __pyx_v_f, __pyx_v_end, __pyx_v_offset); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 849; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_v_f = __pyx_t_9;
     }
     __pyx_L13:;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":794
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -11448,7 +3915,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":850
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":850
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)
  *     return f             # <<<<<<<<<<<<<<
@@ -11458,7 +3925,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   __pyx_r = __pyx_v_f;
   goto __pyx_L0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":785
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":785
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -11483,7 +3950,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   return __pyx_r;
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":966
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -11498,7 +3965,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":968
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":968
  * cdef inline void set_array_base(ndarray arr, object base):
  *      cdef PyObject* baseptr
  *      if base is None:             # <<<<<<<<<<<<<<
@@ -11509,7 +3976,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":969
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":969
  *      cdef PyObject* baseptr
  *      if base is None:
  *          baseptr = NULL             # <<<<<<<<<<<<<<
@@ -11518,7 +3985,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
     __pyx_v_baseptr = NULL;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":968
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":968
  * cdef inline void set_array_base(ndarray arr, object base):
  *      cdef PyObject* baseptr
  *      if base is None:             # <<<<<<<<<<<<<<
@@ -11528,7 +3995,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
     goto __pyx_L3;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":971
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":971
  *          baseptr = NULL
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!             # <<<<<<<<<<<<<<
@@ -11538,7 +4005,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   /*else*/ {
     Py_INCREF(__pyx_v_base);
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":972
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":972
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base             # <<<<<<<<<<<<<<
@@ -11549,7 +4016,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   }
   __pyx_L3:;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":973
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":973
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)             # <<<<<<<<<<<<<<
@@ -11558,7 +4025,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_XDECREF(__pyx_v_arr->base);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":974
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":974
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)
  *      arr.base = baseptr             # <<<<<<<<<<<<<<
@@ -11567,7 +4034,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   __pyx_v_arr->base = __pyx_v_baseptr;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":966
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -11579,7 +4046,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
+/* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -11593,7 +4060,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":977
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":977
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:             # <<<<<<<<<<<<<<
@@ -11603,7 +4070,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_arr->base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":978
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":978
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -11615,7 +4082,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None;
     goto __pyx_L0;
 
-    /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":977
+    /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":977
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:             # <<<<<<<<<<<<<<
@@ -11624,7 +4091,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":980
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":980
  *         return None
  *     else:
  *         return <object>arr.base             # <<<<<<<<<<<<<<
@@ -11636,7 +4103,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     goto __pyx_L0;
   }
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -11674,57 +4141,23 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_s_A_columns_B_rows, __pyx_k_A_columns_B_rows, sizeof(__pyx_k_A_columns_B_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_columns_x_rows, __pyx_k_A_columns_x_rows, sizeof(__pyx_k_A_columns_x_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_is_not_a_matrix, __pyx_k_A_is_not_a_matrix, sizeof(__pyx_k_A_is_not_a_matrix), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_is_not_a_vector, __pyx_k_A_is_not_a_vector, sizeof(__pyx_k_A_is_not_a_vector), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_is_not_of_type_double, __pyx_k_A_is_not_of_type_double, sizeof(__pyx_k_A_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_is_not_of_type_float, __pyx_k_A_is_not_of_type_float, sizeof(__pyx_k_A_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_rows_C_columns, __pyx_k_A_rows_C_columns, sizeof(__pyx_k_A_rows_C_columns), 0, 0, 1, 0},
-  {&__pyx_kp_s_A_rows_y_rows, __pyx_k_A_rows_y_rows, sizeof(__pyx_k_A_rows_y_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_B_columns_C_rows, __pyx_k_B_columns_C_rows, sizeof(__pyx_k_B_columns_C_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_B_is_not_a_matrix, __pyx_k_B_is_not_a_matrix, sizeof(__pyx_k_B_is_not_a_matrix), 0, 0, 1, 0},
-  {&__pyx_kp_s_B_is_not_of_type_double, __pyx_k_B_is_not_of_type_double, sizeof(__pyx_k_B_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_B_is_not_of_type_float, __pyx_k_B_is_not_of_type_float, sizeof(__pyx_k_B_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_C_is_not_a_matrix, __pyx_k_C_is_not_a_matrix, sizeof(__pyx_k_C_is_not_a_matrix), 0, 0, 1, 0},
-  {&__pyx_kp_s_C_is_not_of_type_double, __pyx_k_C_is_not_of_type_double, sizeof(__pyx_k_C_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_C_is_not_of_type_float, __pyx_k_C_is_not_of_type_float, sizeof(__pyx_k_C_is_not_of_type_float), 0, 0, 1, 0},
   {&__pyx_kp_u_Format_string_allocated_too_shor, __pyx_k_Format_string_allocated_too_shor, sizeof(__pyx_k_Format_string_allocated_too_shor), 0, 1, 0, 0},
   {&__pyx_kp_u_Format_string_allocated_too_shor_2, __pyx_k_Format_string_allocated_too_shor_2, sizeof(__pyx_k_Format_string_allocated_too_shor_2), 0, 1, 0, 0},
   {&__pyx_kp_u_Non_native_byte_order_not_suppor, __pyx_k_Non_native_byte_order_not_suppor, sizeof(__pyx_k_Non_native_byte_order_not_suppor), 0, 1, 0, 0},
   {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
-  {&__pyx_kp_s_X_columns_Y_columns, __pyx_k_X_columns_Y_columns, sizeof(__pyx_k_X_columns_Y_columns), 0, 0, 1, 0},
-  {&__pyx_kp_s_X_is_not_of_type_double, __pyx_k_X_is_not_of_type_double, sizeof(__pyx_k_X_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_X_is_not_of_type_float, __pyx_k_X_is_not_of_type_float, sizeof(__pyx_k_X_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_X_rows_Y_rows, __pyx_k_X_rows_Y_rows, sizeof(__pyx_k_X_rows_Y_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_Y_is_not_of_type_double, __pyx_k_Y_is_not_of_type_double, sizeof(__pyx_k_Y_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_Y_is_not_of_type_float, __pyx_k_Y_is_not_of_type_float, sizeof(__pyx_k_Y_is_not_of_type_float), 0, 0, 1, 0},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_kp_u_ndarray_is_not_C_contiguous, __pyx_k_ndarray_is_not_C_contiguous, sizeof(__pyx_k_ndarray_is_not_C_contiguous), 0, 1, 0, 0},
   {&__pyx_kp_u_ndarray_is_not_Fortran_contiguou, __pyx_k_ndarray_is_not_Fortran_contiguou, sizeof(__pyx_k_ndarray_is_not_Fortran_contiguou), 0, 1, 0, 0},
-  {&__pyx_kp_s_param_is_not_a_vector, __pyx_k_param_is_not_a_vector, sizeof(__pyx_k_param_is_not_a_vector), 0, 0, 1, 0},
-  {&__pyx_kp_s_param_is_not_of_type_double, __pyx_k_param_is_not_of_type_double, sizeof(__pyx_k_param_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_param_is_not_of_type_float, __pyx_k_param_is_not_of_type_float, sizeof(__pyx_k_param_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_param_must_have_length_at_least, __pyx_k_param_must_have_length_at_least, sizeof(__pyx_k_param_must_have_length_at_least), 0, 0, 1, 0},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
-  {&__pyx_kp_s_x_is_not_a_vector, __pyx_k_x_is_not_a_vector, sizeof(__pyx_k_x_is_not_a_vector), 0, 0, 1, 0},
-  {&__pyx_kp_s_x_is_not_of_type_double, __pyx_k_x_is_not_of_type_double, sizeof(__pyx_k_x_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_x_is_not_of_type_float, __pyx_k_x_is_not_of_type_float, sizeof(__pyx_k_x_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_x_rows_A_rows, __pyx_k_x_rows_A_rows, sizeof(__pyx_k_x_rows_A_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_x_rows_y_rows, __pyx_k_x_rows_y_rows, sizeof(__pyx_k_x_rows_y_rows), 0, 0, 1, 0},
-  {&__pyx_kp_s_y_is_not_a_vector, __pyx_k_y_is_not_a_vector, sizeof(__pyx_k_y_is_not_a_vector), 0, 0, 1, 0},
-  {&__pyx_kp_s_y_is_not_of_type_double, __pyx_k_y_is_not_of_type_double, sizeof(__pyx_k_y_is_not_of_type_double), 0, 0, 1, 0},
-  {&__pyx_kp_s_y_is_not_of_type_float, __pyx_k_y_is_not_of_type_float, sizeof(__pyx_k_y_is_not_of_type_float), 0, 0, 1, 0},
-  {&__pyx_kp_s_y_rows_A_columns, __pyx_k_y_rows_A_columns, sizeof(__pyx_k_y_rows_A_columns), 0, 0, 1, 0},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 716; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -11734,2161 +4167,71 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "tokyo.pyx":19
- * 
- * cdef void sswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
-
-  /* "tokyo.pyx":20
- * cdef void sswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
-
-  /* "tokyo.pyx":21
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
-
-  /* "tokyo.pyx":23
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-
-  /* "tokyo.pyx":25
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sswap(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 25; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
-
-  /* "tokyo.pyx":34
- * 
- * cdef void dswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
-
-  /* "tokyo.pyx":35
- * cdef void dswap(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
-
-  /* "tokyo.pyx":36
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-
-  /* "tokyo.pyx":38
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
-
-  /* "tokyo.pyx":40
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dswap(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-
-  /* "tokyo.pyx":48
- * 
- * cdef void sscal(float alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
-
-  /* "tokyo.pyx":50
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     lib_sscal(x.shape[0], alpha, <float*>x.data, 1)
- * 
- */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-
-  /* "tokyo.pyx":58
- * 
- * cdef void dscal(double alpha, np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
-
-  /* "tokyo.pyx":60
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dscal(x.shape[0], alpha, <double*>x.data, 1)
- * 
- */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-
-  /* "tokyo.pyx":69
- * 
- * cdef void scopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
-
-  /* "tokyo.pyx":70
- * cdef void scopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
-
-  /* "tokyo.pyx":71
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__17)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
-
-  /* "tokyo.pyx":73
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
-
-  /* "tokyo.pyx":75
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     lib_scopy(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
-
-  /* "tokyo.pyx":83
- * 
- * cdef void dcopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
-
-  /* "tokyo.pyx":84
- * cdef void dcopy(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__21)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
-
-  /* "tokyo.pyx":85
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
-
-  /* "tokyo.pyx":87
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__23)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
-
-  /* "tokyo.pyx":89
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_dcopy(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__24)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
-
-  /* "tokyo.pyx":98
- * 
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__25)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
-
-  /* "tokyo.pyx":99
- * cdef void saxpy(float alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__26)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
-
-  /* "tokyo.pyx":100
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__27)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
-
-  /* "tokyo.pyx":102
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
-
-  /* "tokyo.pyx":104
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     lib_saxpy(x.shape[0], alpha, <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
-
-  /* "tokyo.pyx":112
- * 
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
-
-  /* "tokyo.pyx":113
- * cdef void daxpy(double alpha, np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
-
-  /* "tokyo.pyx":114
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__32)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 114; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
-
-  /* "tokyo.pyx":116
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__33)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 116; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
-
-  /* "tokyo.pyx":118
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     lib_daxpy(x.shape[0], alpha, <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 118; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__34);
-  __Pyx_GIVEREF(__pyx_tuple__34);
-
-  /* "tokyo.pyx":127
- * 
- * cdef float sdot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
-
-  /* "tokyo.pyx":128
- * cdef float sdot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__36);
-  __Pyx_GIVEREF(__pyx_tuple__36);
-
-  /* "tokyo.pyx":129
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__37);
-  __Pyx_GIVEREF(__pyx_tuple__37);
-
-  /* "tokyo.pyx":131
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__38);
-  __Pyx_GIVEREF(__pyx_tuple__38);
-
-  /* "tokyo.pyx":133
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_sdot(x.shape[0], <float*>x.data, 1, <float*>y.data, 1)
- * 
- */
-  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__39);
-  __Pyx_GIVEREF(__pyx_tuple__39);
-
-  /* "tokyo.pyx":141
- * 
- * cdef double ddot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__40);
-  __Pyx_GIVEREF(__pyx_tuple__40);
-
-  /* "tokyo.pyx":142
- * cdef double ddot(np.ndarray x, np.ndarray y):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 142; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__41);
-  __Pyx_GIVEREF(__pyx_tuple__41);
-
-  /* "tokyo.pyx":143
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__42);
-  __Pyx_GIVEREF(__pyx_tuple__42);
-
-  /* "tokyo.pyx":145
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__43);
-  __Pyx_GIVEREF(__pyx_tuple__43);
-
-  /* "tokyo.pyx":147
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_ddot(x.shape[0], <double*>x.data, 1, <double*>y.data, 1)
- * 
- */
-  __pyx_tuple__44 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__44)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__44);
-  __Pyx_GIVEREF(__pyx_tuple__44);
-
-  /* "tokyo.pyx":156
- * 
- * cdef float snrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__45)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__45);
-  __Pyx_GIVEREF(__pyx_tuple__45);
-
-  /* "tokyo.pyx":158
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_snrm2(x.shape[0], <float*>x.data, 1)
- * 
- */
-  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__46)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__46);
-  __Pyx_GIVEREF(__pyx_tuple__46);
-
-  /* "tokyo.pyx":166
- * 
- * cdef double dnrm2(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__47)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__47);
-  __Pyx_GIVEREF(__pyx_tuple__47);
-
-  /* "tokyo.pyx":168
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_dnrm2(x.shape[0], <double*>x.data, 1)
- * 
- */
-  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__48)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__48);
-  __Pyx_GIVEREF(__pyx_tuple__48);
-
-  /* "tokyo.pyx":176
- * 
- * cdef float sasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__49 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__49)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
-
-  /* "tokyo.pyx":178
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_sasum(x.shape[0], <float*>x.data, 1)
- * 
- */
-  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__50)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__50);
-  __Pyx_GIVEREF(__pyx_tuple__50);
-
-  /* "tokyo.pyx":186
- * 
- * cdef double dasum(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__51)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 186; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
-
-  /* "tokyo.pyx":188
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_dasum(x.shape[0], <double*>x.data, 1)
- * 
- */
-  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__52)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 188; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__52);
-  __Pyx_GIVEREF(__pyx_tuple__52);
-
-  /* "tokyo.pyx":197
- * cdef int isamax(np.ndarray x):
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     return lib_isamax(x.shape[0], <float*>x.data, 1)
- * 
- */
-  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__53)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
-
-  /* "tokyo.pyx":205
- * 
- * cdef int idamax(np.ndarray x):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__54 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__54)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__54);
-  __Pyx_GIVEREF(__pyx_tuple__54);
-
-  /* "tokyo.pyx":207
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     return lib_idamax(x.shape[0], <double*>x.data, 1)
- * 
- */
-  __pyx_tuple__55 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__55)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__55);
-  __Pyx_GIVEREF(__pyx_tuple__55);
-
-  /* "tokyo.pyx":239
- * 
- * cdef tuple srotmg(float d1, float d2, float x, float y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_tuple__56 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_a_vector); if (unlikely(!__pyx_tuple__56)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__56);
-  __Pyx_GIVEREF(__pyx_tuple__56);
-
-  /* "tokyo.pyx":241
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- */
-  __pyx_tuple__57 = PyTuple_Pack(1, __pyx_kp_s_param_must_have_length_at_least); if (unlikely(!__pyx_tuple__57)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__57);
-  __Pyx_GIVEREF(__pyx_tuple__57);
-
-  /* "tokyo.pyx":243
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")             # <<<<<<<<<<<<<<
- *     cdef float d1_ = d1, d2_ = d2, x_ = x
- *     srotmg_(&d1_, &d2_, &x_, y, <float *>param.data)
- */
-  __pyx_tuple__58 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_of_type_float); if (unlikely(!__pyx_tuple__58)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__58);
-  __Pyx_GIVEREF(__pyx_tuple__58);
-
-  /* "tokyo.pyx":252
- * 
- * cdef tuple drotmg(double d1, double d2, double x, double y, np.ndarray param):
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_tuple__59 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_a_vector); if (unlikely(!__pyx_tuple__59)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__59);
-  __Pyx_GIVEREF(__pyx_tuple__59);
-
-  /* "tokyo.pyx":254
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- */
-  __pyx_tuple__60 = PyTuple_Pack(1, __pyx_kp_s_param_must_have_length_at_least); if (unlikely(!__pyx_tuple__60)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__60);
-  __Pyx_GIVEREF(__pyx_tuple__60);
-
-  /* "tokyo.pyx":256
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")             # <<<<<<<<<<<<<<
- *     cdef double d1_ = d1, d2_ = d2, x_ = x
- *     drotmg_(&d1_, &d2_, &x_, y, <double *>param.data)
- */
-  __pyx_tuple__61 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_of_type_double); if (unlikely(!__pyx_tuple__61)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__61);
-  __Pyx_GIVEREF(__pyx_tuple__61);
-
-  /* "tokyo.pyx":267
- * 
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__62 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__62)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__62);
-  __Pyx_GIVEREF(__pyx_tuple__62);
-
-  /* "tokyo.pyx":268
- * cdef void srot(np.ndarray x, np.ndarray y, float c, float s, int dx=1, int dy=1):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- */
-  __pyx_tuple__63 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__63)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 268; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__63);
-  __Pyx_GIVEREF(__pyx_tuple__63);
-
-  /* "tokyo.pyx":269
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__64 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__64)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__64);
-  __Pyx_GIVEREF(__pyx_tuple__64);
-
-  /* "tokyo.pyx":271
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__65 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__65)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__65);
-  __Pyx_GIVEREF(__pyx_tuple__65);
-
-  /* "tokyo.pyx":273
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     srot_(x.shape[0], <float *>x.data, dx, <float *>y.data, dy, c, s)
- *     return
- */
-  __pyx_tuple__66 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__66)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 273; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__66);
-  __Pyx_GIVEREF(__pyx_tuple__66);
-
-  /* "tokyo.pyx":282
- * 
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__67 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__67)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__67);
-  __Pyx_GIVEREF(__pyx_tuple__67);
-
-  /* "tokyo.pyx":283
- * cdef void drot(np.ndarray x, np.ndarray y, double c, double s):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- */
-  __pyx_tuple__68 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__68)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__68);
-  __Pyx_GIVEREF(__pyx_tuple__68);
-
-  /* "tokyo.pyx":284
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__69 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__69)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 284; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__69);
-  __Pyx_GIVEREF(__pyx_tuple__69);
-
-  /* "tokyo.pyx":286
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__70 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__70)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__70);
-  __Pyx_GIVEREF(__pyx_tuple__70);
-
-  /* "tokyo.pyx":288
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     drot_(x.shape[0], <double *>x.data, 1, <double *>y.data, 1, c, s)
- *     return
- */
-  __pyx_tuple__71 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__71)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__71);
-  __Pyx_GIVEREF(__pyx_tuple__71);
-
-  /* "tokyo.pyx":298
- * 
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- */
-  __pyx_tuple__72 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__72)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__72);
-  __Pyx_GIVEREF(__pyx_tuple__72);
-
-  /* "tokyo.pyx":299
- * cdef void srotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__73 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__73)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__73);
-  __Pyx_GIVEREF(__pyx_tuple__73);
-
-  /* "tokyo.pyx":300
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- */
-  __pyx_tuple__74 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_a_vector); if (unlikely(!__pyx_tuple__74)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__74);
-  __Pyx_GIVEREF(__pyx_tuple__74);
-
-  /* "tokyo.pyx":301
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if param.ndim != 1: raise ValueError("param is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_tuple__75 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__75)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__75);
-  __Pyx_GIVEREF(__pyx_tuple__75);
-
-  /* "tokyo.pyx":303
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")
- */
-  __pyx_tuple__76 = PyTuple_Pack(1, __pyx_kp_s_param_must_have_length_at_least); if (unlikely(!__pyx_tuple__76)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__76);
-  __Pyx_GIVEREF(__pyx_tuple__76);
-
-  /* "tokyo.pyx":305
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_FLOAT:
- *         raise ValueError("param is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")
- */
-  __pyx_tuple__77 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_of_type_float); if (unlikely(!__pyx_tuple__77)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__77);
-  __Pyx_GIVEREF(__pyx_tuple__77);
-
-  /* "tokyo.pyx":307
- *         raise ValueError("param is not of type float")
- *     if x.descr.type_num != NPY_FLOAT:
- *         raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")
- */
-  __pyx_tuple__78 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__78)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__78);
-  __Pyx_GIVEREF(__pyx_tuple__78);
-
-  /* "tokyo.pyx":309
- *         raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT:
- *         raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- *     srotm_(x.shape[0], <float *>x.data, 1,
- *                        <float *>y.data, 1, <float *>param.data)
- */
-  __pyx_tuple__79 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__79)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__79);
-  __Pyx_GIVEREF(__pyx_tuple__79);
-
-  /* "tokyo.pyx":318
- * 
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- */
-  __pyx_tuple__80 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__80)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__80);
-  __Pyx_GIVEREF(__pyx_tuple__80);
-
-  /* "tokyo.pyx":319
- * cdef void drotm(np.ndarray x, np.ndarray y, np.ndarray param):
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- */
-  __pyx_tuple__81 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__81)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__81);
-  __Pyx_GIVEREF(__pyx_tuple__81);
-
-  /* "tokyo.pyx":320
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")             # <<<<<<<<<<<<<<
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")
- */
-  __pyx_tuple__82 = PyTuple_Pack(1, __pyx_kp_s_x_rows_y_rows); if (unlikely(!__pyx_tuple__82)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__82);
-  __Pyx_GIVEREF(__pyx_tuple__82);
-
-  /* "tokyo.pyx":322
- *     if x.shape[0] != y.shape[0]: raise ValueError("x rows != y rows")
- *     if param.shape[0] < 5:
- *         raise ValueError("param must have length at least 5")             # <<<<<<<<<<<<<<
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")
- */
-  __pyx_tuple__83 = PyTuple_Pack(1, __pyx_kp_s_param_must_have_length_at_least); if (unlikely(!__pyx_tuple__83)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__83);
-  __Pyx_GIVEREF(__pyx_tuple__83);
-
-  /* "tokyo.pyx":324
- *         raise ValueError("param must have length at least 5")
- *     if param.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("param is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")
- */
-  __pyx_tuple__84 = PyTuple_Pack(1, __pyx_kp_s_param_is_not_of_type_double); if (unlikely(!__pyx_tuple__84)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 324; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__84);
-  __Pyx_GIVEREF(__pyx_tuple__84);
-
-  /* "tokyo.pyx":326
- *         raise ValueError("param is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")
- */
-  __pyx_tuple__85 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__85)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__85);
-  __Pyx_GIVEREF(__pyx_tuple__85);
-
-  /* "tokyo.pyx":328
- *         raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE:
- *         raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- *     drotm_(x.shape[0], <double *>x.data, 1,
- *                        <double *>y.data, 1, <double *>param.data)
- */
-  __pyx_tuple__86 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__86)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__86);
-  __Pyx_GIVEREF(__pyx_tuple__86);
-
-  /* "tokyo.pyx":353
- *                       np.ndarray x, float beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__87 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__87)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 353; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__87);
-  __Pyx_GIVEREF(__pyx_tuple__87);
-
-  /* "tokyo.pyx":354
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_tuple__88 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__88)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__88);
-  __Pyx_GIVEREF(__pyx_tuple__88);
-
-  /* "tokyo.pyx":355
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_tuple__89 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__89)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 355; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__89);
-  __Pyx_GIVEREF(__pyx_tuple__89);
-
-  /* "tokyo.pyx":356
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_tuple__90 = PyTuple_Pack(1, __pyx_kp_s_A_rows_y_rows); if (unlikely(!__pyx_tuple__90)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__90);
-  __Pyx_GIVEREF(__pyx_tuple__90);
-
-  /* "tokyo.pyx":357
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_tuple__91 = PyTuple_Pack(1, __pyx_kp_s_A_columns_x_rows); if (unlikely(!__pyx_tuple__91)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 357; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__91);
-  __Pyx_GIVEREF(__pyx_tuple__91);
-
-  /* "tokyo.pyx":358
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_tuple__92 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__92)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 358; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__92);
-  __Pyx_GIVEREF(__pyx_tuple__92);
-
-  /* "tokyo.pyx":359
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_tuple__93 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__93)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__93);
-  __Pyx_GIVEREF(__pyx_tuple__93);
-
-  /* "tokyo.pyx":360
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <float*>A.data,
- */
-  __pyx_tuple__94 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__94)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 360; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__94);
-  __Pyx_GIVEREF(__pyx_tuple__94);
-
-  /* "tokyo.pyx":368
- * cdef void sgemv5(float alpha, np.ndarray A, np.ndarray x, float beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__95 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__95)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 368; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__95);
-  __Pyx_GIVEREF(__pyx_tuple__95);
-
-  /* "tokyo.pyx":369
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_tuple__96 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__96)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__96);
-  __Pyx_GIVEREF(__pyx_tuple__96);
-
-  /* "tokyo.pyx":370
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_tuple__97 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__97)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 370; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__97);
-  __Pyx_GIVEREF(__pyx_tuple__97);
-
-  /* "tokyo.pyx":371
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_tuple__98 = PyTuple_Pack(1, __pyx_kp_s_A_rows_y_rows); if (unlikely(!__pyx_tuple__98)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 371; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__98);
-  __Pyx_GIVEREF(__pyx_tuple__98);
-
-  /* "tokyo.pyx":372
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_tuple__99 = PyTuple_Pack(1, __pyx_kp_s_A_columns_x_rows); if (unlikely(!__pyx_tuple__99)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 372; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__99);
-  __Pyx_GIVEREF(__pyx_tuple__99);
-
-  /* "tokyo.pyx":373
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_tuple__100 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__100)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 373; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__100);
-  __Pyx_GIVEREF(__pyx_tuple__100);
-
-  /* "tokyo.pyx":374
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_tuple__101 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__101)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__101);
-  __Pyx_GIVEREF(__pyx_tuple__101);
-
-  /* "tokyo.pyx":375
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,
- */
-  __pyx_tuple__102 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__102)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 375; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__102);
-  __Pyx_GIVEREF(__pyx_tuple__102);
-
-  /* "tokyo.pyx":401
- *                       np.ndarray x, double beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__103 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__103)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__103);
-  __Pyx_GIVEREF(__pyx_tuple__103);
-
-  /* "tokyo.pyx":402
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_tuple__104 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__104)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__104);
-  __Pyx_GIVEREF(__pyx_tuple__104);
-
-  /* "tokyo.pyx":403
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_tuple__105 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__105)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 403; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__105);
-  __Pyx_GIVEREF(__pyx_tuple__105);
-
-  /* "tokyo.pyx":404
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_tuple__106 = PyTuple_Pack(1, __pyx_kp_s_A_rows_y_rows); if (unlikely(!__pyx_tuple__106)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 404; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__106);
-  __Pyx_GIVEREF(__pyx_tuple__106);
-
-  /* "tokyo.pyx":405
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_tuple__107 = PyTuple_Pack(1, __pyx_kp_s_A_columns_x_rows); if (unlikely(!__pyx_tuple__107)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 405; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__107);
-  __Pyx_GIVEREF(__pyx_tuple__107);
-
-  /* "tokyo.pyx":406
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_tuple__108 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__108)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 406; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__108);
-  __Pyx_GIVEREF(__pyx_tuple__108);
-
-  /* "tokyo.pyx":407
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_tuple__109 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__109)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 407; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__109);
-  __Pyx_GIVEREF(__pyx_tuple__109);
-
-  /* "tokyo.pyx":408
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemv(CblasRowMajor, TransA, A.shape[0], A.shape[1], alpha, <double*>A.data,
- */
-  __pyx_tuple__110 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__110)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 408; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__110);
-  __Pyx_GIVEREF(__pyx_tuple__110);
-
-  /* "tokyo.pyx":416
- * cdef void dgemv5(double alpha, np.ndarray A, np.ndarray x, double beta, np.ndarray y):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__111 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__111)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 416; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__111);
-  __Pyx_GIVEREF(__pyx_tuple__111);
-
-  /* "tokyo.pyx":417
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- */
-  __pyx_tuple__112 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__112)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__112);
-  __Pyx_GIVEREF(__pyx_tuple__112);
-
-  /* "tokyo.pyx":418
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- */
-  __pyx_tuple__113 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__113)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 418; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__113);
-  __Pyx_GIVEREF(__pyx_tuple__113);
-
-  /* "tokyo.pyx":419
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_tuple__114 = PyTuple_Pack(1, __pyx_kp_s_A_rows_y_rows); if (unlikely(!__pyx_tuple__114)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 419; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__114);
-  __Pyx_GIVEREF(__pyx_tuple__114);
-
-  /* "tokyo.pyx":420
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_tuple__115 = PyTuple_Pack(1, __pyx_kp_s_A_columns_x_rows); if (unlikely(!__pyx_tuple__115)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__115);
-  __Pyx_GIVEREF(__pyx_tuple__115);
-
-  /* "tokyo.pyx":421
- *     if A.shape[0] != y.shape[0]: raise ValueError("A rows != y rows")
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_tuple__116 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__116)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 421; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__116);
-  __Pyx_GIVEREF(__pyx_tuple__116);
-
-  /* "tokyo.pyx":422
- *     if A.shape[1] != x.shape[0]: raise ValueError("A columns != x rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_tuple__117 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__117)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__117);
-  __Pyx_GIVEREF(__pyx_tuple__117);
-
-  /* "tokyo.pyx":423
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemv(CblasRowMajor, CblasNoTrans, A.shape[0], A.shape[1], alpha,
- */
-  __pyx_tuple__118 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__118)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 423; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__118);
-  __Pyx_GIVEREF(__pyx_tuple__118);
-
-  /* "tokyo.pyx":457
- * cdef void sger4(float alpha, np.ndarray x, np.ndarray y, np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__119 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__119)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 457; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__119);
-  __Pyx_GIVEREF(__pyx_tuple__119);
-
-  /* "tokyo.pyx":458
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- */
-  __pyx_tuple__120 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__120)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 458; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__120);
-  __Pyx_GIVEREF(__pyx_tuple__120);
-
-  /* "tokyo.pyx":459
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- */
-  __pyx_tuple__121 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__121)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 459; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__121);
-  __Pyx_GIVEREF(__pyx_tuple__121);
-
-  /* "tokyo.pyx":460
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")             # <<<<<<<<<<<<<<
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_tuple__122 = PyTuple_Pack(1, __pyx_kp_s_x_rows_A_rows); if (unlikely(!__pyx_tuple__122)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 460; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__122);
-  __Pyx_GIVEREF(__pyx_tuple__122);
-
-  /* "tokyo.pyx":461
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- */
-  __pyx_tuple__123 = PyTuple_Pack(1, __pyx_kp_s_y_rows_A_columns); if (unlikely(!__pyx_tuple__123)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 461; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__123);
-  __Pyx_GIVEREF(__pyx_tuple__123);
-
-  /* "tokyo.pyx":462
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- */
-  __pyx_tuple__124 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__124)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 462; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__124);
-  __Pyx_GIVEREF(__pyx_tuple__124);
-
-  /* "tokyo.pyx":463
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")
- * 
- */
-  __pyx_tuple__125 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__125)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 463; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__125);
-  __Pyx_GIVEREF(__pyx_tuple__125);
-
-  /* "tokyo.pyx":464
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- *     if y.descr.type_num != NPY_FLOAT: raise ValueError("y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sger(CblasRowMajor, x.shape[0], y.shape[0], alpha,
- */
-  __pyx_tuple__126 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_float); if (unlikely(!__pyx_tuple__126)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 464; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__126);
-  __Pyx_GIVEREF(__pyx_tuple__126);
-
-  /* "tokyo.pyx":490
- * cdef void dger4(double alpha, np.ndarray x, np.ndarray y, np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- */
-  __pyx_tuple__127 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__127)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 490; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__127);
-  __Pyx_GIVEREF(__pyx_tuple__127);
-
-  /* "tokyo.pyx":491
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")             # <<<<<<<<<<<<<<
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- */
-  __pyx_tuple__128 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_a_vector); if (unlikely(!__pyx_tuple__128)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 491; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__128);
-  __Pyx_GIVEREF(__pyx_tuple__128);
-
-  /* "tokyo.pyx":492
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")             # <<<<<<<<<<<<<<
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- */
-  __pyx_tuple__129 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_a_vector); if (unlikely(!__pyx_tuple__129)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 492; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__129);
-  __Pyx_GIVEREF(__pyx_tuple__129);
-
-  /* "tokyo.pyx":493
- *     if x.ndim != 1: raise ValueError("x is not a vector")
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")             # <<<<<<<<<<<<<<
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_tuple__130 = PyTuple_Pack(1, __pyx_kp_s_x_rows_A_rows); if (unlikely(!__pyx_tuple__130)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 493; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__130);
-  __Pyx_GIVEREF(__pyx_tuple__130);
-
-  /* "tokyo.pyx":494
- *     if y.ndim != 1: raise ValueError("y is not a vector")
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- */
-  __pyx_tuple__131 = PyTuple_Pack(1, __pyx_kp_s_y_rows_A_columns); if (unlikely(!__pyx_tuple__131)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 494; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__131);
-  __Pyx_GIVEREF(__pyx_tuple__131);
-
-  /* "tokyo.pyx":495
- *     if x.shape[0] != A.shape[0]: raise ValueError("x rows != A rows")
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- */
-  __pyx_tuple__132 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__132)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 495; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__132);
-  __Pyx_GIVEREF(__pyx_tuple__132);
-
-  /* "tokyo.pyx":496
- *     if y.shape[0] != A.shape[1]: raise ValueError("y rows != A columns")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")
- * 
- */
-  __pyx_tuple__133 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__133)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 496; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__133);
-  __Pyx_GIVEREF(__pyx_tuple__133);
-
-  /* "tokyo.pyx":497
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- *     if y.descr.type_num != NPY_DOUBLE: raise ValueError("y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dger(CblasRowMajor, x.shape[0], y.shape[0], alpha,
- */
-  __pyx_tuple__134 = PyTuple_Pack(1, __pyx_kp_s_y_is_not_of_type_double); if (unlikely(!__pyx_tuple__134)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 497; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__134);
-  __Pyx_GIVEREF(__pyx_tuple__134);
-
-  /* "tokyo.pyx":538
- *                   float alpha, np.ndarray A, np.ndarray B, float beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_tuple__135 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__135)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 538; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__135);
-  __Pyx_GIVEREF(__pyx_tuple__135);
-
-  /* "tokyo.pyx":539
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_tuple__136 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_a_matrix); if (unlikely(!__pyx_tuple__136)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 539; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__136);
-  __Pyx_GIVEREF(__pyx_tuple__136);
-
-  /* "tokyo.pyx":540
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_tuple__137 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_a_matrix); if (unlikely(!__pyx_tuple__137)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 540; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__137);
-  __Pyx_GIVEREF(__pyx_tuple__137);
-
-  /* "tokyo.pyx":541
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_tuple__138 = PyTuple_Pack(1, __pyx_kp_s_A_rows_C_columns); if (unlikely(!__pyx_tuple__138)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 541; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__138);
-  __Pyx_GIVEREF(__pyx_tuple__138);
-
-  /* "tokyo.pyx":542
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_tuple__139 = PyTuple_Pack(1, __pyx_kp_s_B_columns_C_rows); if (unlikely(!__pyx_tuple__139)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 542; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__139);
-  __Pyx_GIVEREF(__pyx_tuple__139);
-
-  /* "tokyo.pyx":543
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- */
-  __pyx_tuple__140 = PyTuple_Pack(1, __pyx_kp_s_A_columns_B_rows); if (unlikely(!__pyx_tuple__140)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 543; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__140);
-  __Pyx_GIVEREF(__pyx_tuple__140);
-
-  /* "tokyo.pyx":544
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- */
-  __pyx_tuple__141 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__141)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 544; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__141);
-  __Pyx_GIVEREF(__pyx_tuple__141);
-
-  /* "tokyo.pyx":545
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- */
-  __pyx_tuple__142 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_of_type_float); if (unlikely(!__pyx_tuple__142)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__142);
-  __Pyx_GIVEREF(__pyx_tuple__142);
-
-  /* "tokyo.pyx":546
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],
- */
-  __pyx_tuple__143 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_of_type_float); if (unlikely(!__pyx_tuple__143)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__143);
-  __Pyx_GIVEREF(__pyx_tuple__143);
-
-  /* "tokyo.pyx":556
- *                       float beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_tuple__144 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__144)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 556; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__144);
-  __Pyx_GIVEREF(__pyx_tuple__144);
-
-  /* "tokyo.pyx":557
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_tuple__145 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_a_matrix); if (unlikely(!__pyx_tuple__145)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 557; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__145);
-  __Pyx_GIVEREF(__pyx_tuple__145);
-
-  /* "tokyo.pyx":558
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_tuple__146 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_a_matrix); if (unlikely(!__pyx_tuple__146)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 558; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__146);
-  __Pyx_GIVEREF(__pyx_tuple__146);
-
-  /* "tokyo.pyx":559
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_tuple__147 = PyTuple_Pack(1, __pyx_kp_s_A_rows_C_columns); if (unlikely(!__pyx_tuple__147)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 559; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__147);
-  __Pyx_GIVEREF(__pyx_tuple__147);
-
-  /* "tokyo.pyx":560
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- */
-  __pyx_tuple__148 = PyTuple_Pack(1, __pyx_kp_s_B_columns_C_rows); if (unlikely(!__pyx_tuple__148)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 560; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__148);
-  __Pyx_GIVEREF(__pyx_tuple__148);
-
-  /* "tokyo.pyx":561
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- */
-  __pyx_tuple__149 = PyTuple_Pack(1, __pyx_kp_s_A_columns_B_rows); if (unlikely(!__pyx_tuple__149)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 561; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__149);
-  __Pyx_GIVEREF(__pyx_tuple__149);
-
-  /* "tokyo.pyx":562
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- */
-  __pyx_tuple__150 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__150)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 562; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__150);
-  __Pyx_GIVEREF(__pyx_tuple__150);
-
-  /* "tokyo.pyx":563
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")
- * 
- */
-  __pyx_tuple__151 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_of_type_float); if (unlikely(!__pyx_tuple__151)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__151);
-  __Pyx_GIVEREF(__pyx_tuple__151);
-
-  /* "tokyo.pyx":564
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- *     if B.descr.type_num != NPY_FLOAT: raise ValueError("B is not of type float")
- *     if C.descr.type_num != NPY_FLOAT: raise ValueError("C is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     lib_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],
- */
-  __pyx_tuple__152 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_of_type_float); if (unlikely(!__pyx_tuple__152)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 564; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__152);
-  __Pyx_GIVEREF(__pyx_tuple__152);
-
-  /* "tokyo.pyx":597
- *                   double alpha, np.ndarray A, np.ndarray B, double beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_tuple__153 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__153)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 597; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__153);
-  __Pyx_GIVEREF(__pyx_tuple__153);
-
-  /* "tokyo.pyx":598
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_tuple__154 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_a_matrix); if (unlikely(!__pyx_tuple__154)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 598; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__154);
-  __Pyx_GIVEREF(__pyx_tuple__154);
-
-  /* "tokyo.pyx":599
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_tuple__155 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_a_matrix); if (unlikely(!__pyx_tuple__155)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 599; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__155);
-  __Pyx_GIVEREF(__pyx_tuple__155);
-
-  /* "tokyo.pyx":600
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_tuple__156 = PyTuple_Pack(1, __pyx_kp_s_A_rows_C_columns); if (unlikely(!__pyx_tuple__156)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 600; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__156);
-  __Pyx_GIVEREF(__pyx_tuple__156);
-
-  /* "tokyo.pyx":601
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_tuple__157 = PyTuple_Pack(1, __pyx_kp_s_B_columns_C_rows); if (unlikely(!__pyx_tuple__157)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 601; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__157);
-  __Pyx_GIVEREF(__pyx_tuple__157);
-
-  /* "tokyo.pyx":602
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- */
-  __pyx_tuple__158 = PyTuple_Pack(1, __pyx_kp_s_A_columns_B_rows); if (unlikely(!__pyx_tuple__158)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 602; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__158);
-  __Pyx_GIVEREF(__pyx_tuple__158);
-
-  /* "tokyo.pyx":603
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- */
-  __pyx_tuple__159 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__159)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 603; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__159);
-  __Pyx_GIVEREF(__pyx_tuple__159);
-
-  /* "tokyo.pyx":604
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- */
-  __pyx_tuple__160 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_of_type_double); if (unlikely(!__pyx_tuple__160)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 604; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__160);
-  __Pyx_GIVEREF(__pyx_tuple__160);
-
-  /* "tokyo.pyx":605
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemm(CblasRowMajor, TransA, TransB, C.shape[0], C.shape[1], B.shape[0],
- */
-  __pyx_tuple__161 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_of_type_double); if (unlikely(!__pyx_tuple__161)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 605; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__161);
-  __Pyx_GIVEREF(__pyx_tuple__161);
-
-  /* "tokyo.pyx":615
- *                       double beta, np.ndarray C):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- */
-  __pyx_tuple__162 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__162)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__162);
-  __Pyx_GIVEREF(__pyx_tuple__162);
-
-  /* "tokyo.pyx":616
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")             # <<<<<<<<<<<<<<
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- */
-  __pyx_tuple__163 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_a_matrix); if (unlikely(!__pyx_tuple__163)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 616; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__163);
-  __Pyx_GIVEREF(__pyx_tuple__163);
-
-  /* "tokyo.pyx":617
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- */
-  __pyx_tuple__164 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_a_matrix); if (unlikely(!__pyx_tuple__164)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 617; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__164);
-  __Pyx_GIVEREF(__pyx_tuple__164);
-
-  /* "tokyo.pyx":618
- *     if B.ndim != 2: raise ValueError("B is not a matrix")
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")             # <<<<<<<<<<<<<<
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- */
-  __pyx_tuple__165 = PyTuple_Pack(1, __pyx_kp_s_A_rows_C_columns); if (unlikely(!__pyx_tuple__165)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 618; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__165);
-  __Pyx_GIVEREF(__pyx_tuple__165);
-
-  /* "tokyo.pyx":619
- *     if C.ndim != 2: raise ValueError("C is not a matrix")
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")             # <<<<<<<<<<<<<<
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- */
-  __pyx_tuple__166 = PyTuple_Pack(1, __pyx_kp_s_B_columns_C_rows); if (unlikely(!__pyx_tuple__166)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 619; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__166);
-  __Pyx_GIVEREF(__pyx_tuple__166);
-
-  /* "tokyo.pyx":620
- *     if A.shape[0] != C.shape[0]: raise ValueError("A rows != C columns")
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- */
-  __pyx_tuple__167 = PyTuple_Pack(1, __pyx_kp_s_A_columns_B_rows); if (unlikely(!__pyx_tuple__167)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 620; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__167);
-  __Pyx_GIVEREF(__pyx_tuple__167);
-
-  /* "tokyo.pyx":621
- *     if B.shape[1] != C.shape[1]: raise ValueError("B columns != C rows")
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- */
-  __pyx_tuple__168 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__168)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 621; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__168);
-  __Pyx_GIVEREF(__pyx_tuple__168);
-
-  /* "tokyo.pyx":622
- *     if A.shape[1] != B.shape[0]: raise ValueError("A columns != B rows")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")             # <<<<<<<<<<<<<<
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")
- * 
- */
-  __pyx_tuple__169 = PyTuple_Pack(1, __pyx_kp_s_B_is_not_of_type_double); if (unlikely(!__pyx_tuple__169)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 622; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__169);
-  __Pyx_GIVEREF(__pyx_tuple__169);
-
-  /* "tokyo.pyx":623
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- *     if B.descr.type_num != NPY_DOUBLE: raise ValueError("B is not of type double")
- *     if C.descr.type_num != NPY_DOUBLE: raise ValueError("C is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     lib_dgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans, C.shape[0], C.shape[1],
- */
-  __pyx_tuple__170 = PyTuple_Pack(1, __pyx_kp_s_C_is_not_of_type_double); if (unlikely(!__pyx_tuple__170)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 623; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__170);
-  __Pyx_GIVEREF(__pyx_tuple__170);
-
-  /* "tokyo.pyx":711
- * cdef void smsetzero(np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")
- * 
- */
-  __pyx_tuple__171 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__171)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 711; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__171);
-  __Pyx_GIVEREF(__pyx_tuple__171);
-
-  /* "tokyo.pyx":712
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if A.descr.type_num != NPY_FLOAT: raise ValueError("A is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef float *ptr = <float*>A.data
- */
-  __pyx_tuple__172 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_float); if (unlikely(!__pyx_tuple__172)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__172);
-  __Pyx_GIVEREF(__pyx_tuple__172);
-
-  /* "tokyo.pyx":723
- * cdef void dmsetzero(np.ndarray A):
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")
- * 
- */
-  __pyx_tuple__173 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__173)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 723; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__173);
-  __Pyx_GIVEREF(__pyx_tuple__173);
-
-  /* "tokyo.pyx":724
- * 
- *     if A.ndim != 2: raise ValueError("A is not a matrix")
- *     if A.descr.type_num != NPY_DOUBLE: raise ValueError("A is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef double *ptr = <double*>A.data
- */
-  __pyx_tuple__174 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_of_type_double); if (unlikely(!__pyx_tuple__174)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 724; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__174);
-  __Pyx_GIVEREF(__pyx_tuple__174);
-
-  /* "tokyo.pyx":736
- * cdef void svsetzero(np.ndarray x):
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")
- * 
- */
-  __pyx_tuple__175 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_vector); if (unlikely(!__pyx_tuple__175)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 736; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__175);
-  __Pyx_GIVEREF(__pyx_tuple__175);
-
-  /* "tokyo.pyx":737
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- *     if x.descr.type_num != NPY_FLOAT: raise ValueError("x is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef float *ptr = <float*>x.data
- */
-  __pyx_tuple__176 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_float); if (unlikely(!__pyx_tuple__176)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 737; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__176);
-  __Pyx_GIVEREF(__pyx_tuple__176);
-
-  /* "tokyo.pyx":748
- * cdef void dvsetzero(np.ndarray x):
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")             # <<<<<<<<<<<<<<
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")
- * 
- */
-  __pyx_tuple__177 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_vector); if (unlikely(!__pyx_tuple__177)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 748; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__177);
-  __Pyx_GIVEREF(__pyx_tuple__177);
-
-  /* "tokyo.pyx":749
- * 
- *     if x.ndim != 1: raise ValueError("A is not a vector")
- *     if x.descr.type_num != NPY_DOUBLE: raise ValueError("x is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef double *ptr = <double*>x.data
- */
-  __pyx_tuple__178 = PyTuple_Pack(1, __pyx_kp_s_x_is_not_of_type_double); if (unlikely(!__pyx_tuple__178)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 749; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__178);
-  __Pyx_GIVEREF(__pyx_tuple__178);
-
-  /* "tokyo.pyx":763
- * cdef void smaxpy(float alpha, np.ndarray X, np.ndarray Y):
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- */
-  __pyx_tuple__179 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__179)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 763; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__179);
-  __Pyx_GIVEREF(__pyx_tuple__179);
-
-  /* "tokyo.pyx":764
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- */
-  __pyx_tuple__180 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__180)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 764; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__180);
-  __Pyx_GIVEREF(__pyx_tuple__180);
-
-  /* "tokyo.pyx":765
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")             # <<<<<<<<<<<<<<
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- */
-  __pyx_tuple__181 = PyTuple_Pack(1, __pyx_kp_s_X_rows_Y_rows); if (unlikely(!__pyx_tuple__181)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 765; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__181);
-  __Pyx_GIVEREF(__pyx_tuple__181);
-
-  /* "tokyo.pyx":766
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")             # <<<<<<<<<<<<<<
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")
- */
-  __pyx_tuple__182 = PyTuple_Pack(1, __pyx_kp_s_X_columns_Y_columns); if (unlikely(!__pyx_tuple__182)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 766; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__182);
-  __Pyx_GIVEREF(__pyx_tuple__182);
-
-  /* "tokyo.pyx":767
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")             # <<<<<<<<<<<<<<
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")
- * 
- */
-  __pyx_tuple__183 = PyTuple_Pack(1, __pyx_kp_s_X_is_not_of_type_float); if (unlikely(!__pyx_tuple__183)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 767; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__183);
-  __Pyx_GIVEREF(__pyx_tuple__183);
-
-  /* "tokyo.pyx":768
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_FLOAT: raise ValueError("X is not of type float")
- *     if Y.descr.type_num != NPY_FLOAT: raise ValueError("Y is not of type float")             # <<<<<<<<<<<<<<
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- */
-  __pyx_tuple__184 = PyTuple_Pack(1, __pyx_kp_s_Y_is_not_of_type_float); if (unlikely(!__pyx_tuple__184)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 768; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__184);
-  __Pyx_GIVEREF(__pyx_tuple__184);
-
-  /* "tokyo.pyx":780
- * cdef void dmaxpy(double alpha, np.ndarray X, np.ndarray Y):
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- */
-  __pyx_tuple__185 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__185)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 780; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__185);
-  __Pyx_GIVEREF(__pyx_tuple__185);
-
-  /* "tokyo.pyx":781
- * 
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")             # <<<<<<<<<<<<<<
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- */
-  __pyx_tuple__186 = PyTuple_Pack(1, __pyx_kp_s_A_is_not_a_matrix); if (unlikely(!__pyx_tuple__186)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 781; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__186);
-  __Pyx_GIVEREF(__pyx_tuple__186);
-
-  /* "tokyo.pyx":782
- *     if X.ndim != 2: raise ValueError("A is not a matrix")
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")             # <<<<<<<<<<<<<<
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- */
-  __pyx_tuple__187 = PyTuple_Pack(1, __pyx_kp_s_X_rows_Y_rows); if (unlikely(!__pyx_tuple__187)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 782; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__187);
-  __Pyx_GIVEREF(__pyx_tuple__187);
-
-  /* "tokyo.pyx":783
- *     if Y.ndim != 2: raise ValueError("A is not a matrix")
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")             # <<<<<<<<<<<<<<
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")
- */
-  __pyx_tuple__188 = PyTuple_Pack(1, __pyx_kp_s_X_columns_Y_columns); if (unlikely(!__pyx_tuple__188)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 783; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__188);
-  __Pyx_GIVEREF(__pyx_tuple__188);
-
-  /* "tokyo.pyx":784
- *     if X.shape[0] != Y.shape[0]: raise ValueError("X rows != Y rows")
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")             # <<<<<<<<<<<<<<
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")
- * 
- */
-  __pyx_tuple__189 = PyTuple_Pack(1, __pyx_kp_s_X_is_not_of_type_double); if (unlikely(!__pyx_tuple__189)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 784; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__189);
-  __Pyx_GIVEREF(__pyx_tuple__189);
-
-  /* "tokyo.pyx":785
- *     if X.shape[1] != Y.shape[1]: raise ValueError("X columns != Y columns")
- *     if X.descr.type_num != NPY_DOUBLE: raise ValueError("X is not of type double")
- *     if Y.descr.type_num != NPY_DOUBLE: raise ValueError("Y is not of type double")             # <<<<<<<<<<<<<<
- * 
- *     cdef unsigned int N = X.shape[0]*X.shape[1]
- */
-  __pyx_tuple__190 = PyTuple_Pack(1, __pyx_kp_s_Y_is_not_of_type_double); if (unlikely(!__pyx_tuple__190)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 785; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__190);
-  __Pyx_GIVEREF(__pyx_tuple__190);
-
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":218
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":218
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-  __pyx_tuple__191 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__191)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__191);
-  __Pyx_GIVEREF(__pyx_tuple__191);
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":222
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":222
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-  __pyx_tuple__192 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__192)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__192);
-  __Pyx_GIVEREF(__pyx_tuple__192);
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":259
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-  __pyx_tuple__193 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__193)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__193);
-  __Pyx_GIVEREF(__pyx_tuple__193);
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":799
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-  __pyx_tuple__194 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__194)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__194);
-  __Pyx_GIVEREF(__pyx_tuple__194);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":803
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-  __pyx_tuple__195 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__195)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__195);
-  __Pyx_GIVEREF(__pyx_tuple__195);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":823
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-  __pyx_tuple__196 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__196)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__196);
-  __Pyx_GIVEREF(__pyx_tuple__196);
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -13897,7 +4240,7 @@ static int __Pyx_InitCachedConstants(void) {
 }
 
 static int __Pyx_InitGlobals(void) {
-  if (__Pyx_InitStrings(__pyx_string_tab) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+  if (__Pyx_InitStrings(__pyx_string_tab) < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -13926,23 +4269,23 @@ PyMODINIT_FUNC PyInit_tokyo(void)
   }
   #endif
   __Pyx_RefNannySetupContext("PyMODINIT_FUNC PyInit_tokyo(void)", 0);
-  if (__Pyx_check_binary_version() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_check_binary_version() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #ifdef __Pyx_CyFunction_USED
-  if (__pyx_CyFunction_init() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_CyFunction_init() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
   #ifdef __Pyx_FusedFunction_USED
-  if (__pyx_FusedFunction_init() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_FusedFunction_init() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
   #ifdef __Pyx_Coroutine_USED
-  if (__pyx_Coroutine_init() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_Coroutine_init() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
   #ifdef __Pyx_Generator_USED
-  if (__pyx_Generator_init() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_Generator_init() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
   #ifdef __Pyx_StopAsyncIteration_USED
-  if (__pyx_StopAsyncIteration_init() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_StopAsyncIteration_init() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
   /*--- Library function declarations ---*/
   /*--- Threads initialization code ---*/
@@ -13957,115 +4300,59 @@ PyMODINIT_FUNC PyInit_tokyo(void)
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
-  if (unlikely(!__pyx_m)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_d = PyModule_GetDict(__pyx_m); if (unlikely(!__pyx_d)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (unlikely(!__pyx_m)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_d = PyModule_GetDict(__pyx_m); if (unlikely(!__pyx_d)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   Py_INCREF(__pyx_d);
-  __pyx_b = PyImport_AddModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_b)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_b = PyImport_AddModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_b)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #if CYTHON_COMPILING_IN_PYPY
   Py_INCREF(__pyx_b);
   #endif
-  if (PyObject_SetAttrString(__pyx_m, "__builtins__", __pyx_b) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+  if (PyObject_SetAttrString(__pyx_m, "__builtins__", __pyx_b) < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   /*--- Initialize various global constants etc. ---*/
-  if (__Pyx_InitGlobals() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_InitGlobals() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
-  if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
-  if (__pyx_module_is_main_tokyo) {
-    if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__pyx_module_is_main_tokyo__tokyo) {
+    if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   #if PY_MAJOR_VERSION >= 3
   {
-    PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    if (!PyDict_GetItemString(modules, "tokyo")) {
-      if (unlikely(PyDict_SetItemString(modules, "tokyo", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!PyDict_GetItemString(modules, "tokyo.tokyo")) {
+      if (unlikely(PyDict_SetItemString(modules, "tokyo.tokyo", __pyx_m) < 0)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
   }
   #endif
   /*--- Builtin init code ---*/
-  if (__Pyx_InitCachedBuiltins() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_InitCachedBuiltins() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Constants init code ---*/
-  if (__Pyx_InitCachedConstants() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_InitCachedConstants() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Global init code ---*/
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
-  if (__Pyx_ExportFunction("sswap_", (void (*)(void))__pyx_f_5tokyo_sswap_, "void (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sswap", (void (*)(void))__pyx_f_5tokyo_sswap, "void (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dswap_", (void (*)(void))__pyx_f_5tokyo_dswap_, "void (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dswap", (void (*)(void))__pyx_f_5tokyo_dswap, "void (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sscal_", (void (*)(void))__pyx_f_5tokyo_sscal_, "void (int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sscal", (void (*)(void))__pyx_f_5tokyo_sscal, "void (float, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dscal_", (void (*)(void))__pyx_f_5tokyo_dscal_, "void (int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dscal", (void (*)(void))__pyx_f_5tokyo_dscal, "void (double, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("scopy_", (void (*)(void))__pyx_f_5tokyo_scopy_, "void (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("scopy", (void (*)(void))__pyx_f_5tokyo_scopy, "void (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dcopy_", (void (*)(void))__pyx_f_5tokyo_dcopy_, "void (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dcopy", (void (*)(void))__pyx_f_5tokyo_dcopy, "void (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("saxpy_", (void (*)(void))__pyx_f_5tokyo_saxpy_, "void (int, float, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("saxpy", (void (*)(void))__pyx_f_5tokyo_saxpy, "void (float, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("daxpy_", (void (*)(void))__pyx_f_5tokyo_daxpy_, "void (int, double, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("daxpy", (void (*)(void))__pyx_f_5tokyo_daxpy, "void (double, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sdot_", (void (*)(void))__pyx_f_5tokyo_sdot_, "float (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sdot", (void (*)(void))__pyx_f_5tokyo_sdot, "float (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("ddot_", (void (*)(void))__pyx_f_5tokyo_ddot_, "double (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("ddot", (void (*)(void))__pyx_f_5tokyo_ddot, "double (PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("snrm2_", (void (*)(void))__pyx_f_5tokyo_snrm2_, "float (int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("snrm2", (void (*)(void))__pyx_f_5tokyo_snrm2, "float (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dnrm2_", (void (*)(void))__pyx_f_5tokyo_dnrm2_, "double (int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dnrm2", (void (*)(void))__pyx_f_5tokyo_dnrm2, "double (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sasum_", (void (*)(void))__pyx_f_5tokyo_sasum_, "float (int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sasum", (void (*)(void))__pyx_f_5tokyo_sasum, "float (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dasum_", (void (*)(void))__pyx_f_5tokyo_dasum_, "double (int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dasum", (void (*)(void))__pyx_f_5tokyo_dasum, "double (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("isamax_", (void (*)(void))__pyx_f_5tokyo_isamax_, "int (int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("isamax", (void (*)(void))__pyx_f_5tokyo_isamax, "int (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("idamax_", (void (*)(void))__pyx_f_5tokyo_idamax_, "int (int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("idamax", (void (*)(void))__pyx_f_5tokyo_idamax, "int (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("srotg_", (void (*)(void))__pyx_f_5tokyo_srotg_, "PyArrayObject *(float, float)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("srotg", (void (*)(void))__pyx_f_5tokyo_srotg, "PyArrayObject *(float, float)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("drotg_", (void (*)(void))__pyx_f_5tokyo_drotg_, "PyArrayObject *(double, double)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("drotg", (void (*)(void))__pyx_f_5tokyo_drotg, "PyArrayObject *(double, double)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemv_", (void (*)(void))__pyx_f_5tokyo_sgemv_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, int, int, float, float *, int, float *, int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemv6", (void (*)(void))__pyx_f_5tokyo_sgemv6, "void (enum CBLAS_TRANSPOSE, float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemv5", (void (*)(void))__pyx_f_5tokyo_sgemv5, "void (float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemv3", (void (*)(void))__pyx_f_5tokyo_sgemv3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemv", (void (*)(void))__pyx_f_5tokyo_sgemv, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemv_", (void (*)(void))__pyx_f_5tokyo_dgemv_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, int, int, double, double *, int, double *, int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemv6", (void (*)(void))__pyx_f_5tokyo_dgemv6, "void (enum CBLAS_TRANSPOSE, double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemv5", (void (*)(void))__pyx_f_5tokyo_dgemv5, "void (double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemv3", (void (*)(void))__pyx_f_5tokyo_dgemv3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemv", (void (*)(void))__pyx_f_5tokyo_dgemv, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sger_", (void (*)(void))__pyx_f_5tokyo_sger_, "void (enum CBLAS_ORDER, int, int, float, float *, int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sger4", (void (*)(void))__pyx_f_5tokyo_sger4, "void (float, PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sger3", (void (*)(void))__pyx_f_5tokyo_sger3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sger", (void (*)(void))__pyx_f_5tokyo_sger, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dger_", (void (*)(void))__pyx_f_5tokyo_dger_, "void (enum CBLAS_ORDER, int, int, double, double *, int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dger4", (void (*)(void))__pyx_f_5tokyo_dger4, "void (double, PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dger3", (void (*)(void))__pyx_f_5tokyo_dger3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dger", (void (*)(void))__pyx_f_5tokyo_dger, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemm_", (void (*)(void))__pyx_f_5tokyo_sgemm_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, int, int, int, float, float *, int, float *, int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemm7", (void (*)(void))__pyx_f_5tokyo_sgemm7, "void (enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemm5", (void (*)(void))__pyx_f_5tokyo_sgemm5, "void (float, PyArrayObject *, PyArrayObject *, float, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemm3", (void (*)(void))__pyx_f_5tokyo_sgemm3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("sgemm", (void (*)(void))__pyx_f_5tokyo_sgemm, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemm_", (void (*)(void))__pyx_f_5tokyo_dgemm_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, int, int, int, double, double *, int, double *, int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemm7", (void (*)(void))__pyx_f_5tokyo_dgemm7, "void (enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemm5", (void (*)(void))__pyx_f_5tokyo_dgemm5, "void (double, PyArrayObject *, PyArrayObject *, double, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemm3", (void (*)(void))__pyx_f_5tokyo_dgemm3, "void (PyArrayObject *, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dgemm", (void (*)(void))__pyx_f_5tokyo_dgemm, "PyArrayObject *(PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("smnewempty", (void (*)(void))__pyx_f_5tokyo_smnewempty, "PyArrayObject *(int, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dmnewempty", (void (*)(void))__pyx_f_5tokyo_dmnewempty, "PyArrayObject *(int, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("svnewempty", (void (*)(void))__pyx_f_5tokyo_svnewempty, "PyArrayObject *(int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dvnewempty", (void (*)(void))__pyx_f_5tokyo_dvnewempty, "PyArrayObject *(int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("smnewzero", (void (*)(void))__pyx_f_5tokyo_smnewzero, "PyArrayObject *(int, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dmnewzero", (void (*)(void))__pyx_f_5tokyo_dmnewzero, "PyArrayObject *(int, int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("svnewzero", (void (*)(void))__pyx_f_5tokyo_svnewzero, "PyArrayObject *(int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dvnewzero", (void (*)(void))__pyx_f_5tokyo_dvnewzero, "PyArrayObject *(int)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("smsetzero", (void (*)(void))__pyx_f_5tokyo_smsetzero, "void (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dmsetzero", (void (*)(void))__pyx_f_5tokyo_dmsetzero, "void (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("svsetzero", (void (*)(void))__pyx_f_5tokyo_svsetzero, "void (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dvsetzero", (void (*)(void))__pyx_f_5tokyo_dvsetzero, "void (PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("smaxpy", (void (*)(void))__pyx_f_5tokyo_smaxpy, "void (float, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  if (__Pyx_ExportFunction("dmaxpy", (void (*)(void))__pyx_f_5tokyo_dmaxpy, "void (double, PyArrayObject *, PyArrayObject *)") < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sswap_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sswap_, "void (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dswap_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dswap_, "void (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sscal_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sscal_, "void (int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dscal_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dscal_, "void (int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("scopy_", (void (*)(void))__pyx_f_5tokyo_5tokyo_scopy_, "void (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dcopy_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dcopy_, "void (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("saxpy_", (void (*)(void))__pyx_f_5tokyo_5tokyo_saxpy_, "void (int, float, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("daxpy_", (void (*)(void))__pyx_f_5tokyo_5tokyo_daxpy_, "void (int, double, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sdot_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sdot_, "float (int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("ddot_", (void (*)(void))__pyx_f_5tokyo_5tokyo_ddot_, "double (int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("snrm2_", (void (*)(void))__pyx_f_5tokyo_5tokyo_snrm2_, "float (int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dnrm2_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dnrm2_, "double (int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sasum_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sasum_, "float (int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dasum_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dasum_, "double (int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("isamax_", (void (*)(void))__pyx_f_5tokyo_5tokyo_isamax_, "int (int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("idamax_", (void (*)(void))__pyx_f_5tokyo_5tokyo_idamax_, "int (int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sgemv_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sgemv_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, int, int, float, float *, int, float *, int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dgemv_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dgemv_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, int, int, double, double *, int, double *, int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sger_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sger_, "void (enum CBLAS_ORDER, int, int, float, float *, int, float *, int, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dger_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dger_, "void (enum CBLAS_ORDER, int, int, double, double *, int, double *, int, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("sgemm_", (void (*)(void))__pyx_f_5tokyo_5tokyo_sgemm_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, int, int, int, float, float *, int, float *, int, float, float *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_ExportFunction("dgemm_", (void (*)(void))__pyx_f_5tokyo_5tokyo_dgemm_, "void (enum CBLAS_ORDER, enum CBLAS_TRANSPOSE, enum CBLAS_TRANSPOSE, int, int, int, double, double *, int, double *, int, double, double *, int)") < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Type init code ---*/
   /*--- Type import code ---*/
   __pyx_ptype_7cpython_4type_type = __Pyx_ImportType(__Pyx_BUILTIN_MODULE_NAME, "type", 
@@ -14075,19 +4362,19 @@ PyMODINIT_FUNC PyInit_tokyo(void)
   sizeof(PyHeapTypeObject),
   #endif
   0); if (unlikely(!__pyx_ptype_7cpython_4type_type)) {__pyx_filename = __pyx_f[2]; __pyx_lineno = 9; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_5numpy_dtype = __Pyx_ImportType("numpy", "dtype", sizeof(PyArray_Descr), 0); if (unlikely(!__pyx_ptype_5numpy_dtype)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_5numpy_flatiter = __Pyx_ImportType("numpy", "flatiter", sizeof(PyArrayIterObject), 0); if (unlikely(!__pyx_ptype_5numpy_flatiter)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_5numpy_broadcast = __Pyx_ImportType("numpy", "broadcast", sizeof(PyArrayMultiIterObject), 0); if (unlikely(!__pyx_ptype_5numpy_broadcast)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_5numpy_ndarray = __Pyx_ImportType("numpy", "ndarray", sizeof(PyArrayObject), 0); if (unlikely(!__pyx_ptype_5numpy_ndarray)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_ptype_5numpy_ufunc = __Pyx_ImportType("numpy", "ufunc", sizeof(PyUFuncObject), 0); if (unlikely(!__pyx_ptype_5numpy_ufunc)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 861; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_5numpy_dtype = __Pyx_ImportType("numpy", "dtype", sizeof(PyArray_Descr), 0); if (unlikely(!__pyx_ptype_5numpy_dtype)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_5numpy_flatiter = __Pyx_ImportType("numpy", "flatiter", sizeof(PyArrayIterObject), 0); if (unlikely(!__pyx_ptype_5numpy_flatiter)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_5numpy_broadcast = __Pyx_ImportType("numpy", "broadcast", sizeof(PyArrayMultiIterObject), 0); if (unlikely(!__pyx_ptype_5numpy_broadcast)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_5numpy_ndarray = __Pyx_ImportType("numpy", "ndarray", sizeof(PyArrayObject), 0); if (unlikely(!__pyx_ptype_5numpy_ndarray)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_ptype_5numpy_ufunc = __Pyx_ImportType("numpy", "ufunc", sizeof(PyUFuncObject), 0); if (unlikely(!__pyx_ptype_5numpy_ufunc)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 861; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
   /*--- Execution code ---*/
   #if defined(__Pyx_Generator_USED) || defined(__Pyx_Coroutine_USED)
-  if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
 
-  /* "tokyo.pyx":3
+  /* "tokyo/tokyo.pyx":3
  * cimport numpy as np
  * 
  * import_array()             # <<<<<<<<<<<<<<
@@ -14096,17 +4383,17 @@ PyMODINIT_FUNC PyInit_tokyo(void)
  */
   import_array();
 
-  /* "tokyo.pyx":1
+  /* "tokyo/tokyo.pyx":1
  * cimport numpy as np             # <<<<<<<<<<<<<<
  * 
  * import_array()
  */
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../anaconda3/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
+  /* "../../../anaconda/lib/python3.5/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -14121,11 +4408,11 @@ PyMODINIT_FUNC PyInit_tokyo(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init tokyo", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init tokyo.tokyo", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init tokyo");
+    PyErr_SetString(PyExc_ImportError, "init tokyo.tokyo");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -14376,102 +4663,6 @@ bad:
 }
 #endif
 
-static void __Pyx_WriteUnraisable(const char *name, CYTHON_UNUSED int clineno,
-                                  CYTHON_UNUSED int lineno, CYTHON_UNUSED const char *filename,
-                                  int full_traceback, CYTHON_UNUSED int nogil) {
-    PyObject *old_exc, *old_val, *old_tb;
-    PyObject *ctx;
-#ifdef WITH_THREAD
-    PyGILState_STATE state;
-    if (nogil)
-        state = PyGILState_Ensure();
-#endif
-    __Pyx_ErrFetch(&old_exc, &old_val, &old_tb);
-    if (full_traceback) {
-        Py_XINCREF(old_exc);
-        Py_XINCREF(old_val);
-        Py_XINCREF(old_tb);
-        __Pyx_ErrRestore(old_exc, old_val, old_tb);
-        PyErr_PrintEx(1);
-    }
-    #if PY_MAJOR_VERSION < 3
-    ctx = PyString_FromString(name);
-    #else
-    ctx = PyUnicode_FromString(name);
-    #endif
-    __Pyx_ErrRestore(old_exc, old_val, old_tb);
-    if (!ctx) {
-        PyErr_WriteUnraisable(Py_None);
-    } else {
-        PyErr_WriteUnraisable(ctx);
-        Py_DECREF(ctx);
-    }
-#ifdef WITH_THREAD
-    if (nogil)
-        PyGILState_Release(state);
-#endif
-}
-
-static CYTHON_INLINE int __Pyx_SetItemInt_Generic(PyObject *o, PyObject *j, PyObject *v) {
-    int r;
-    if (!j) return -1;
-    r = PyObject_SetItem(o, j, v);
-    Py_DECREF(j);
-    return r;
-}
-static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObject *v, int is_list,
-                                               CYTHON_NCP_UNUSED int wraparound, CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_COMPILING_IN_CPYTHON
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = (!wraparound) ? i : ((likely(i >= 0)) ? i : i + PyList_GET_SIZE(o));
-        if ((!boundscheck) || likely((n >= 0) & (n < PyList_GET_SIZE(o)))) {
-            PyObject* old = PyList_GET_ITEM(o, n);
-            Py_INCREF(v);
-            PyList_SET_ITEM(o, n, v);
-            Py_DECREF(old);
-            return 1;
-        }
-    } else {
-        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
-        if (likely(m && m->sq_ass_item)) {
-            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
-                Py_ssize_t l = m->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (PyErr_ExceptionMatches(PyExc_OverflowError))
-                        PyErr_Clear();
-                    else
-                        return -1;
-                }
-            }
-            return m->sq_ass_item(o, i, v);
-        }
-    }
-#else
-#if CYTHON_COMPILING_IN_PYPY
-    if (is_list || (PySequence_Check(o) && !PyDict_Check(o))) {
-#else
-    if (is_list || PySequence_Check(o)) {
-#endif
-        return PySequence_SetItem(o, i, v);
-    }
-#endif
-    return __Pyx_SetItemInt_Generic(o, PyInt_FromSsize_t(i), v);
-}
-
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    if (likely(PyObject_TypeCheck(obj, type)))
-        return 1;
-    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
-                 Py_TYPE(obj)->tp_name, type->tp_name);
-    return 0;
-}
-
 static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {
     PyErr_Format(PyExc_ValueError,
                  "too many values to unpack (expected %" CYTHON_FORMAT_SSIZE_T "d)", expected);
@@ -14485,6 +4676,18 @@ static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {
 
 static CYTHON_INLINE void __Pyx_RaiseNoneNotIterableError(void) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
+}
+
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
+    }
+    if (likely(PyObject_TypeCheck(obj, type)))
+        return 1;
+    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
+                 Py_TYPE(obj)->tp_name, type->tp_name);
+    return 0;
 }
 
 static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {
@@ -14644,293 +4847,6 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 bad:
     Py_XDECREF(py_code);
     Py_XDECREF(py_frame);
-}
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
-    const long neg_one = (long) -1, const_zero = (long) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(long) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-        }
-    } else {
-        if (sizeof(long) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(long),
-                                     little, !is_unsigned);
-    }
-}
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value) {
-    const enum NPY_TYPES neg_one = (enum NPY_TYPES) -1, const_zero = (enum NPY_TYPES) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(enum NPY_TYPES) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(enum NPY_TYPES) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(enum NPY_TYPES) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-        }
-    } else {
-        if (sizeof(enum NPY_TYPES) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(enum NPY_TYPES) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(enum NPY_TYPES),
-                                     little, !is_unsigned);
-    }
-}
-
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_Py_intptr_t(Py_intptr_t value) {
-    const Py_intptr_t neg_one = (Py_intptr_t) -1, const_zero = (Py_intptr_t) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(Py_intptr_t) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(Py_intptr_t) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(Py_intptr_t) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-        }
-    } else {
-        if (sizeof(Py_intptr_t) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(Py_intptr_t) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(Py_intptr_t),
-                                     little, !is_unsigned);
-    }
-}
-
-#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
-
-#if CYTHON_USE_PYLONG_INTERNALS
-  #include "longintrepr.h"
-#endif
-
-static CYTHON_INLINE unsigned int __Pyx_PyInt_As_unsigned_int(PyObject *x) {
-    const unsigned int neg_one = (unsigned int) -1, const_zero = (unsigned int) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(unsigned int) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(unsigned int, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (unsigned int) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (unsigned int) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(unsigned int, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(unsigned int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) >= 2 * PyLong_SHIFT) {
-                            return (unsigned int) (((((unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(unsigned int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) >= 3 * PyLong_SHIFT) {
-                            return (unsigned int) (((((((unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(unsigned int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) >= 4 * PyLong_SHIFT) {
-                            return (unsigned int) (((((((((unsigned int)digits[3]) << PyLong_SHIFT) | (unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (unsigned int) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(unsigned int) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned int, unsigned long, PyLong_AsUnsignedLong(x))
-            } else if (sizeof(unsigned int) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (unsigned int) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(unsigned int, sdigit, -(sdigit) digits[0])
-                case  1: __PYX_VERIFY_RETURN_INT(unsigned int,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(unsigned int) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 2 * PyLong_SHIFT) {
-                            return (unsigned int) (((unsigned int)-1)*(((((unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(unsigned int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 2 * PyLong_SHIFT) {
-                            return (unsigned int) ((((((unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(unsigned int) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 3 * PyLong_SHIFT) {
-                            return (unsigned int) (((unsigned int)-1)*(((((((unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(unsigned int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 3 * PyLong_SHIFT) {
-                            return (unsigned int) ((((((((unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(unsigned int) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 4 * PyLong_SHIFT) {
-                            return (unsigned int) (((unsigned int)-1)*(((((((((unsigned int)digits[3]) << PyLong_SHIFT) | (unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(unsigned int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned int) - 1 > 4 * PyLong_SHIFT) {
-                            return (unsigned int) ((((((((((unsigned int)digits[3]) << PyLong_SHIFT) | (unsigned int)digits[2]) << PyLong_SHIFT) | (unsigned int)digits[1]) << PyLong_SHIFT) | (unsigned int)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(unsigned int) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned int, long, PyLong_AsLong(x))
-            } else if (sizeof(unsigned int) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned int, PY_LONG_LONG, PyLong_AsLongLong(x))
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            unsigned int val;
-            PyObject *v = __Pyx_PyNumber_Int(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (unsigned int) -1;
-        }
-    } else {
-        unsigned int val;
-        PyObject *tmp = __Pyx_PyNumber_Int(x);
-        if (!tmp) return (unsigned int) -1;
-        val = __Pyx_PyInt_As_unsigned_int(tmp);
-        Py_DECREF(tmp);
-        return val;
-    }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to unsigned int");
-    return (unsigned int) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to unsigned int");
-    return (unsigned int) -1;
 }
 
 #if CYTHON_CCOMPLEX
@@ -15199,6 +5115,31 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
     }
 }
 
+#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
+
+#if CYTHON_USE_PYLONG_INTERNALS
+  #include "longintrepr.h"
+#endif
+
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
     const int neg_one = (int) -1, const_zero = (int) 0;
     const int is_unsigned = neg_one > const_zero;
@@ -15381,6 +5322,58 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to int");
     return (int) -1;
+}
+
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value) {
+    const enum NPY_TYPES neg_one = (enum NPY_TYPES) -1, const_zero = (enum NPY_TYPES) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(enum NPY_TYPES) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(enum NPY_TYPES) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+        } else if (sizeof(enum NPY_TYPES) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+        }
+    } else {
+        if (sizeof(enum NPY_TYPES) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(enum NPY_TYPES) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(enum NPY_TYPES),
+                                     little, !is_unsigned);
+    }
+}
+
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+    const long neg_one = (long) -1, const_zero = (long) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(long) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+        }
+    } else {
+        if (sizeof(long) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(long),
+                                     little, !is_unsigned);
+    }
 }
 
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
