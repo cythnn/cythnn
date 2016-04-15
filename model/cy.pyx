@@ -135,15 +135,15 @@ cdef class modelc:
         return self.model
 
     def setSolution(self, solution):
-        self.w = allocRP(len(solution))
-        self.w_input = allocI(len(solution))
-        self.w_output = allocI(len(solution))
-        self.layer = allocRP(len(solution) * self.cores)
-        for l in range(len(solution)):
+        self.matrices = len(solution)
+        self.w = allocRP(self.matrices)
+        self.w_input = allocI(self.matrices)
+        self.w_output = allocI(self.matrices)
+        self.layer = allocRP((self.matrices + 1) * self.cores)
+        for l in range(self.matrices):
             self.w[l] = toRArray(solution[l]);
             self.w_input[l] = solution[l].shape[0]
             self.w_output[l] = solution[l].shape[1]
-        self.matrices = len(solution)
 
     # fast lookup table for sigmoid activation function
     cdef cREAL* createSigmoidTable(self):
@@ -158,9 +158,10 @@ cdef class modelc:
     # returns a thread-safe vector for the given layer, 0 being the input and |layer|-1 being the output layer
     # getLayer allows the layer to be shared over different pipe modules in the same thread
     cdef cREAL *getLayer(self, int thread, int layer) nogil:
-        if self.layer[thread * self.cores + layer] == NULL:
-            self.layer[thread * self.cores + layer] = self.createWorkLayer(layer)
-        return self.layer[thread * self.cores + layer]
+        cdef int pos = thread * (self.matrices + 1) + layer
+        if self.layer[pos] == NULL:
+            self.layer[pos] = self.createWorkLayer(layer)
+        return self.layer[pos]
 
     # returns a thread-safe vector for the given layer, 0 being the input and |layer|-1 being the output layer
     # createLayer creates a non-shared layer instance
