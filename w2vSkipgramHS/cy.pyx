@@ -5,8 +5,8 @@ from model.cy cimport *
 
 from numpy import int32, uint64
 from libc.string cimport memset
-from tokyo.tokyo cimport saxpy_ as saxpy
-from tokyo.tokyo cimport sdot_ as sdot
+from tokyo.cy cimport saxpy_ as saxpy
+from tokyo.cy cimport sdot_ as sdot
 
 import numpy as np
 cimport numpy as np

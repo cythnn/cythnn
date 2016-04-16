@@ -1,9 +1,10 @@
 from multiprocessing.pool import Pool
 from queue import Queue, Empty
+import warnings
 
 import cython, math
 from numpy import float32, int32
-import tokyo.tokyo
+import tokyo.cy as tokyo
 from libc.stdio cimport *
 from pipe.cy import cypipe
 
@@ -41,7 +42,10 @@ class model:
                                             # vocabulary and reused to learn the model
         self.progress = np.zeros((cores), dtype=int32)  # tracks progress per thread
         self.pipe = [None] * cores          # first pipelineobject per thread
-        tokyo.tokyo.setMaxThreads(1)        # limit openblas to a single thread to not interfere with multithreading
+        try:
+            tokyo.setMaxThreads(1)        # limit openblas to a single thread to not interfere with multithreading
+        except AttributeError:
+            warnings.warn("openblas not found, therefore cannot optimize multithreading efficiency")
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
     def run(self):
