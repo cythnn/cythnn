@@ -5,7 +5,6 @@ from model.cy cimport *
 
 from numpy import int32, uint64
 from libc.string cimport memset
-#from blas.cy cimport sdot, saxpy
 from tokyo.tokyo cimport saxpy_ as saxpy
 from tokyo.tokyo cimport sdot_ as sdot
 

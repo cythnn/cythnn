@@ -3,7 +3,7 @@ from queue import Queue, Empty
 
 import cython, math
 from numpy import float32, int32
-#from blas.cy cimport sdot, saxpy
+import tokyo.tokyo
 from libc.stdio cimport *
 from pipe.cy import cypipe
 
@@ -41,6 +41,7 @@ class model:
                                             # vocabulary and reused to learn the model
         self.progress = np.zeros((cores), dtype=int32)  # tracks progress per thread
         self.pipe = [None] * cores          # first pipelineobject per thread
+        tokyo.tokyo.setMaxThreads(1)        # limit openblas to a single thread to not interfere with multithreading
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
     def run(self):

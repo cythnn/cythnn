@@ -1,6 +1,25 @@
 cimport numpy as np
+import ctypes
+from ctypes.util import find_library
 
 import_array()
+
+def setMaxThreads(int threads):
+    try_paths = ['/opt/OpenBLAS/lib/libopenblas.so',
+                 '/lib/libopenblas.so',
+                 '/usr/lib/libopenblas.so.0',
+                 '/usr/lib/openblas/libopenblas.so.0',
+                 find_library('openblas')]
+    openblas_lib = None
+    for libpath in try_paths:
+        try:
+            openblas_lib = ctypes.cdll.LoadLibrary(libpath)
+            break
+        except OSError:
+            continue
+    if openblas_lib is None:
+        raise EnvironmentError('Could not locate an OpenBLAS shared library', 2)
+    openblas_lib.openblas_set_num_threads(threads)
 
 ##########################################################################
 # BLAS LEVEL 1
