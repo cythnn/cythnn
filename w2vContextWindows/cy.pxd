@@ -14,6 +14,7 @@ cdef class contextWindow(cypipe):
     cdef cREAL sample
     cdef long totalwords
     cdef cINT* corpusfrequency
+    cdef int debug
 
     cdef void feed2process(self, ndarray wordids, int wentback, int wentpast)
 

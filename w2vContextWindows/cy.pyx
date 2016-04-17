@@ -23,6 +23,7 @@ cdef class contextWindow(cypipe):
         self.vocabularysize = len(model.vocab)
         self.sample = model.sample if hasattr(model, 'sample') else 0
         self.totalwords = model.vocab.totalwords
+        self.debug = 0
         if self.sample > 0:
             self.corpusfrequency = allocI(self.vocabularysize)
             for i in range(1, self.vocabularysize):
@@ -40,22 +41,23 @@ cdef class contextWindow(cypipe):
 
     def feed(self, input):
         words, wentback, wentpast = input
-        print("ConvertWindows", self.threadid, len(words), wentback, wentpast)
+        if self.debug: print("ConvertWindows", self.threadid, len(words), wentback, wentpast)
         self.feed2process(words, wentback, wentpast)
 
     cdef void feed2process(self, ndarray wordids, int wentback, int wentpast):
-        print("feed2Process\n")
+        if self.debug: print("feed2Process\n")
         cdef cINT *words = toIArray(wordids)
         cdef int length = len(wordids)
+        #if True:
         with nogil:
-            printf("feed2Process 2\n")
+            if self.debug: printf("feed2Process 2\n")
             self.process(words, length, wentback, wentpast)
-            printf("feed2Process 3\n")
+            if self.debug: printf("feed2Process 3\n")
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, int length, int wentback, int wentpast) nogil:
-        printf("ContextWindows\n")
+        if self.debug: printf("ContextWindows\n")
         cdef int b, i, pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
         cdef int first_word = 0, next_newline
         cdef float psampledout
@@ -105,13 +107,9 @@ cdef class contextWindow(cypipe):
                     pos += 1
             pos = next_newline + 1
             first_word = pos
-        self.modelc.currentpartsize[self.threadid] = length
-        printf("ContextWindows 2\n")
+        if self.debug:  printf("ContextWindows 2\n")
         self.successorMethod(self.successor, words, clower, cupper, length)  # emit the sample
-        printf("ContextWindows 3\n")
-        self.modelc.partsdone[self.threadid] = self.modelc.partsdone[self.threadid] + 1
-        self.modelc.currentpartsize[self.threadid] = 0
-        self.modelc.progress[self.threadid] = 0
+        if self.debug: printf("ContextWindows 3\n")
         free(clower)
         free(cupper)
 

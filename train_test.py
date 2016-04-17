@@ -12,7 +12,7 @@ def doTrain():
                  input = wordStreams("data/test", byterange=None, parts=4),
                  build=[ build_vocab, build_hs_tree, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainSkipgramHS ],
-                 mintf=1, cores=1, windowsize=1, iterations=1)
+                 mintf=1, threads=1, windowsize=1, iterations=1)
 
 if __name__ == "__main__":
     m = doTrain() #tiny example to experiment on

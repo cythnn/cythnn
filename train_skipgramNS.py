@@ -7,9 +7,10 @@ from tools.nntools import createW2V, save
 from tools.worddict import build_vocab
 from tools.wordio import wordStreams
 
-def doTestSkipgramNS(byterange=None):
+def doTestSkipgramNS(inputrange=None):
     return model(alpha=0.025, vectorsize=100,
-                 input=wordStreams("data/text8", byterange=byterange, parts=2),
+                 input="data/text8",
+                 inputrange=inputrange,
                  build=[ build_vocab, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainSkipgramNS ],
                  mintf=5, cores=2, windowsize=5, iterations=1, negative=5)
@@ -19,16 +20,8 @@ def time(m):
     m.run()
 
 if __name__ == "__main__":
-    #m = doTestSkipgramHS()  #for w, word in vocab.items():
-    #m = doTestSkipgramHS( byterange=range(1000000) ) # specify byterange to truncate the input
-    #m = doTestCbowHS()  #for w, word in vocab.items():
-    m = doTestSkipgramNS()  #for w, word in vocab.items():
-    #m = doTrain() #tiny example to experiment on
-
+    m = doTestSkipgramNS()
     time(m)
-
-    save("results/vectors.sgns", m)
     save("results/vectors.sgns.bin", m, binary=True)
-
     print("done")
 

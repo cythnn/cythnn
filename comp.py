@@ -23,8 +23,8 @@ tokyo_ext_params['library_dirs'] = ['/usr/lib',
 
 
 ext_modules = [
-    #Extension("blas.cy",["blas/cy.pyx"]),
-    Extension("tokyo.cy",["tokyo/cy.pyx"], **tokyo_ext_params ),
+    Extension("blas.cy",["blas/cy.pyx"]),
+    #Extension("tokyo.cy",["tokyo/cy.pyx"], **tokyo_ext_params ),
     Extension("matrix.cy",["matrix/cy.pyx"]),
     Extension("model.cy", ["model/cy.pyx"]),
     Extension("pipe.cy", ["pipe/cy.pyx"]),
@@ -39,5 +39,5 @@ ext_modules = [
 
 setup(
     ext_modules = cythonize(ext_modules),
-    **ext_params
+    include_dirs=[np.get_include()]
 )

@@ -6,7 +6,6 @@ ctypedef np.int32_t cINT
 ctypedef np.float32_t cREAL
 
 cdef class trainSkipgramNS(cypipe):
-    cdef float alpha         # current learning rate
     cdef int wordsprocessed  # counts the number of processed words, to update the learning rate
     cdef int vectorsize      # size of the hidden layer (=size of the learned embeddings)
     cdef int vocabularysize  # number of words in the vocabulary

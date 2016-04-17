@@ -6,7 +6,6 @@ ctypedef np.int32_t cINT
 ctypedef np.float32_t cREAL
 
 cdef class trainCbowHS(cypipe):
-    cdef float alpha        # current learning rate
     cdef cINT **innernodes  # points to the HS tree
     cdef cBYTE **expected
     cdef int wordsprocessed     # counts the number of processed words, to update the learning rate

@@ -13,7 +13,7 @@ cimport numpy as np
 # layer, and it's expected value is 0 if the targetted word is in the left subtree or 1 when
 # in the right subtree.
 
-@taketime("build_hs_tree")
+#@taketime("build_hs_tree")
 def build_hs_tree(model):
     # short py preparation that sets up a numpy array with the sorted collection frequencies
     # of the words in the vocabulary V. The array is size 2*|V|-1 to also contain the inner nodes.

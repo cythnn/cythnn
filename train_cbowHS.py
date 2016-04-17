@@ -8,12 +8,13 @@ from tools.worddict import build_vocab
 from tools.wordio import wordStreams
 from w2vHSoftmax.cy import build_hs_tree
 
-def doTestCbowHS(byterange=None):
+def doTestCbowHS(inputrange=None):
     return model(alpha=0.05, vectorsize=100,
-                 input=wordStreams("data/text8", byterange=byterange, parts=2),
+                 input="data/text8",
+                 inputrange=inputrange,
                  build=[ build_vocab, build_hs_tree, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainCbowHS ],
-                 mintf=5, cores=2, windowsize=5, iterations=1)
+                 mintf=5, threads=2, windowsize=5, iterations=1)
 
 @taketime("run")
 def time(m):

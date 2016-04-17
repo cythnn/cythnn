@@ -100,17 +100,43 @@ class WordStream:
                     return
 
 #setup a list of #parts WordStream objects, that cover the given #byterange
-@taketime("wordstreams")
-def wordStreams(path, parts = 2, byterange = None, windowsize = 0):
-    if byterange is None:
-        byterange = range(0, size(path))
-    #print([ [w for w in WordStream(r, path, windowsize=windowsize)] for r in chunkRange(byterange, parts) ])
-    return [WordStream(r, path, windowsize=windowsize)
-            for r in chunkRange(byterange, parts)]
+#@taketime("wordstreams")
+def wordStreams(path, parts = 2, inputrange = None, windowsize = 0, iterations = 1):
+    if iterations < 1:
+        return []
+    if inputrange is None:
+        inputrange = range(0, size(path))
+    a = [WordStream(r, path, windowsize=windowsize)
+            for r in chunkRange(inputrange, parts)]
+    a.extend(wordStreams(path, parts, inputrange, windowsize, iterations - 1))
+    return a
+
+#@taketime("wordstreams")
+def wordStreamsDecay(path, parts = 2, inputrange = None, windowsize = 0, iterations = 1):
+    if inputrange is None:
+        inputrange = range(0, size(path))
+    a = [WordStream(r, path, windowsize=windowsize)
+         for r in chunkRangeDecay(inputrange, parts)]
+    a.extend(wordStreams(path, parts, inputrange, windowsize, iterations - 1))
+    return a
 
 #split range in #n consecutive sub-ranges
 def chunkRange(rnge, n):
     step = math.ceil(len(rnge) / n)
-    return [ range(i, min(rnge.stop, i + step))
-             for i in range(rnge.start, rnge.stop, step) ]
+    a = [ range(rnge.start + i * step, rnge.start + (i + 1) * step)
+         for i in range(n - 1) ]
+    a.append(range(rnge.start + (n - 1) * step, rnge.stop))
+    return a
+
+#split range in #n consecutive sub-ranges
+def chunkRangeDecay(rnge, n):
+    step = math.ceil( 2 * (rnge.stop - rnge.start) / n / (n + 1))
+    a = []
+    start = rnge.start
+    for incr in range(step, (n) * step, step):
+        a.append(range(start, start + int(incr)))
+        start += int(incr)
+    a.append(range(start, rnge.stop))
+
+    return a
 

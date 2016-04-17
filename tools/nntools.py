@@ -16,7 +16,7 @@ def normalize(w1):
    return (w1 / math.sqrt(sum([ w * w for w in w1 ])))
 
 # creates a solution space for a word2vec model, 2 weight matrices, initialized resp. random and with zeros
-@taketime("createW2V")
+#@taketime("createW2V")
 def createW2V(model):
     if isinstance(model.vocab, Vocabulary):
         l = createMatrices([len(model.vocab), model.vectorsize, model.outputsize], [2, 0])

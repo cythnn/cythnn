@@ -7,12 +7,13 @@ from tools.nntools import createW2V, save
 from tools.worddict import build_vocab
 from tools.wordio import wordStreams
 
-def doTestCbowNS(byterange=None):
+def doTestCbowNS(inputrange=None):
     return model(alpha=0.05, vectorsize=100,
-                 input=wordStreams("data/text8", byterange=byterange, parts=2),
+                 input="data/text8",
+                 inputrange=inputrange,
                  build=[ build_vocab, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainCbowNS ],
-                 mintf=5, cores=2, windowsize=5, iterations=1, negative=5)
+                 mintf=5, threads=2, windowsize=5, iterations=1, negative=5)
 
 @taketime("run")
 def time(m):

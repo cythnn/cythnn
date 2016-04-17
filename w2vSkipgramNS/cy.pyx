@@ -18,7 +18,6 @@ cdef float fONE = 1.0
 cdef class trainSkipgramNS(cypipe):
     def __init__(self, threadid, model):
         cypipe.__init__(self, threadid, model)
-        self.alpha = model.alpha
         self.negative = model.negative
         self.vocabularysize = len(model.vocab)
         self.random = threadid
@@ -44,7 +43,8 @@ cdef class trainSkipgramNS(cypipe):
     @cython.wraparound(False)
     cdef void process(self, cINT *words, cINT *clower, cINT *cupper, int length) nogil:
         cdef int word, last_word, i, d, l0, l1, exp
-        cdef cREAL f, g
+        cdef float f, g
+        cdef float alpha = self.modelc.updateAlpha(self.threadid, 0)
 
         for i in range(length):
 
@@ -77,13 +77,13 @@ cdef class trainSkipgramNS(cypipe):
                         if f > self.MAX_SIGMOID:
                             if exp == 1:
                                 continue
-                            g = -self.alpha
+                            g = -alpha
                         elif f < -self.MAX_SIGMOID:
                             if exp == 0:
                                 continue
-                            g = self.alpha
+                            g = alpha
                         else:
-                            g = self.alpha * (exp - self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))])
+                            g = alpha * (exp - self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))])
 
                         # update the inner node (appears only once in a path)
                         # then add update to hidden layer
@@ -92,10 +92,10 @@ cdef class trainSkipgramNS(cypipe):
 
                     saxpy( &self.vectorsize, &fONE, self.hiddenlayer, &iONE, &(self.w0[l0]), &iONE)
 
-                    # update number of words processed, and alpha every 10k words
+            # update number of words processed, and alpha every 10k words
             self.wordsprocessed += 1
             if self.wordsprocessed > 10000:
-                self.modelc.progress[self.threadid] = self.modelc.progress[self.threadid] + self.wordsprocessed
-                self.alpha = self.modelc.alpha * max_float(1.0 - self.modelc.getProgress(), 0.0001)
+                alpha = self.modelc.updateAlpha(self.threadid, self.wordsprocessed)
                 self.wordsprocessed = 0
-                printf("alpha %d %f\n", self.threadid, self.alpha)
+        self.modelc.updateAlpha(self.threadid, self.wordsprocessed)
+

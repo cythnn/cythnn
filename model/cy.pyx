@@ -1,11 +1,13 @@
+from __future__ import print_function
 from multiprocessing.pool import Pool
-from queue import Queue, Empty
+from queue import PriorityQueue, Queue, Empty
 import warnings
-
+import time
 import cython, math
 from numpy import float32, int32
-import tokyo.cy as tokyo
 from libc.stdio cimport *
+
+from tools.wordio import wordStreamsDecay, wordStreams
 from pipe.cy import cypipe
 
 from tools.taketime import taketime
@@ -28,8 +30,8 @@ setvbuf (stdout, NULL, _IONBF, 0);
 # For the learning pipeline a c-projection of this model is made to be passed through the pipeline.
 class model:
     def __init__(self, alpha,
-                 input, build, pipeline,
-                 mintf=1, cores=1, windowsize=5, iterations=1, **kwargs):
+                 input, vocabulary_input = None, build=[], pipeline=[],
+                 mintf=1, cores=2, threads=None, windowsize=5, iterations=1, **kwargs):
         self.__dict__.update(kwargs)
         self.windowsize = windowsize        # windowsize used for w2v models
         self.alpha = alpha                  # initial learning rate
@@ -37,15 +39,16 @@ class model:
         self.mintf = mintf                  # minimal collection frequency for terms to be used
         self.build = build                  # functions called with (model) to construct the model
         self.pipeline = pipeline            # python functions that process the input word generator
-        self.cores = cores                  # number of cores/threads to use in multithreading mode
-        self.input = input                  # reusable list of generators that generate input, used twice to build the
-                                            # vocabulary and reused to learn the model
-        self.progress = np.zeros((cores), dtype=int32)  # tracks progress per thread
-        self.pipe = [None] * cores          # first pipelineobject per thread
-        try:
-            tokyo.setMaxThreads(1)        # limit openblas to a single thread to not interfere with multithreading
-        except AttributeError:
-            warnings.warn("openblas not found, therefore cannot optimize multithreading efficiency")
+
+        # number of cores/threads to use in multithreading mode, by default for every core two
+        # threads are used to overcome performance loss by memory blocks
+        self.threads = threads if threads is not None else cores * 2
+
+        self.input = input if isinstance(input, list) else self.setupInput(input)
+        self.vocabulary_input = vocabulary_input if vocabulary_input is not None else self.setupVocabInput(input)
+
+        self.progress = np.zeros((self.threads), dtype=int32)  # tracks progress per thread
+        self.pipe = [[None for x in range(len(self.pipeline))] for y in range(self.threads)]  # first pipelineobject per thread
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
     def run(self):
@@ -57,28 +60,49 @@ class model:
         # instantiate the processing pipelines
         self.createPipes()
 
-        # when there is only one core or one input, run in single mode,
-        # otherwise run multithreaded, learning the model in parallel.
-        # The current version requires the cores to be on a single machine with shared memory.
-        if self.cores * len(self.input) == 1 or self.cores == 1:
-            print("running in single thread mode")
-            for input in self.input:
-                self.pipe[0].feed(input)
+        # queues for the
+        queue = Queue(self.iterations * len(self.input))
+        finished = Queue()
+        for i in self.input:
+            queue.put(i)
+        print("running multithreadeded threads %d parts %d iterations %d" %
+        ( self.threads, len(self.input), self.iterations))
+        if self.threads * len(self.input) == 1 or self.threads == 1:
+            learnThread(0, self, queue, finished)
         else:
             threads = []
-            print("running multithreadeded cores %d parts %d iterations %d"%(self.cores, len(self.input), self.iterations))
-            queue = Queue(self.iterations * len(self.input))
-            for it in range(self.iterations):
-                for i in range(len(self.input)):
-                    queue.put(self.input[ (i + it) % len(self.input) ])
-
-            for i in range(self.cores):
-                t = threading.Thread(target=learnThread, args=(i, self, queue))
+            for i in range(self.threads):
+                t = threading.Thread(target=learnThread, args=(i, self, queue, finished))
                 t.daemon = True
                 threads.append(t)
                 t.start()
-            for t in threads:
-                t.join()
+        unfinished = self.threads
+        starttime = time.time()
+        while unfinished > 0:
+            try:
+                f = finished.get(True, 2)
+            except Empty:
+                f = None
+            if f is not None:
+                unfinished -= 1
+            p = self.getModelC().getProgressPy();
+            if p > 0:
+                wps = self.vocab.totalwords * self.iterations * p / (time.time() - starttime)
+                print("progress %4.1f%% wps %d workers %d alpha %f\r" % (100 * p, int(wps), unfinished, (1 - p) * self.alpha), end = '')
+            else:
+                starttime = time.time()
+                wps = 0
+        print()
+
+    def setupInput(self, input):
+        inputrange = self.inputrange if hasattr(self, 'inputrange') else None
+        return wordStreamsDecay(input, parts =self.threads * 4, inputrange=inputrange,
+                                windowsize = self.windowsize, iterations = self.iterations)
+
+    def setupVocabInput(self, input):
+        inputrange = self.inputrange if hasattr(self, 'inputrange') else None
+        return wordStreams(input, parts = self.threads, inputrange=inputrange,
+                           windowsize = self.windowsize, iterations = 1)
 
     def setSolution(self, solution):
         self.solution = solution
@@ -86,13 +110,12 @@ class model:
 
     def createPipes(self):
         def createPipe(threadid):
-            previous = self.pipe[threadid] = self.pipeline[0](threadid, self)
-            for i in range(1, len(self.pipeline)):
-                next = self.pipeline[i](threadid, self)
-                next.bindTo(previous)
-                previous = next
+            for i in range(len(self.pipeline)):
+                self.pipe[threadid][i] = self.pipeline[i](threadid, self)
+                if  i > 0:
+                    self.pipe[threadid][i].bindTo(self.pipe[threadid][i - 1])
 
-        for t in range(self.cores):
+        for t in range(self.threads):
             createPipe(t) # initialize the first to avoid duplicate generation of required shared resources
 
     # the Cython version of the model, instantiated on first request, which should be after the vocabulary was build.
@@ -104,16 +127,17 @@ class model:
 # a thread that repeatedly pulls a chunk of input data from the queue and calls
 # the trainer on that chunk, until there is no more input
 # note must be a 
-def learnThread(threadid, model, queue):
+def learnThread(threadid, model, queue, finished):
     def learn(input):
-        model.pipe[threadid].feed(input)
+        model.pipe[threadid][0].feed(input)
 
     while True:
         try:
             input = queue.get(False)
-            print("learnThread pull input thread", threadid)
+            #print("learnThread pull input thread", threadid)
             learn(input)
         except Empty:
+            finished.put(threadid)
             break
 
 
@@ -122,16 +146,13 @@ def learnThread(threadid, model, queue):
 # model parameters can be taken from the py-model in the _init_ of a pipe module.
 cdef class modelc:
     def __init__(self, m):
-        print("initializing modelc")
+        #print("initializing modelc")
         self.model = m                                  # links back to the py-model
-        self.currentpartsize = allocZeros(m.cores)
-        self.progress = allocZeros(m.cores)
-        self.partsdone = allocZeros(m.cores)
-        self.parts = len(m.input) * m.iterations
-        self.totalwords = m.vocab.totalwords           # assumed to be the number of words to be processed (for progress)
+        self.progress = allocZeros(m.threads)
+        self.totalwords = m.vocab.totalwords * m.iterations  # assumed to be the number of words to be processed (for progress)
         self.windowsize = m.windowsize
         self.vocsize = len(m.vocab)
-        self.cores = m.cores
+        self.threads = m.threads
         self.alpha = m.alpha
         self.iterations = m.iterations
         self.sigmoidtable = self.createSigmoidTable()   # used for fast lookup of sigmoid function
@@ -144,7 +165,7 @@ cdef class modelc:
         self.w = allocRP(self.matrices)
         self.w_input = allocI(self.matrices)
         self.w_output = allocI(self.matrices)
-        self.layer = allocRP((self.matrices + 1) * self.cores)
+        self.layer = allocRP((self.matrices + 1) * self.threads)
         for l in range(self.matrices):
             self.w[l] = toRArray(solution[l]);
             self.w_input[l] = solution[l].shape[0]
@@ -180,15 +201,14 @@ cdef class modelc:
 
  # returns a float that contains is the fraction of words processed, for reporting and to adjust the learning rate
     cdef float getProgress(self) nogil:
-        cdef int partsfinished = 0, currentcompleted = 0, activecores = 0
-        cdef cREAL currentsize = 0
-        for i in range(self.cores):
-            if self.currentpartsize[i] > 0:
-                currentsize += self.currentpartsize[i]
-                currentcompleted += self.progress[i]
-                activecores += 1
-            partsfinished += self.partsdone[i]
-        if currentsize > 0:
-            return (partsfinished + activecores * currentcompleted / currentsize) / (self.parts)
-        return partsfinished / <float>self.parts
+        cdef cREAL currentcompleted = 0
+        for i in range(self.threads):
+            currentcompleted += self.progress[i]
+        return currentcompleted / self.totalwords
 
+    cdef float updateAlpha(self, int threadid, int completed) nogil:
+        self.progress[threadid] += completed
+        return self.alpha * max_float(1.0 - self.getProgress(), 0.0001)
+
+    def getProgressPy(self):
+        return self.getProgress()

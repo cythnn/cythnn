@@ -7,7 +7,6 @@ from tools.taketime import taketime
 # designated range in a partial file, which needs to be passed for proper processing
 
 class convertWordIds(pypipe):
-    @taketime("convertWordIds")
     def feed(self, input):
         def genWords(str, vocab):
             for term in str:
@@ -22,5 +21,3 @@ class convertWordIds(pypipe):
                 if (i % 10000):
                     print(self.threadid, i, w)
 
-
-# pypipe registers self.model containing the vocabulary vocab, input here should be a wordStream object

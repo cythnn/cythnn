@@ -20,7 +20,6 @@ cdef class trainCbowHS(cypipe):
         cypipe.__init__(self, threadid, model)
         self.innernodes = self.modelc.innernodes
         self.expected = self.modelc.exp
-        self.alpha = model.alpha
         self.wordsprocessed = 0 # can remember self state
 
         self.vectorsize = self.modelc.getLayerSize(1)
@@ -44,17 +43,16 @@ cdef class trainCbowHS(cypipe):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, cINT *clower, cINT *cupper, int length) nogil:
-        printf("cbow thread %d\n", self.threadid)
         cdef int word, last_word, i, inner, exp, l0, l1
         cdef cINT *p_inner
         cdef cBYTE *p_exp
         cdef cREAL f, g, cfrac
+        cdef float alpha = self.modelc.updateAlpha(self.threadid, 0)
 
         for i in range(length):
             word = words[i]
             if cupper[i] > clower[i] + 1:
 
-                #printf("cbow thread %d pos %d lower %d upper %d\n", self.threadid, i, clower[i], cupper[i])
                 # set hidden layer to average of embeddings of the context words
                 memset(self.hiddenlayer_fw, 0, self.vectorsize * 4)
                 memset(self.hiddenlayer_bw, 0, self.vectorsize * 4)
@@ -65,11 +63,9 @@ cdef class trainCbowHS(cypipe):
                         l0 = last_word * self.vectorsize
                         saxpy(&self.vectorsize, &cfrac, &self.w0[l0], &iONE, self.hiddenlayer_fw, &iONE)
 
-                #printf("cbow thread %d pos %d lower %d upper %d\n", self.threadid, i, clower[i], cupper[i])
                 # learn against hier. softmax of the center word
                 p_inner = self.innernodes[word]          # points to list of inner nodes for word is HS
                 p_exp = self.expected[word]                   # points to expected value for inner node (left=0, right=1)
-                #printf("cbow thread %d pos %d lower %d upper %d", self.threadid, i, clower[i], cupper[i])
                 while True:
                     inner = p_inner[0]              # iterate over the inner nodes, until the root (inner = 0)
                     exp = p_exp[0]
@@ -84,7 +80,7 @@ cdef class trainCbowHS(cypipe):
                     if f >= -self.MAX_SIGMOID and f <= self.MAX_SIGMOID:
                         # compute the gradient * alpha
                         g = self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))]
-                        g = (1 - exp - g) * self.alpha
+                        g = (1 - exp - g) * alpha
 
                         # update the inner node (appears only once in a path)
                         # then add update to hidden layer
@@ -108,12 +104,8 @@ cdef class trainCbowHS(cypipe):
                         l0 = last_word * self.vectorsize
                         saxpy( &self.vectorsize, &fONE, self.hiddenlayer_bw, &iONE, &(self.w0[l0]), &iONE)
 
-                #printf("cbow thread %d pos %d\n", self.threadid, i)
-
-                    # update number of words processed, and alpha every 10k words
+            # update number of words processed, and alpha every 10k words
             self.wordsprocessed += 1
             if self.wordsprocessed > 10000:
-                self.modelc.progress[self.threadid] = self.modelc.progress[self.threadid] + self.wordsprocessed
-                self.alpha = self.modelc.alpha * max_float(1.0 - self.modelc.getProgress(), 0.0001)
+                alpha = self.modelc.updateAlpha(self.threadid, self.wordsprocessed)
                 self.wordsprocessed = 0
-                printf("alpha %d %f\n", self.threadid, self.alpha)

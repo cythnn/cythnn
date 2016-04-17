@@ -7,7 +7,7 @@ from numpy cimport ndarray
 
 #creates a list of weight matrices, according to the given LAYER sizes, ordered input, h1, ..., output. The initialization
 # functions (always |LAYERS| - 1) are used to seed the weight matrices
-@taketime("createMatrices")
+#@taketime("createMatrices")
 def createMatrices(sizes, init):
     layers = []
     for i in range(len(sizes) - 1):
@@ -22,10 +22,10 @@ def createMatrices(sizes, init):
 
 # initializes a weight matrix between layers sized INPUT and OUTPUT with random numbers
 cdef void randomize(ndarray array):
-    cdef cREAL *a = toRArray(array)
+    cdef float *a = toRArray(array)
     cdef int i, length = array.shape[0] * array.shape[1]
     cdef int width = array.shape[1]
-    cdef cULONGLONG random = 1
+    cdef unsigned long long random = 1
 
     with nogil:
         for i in range(length):

@@ -97,10 +97,8 @@ cdef class modelc:
     cdef int totalwords         # number of word occurrences in the corpus
 
     cdef cINT *progress         # progress, per core
-    cdef cINT *currentpartsize
-    cdef cINT *partsdone
     cdef cINT parts
-    cdef int cores              # number of cores/threads used
+    cdef int threads              # number of cores/threads used
     cdef int vocsize            # number of unique words in the corpus
     cdef int iterations         # number of passes made over the corpus for learning
     cdef float alpha            # initial learning rate
@@ -114,9 +112,9 @@ cdef class modelc:
     #cdef cINT **contextwindow   # array of contextwindows
     #cdef cINT **trainsamples    # array of training samples
 
-    cdef cREAL * getLayer(self, int thread, int layer) nogil    # returns a shareable vector to be used as layer #layer, unique per thread and layer
+    cdef float *getLayer(self, int thread, int layer) nogil    # returns a shareable vector to be used as layer #layer, unique per thread and layer
     cdef cINT getLayerSize(self, int layer) nogil               # returns the size of the given layer, 0=input, ..., |layers|-1=output
-    cdef cREAL *createWorkLayer(self, int layer) nogil          # returns a vector to be used as layer #layere, not shared by he thread
-    cdef cREAL* createSigmoidTable(self)                        # constructs a sigmoid lookup table
+    cdef float *createWorkLayer(self, int layer) nogil          # returns a vector to be used as layer #layere, not shared by he thread
+    cdef float *createSigmoidTable(self)                        # constructs a sigmoid lookup table
     cdef float getProgress(self) nogil                          # returns a float that indicates the percentage of words processed
-
+    cdef float updateAlpha(self, int threadid, int completed) nogil # updates the cumber of completed words for the thread and return the new alpha

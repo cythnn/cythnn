@@ -17,7 +17,6 @@ cdef float fONE = 1.0
 cdef class trainCbowNS(cypipe):
     def __init__(self, threadid, model):
         cypipe.__init__(self, threadid, model)
-        self.alpha = model.alpha            # learning rate
         self.negative = model.negative      # number of negative samples per position
         self.vocabularysize = len(model.vocab)
         self.random = threadid              # used for random sampling negative samples
@@ -44,9 +43,9 @@ cdef class trainCbowNS(cypipe):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, cINT *words, cINT *clower, cINT *cupper, int length) nogil:
-        printf("cbow thread %d\n", self.threadid)
         cdef int word, last_word, i, l0, l1, d, exp
         cdef cREAL f, g, cfrac
+        cdef float alpha = self.modelc.updateAlpha(self.threadid, 0)
 
         for i in range(length):
             word = words[i]
@@ -82,13 +81,13 @@ cdef class trainCbowNS(cypipe):
                     if f > self.MAX_SIGMOID:
                         if exp == 1:
                             continue
-                        g = -self.alpha
+                        g = -alpha
                     elif f < -self.MAX_SIGMOID:
                         if exp == 0:
                             continue
-                        g = self.alpha
+                        g = alpha
                     else:
-                        g = self.alpha * (exp - self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))])
+                        g = alpha * (exp - self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))])
 
                     # update the inner node (appears only once in a path)
                     # then add update to hidden layer
@@ -104,7 +103,6 @@ cdef class trainCbowNS(cypipe):
             # update number of words processed, and alpha every 10k words
             self.wordsprocessed += 1
             if self.wordsprocessed > 10000:
-                self.modelc.progress[self.threadid] = self.modelc.progress[self.threadid] + self.wordsprocessed
-                self.alpha = self.modelc.alpha * max_float(1.0 - self.modelc.getProgress(), 0.0001)
+                alpha = self.modelc.updateAlpha(self.threadid, self.wordsprocessed)
                 self.wordsprocessed = 0
-                printf("alpha %d %f\n", self.threadid, self.alpha)
+        self.modelc.updateAlpha(self.threadid, self.wordsprocessed)

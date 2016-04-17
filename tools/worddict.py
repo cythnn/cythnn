@@ -60,8 +60,8 @@ def toList(dict):
 
 def build_vocab(model):
     if not hasattr(model, 'vocab'):
-        pool = Pool(processes=model.cores)
-        tokens = pool.map(countWords, model.input)
+        pool = Pool(processes=model.threads)
+        tokens = pool.map(countWords, model.vocabulary_input)
         merged = mergeDicts(tokens)
         model.vocab = Vocabulary(merged, model.mintf)
         model.outputsize = len(model.vocab)

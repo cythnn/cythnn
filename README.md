@@ -24,7 +24,7 @@ model(
 
 - mintf: filters the input keeping only words that occur at least mintf times in the corpus
 
-- cores: number of threads to run in parallel
+- cores: number of cores, by default 2 threads are run in parallel on each core
 
 - windowsize: size of the context to be considered, e.g. 5 means a maximum of 5 words to the left and right. In accordance with the original implementation the actual window size per word is uniformly sampled between 1 and windowsize and bound by sentence boundaries.
 
