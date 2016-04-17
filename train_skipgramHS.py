@@ -22,12 +22,8 @@ def time(m):
 
 if __name__ == "__main__":
     m = doTestSkipgramHS()
-    #m = doTestSkipgramHS( inputrange=range(10000) )
-
     time(m)
-
-    save("results/vectors.sghsi5d0c2", m)
-    save("results/vectors.sghsi5d0c2.bin", m, binary=True)
+    save("results/vectors.sghs.bin", m, binary=True)
 
     print("done")
 

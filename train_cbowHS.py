@@ -14,7 +14,7 @@ def doTestCbowHS(inputrange=None):
                  inputrange=inputrange,
                  build=[ build_vocab, build_hs_tree, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainCbowHS ],
-                 mintf=5, threads=2, windowsize=5, iterations=1)
+                 mintf=5, cores=2, windowsize=5, iterations=1)
 
 @taketime("run")
 def time(m):
@@ -22,10 +22,7 @@ def time(m):
 
 if __name__ == "__main__":
     m = doTestCbowHS()
-
     time(m)
-
-    save("results/vectors.cbhs", m)
     save("results/vectors.cbhs.bin", m, binary=True)
 
     print("done")

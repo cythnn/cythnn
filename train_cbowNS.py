@@ -13,7 +13,7 @@ def doTestCbowNS(inputrange=None):
                  inputrange=inputrange,
                  build=[ build_vocab, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, trainCbowNS ],
-                 mintf=5, threads=2, windowsize=5, iterations=1, negative=5)
+                 mintf=5, cores=2, windowsize=5, iterations=1, negative=5)
 
 @taketime("run")
 def time(m):
@@ -21,10 +21,7 @@ def time(m):
 
 if __name__ == "__main__":
     m = doTestCbowNS()
-
     time(m)
-
-    save("results/vectors.cbns", m)
     save("results/vectors.cbns.bin", m, binary=True)
 
     print("done")

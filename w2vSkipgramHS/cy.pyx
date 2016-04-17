@@ -102,4 +102,3 @@ cdef class trainSkipgramHS(cypipe):
             if self.wordsprocessed > 10000:
                 alpha = self.modelc.updateAlpha(self.threadid, self.wordsprocessed)
                 self.wordsprocessed = 0
-        self.modelc.updateAlpha(self.threadid, self.wordsprocessed)

@@ -88,7 +88,8 @@ class model:
             p = self.getModelC().getProgressPy();
             if p > 0:
                 wps = self.vocab.totalwords * self.iterations * p / (time.time() - starttime)
-                print("progress %4.1f%% wps %d workers %d alpha %f\r" % (100 * p, int(wps), unfinished, (1 - p) * self.alpha), end = '')
+                alpha = self.modelc.getCurrentAlpha()
+                print("progress %4.1f%% wps %d workers %d alpha %f\r" % (100 * p, int(wps), unfinished, alpha), end = '')
             else:
                 starttime = time.time()
                 wps = 0
@@ -208,6 +209,10 @@ cdef class modelc:
 
     cdef float updateAlpha(self, int threadid, int completed) nogil:
         self.progress[threadid] += completed
+        return self.alpha * max_float(1.0 - self.getProgress(), 0.0001)
+
+
+    def getCurrentAlpha(self):
         return self.alpha * max_float(1.0 - self.getProgress(), 0.0001)
 
     def getProgressPy(self):
