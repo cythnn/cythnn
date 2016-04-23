@@ -65,7 +65,7 @@ def build_vocab(learner, model):
         merged = mergeDicts(tokens)
         v = Vocabulary(merged, model.mintf)
         model.setVocab(v)
-        print("vocabulary build |v|=%d |c|=%ll"%(len(v), v.totalwords))
+        print("vocabulary build |v|=%d |c|=%ld"%(len(v), v.totalwords))
 
 # reads a stream of words and returns a list of its word id's
 # the window of the wordstream is set to match the model, to allow to retrieve #window words

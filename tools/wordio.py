@@ -24,13 +24,14 @@ def chunkRangeS(rnge, size):
 # the designated byterange, wentBack and wentPast indicate the number of words read before and
 # after the designated boundary (max #window)
 class WordStream:
-    def __init__(self, inputrange=None, file=None, windowsize = 0):
+    def __init__(self, inputrange=None, file=None, eol=r'\n', windowsize = 0):
         self.file = file
         if file and inputrange is None:
             self.inputrange = range(0, size(file))
         else:
             self.inputrange = inputrange
         self.windowsize = windowsize
+        self.eol = eol
 
     def readFirst(self, f, bytepos, end):
         start = max(0, min(bytepos, bytepos - 100 * self.windowsize))
@@ -42,7 +43,7 @@ class WordStream:
         if self.windowsize > self.wentBack and bytepos > 0:
             while pos > 0 and self.windowsize > self.wentBack:
                 pos -= 1
-                if buffer[pos] == ' ' or buffer[pos] == '\n':
+                if re.match(r'[\s' + self.eol + ']', buffer[pos]) or buffer[pos] == self.eol:
                     self.wentBack += 1
                     if self.windowsize == self.wentBack:
                         buffer = buffer[pos+1:]
@@ -50,7 +51,7 @@ class WordStream:
                 self.wentBack += 1
         elif bytepos > 0:
             while pos < len(buffer):
-                if buffer[pos] == ' ' or buffer[pos] == '\n':
+                if re.match(r'\s', buffer[pos]) or buffer[pos] == self.eol:
                     break
                 pos += 1
             buffer = buffer[pos+1:]
@@ -72,13 +73,13 @@ class WordStream:
                         buffer = ""
                         break
                     buffer += newbuf
-                for sentence in re.split('(\n)', buffer):
-                    if sentence == '\n':
+                for sentence in re.split('(' + self.eol + ')', buffer):
+                    if re.match(self.eol, sentence):
                         yield buffer
                         yield '</s>'
                         buffer = ""
                     else:
-                        words = sentence.split(' ')
+                        words = re.split(r'\s', sentence)
                         for word in words[:-1]:
                             yield word
                         buffer = words[-1]
@@ -89,8 +90,8 @@ class WordStream:
                     yield buffer
             else:
                 buffer += newbuf
-                for sentence in re.split('(\n)', buffer):
-                    for word in sentence.split(' '):
+                for sentence in re.split('(' + self.eol + ')', buffer):
+                    for word in re.split(r'\s', sentence):
                         self.wentPast += 1
                         yield word
                         if self.windowsize <= self.wentPast:

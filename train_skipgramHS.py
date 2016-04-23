@@ -14,7 +14,7 @@ def doTestSkipgramHS(inputrange=None):
                  inputrange=inputrange,
                  build=[ build_vocab, build_hs_tree, createW2V ],
                  pipeline=[ convertWordIds, contextWindow, SkipgramHS ],
-                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=1)
+                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=0)
 
 @taketime("run")
 def time(m):
