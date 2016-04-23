@@ -58,14 +58,14 @@ def countWords(words):
 def toList(dict):
     return [(x, y) for x, y in dict.items()]
 
-def build_vocab(model):
+def build_vocab(learner, model):
     if not hasattr(model, 'vocab'):
-        pool = Pool(processes=model.threads)
-        tokens = pool.map(countWords, model.vocabulary_input)
+        pool = Pool(processes=model.cores)
+        tokens = pool.map(countWords, learner.getUniformInputs())
         merged = mergeDicts(tokens)
-        model.vocab = Vocabulary(merged, model.mintf)
-        model.outputsize = len(model.vocab)
-        print("vocabulary build")
+        v = Vocabulary(merged, model.mintf)
+        model.setVocab(v)
+        print("vocabulary build |v|=%d |c|=%ll"%(len(v), v.totalwords))
 
 # reads a stream of words and returns a list of its word id's
 # the window of the wordstream is set to match the model, to allow to retrieve #window words
@@ -92,7 +92,6 @@ class Vocabulary(defaultdict):
         for word, count in vocab:
             if count >= MIN_TF and word != "</s>":
                 words.append(Word(count, word=word, index=len(words)))
-        #createHierarchicalSoftmaxTree(words)
 
         totalwords = 0
         for word in words:
@@ -124,7 +123,6 @@ class Vocabulary(defaultdict):
 
     def similarity(self, term, term2, solution):
         return np.dot(self.get(term).getNormalized(solution), self.get(term2).getNormalized(solution))
-
 
 class Word:
     next_random = uint64(1)

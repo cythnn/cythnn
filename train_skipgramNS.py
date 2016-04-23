@@ -1,19 +1,19 @@
+from arch.SkipgramNS import SkipgramNS
 from convertWordIds.py import convertWordIds
+from model.model import Model
 from tools.taketime import taketime
-from w2vContextWindows.cy import contextWindow
-from w2vSkipgramNS.cy import trainSkipgramNS
-from model.cy import model
-from tools.nntools import createW2V, save
+from tools.word2vec import createW2V, save
 from tools.worddict import build_vocab
-from tools.wordio import wordStreams
+from w2vContextWindows.cy import contextWindow
+
 
 def doTestSkipgramNS(inputrange=None):
-    return model(alpha=0.025, vectorsize=100,
+    return Model(alpha=0.025, vectorsize=100,
                  input="data/text8",
                  inputrange=inputrange,
                  build=[ build_vocab, createW2V ],
-                 pipeline=[ convertWordIds, contextWindow, trainSkipgramNS ],
-                 mintf=5, cores=2, windowsize=5, iterations=1, negative=5)
+                 pipeline=[ convertWordIds, contextWindow, SkipgramNS ],
+                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, negative=5)
 
 @taketime("run")
 def time(m):

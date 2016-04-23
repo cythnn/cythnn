@@ -1,9 +1,7 @@
-import cython
 import numpy as np
-from model.cy cimport *
 from numpy import int32, uint64, float32
-from tools.taketime import taketime
 from numpy cimport ndarray
+from model.solution cimport *
 
 #creates a list of weight matrices, according to the given LAYER sizes, ordered input, h1, ..., output. The initialization
 # functions (always |LAYERS| - 1) are used to seed the weight matrices

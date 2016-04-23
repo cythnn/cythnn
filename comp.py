@@ -7,15 +7,14 @@ import numpy as np
 ext_modules = [
     Extension("blas.cy",["blas/cy.pyx"]),
     Extension("matrix.cy",["matrix/cy.pyx"]),
-    Extension("model.cy", ["model/cy.pyx"]),
-    Extension("pipe.cy", ["pipe/cy.pyx"]),
-    Extension("pipe.cy_example", ["pipe/cy_example.pyx"]),
+    Extension("model.solution", ["model/solution.pyx"]),
+    Extension("model.cpipe", ["model/cpipe.pyx"]),
     Extension("w2vContextWindows.cy", ["w2vContextWindows/cy.pyx"],),
     Extension("w2vHSoftmax.cy", ["w2vHSoftmax/cy.pyx"],),
-    Extension("w2vSkipgramHS.cy", ["w2vSkipgramHS/cy.pyx"]),
-    Extension("w2vSkipgramNS.cy", ["w2vSkipgramNS/cy.pyx"]),
-    Extension("w2vCbowHS.cy", ["w2vCbowHS/cy.pyx"]),
-    Extension("w2vCbowNS.cy", ["w2vCbowNS/cy.pyx"]),
+    Extension("arch.SkipgramHS", ["arch/SkipgramHS.pyx"]),
+    Extension("arch.SkipgramNS", ["arch/SkipgramNS.pyx"]),
+    Extension("arch.CbowHS", ["arch/CbowHS.pyx"]),
+    Extension("arch.CbowNS", ["arch/CbowNS.pyx"]),
 ]
 
 setup(

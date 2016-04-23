@@ -4,20 +4,12 @@ import struct
 
 from numpy import int32, uint64, float32
 
-# wraps a generator of words read from a flat text #file, within position #byterange
-# uses virtual soft partitioning of flat text files, a partition starts after the first whitespace
-# and the prior partition reads until the first word seperator after the boundary
 from matrix.cy import createMatrices
-from tools.taketime import taketime
-from tools.worddict import Vocabulary, Word, build_vocab
-
-# normalize a vector (commonly used before comparing vectors)
-def normalize(w1):
-   return (w1 / math.sqrt(sum([ w * w for w in w1 ])))
+from tools.worddict import Vocabulary, Word
 
 # creates a solution space for a word2vec model, 2 weight matrices, initialized resp. random and with zeros
 #@taketime("createW2V")
-def createW2V(model):
+def createW2V(learner, model):
     if isinstance(model.vocab, Vocabulary):
         l = createMatrices([len(model.vocab), model.vectorsize, model.outputsize], [2, 0])
     else:
@@ -26,15 +18,16 @@ def createW2V(model):
 
 # returns the embedding for a Word (to be looked up in model.vocab)
 def getVector(model, word):
-    return model.solution[0][word.index]
+    return model.matrices[0][word.index]
 
 # saves the embeddings from a trained solution in a model to file
 def save(fname, model, binary=False):
     s = sorted(model.vocab.items(), key=lambda x: x[1].index)
+    solution = model.getSolution()
     if binary:
         print("write binary")
         with open(fname, 'wb') as fout:
-            fout.write(("%s %s\n" % (len(model.vocab), model.solution[-1].shape[0])).encode())
+            fout.write(("%s %s\n" % (len(model.vocab), solution.getLayerSize(1))).encode())
             for word, obj in s:
                 row = getVector(model, obj)
                 fout.write((word + " ").encode())
@@ -42,7 +35,7 @@ def save(fname, model, binary=False):
     else:
         print("write flat")
         with open(fname, 'w') as fout:
-            fout.write("%s %s\n" % (len(model.vocab), model.solution[-1].shape[0]))
+            fout.write("%s %s\n" % (len(model.vocab), solution.getLayerSize(1)))
             for word, obj in s:
                 row = getVector(model, obj)
                 fout.write("%s %d %s\n" % (word, obj.count, ' '.join("%f" % val for val in row)))
@@ -66,3 +59,8 @@ def load(fname, binary=False, normalized=False):
             index+=1
             vocab.total_words += count
         return vocab, solution
+
+# normalize a vector (commonly used before comparing vectors)
+def normalize(w1):
+   return (w1 / math.sqrt(sum([ w * w for w in w1 ])))
+

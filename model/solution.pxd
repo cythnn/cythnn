@@ -80,41 +80,39 @@ cdef enum:
     CONTEXTWINDOWSIZE=50000
     TRAINSAMPLESSIZE=1000000
 
-# header for the C representation of model
-cdef class modelc:
+# header for the C representation of model, modelc focusses more on the solution space, and progress
+# that is required by
+cdef class Solution:
     cdef public object model
-    cdef cREAL **layer          # array of pointers to layer vectors, created only on demand using getLayer
+    cdef cREAL **layerfw        # array of pointers to layer vectors, created only on demand using getLayer
+    cdef cREAL **layerbw        # array of pointers to layer vectors, created only on demand using getLayer
     cdef cREAL **w              # array of pointers to weight matrices
     cdef cINT *w_input          # array that stores the input size of the matrices
     cdef cINT *w_output         # array that stores the output size of the matrices
-    cdef int matrices           # number of matrices
+    cdef public object solution # numpy weight matrices that contain the solution
+    cdef public int matrices    # number of matrices
 
     cdef int MAX_SIGMOID, SIGMOID_TABLE
     cdef cREAL *sigmoidtable    # fast sigmoid lookup table
 
-    cdef int windowsize         # window size of the context used for learning W2V
-    cdef int vectorsize         # size of the embeddings learned
-    cdef int totalwords         # number of word occurrences in the corpus
-
-    cdef cINT *progress         # progress, per core
-    cdef cINT parts
-    cdef int threads              # number of cores/threads used
-    cdef int vocsize            # number of unique words in the corpus
-    cdef int iterations         # number of passes made over the corpus for learning
-    cdef float alpha            # initial learning rate
+    cdef cINT *progress         # progress, per thread
+    cdef long totalwords
+    cdef int threads
+    cdef public float alpha            # initial learning rate
     cdef int debugtarget        # for debugging purposes
 
     # for hierarchical softmax
     cdef cINT **innernodes      # array that keep a list of inner nodes that parent each indexed word, the root (id=0) is always last
     cdef cBYTE **exp            # array of the expected values, i.e. whether at a given inner node one must go left=0 or right=1 to find the indexed word
+    cdef cINT* word2taskid
+    cdef public int singletaskids
 
-    #cdef void **pipelinec       # array of function pointers in the Cython module pipeline
-    #cdef cINT **contextwindow   # array of contextwindows
-    #cdef cINT **trainsamples    # array of training samples
+    cdef float *getLayerFw(self, int thread, int layer)   # returns a vector to be used as forward layer #layer, unique per thread and layer
+    cdef float *getLayerBw(self, int thread, int layer)   # returns a vector to be used as backward layer #layer, unique per thread and layer
+    #cdef public int getLayerSize(self, int layer) nogil  # returns the size of the given layer, 0=input, ..., |layers|-1=output
+    cdef float *createWorkLayer(self, int layer)          # returns a vector to be used as layer #layere, not shared by he thread
+    cdef float *createSigmoidTable(self)                                    # constructs a sigmoid lookup table
+    cdef float getProgress(self) nogil                                      # returns a float that indicates the percentage of words processed
+    cdef float updateAlpha(self, int threadid, int completed) nogil         # updates the cumber of completed words for the thread and return the new alpha
 
-    cdef float *getLayer(self, int thread, int layer) nogil    # returns a shareable vector to be used as layer #layer, unique per thread and layer
-    cdef cINT getLayerSize(self, int layer) nogil               # returns the size of the given layer, 0=input, ..., |layers|-1=output
-    cdef float *createWorkLayer(self, int layer) nogil          # returns a vector to be used as layer #layere, not shared by he thread
-    cdef float *createSigmoidTable(self)                        # constructs a sigmoid lookup table
-    cdef float getProgress(self) nogil                          # returns a float that indicates the percentage of words processed
-    cdef float updateAlpha(self, int threadid, int completed) nogil # updates the cumber of completed words for the thread and return the new alpha
+

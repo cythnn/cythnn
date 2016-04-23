@@ -7,9 +7,6 @@ ctypedef np.int32_t cINT
 cdef extern from "voidptr.h":
     void* PyCObject_AsVoidPtr(object obj)
 
-# from gensim
-# bind scipy blas functions
-
 ctypedef void (*scopy_ptr) (const int *N, const float *X, const int *incX, float *Y, const int *incY) nogil
 ctypedef void (*saxpy_ptr) (const int *N, const float *alpha, const float *X, const int *incX, float *Y, const int *incY) nogil
 ctypedef float (*sdot_ptr) (const int *N, const float *X, const int *incX, const float *Y, const int *incY) nogil

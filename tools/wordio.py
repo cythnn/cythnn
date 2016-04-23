@@ -24,12 +24,12 @@ def chunkRangeS(rnge, size):
 # the designated byterange, wentBack and wentPast indicate the number of words read before and
 # after the designated boundary (max #window)
 class WordStream:
-    def __init__(self, byterange=None, file=None, windowsize = 0):
+    def __init__(self, inputrange=None, file=None, windowsize = 0):
         self.file = file
-        if file and byterange is None:
-            self.range = range(0, size(file))
+        if file and inputrange is None:
+            self.inputrange = range(0, size(file))
         else:
-            self.range = byterange
+            self.inputrange = inputrange
         self.windowsize = windowsize
 
     def readFirst(self, f, bytepos, end):
@@ -61,8 +61,8 @@ class WordStream:
         self.wentPast = -1
         self.wentBack = 0
         with open(self.file, "r") as f:
-            for chunk in chunkRangeS(self.range, 1000000):
-                if chunk.start == self.range.start and chunk.start > 0:
+            for chunk in chunkRangeS(self.inputrange, 1000000):
+                if chunk.start == self.inputrange.start and chunk.start > 0:
                     buffer = self.readFirst(f, chunk.start, chunk.stop)
                 else:
                     newbuf = f.read(chunk.stop - chunk.start)

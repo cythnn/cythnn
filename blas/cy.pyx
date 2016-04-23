@@ -1,12 +1,7 @@
-import cython
 import scipy.linalg.blas as fblas
-import numpy as np
-
-REAL = np.float32
-INT = np.int32
 
 # from gensim
-# bind scipy blas functions
+# bind scipy blas functions, for very fast vector computations
 
 # scopy: y = x
 cdef scopy_ptr scopy=<scopy_ptr>PyCObject_AsVoidPtr(fblas.scopy._cpointer)

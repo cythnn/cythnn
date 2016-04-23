@@ -1,7 +1,6 @@
-from model.cy cimport modelc
+from model.solution cimport Solution
 from numpy cimport ndarray
 
-cdef void build_hs_tree2(modelc, ndarray collectionfrequencies)
-
+cdef void build_hs_tree2(object model, ndarray collectionfrequencies)
 
 
