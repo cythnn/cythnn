@@ -11,16 +11,18 @@ class Pipe:
     def feed(self, threadid, task):
         raise NotImplementedError("A Pipe must implement the feed(threadid, task) method.")
 
+    def build(self):
+        pass
+
+    # if a Pipe is optional and for the give configuration returns false, it is removed from the pipeline
+    def isNeeded(self):
+        return True
+
     def getTaskids(self, task):
         if self.model.split == 0 or task.iteration == 0:
             return self.model.tasks
         return self.model.tasks - self.solution.singletaskids
 
-    def addTask(self, task, oldtask, pipeid = None):
-        task.iteration = oldtask.iteration
-        if pipeid is None:
-            task.pipeid = oldtask.pipeid + 1
-        else:
-            task.pipeid = pipeid
+    def addTask(self, task):
         self.learner.addTask(task)
 

@@ -1,4 +1,4 @@
-from model.cpipe cimport CPipe
+from pipe.cpipe cimport CPipe
 from model.solution cimport *       # defines the cREAL and cINT types
 
 cdef class SkipgramNS(CPipe):

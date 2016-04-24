@@ -1,6 +1,8 @@
-from model.learner import Task
-from model.pipe import Pipe
 from numpy import fromiter, int32
+
+from model.learner import Task
+from pipe.pipe import Pipe
+
 
 # converts the input array of word id's, the input should be a wordstream, which considers the models #windowsize
 # and provides wentBack and wentPast to indicate words prepended and appended that do not belong to the
@@ -14,9 +16,11 @@ class convertWordIds(Pipe):
                 if word is not None:
                     yield word.index
 
-        wordstream = task.pyparams
-        wordidstream = (fromiter(genWords(wordstream, self.model.vocab), dtype=int32), wordstream.wentBack, wordstream.wentPast)
-        newtask = Task(priority=1/len(wordidstream))
-        newtask.pyparams = wordidstream
-        self.addTask(newtask, task)
+        wordstream = task.inputstream
+        newtask = task.nextTask()
+        newtask.words = fromiter(genWords(wordstream, self.model.vocab), dtype=int32)
+        newtask.wentback = wordstream.wentBack
+        newtask.wentpast = wordstream.wentPast
+        newtask.length = len(newtask.words)
+        self.addTask(newtask)
 

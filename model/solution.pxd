@@ -96,10 +96,12 @@ cdef class Solution:
     cdef cREAL *sigmoidtable    # fast sigmoid lookup table
 
     cdef cINT *progress         # progress, per thread
-    cdef long totalwords
-    cdef int threads
-    cdef public float alpha            # initial learning rate
-    cdef int debugtarget        # for debugging purposes
+    cdef long totalwords        # to estimate the total number of words to be processed,
+    cdef int threads            # number of concurrent threads used for learning
+    cdef int tasks              # number of dedicated task ids, equals threads unless multiple threads work the same task id
+    cdef int split              # 1 assigns every thread a dedicated taskid to process a disjoint subset of words, all theads process on the same data
+                                # 0 assigns every data chunk to only one thread
+    cdef public float alpha     # initial learning rate
 
     # for hierarchical softmax
     cdef cINT **innernodes      # array that keep a list of inner nodes that parent each indexed word, the root (id=0) is always last

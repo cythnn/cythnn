@@ -1,9 +1,10 @@
 import cython
 from arch.SkipgramNS cimport SkipgramNS
 from model.solution cimport *
+from pipe.cpipe cimport *
 from numpy import int32, uint64
 from libc.string cimport memset
-from blas.cy cimport sdot, saxpy
+from tools.blas cimport sdot, saxpy
 
 import numpy as np
 cimport numpy as np
@@ -16,20 +17,6 @@ cdef float fONE = 1.0
 cdef class CbowNS(SkipgramNS):
     def __init__(self, pipeid, learner):
         SkipgramNS.__init__(self, pipeid, learner)
-    #     self.negative = self.model.negative      # number of negative samples per position
-    #     self.vocabularysize = len(self.model.vocab)
-    #     self.random = 1                     # used for random sampling negative samples
-    #
-    #     self.vectorsize = self.solution.getLayerSize(1)
-    #     self.w0 = self.solution.w[0]
-    #     self.w1 = self.solution.w[1]
-    #
-    #     self.MAX_SIGMOID = self.solution.MAX_SIGMOID
-    #     self.SIGMOID_TABLE = self.solution.SIGMOID_TABLE
-    #     self.sigmoidtable = self.solution.sigmoidtable
-    #
-    # def feed(self, threadid, task):
-    #     self.process(threadid, toIArray(task.words), toIArray(task.clower), toIArray(task.cupper), task.length)
 
     # process is called with a center position in words (array of word ids), and clower and
     # cupper define valid window boundaries as training context

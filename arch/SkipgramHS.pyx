@@ -1,10 +1,11 @@
 import cython
-from model.solution cimport *
-from model.cpipe import CPipe
-from libc.stdio cimport *
-from numpy import int32, uint64
+
+from tools.word2vec import createW2V
+from w2vHSoftmax.cy import build_hs_tree
+from pipe.cpipe import CPipe
+from numpy import uint64
 from libc.string cimport memset
-from blas.cy cimport sdot, saxpy
+from tools.blas cimport sdot, saxpy
 
 import numpy as np
 cimport numpy as np
@@ -31,7 +32,10 @@ cdef class SkipgramHS(CPipe):
         self.SIGMOID_TABLE = self.solution.SIGMOID_TABLE
         self.sigmoidtable = self.solution.sigmoidtable
 
-        setvbuf(stdout, NULL, _IONBF, 0);               # for debugging, turn off output buffering
+    # build is executed before the init
+    def build(self):
+        build_hs_tree(self.learner, self.model)
+        createW2V(self.model, self.model.vocsize, self.model.vocsize - 1)
 
     def feed(self, threadid, task):
         taskid = task.taskid if task.taskid is not None else 0  # only used in split mode

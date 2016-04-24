@@ -2,7 +2,7 @@ import cython
 from arch.SkipgramHS cimport SkipgramHS
 from model.solution cimport *
 from libc.string cimport memset
-from blas.cy cimport sdot, saxpy
+from tools.blas cimport sdot, saxpy
 cimport numpy as np
 from numpy import uint64
 

@@ -1,10 +1,10 @@
 import cython
-from model.cpipe cimport CPipe
-from model.solution cimport *
-from numpy import int32, uint64
+
+from pipe.cpipe cimport *
+from tools.word2vec import createW2V
+from numpy import uint64
 from libc.string cimport memset
-from blas.cy cimport sdot, saxpy
-from libc.stdio cimport *
+from tools.blas cimport sdot, saxpy
 
 import numpy as np
 cimport numpy as np
@@ -29,7 +29,8 @@ cdef class SkipgramNS(CPipe):
         self.SIGMOID_TABLE = self.solution.SIGMOID_TABLE
         self.sigmoidtable = self.solution.sigmoidtable
 
-        setvbuf(stdout, NULL, _IONBF, 0);               # for debugging, turn off output buffering
+    def build(self):
+        createW2V(self.model, self.model.vocsize, self.model.vocsize)
 
     def feed(self, threadid, task):
         self.process(threadid, toIArray(task.words), toIArray(task.clower), toIArray(task.cupper), task.length)

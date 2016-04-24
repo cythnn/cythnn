@@ -4,17 +4,14 @@ import struct
 
 from numpy import int32, uint64, float32
 
-from matrix.cy import createMatrices
+from tools.matrix import createMatrices
 from tools.worddict import Vocabulary, Word
 
 # creates a solution space for a word2vec model, 2 weight matrices, initialized resp. random and with zeros
 #@taketime("createW2V")
-def createW2V(learner, model):
-    if isinstance(model.vocab, Vocabulary):
-        l = createMatrices([len(model.vocab), model.vectorsize, model.outputsize], [2, 0])
-    else:
-        l = createMatrices([model.vocab, model.vectorsize, model.outputsize], [2, 0])
-    model.setSolution(l if isinstance(l, list) else [l])
+def createW2V(model, input_size, output_size):
+    matrices = createMatrices([input_size, model.vectorsize, output_size], [2, 0])
+    model.setSolution(matrices)
 
 # returns the embedding for a Word (to be looked up in model.vocab)
 def getVector(model, word):

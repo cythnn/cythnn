@@ -1,6 +1,6 @@
 from convertWordIds.py import convertWordIds
 from tools.taketime import taketime
-from w2vContextWindows.cy import contextWindow
+from pipe.cy import contextWindow
 from w2vSkipgramHS.cy import trainSkipgramHS
 from model.cy import model
 from tools.nntools import createW2V, save

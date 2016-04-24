@@ -5,11 +5,12 @@ from Cython.Build import cythonize
 import numpy as np
 
 ext_modules = [
-    Extension("blas.cy",["blas/cy.pyx"]),
-    Extension("matrix.cy",["matrix/cy.pyx"]),
+    Extension("tools.blas",["tools/blas.pyx"]),
+    Extension("tools.matrix",["tools/matrix.pyx"]),
     Extension("model.solution", ["model/solution.pyx"]),
-    Extension("model.cpipe", ["model/cpipe.pyx"]),
-    Extension("w2vContextWindows.cy", ["w2vContextWindows/cy.pyx"],),
+    Extension("pipe.cpipe", ["pipe/cpipe.pyx"]),
+    Extension("pipe.ContextWindows", ["pipe/ContextWindows.pyx"],),
+    Extension("pipe.DownSample", ["pipe/DownSample.pyx"],),
     Extension("w2vHSoftmax.cy", ["w2vHSoftmax/cy.pyx"],),
     Extension("arch.SkipgramHS", ["arch/SkipgramHS.pyx"]),
     Extension("arch.SkipgramNS", ["arch/SkipgramNS.pyx"]),

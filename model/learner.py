@@ -16,7 +16,6 @@ class Learner:
         self.threads = model.threads
         self.iterations = model.iterations
         self.tasks = model.tasks
-        self.progress = np.zeros((self.threads + 1), dtype=np.int32)  # tracks progress per thread
         self.pipe = [None for x in range(len(model.pipeline))] # first pipelineobject per thread
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
@@ -41,8 +40,8 @@ class Learner:
 
         self.setupInputTasks()
 
-        print("running multithreadeded threads %d parts %d iterations %d" %
-        ( self.threads, len(self.model.input), self.iterations))
+        print("running multithreadeded threads %d iterations %d" %
+        ( self.threads, self.iterations))
 
         threads = []
         for threadid in range(self.threads):
@@ -99,7 +98,7 @@ class Learner:
                                          windowsize=self.model.windowsize)
             for index, input in enumerate(input):
                 task = Task(iteration=iteration, priority=1 / len(input.inputrange))
-                task.pyparams = input
+                task.inputstream = input
                 self.addTask(task)
 
     # add all inputs as tasks, priorize largest first
@@ -107,8 +106,12 @@ class Learner:
         return wordStreams(self.model.input, parts=self.threads, inputrange=self.model.inputrange, windowsize=self.model.windowsize)
 
     def createPipes(self):
-        for pipeid in range(len(self.model.pipeline)):
-            self.pipe[pipeid] = self.model.pipeline[pipeid](pipeid, self)
+        pipeid = 0
+        for i in range(len(self.model.pipeline)):
+            p = self.model.pipeline[i](pipeid, self)
+            if p.isNeeded(): # optional pipes are removed
+                self.pipe[pipeid] = p
+                pipeid += 1
 
 # a thread has a designated taskid, and repeatedly picks task (matching its desgnated taskid
 # or a general task), and processes it using the  queue and calls
@@ -165,3 +168,6 @@ class Task:
 
     def __lt__(self, other):
         return True if self.iteration + self.priority - self.pipeid < other.iteration + other.priority - other.pipeid else False
+
+    def nextTask(self):
+        return Task(iteration = self.iteration, priority = self.priority, pipeid=self.pipeid+1, taskid=self.taskid)

@@ -1,20 +1,21 @@
 from arch.SkipgramHS import SkipgramHS
-from convertWordIds.py import convertWordIds
+from pipe.Split import Split
+from pipe.ConvertWordIds import convertWordIds
 from model.model import Model
+from pipe.DownSample import DownSample
 from tools.taketime import taketime
-from tools.word2vec import createW2V, save
+from tools.word2vec import save
 from tools.worddict import build_vocab
-from w2vContextWindows.cy import contextWindow
-from w2vHSoftmax.cy import build_hs_tree
+from pipe.ContextWindows import contextWindow
 from datetime import datetime
 
 def doTestSkipgramHS(inputrange=None):
     return Model(alpha=0.025, vectorsize=100,
                  input="data/text8",
                  inputrange=inputrange,
-                 build=[ build_vocab, build_hs_tree, createW2V ],
-                 pipeline=[ convertWordIds, contextWindow, SkipgramHS ],
-                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=0)
+                 build=[ build_vocab ],
+                 pipeline=[ convertWordIds, DownSample, contextWindow, Split, SkipgramHS ],
+                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=1, sample=0.001)
 
 @taketime("run")
 def time(m):
