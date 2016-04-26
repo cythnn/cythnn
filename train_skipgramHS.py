@@ -1,5 +1,4 @@
 from arch.SkipgramHS import SkipgramHS
-from pipe.Split import Split
 from pipe.ConvertWordIds import convertWordIds
 from model.model import Model
 from pipe.DownSample import DownSample
@@ -15,7 +14,7 @@ def doTestSkipgramHS(inputrange=None):
                  inputrange=inputrange,
                  build=[ build_vocab ],
                  pipeline=[ convertWordIds, DownSample, contextWindow, SkipgramHS ],
-                 mintf=5, cores=2, threads=2, windowsize=5, iterations=1, sample=0,
+                 mintf=5, cores=2, threads=2, windowsize=5, iterations=1, downsample=0.001,
                  )
 
 @taketime("run")

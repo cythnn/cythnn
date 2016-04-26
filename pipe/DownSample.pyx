@@ -46,6 +46,7 @@ cdef class DownSample(CPipe):
         cdef int pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
         cdef float psampledout
 
+        print("downsample", self.downsample)
         with nogil:
             # downsample frequent terms
             if self.downsample > 0:

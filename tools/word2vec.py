@@ -7,8 +7,7 @@ from numpy import int32, uint64, float32
 from tools.matrix import createMatrices
 from tools.worddict import Vocabulary, Word
 
-# creates a solution space for a word2vec model, 2 weight matrices, initialized resp. random and with zeros
-#@taketime("createW2V")
+# creates a solution space for a word2vec model, 2 weight matrices, initialized resp. with random and with zeros
 def createW2V(model, input_size, output_size):
     matrices = createMatrices([input_size, model.vectorsize, output_size], [2, 0])
     model.setSolution(matrices)
