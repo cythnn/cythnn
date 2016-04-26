@@ -19,7 +19,7 @@ cdef class CbowHS(SkipgramHS):
     # cupper define valid window boundaries as training context
     @cython.boundscheck(False)
     @cython.wraparound(False)
-    cdef void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int split, int length):
+    cdef void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int length):
         cdef int word, last_word, i, j, inner, exp, l0, l1, wordsprocessed = 0
         cdef cINT *p_inner                                                  # pointers to list of output nodes per wordid
         cdef cBYTE *p_exp                                                   # expected value per output node
@@ -44,7 +44,7 @@ cdef class CbowHS(SkipgramHS):
                         inner = p_inner[0]                       # iterate over the inner nodes, until the root (inner = 0)
                         exp = p_exp[0]
 
-                        if split == 0 or self.word2taskid[inner] == taskid:
+                        if self.split == 0 or self.word2taskid[inner] == taskid:
                             if not updated:
                                 # set hidden layer to average of embeddings of the context words
                                 memset(hiddenlayer_fw, 0, self.vectorsize * 4)
@@ -89,9 +89,8 @@ cdef class CbowHS(SkipgramHS):
                                 saxpy( &self.vectorsize, &fONE, hiddenlayer_bw, &iONE, &(self.w0[l0]), &iONE)
 
                 # update number of words processed, and alpha every 10k words
-                if split==0 or self.word2taskid[self.innernodes[word][0]] == taskid:
-                    wordsprocessed += 1
-                    if wordsprocessed > 10000:
-                        alpha = self.solution.updateAlpha(threadid, wordsprocessed)
-                        wordsprocessed = 0
+                wordsprocessed += 1
+                if wordsprocessed > 10000:
+                    alpha = self.solution.updateAlpha(threadid, wordsprocessed)
+                    wordsprocessed = 0
             self.solution.updateAlpha(threadid, wordsprocessed) # push the remainder of wordsprocessed to progress

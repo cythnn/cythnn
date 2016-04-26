@@ -15,6 +15,10 @@ class Model:
                         iterations=1,       # number of times to iterate over the corpus when learning
                         threads=None,       # hard defines the number of threads used for learning, otherwise cores is used
                         cores=2,            # defines number of threads used for building
+                        updaterate=100,     # after this number of processed words, cached vectors, processed words and alpha are updated
+                        wordcache=0,        # number of most frequent words to cache to avoid memory collisions between threads
+                        innercache=100,     # number of most frequent inner nodes to cache to avoid memory collisions between threads
+                        downsample=0,        # parameter for downsampling frequent terms (0=no downsampling)
                         **kwargs):
         self.__dict__.update(kwargs)
         self.input = input;
@@ -25,6 +29,10 @@ class Model:
         self.mintf = mintf
         self.windowsize = windowsize
         self.iterations = iterations
+        self.updaterate = updaterate        # set to 10k when not caching
+        self.wordcache = wordcache
+        self.innercache = innercache
+        self.downsample = downsample        # typical settings: 0, 10e-3 or 10e-5
 
         # number of cores/threads to use in multithreading mode, by default for every core two
         # threads are used to overcome performance loss by memory blocks

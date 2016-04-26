@@ -4,7 +4,7 @@ from model.model import Model
 from tools.taketime import taketime
 from tools.word2vec import save
 from tools.worddict import build_vocab
-from pipe.ContextWindow import contextWindow
+from pipe.ContextWindows import contextWindow
 
 
 def doTestSkipgramNS(inputrange=None):

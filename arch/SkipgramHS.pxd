@@ -13,11 +13,9 @@ cdef class SkipgramHS(CPipe):
     # shared weight matrices w0 and w1 and
     cdef cREAL *w0, *w1
 
-    # when split=1, word2taskid assigns the learning of each word to a task id, to lower memory collisions when learning
-    cdef int split
-    cdef cINT *word2taskid
+    cdef int wordcache, innercache, updaterate
 
-    cdef void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int mode, int length)
+    cdef void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int length)
 
 
 

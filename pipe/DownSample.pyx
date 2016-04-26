@@ -17,24 +17,23 @@ cdef cULONGLONG rand = uint64(25214903917)
 cdef class DownSample(CPipe):
     def __init__(self, pipeid, learner):
         CPipe.__init__(self, pipeid, learner)
-        self.sample = self.model.sample
-        if self.sample > 0:
+        self.downsample = self.model.downsample
+        if self.downsample > 0:
             self.random = 1
             self.vocabularysize = len(self.model.vocab)
-            self.sample = self.model.sample if hasattr(self.model, 'sample') else 0
             self.totalwords = self.model.vocab.totalwords
             self.corpusfrequency = allocI(self.vocabularysize)
             for i in range(1, self.vocabularysize):
                 self.corpusfrequency[i] = self.model.vocab.sorted[i].count
 
     def isNeeded(self):
-        return self.sample > 0
+        return self.downsample > 0
 
     def feed(self, threadid, task):
         self.feed2(threadid, task, toIArray(task.words), task.length, task.wentback, task.wentpast)
 
     cdef void feed2(self, int threadid, object task, cINT *words, int length, int wentback, int wentpast):
-        downsampled = self.downsample(threadid, words, &length, &wentback, &wentpast)
+        downsampled = self.process(threadid, words, &length, &wentback, &wentpast)
         newtask = task.nextTask()
         newtask.words = task.words
         newtask.wentback = wentback
@@ -43,18 +42,18 @@ cdef class DownSample(CPipe):
         self.addTask(newtask)
         self.solution.updateProcessed(downsampled)
 
-    cdef int downsample(self, int threadid, cINT *words, int *length, int *wentback, int *wentpast):
+    cdef int process(self, int threadid, cINT *words, int *length, int *wentback, int *wentpast):
         cdef int pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
         cdef float psampledout
 
         with nogil:
             # downsample frequent terms
-            if self.sample > 0:
+            if self.downsample > 0:
                 for pos in range(length[0]):
                     word = words[pos]
                     if word > 0: # don't downsample end of sentence, or negative values which paragraoh vector uses as ids
-                        psampledout = (sqrt(self.corpusfrequency[word] / (self.sample * self.totalwords)) + 1) * \
-                                      (self.sample * self.totalwords) / self.corpusfrequency[word];
+                        psampledout = (sqrt(self.corpusfrequency[word] / (self.downsample * self.totalwords)) + 1) * \
+                                      (self.downsample * self.totalwords) / self.corpusfrequency[word];
                         self.random = self.random * rand + 11;
                         if psampledout < (self.random & 0xFFFF) / 65536.0:
                             if pos < wentback[0]:

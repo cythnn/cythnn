@@ -1,6 +1,6 @@
 from pipe.ConvertWordIds import convertWordIds
 from tools.taketime import taketime
-from pipe.ContextWindow import contextWindow
+from pipe.ContextWindows import contextWindow
 from arch.CbowNS import CbowNS
 from model.model import Model
 from tools.word2vec import save

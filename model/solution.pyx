@@ -19,12 +19,11 @@ cdef cREAL fZERO = 0.0
 cdef class Solution:
     def __init__(self, model):
         #print("initializing solution")
-        self.progress = allocZeros(model.threads + 1)
+        self.progress = allocLongZeros(model.threads + 1)
         self.totalwords = model.vocab.totalwords * model.iterations  # assumed to be the number of words to be processed (for progress)
         self.alpha = model.alpha
         self.threads = model.threads
         self.tasks = model.tasks
-        self.split = model.split
         self.sigmoidtable = self.createSigmoidTable()   # used for fast lookup of sigmoid function
 
     def setSolution(self, solution):
@@ -96,10 +95,7 @@ cdef class Solution:
 
     # updates completed words outside tasks, for instance words skipped by a preprocessor
     def updateProcessed(self, completed):
-        if self.split == 1:  # in split mode, every thread (or taskid processor) iterates over the entire set, processing only assigned words
-            self.progress[self.threads] += completed * self.tasks
-        else:           # in no split mode, every data chunk is only assigned to one thread
-            self.progress[self.threads] += completed
+        self.progress[self.threads] += completed
 
     # returns the current learning rate, used for reporting
     def getCurrentAlpha(self):

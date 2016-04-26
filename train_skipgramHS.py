@@ -14,8 +14,9 @@ def doTestSkipgramHS(inputrange=None):
                  input="data/text8",
                  inputrange=inputrange,
                  build=[ build_vocab ],
-                 pipeline=[ convertWordIds, DownSample, contextWindow, Split, SkipgramHS ],
-                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=1, sample=0.001)
+                 pipeline=[ convertWordIds, DownSample, contextWindow, SkipgramHS ],
+                 mintf=5, cores=2, threads=2, windowsize=5, iterations=1, sample=0,
+                 )
 
 @taketime("run")
 def time(m):
@@ -23,7 +24,7 @@ def time(m):
 
 if __name__ == "__main__":
     m = doTestSkipgramHS()
-    #m = doTestSkipgramHS(inputrange=range(10000))
+    #m = doTestSkipgramHS(inputrange=range(30000000, 40000000))
     time(m)
     save("results/vectors.sghs.bin", m, binary=True)
     print("done", str(datetime.now()))

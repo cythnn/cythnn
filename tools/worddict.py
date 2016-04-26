@@ -99,6 +99,8 @@ class Vocabulary(defaultdict):
             totalwords += word.count
         self.sorted = words
         self.totalwords = totalwords
+        # for i in range(16):
+        #     print("the", i, words[i + 1].count / totalwords)
 
     def lookup_words(self, sentence):
         result = []

@@ -4,6 +4,7 @@ from libc.stdio cimport printf
 from libc.string cimport memset
 
 ctypedef np.int32_t cINT
+ctypedef np.int64_t cLONG
 ctypedef np.uint8_t cBYTE
 ctypedef np.uint64_t cULONGLONG
 ctypedef np.float32_t cREAL
@@ -46,9 +47,18 @@ cdef inline cREAL** allocRP(int size) nogil:
 cdef inline cINT* allocI(int size) nogil:
     return <cINT*>malloc(size * sizeof(cINT))
 
-cdef inline cINT* allocZeros(int size) nogil:
+# allocate memory for an array of int32
+cdef inline cLONG* allocL(int size) nogil:
+    return <cLONG*>malloc(size * sizeof(cLONG))
+
+cdef inline cINT* allocIntZeros(int size) nogil:
     cdef cINT *zeros = allocI(size)
     memset(zeros, 0, size * sizeof(cINT))
+    return zeros
+
+cdef inline cLONG* allocLongZeros(int size) nogil:
+    cdef cLONG *zeros = allocL(size)
+    memset(zeros, 0, size * sizeof(cLONG))
     return zeros
 
 # allocate memory for an array of int32*
@@ -61,6 +71,12 @@ cdef inline cINT** allocIP(int size) nogil:
 # allocate space for an array of int8
 cdef inline cBYTE* allocB(int size) nogil:
     return <cBYTE*>malloc(size * sizeof(cBYTE))
+
+# allocate space for an array of int8
+cdef inline cBYTE* allocBZeros(int size) nogil:
+    cdef cBYTE *r = allocB(size)
+    memset(r, 0, size)
+    return r
 
 # allocate space for an array of int8*
 cdef inline cBYTE** allocBP(int size) nogil:
@@ -95,19 +111,15 @@ cdef class Solution:
     cdef int MAX_SIGMOID, SIGMOID_TABLE
     cdef cREAL *sigmoidtable    # fast sigmoid lookup table
 
-    cdef cINT *progress         # progress, per thread
+    cdef cLONG *progress         # progress, per thread
     cdef long totalwords        # to estimate the total number of words to be processed,
     cdef int threads            # number of concurrent threads used for learning
     cdef int tasks              # number of dedicated task ids, equals threads unless multiple threads work the same task id
-    cdef int split              # 1 assigns every thread a dedicated taskid to process a disjoint subset of words, all theads process on the same data
-                                # 0 assigns every data chunk to only one thread
     cdef public float alpha     # initial learning rate
 
     # for hierarchical softmax
     cdef cINT **innernodes      # array that keep a list of inner nodes that parent each indexed word, the root (id=0) is always last
     cdef cBYTE **exp            # array of the expected values, i.e. whether at a given inner node one must go left=0 or right=1 to find the indexed word
-    cdef cINT* word2taskid
-    cdef public int singletaskids
 
     cdef float *getLayerFw(self, int thread, int layer)   # returns a vector to be used as forward layer #layer, unique per thread and layer
     cdef float *getLayerBw(self, int thread, int layer)   # returns a vector to be used as backward layer #layer, unique per thread and layer

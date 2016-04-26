@@ -94,7 +94,7 @@ class Learner:
             if iteration < self.iterations - 1:  # for all but last iteration use uniform chunk sizes
                 input = self.getUniformInputs()
             else:  # for last iteration, use varying chunk sizes
-                input = wordStreamsDecay(self.model.input, parts=self.threads, inputrange=self.model.inputrange,
+                input = wordStreamsDecay(self.model.input, parts=self.threads * 2, inputrange=self.model.inputrange,
                                          windowsize=self.model.windowsize)
             for index, input in enumerate(input):
                 task = Task(iteration=iteration, priority=1 / len(input.inputrange))

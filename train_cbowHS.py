@@ -1,6 +1,6 @@
 from pipe.ConvertWordIds import convertWordIds
 from tools.taketime import taketime
-from pipe.ContextWindow import contextWindow
+from pipe.ContextWindows import contextWindow
 from arch.CbowHS import CbowHS
 from model.model import Model
 from tools.word2vec import save
@@ -12,7 +12,8 @@ def doTestCbowHS(inputrange=None):
                  inputrange=inputrange,
                  build=[ build_vocab ],
                  pipeline=[ convertWordIds, contextWindow, CbowHS ],
-                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1, split=1)
+                 mintf=5, cores=2, threads=3, windowsize=5, iterations=1
+                 downsample=0)
 
 @taketime("run")
 def time(m):
