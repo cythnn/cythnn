@@ -26,7 +26,6 @@ cdef class CbowHS(SkipgramHS):
         cdef float f                                                        # estimated output
         cdef float g                                                        # gradient
         cdef float cfrac
-        cdef bint updated
         cdef float alpha = self.solution.updateAlpha(threadid, 0)           # the current learning rate
         cdef cREAL *hiddenlayer_fw = self.solution.getLayerFw(threadid, 1)  # the hidden layer for feed forward
         cdef cREAL *hiddenlayer_bw = self.solution.getLayerBw(threadid, 1)  # the hidden layer for back propagation
@@ -39,54 +38,50 @@ cdef class CbowHS(SkipgramHS):
                     # learn against hier. softmax of the center word
                     p_inner = self.innernodes[word]              # points to list of inner nodes for word is HS
                     p_exp = self.expected[word]                  # points to expected value for inner node (left=0, right=1)
-                    updated = 0
+
+                    # set hidden layer to average of embeddings of the context words
+                    memset(hiddenlayer_fw, 0, self.vectorsize * 4)
+                    memset(hiddenlayer_bw, 0, self.vectorsize * 4)
+                    cfrac = 1.0 / (cupper[i] - clower[i] - 1)
+                    for j in range(clower[i], cupper[i]):
+                        if i != j:
+                            last_word = words[j]
+                            l0 = last_word * self.vectorsize
+                            saxpy( & self.vectorsize, & cfrac, & self.w0[l0], & iONE, hiddenlayer_fw, & iONE)
+
                     while True:
-                        inner = p_inner[0]                       # iterate over the inner nodes, until the root (inner = 0)
+                        inner = p_inner[0]        # iterate over the inner nodes, until the root (inner = 0)
                         exp = p_exp[0]
 
-                        if self.split == 0 or self.word2taskid[inner] == taskid:
-                            if not updated:
-                                # set hidden layer to average of embeddings of the context words
-                                memset(hiddenlayer_fw, 0, self.vectorsize * 4)
-                                memset(hiddenlayer_bw, 0, self.vectorsize * 4)
-                                cfrac = 1.0 / (cupper[i] - clower[i] - 1)
-                                for j in range(clower[i], cupper[i]):
-                                    if i != j:
-                                        last_word = words[j]
-                                        l0 = last_word * self.vectorsize
-                                        saxpy( &self.vectorsize, & cfrac, & self.w0[l0], & iONE, hiddenlayer_fw, & iONE)
-                                updated = 1
+                        # index for last_word in weight matrix w0, inner node in w1
+                        l1 = inner * self.vectorsize
 
-                            # index for last_word in weight matrix w0, inner node in w1
-                            l1 = inner * self.vectorsize
+                        # energy emitted to inner tree node (output layer)
+                        f = sdot( &self.vectorsize, hiddenlayer_fw, &iONE, &self.w1[l1], &iONE)
 
-                            # energy emitted to inner tree node (output layer)
-                            f = sdot( &self.vectorsize, hiddenlayer_fw, &iONE, &self.w1[l1], &iONE)
+                        # commonly, when g=0 or g=1 there is nothing to train
+                        if f >= -self.MAX_SIGMOID and f <= self.MAX_SIGMOID:
+                            # compute the gradient * alpha
+                            f = self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))]
+                            g = (1 - exp - f) * alpha
 
-                            # commonly, when g=0 or g=1 there is nothing to train
-                            if f >= -self.MAX_SIGMOID and f <= self.MAX_SIGMOID:
-                                # compute the gradient * alpha
-                                f = self.sigmoidtable[<int>((f + self.MAX_SIGMOID) * (self.SIGMOID_TABLE / self.MAX_SIGMOID / 2))]
-                                g = (1 - exp - f) * alpha
+                            # update the inner node (appears only once in a path)
+                            # then add update to hidden layer
+                            saxpy( &self.vectorsize, &g, &(self.w1[l1]), &iONE, hiddenlayer_bw, &iONE)
+                            saxpy( &self.vectorsize, &g, hiddenlayer_fw, &iONE, &(self.w1[l1]), &iONE)
 
-                                # update the inner node (appears only once in a path)
-                                # then add update to hidden layer
-                                saxpy( &self.vectorsize, &g, &(self.w1[l1]), &iONE, hiddenlayer_bw, &iONE)
-                                saxpy( &self.vectorsize, &g, hiddenlayer_fw, &iONE, &(self.w1[l1]), &iONE)
+                    # check if we backpropagated against the root (inner=0)
+                    if inner == 0:
+                        break
+                    else:
+                        p_inner += 1    # otherwise traverse pointers up the tree to the next inner node
+                        p_exp += 1
 
-                        # check if we backpropagated against the root (inner=0)
-                        if inner == 0:
-                            break
-                        else:
-                            p_inner += 1    # otherwise traverse pointers up the tree to the next inner node
-                            p_exp += 1
-
-                    if updated: # update the embeddings for the context terms
-                        for j in range(clower[i], cupper[i]):
-                            if i != j:
-                                last_word = words[j]
-                                l0 = last_word * self.vectorsize
-                                saxpy( &self.vectorsize, &fONE, hiddenlayer_bw, &iONE, &(self.w0[l0]), &iONE)
+                    for j in range(clower[i], cupper[i]):
+                        if i != j:
+                            last_word = words[j]
+                            l0 = last_word * self.vectorsize
+                            saxpy( &self.vectorsize, &fONE, hiddenlayer_bw, &iONE, &(self.w0[l0]), &iONE)
 
                 # update number of words processed, and alpha every 10k words
                 wordsprocessed += 1
