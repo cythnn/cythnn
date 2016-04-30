@@ -14,10 +14,10 @@ class Model:
                         iterations=1,       # number of times to iterate over the corpus when learning
                         threads=None,       # hard defines the number of threads used for learning, otherwise cores is used
                         cores=2,            # defines number of threads used for building
-                        updatecacherate=0,  # after this number of processed words, cached vectors, processed words and alpha are updated
-                        updaterate=10000,   # after this number of processed words, cached vectors, processed words and alpha are updated
-                        wordcache=0,        # number of most frequent words to cache to avoid memory collisions between threads
-                        innercache=0,       # number of most frequent inner nodes to cache to avoid memory collisions between threads
+                        updatecacherate=0,  # after this number of processed words, the cached vectors and words are updated
+                        updaterate=10000,   # after this number of processed words and alpha are updated
+                        cachewords=0,        # number of most frequent words to cache to avoid memory collisions between threads
+                        cacheinner=0,       # number of most frequent inner nodes to cache to avoid memory collisions between threads
                         downsample=0,        # parameter for downsampling frequent terms (0=no downsampling)
                         **kwargs):
         self.__dict__.update(kwargs)
@@ -31,8 +31,8 @@ class Model:
         self.iterations = iterations
         self.updatecacherate = updatecacherate        # set to 10k when not caching
         self.updaterate = updaterate        # set to 10k when not caching
-        self.wordcache = wordcache
-        self.innercache = innercache
+        self.cachewords = cachewords
+        self.cacheinner = cacheinner
         self.downsample = downsample        # typical settings: 0, 10e-3 or 10e-5
 
         # number of cores/threads to use in multithreading mode, by default for every core two
