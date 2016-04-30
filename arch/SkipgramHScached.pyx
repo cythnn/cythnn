@@ -37,8 +37,8 @@ cdef class SkipgramHScached(SkipgramHS):
         # setup the caches for frequently used words and inner nodes
         cdef cREAL **t0 = allocRP(self.model.vocsize)
         cdef cREAL **t1 = allocRP(self.model.vocsize)
-        cdef cREAL **o0 = allocRP(self.wordcache)
-        cdef cREAL **o1 = allocRP(self.innercache)
+        cdef cREAL **o0 = allocRP(self.cachewords)
+        cdef cREAL **o1 = allocRP(self.cacheinner)
         cdef cBYTE * cachedword = allocBZeros(self.cachewords)
         cdef cBYTE * cachedinner = allocBZeros(self.cacheinner)
         for i in range(self.cachewords):
