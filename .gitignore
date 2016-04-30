@@ -3,4 +3,5 @@ __pychache__
 *.c
 *.so
 *.pyc
-
+imdb
+nqe
