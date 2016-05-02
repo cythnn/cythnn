@@ -15,8 +15,6 @@ ext_modules = [
     Extension("arch.SkipgramHS", ["arch/SkipgramHS.pyx"]),
     Extension("arch.SkipgramHScached", ["arch/SkipgramHScached.pyx"]),
     Extension("arch.SkipgramNS", ["arch/SkipgramNS.pyx"]),
-    Extension("imdb.ParagraphVector", ["imdb/ParagraphVector.pyx"]),
-    Extension("nqe.findmax", ["nqe/findmax.pyx"]),
     Extension("arch.CbowHS", ["arch/CbowHS.pyx"]),
     Extension("arch.CbowNS", ["arch/CbowNS.pyx"]),
 ]

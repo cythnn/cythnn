@@ -59,7 +59,7 @@ class Learner:
                 wps = self.getTotalWords() * self.iterations * p / (time.time() - starttime)
                 alpha = solution.getCurrentAlpha()
                 print("progress %4.1f%% wps %d alpha %f\n" % (100 * p, int(wps), alpha), end = '')
-                print(self.activeThreads())
+                #print(self.activeThreads())
             else:
                 starttime = time.time()
                 wps = 0
@@ -97,7 +97,6 @@ class Learner:
         for i in range(len(self.model.pipeline)):
             p = self.model.pipeline[i](pipeid, self)
             p = p.transform() # a Pipe may remove or replace itself
-            print("createPipes", p)
             if p is not None:
                 self.pipe[pipeid] = p
                 pipeid += 1

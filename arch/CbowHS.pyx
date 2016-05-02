@@ -47,7 +47,7 @@ cdef class CbowHS(SkipgramHS):
                         if i != j:
                             last_word = words[j]
                             l0 = last_word * self.vectorsize
-                            saxpy( & self.vectorsize, & cfrac, & self.w0[l0], & iONE, hiddenlayer_fw, & iONE)
+                            saxpy( & self.vectorsize, &cfrac, & self.w0[l0], &iONE, hiddenlayer_fw, &iONE)
 
                     while True:
                         inner = p_inner[0]        # iterate over the inner nodes, until the root (inner = 0)
@@ -70,12 +70,12 @@ cdef class CbowHS(SkipgramHS):
                             saxpy( &self.vectorsize, &g, &(self.w1[l1]), &iONE, hiddenlayer_bw, &iONE)
                             saxpy( &self.vectorsize, &g, hiddenlayer_fw, &iONE, &(self.w1[l1]), &iONE)
 
-                    # check if we backpropagated against the root (inner=0)
-                    if inner == 0:
-                        break
-                    else:
-                        p_inner += 1    # otherwise traverse pointers up the tree to the next inner node
-                        p_exp += 1
+                        # check if we backpropagated against the root (inner=0)
+                        if inner == 0:
+                            break
+                        else:
+                            p_inner += 1    # otherwise traverse pointers up the tree to the next inner node
+                            p_exp += 1
 
                     for j in range(clower[i], cupper[i]):
                         if i != j:

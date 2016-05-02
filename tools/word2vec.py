@@ -9,7 +9,7 @@ from tools.worddict import Vocabulary, Word
 
 # creates a solution space for a word2vec model, 2 weight matrices, initialized resp. with random and with zeros
 def createW2V(model, input_size, output_size):
-    print("createW2V", input_size, model.vectorsize, output_size)
+    #print("createW2V", input_size, model.vectorsize, output_size)
     matrices = createMatrices([input_size, model.vectorsize, output_size], [2, 0])
     model.setSolution(matrices)
 
@@ -22,7 +22,7 @@ def save(fname, model, binary=False):
     s = sorted(model.vocab.items(), key=lambda x: x[1].index)
     solution = model.getSolution()
     if binary:
-        print("write binary")
+        #print("write binary")
         with open(fname, 'wb') as fout:
             fout.write(("%s %s\n" % (len(model.vocab), solution.getLayerSize(1))).encode())
             for word, obj in s:
@@ -30,7 +30,7 @@ def save(fname, model, binary=False):
                 fout.write((word + " ").encode())
                 fout.write(struct.pack('%sf' % len(row), *row))
     else:
-        print("write flat")
+        #print("write flat")
         with open(fname, 'w') as fout:
             fout.write("%s %s\n" % (len(model.vocab), solution.getLayerSize(1)))
             for word, obj in s:
