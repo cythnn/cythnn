@@ -11,7 +11,7 @@ ext_modules = [
     Extension("pipe.cpipe", ["pipe/cpipe.pyx"]),
     Extension("pipe.ContextWindows", ["pipe/ContextWindows.pyx"],),
     Extension("pipe.DownSample", ["pipe/DownSample.pyx"],),
-    Extension("tools/hsoftmax", ["tools/hsoftmax.pyx"],),
+    Extension("tools.hsoftmax", ["tools/hsoftmax.pyx"],),
     Extension("arch.SkipgramHS", ["arch/SkipgramHS.pyx"]),
     Extension("arch.SkipgramHScached", ["arch/SkipgramHScached.pyx"]),
     Extension("arch.SkipgramNS", ["arch/SkipgramNS.pyx"]),

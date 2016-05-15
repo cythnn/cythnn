@@ -6,9 +6,12 @@ from tools.blas cimport sdot, saxpy
 cimport numpy as np
 from numpy import uint64
 
-cdef cULONGLONG rand = uint64(25214903917)
+cdef uLONG rand_prime = 25214903917
 cdef int iONE = 1
-cdef float fONE = 1.0
+cdef int iZERO = 0
+cdef cREAL fONE = 1.0
+cdef cREAL fZERO = 0.0
+cdef cREAL fmONE = -1.0
 
 # learns embeddings using cbow against a hierarchical softmax (binary huffmann tree) as output layer
 cdef class CbowHS(SkipgramHS):

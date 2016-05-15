@@ -6,12 +6,6 @@ import numpy as np
 cimport numpy as np
 from tools.types cimport *
 
-cdef unsigned long long rand = 25214903917
-cdef int ONE = 1
-cdef int ZERO = 0
-cdef cREAL fONE = 1.0
-cdef cREAL fZERO = 0.0
-
 # The solution is a Cython container that is accessible from Cython modules in the pipeline, allowing nogil Cython modules
 # to process efficiently. Typically the solution contains the model's weight matrices w[0], w[1], etc., can provide temporary
 # thread save layer vectors through getLayerFw and getLayerBw to allow separate computation of feed forward and back propagation.
@@ -20,7 +14,7 @@ cdef cREAL fZERO = 0.0
 cdef class Solution:
     def __init__(self, model):
         #print("initializing solution")
-        self.progress = allocLongZeros(model.threads + 1)
+        self.progress = allocULongZeros(model.threads + 1)
         self.totalwords = model.vocab.totalwords * model.iterations  # assumed to be the number of words to be processed (for progress)
         self.alpha = model.alpha
         self.threads = model.threads

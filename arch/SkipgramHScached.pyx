@@ -1,21 +1,17 @@
 import cython
 
-from tools.word2vec import createW2V
-from tools.hsoftmax import hsoftmax
-from pipe.cpipe import CPipe
-from numpy import uint64
+from arch.SkipgramHS import SkipgramHS
 from libc.string cimport memset
 from tools.blas cimport sdot, saxpy, scopy
 
-import numpy
-cimport numpy
-
-cdef cULONGLONG rand = uint64(25214903917)
 cdef int iONE = 1
-cdef float fmONE = -1.0
-cdef float fONE = 1.0
+cdef int iZERO = 0
+cdef cREAL fONE = 1.0
+cdef cREAL fZERO = 0.0
+cdef cREAL fmONE = -1.0
 
-# learns embeddings using skipgrams against a hierarchical softmax (binary huffmann tree as output layer)
+# extends SkipgramHS by training the top-#cacheinner inner nodes in a local caches that is updated to
+# shared memory every #updatecacherate trained words
 cdef class SkipgramHScached(SkipgramHS):
     def __init__(self, pipeid, learner):
         SkipgramHS.__init__(self, pipeid, learner)

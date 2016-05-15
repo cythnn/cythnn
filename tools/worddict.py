@@ -22,7 +22,8 @@ def buildvocab(learner, model):
         merged = mergeDicts(tokens)
         v = Vocabulary(merged, model.mintf)
         model.setVocab(v)
-        print("vocabulary build |v|=%d |c|=%ld"%(len(v), v.totalwords))
+        if model.quiet == 0:
+            print("vocabulary build |v|=%d |c|=%ld"%(len(v), v.totalwords))
 
 def normalize(w1):
     return (w1 / math.sqrt(sum([w * w for w in w1])))

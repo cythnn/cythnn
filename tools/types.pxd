@@ -5,11 +5,11 @@ from libc.string cimport memset
 ctypedef np.int32_t cINT
 ctypedef np.int64_t cLONG
 ctypedef np.uint8_t cBYTE
-ctypedef np.uint64_t cULONGLONG
+ctypedef np.uint64_t uLONG
 ctypedef np.float32_t cREAL
 
-cdef extern from "voidptr.h":
-    void* PyCObject_AsVoidPtr(object obj)
+# cdef extern from "ctypes.h":
+#     void* PyCObject_AsVoidPtr(object obj)
 
 cdef inline float min_float(float a, float b) nogil: return a if a <= b else b
 cdef inline float max_float(float a, float b) nogil: return a if a >= b else b
@@ -41,17 +41,28 @@ cdef inline cINT* allocI(int size) nogil:
     return <cINT*>malloc(size * sizeof(cINT))
 
 # allocate memory for an array of int32
+cdef inline cINT* allocIfill(int size, int fill) nogil:
+    cdef cINT i,  *r = <cINT*>malloc(size * sizeof(cINT))
+    for i in range(size):
+        r[i] = fill
+    return r
+
+# allocate memory for an array of int32
 cdef inline cLONG* allocL(int size) nogil:
     return <cLONG*>malloc(size * sizeof(cLONG))
+
+# allocate memory for an array of int32
+cdef inline uLONG* allocUL(int size) nogil:
+    return <uLONG*>malloc(size * sizeof(uLONG))
 
 cdef inline cINT* allocIntZeros(int size) nogil:
     cdef cINT *zeros = allocI(size)
     memset(zeros, 0, size * sizeof(cINT))
     return zeros
 
-cdef inline cLONG* allocLongZeros(int size) nogil:
-    cdef cLONG *zeros = allocL(size)
-    memset(zeros, 0, size * sizeof(cLONG))
+cdef inline uLONG* allocULongZeros(int size) nogil:
+    cdef uLONG *zeros = allocUL(size)
+    memset(zeros, 0, size * sizeof(uLONG))
     return zeros
 
 # allocate memory for an array of int32*
@@ -84,5 +95,10 @@ cdef inline void** allocVP(int size) nogil:
     for i in range(size):
         r[i] = NULL
     return r
+
+# allocate space for an array of void
+cdef inline void* allocV(int length, int elementsize) nogil:
+    return <void*>malloc(length * elementsize)
+
 
 

@@ -1,7 +1,12 @@
 import numpy as np
 from numpy import int32, uint64, float32
 from numpy cimport ndarray
+from libc.stdio cimport *
 from model.solution cimport *
+from tools.blas cimport sdot, sswap
+
+cdef uLONG rand_prime = uint64(25214903917)
+cdef int iONE = 1
 
 #creates a list of weight matrices, according to the given LAYER sizes, ordered input, h1, ..., output. The initialization
 # functions (always |LAYERS| - 1) are used to seed the weight matrices
@@ -29,6 +34,40 @@ cdef void randomize(ndarray array):
         for i in range(length):
             random = random * rand + 11;
             a[i] = ((random & 65535) / 65536.0 - 0.5) / width
+
+# initializes a weight matrix between layers sized INPUT and OUTPUT with random numbers
+cdef void randomize1(ndarray array):
+    cdef float *a = toRArray(array)
+    cdef int i, length = len(array)
+    cdef unsigned long long random = 1
+
+    with nogil:
+        for i in range(length):
+            random = random * rand_prime + 11;
+            a[i] = ((random & 65535) / 65536.0 - 0.5)
+
+cdef void randomize2(ndarray array, int width):
+    cdef float s, min, *a = toRArray(array)
+    cdef int minj, i, j, length = len(array)
+
+    randomize1(array)
+    with nogil:
+        printf("", length)
+        printf("", i)
+        i = 0
+        while i < length - 2 * width:
+            min = sdot(&width, &a[i], &iONE, &a[i + width], &iONE)
+            minj = i + width
+            j = minj + width
+            while j < length:
+                s = sdot(&width, &a[i], &iONE, &a[j], &iONE)
+                if minj == -1 or s < min:
+                    min = s
+                    minj = j
+                j += width
+            if minj > i + width:
+                sswap(&width, &a[i + width], &iONE, &a[minj], &iONE)
+            i += width
 
 # creates a weight matrix between layers sized INPUT and OUTPUT setting all weights to 0
 def zeros(input, output):

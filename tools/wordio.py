@@ -1,4 +1,4 @@
-import os, math, re
+import os, math, re, glob
 
 # wraps a generator of words read from a flat text #file, within position #byterange
 # uses virtual soft partitioning of flat text files, a partition starts after the first whitespace
@@ -8,10 +8,6 @@ import os, math, re
 # return filesize
 def size(path):
     return os.path.getsize(path)
-
-def chunkRangeS(rnge, size):
-    return [ range(i, min(rnge.stop, i + size))
-             for i in range(rnge.start, rnge.stop, size) ]
 
 # reads the words that are in a flat text file, by a space or newline.
 # The byterange indicates thedesignated range of words to be read.
@@ -60,7 +56,7 @@ class WordStream:
         self.wentPast = -1
         self.wentBack = 0
         with open(self.file, "r") as f:
-            for chunk in chunkRangeS(self.inputrange, 1000000):
+            for chunk in chunkFixedSize(self.inputrange, 1000000):
                 if chunk.start == self.inputrange.start and chunk.start > 0:
                     buffer = self.readFirst(f, chunk.start, chunk.stop)
                 else:
@@ -101,38 +97,68 @@ class WordStream:
 #setup a list of #parts WordStream objects, that cover the given #byterange
 #@taketime("wordstreams")
 def inputUniform(model, parts):
-    if model.inputrange is None:
-        model.inputrange = range(0, size(model.input))
-    if not hasattr(model, 'inputstreamclass'):
-        model.inputstreamclass = WordStream
-    return [model.inputstreamclass(model, inputrange=r, input=model.input)
-            for r in chunkRange(model.inputrange, parts)]
+    listing = glob.glob(model.input)
+    totalsize = 0
+    for file in listing:
+        totalsize += size(file)
+    partsize = totalsize / parts
 
-#@taketime("wordstreams")
+    chunks = []
+    for file in listing:
+        if model.inputrange is None:
+            model.inputrange = range(0, size(file))
+        if not hasattr(model, 'inputstreamclass'):
+            model.inputstreamclass = WordStream
+        subparts = math.ceil(size(file) / partsize)
+        for r in chunkRange(size(file), subparts):
+            chunks.append(model.inputstreamclass(model, inputrange=r, input=file))
+    return chunks
+
 def inputDecay(model, parts):
-    if model.inputrange is None:
-        model.inputrange = range(0, size(model.input))
-    if not hasattr(model, 'inputstreamclass'):
-        model.inputstreamclass = WordStream
-    return [model.inputstreamclass(model, inputrange=r, input=model.input)
-            for r in chunkRangeDecay(model.inputrange, parts)]
+    listing = glob.glob(model.input)
+    totalsize = 0
+    for file in listing:
+        totalsize += size(file)
+    partsize = totalsize / parts
+
+    chunks = []
+    for file in listing:
+        if model.inputrange is None:
+            model.inputrange = range(0, size(file))
+        if not hasattr(model, 'inputstreamclass'):
+            model.inputstreamclass = WordStream
+        subparts = math.ceil(size(file) / partsize)
+        for r in chunkRangeDecay(size(file), subparts):
+            chunks.append(model.inputstreamclass(model, inputrange=r, input=file))
+    return chunks
+
+def chunkFixedSize(r, size):
+    if not isinstance(r, range):
+        r = range(r)
+    return [ range(i, min(r.stop, i + size))
+             for i in range(r.start, r.stop, size) ]
 
 #split range in #n consecutive sub-ranges
-def chunkRange(rnge, n):
-    step = math.ceil(len(rnge) / n)
-    a = [ range(rnge.start + i * step, rnge.start + (i + 1) * step)
+def chunkRange(r, n):
+    if not isinstance(r, range):
+        r = range(r)
+    step = math.ceil(len(r) / n)
+    a = [ range(r.start + i * step, r.start + (i + 1) * step)
          for i in range(n - 1) ]
-    a.append(range(rnge.start + (n - 1) * step, rnge.stop))
+    a.append(range(r.start + (n - 1) * step, r.stop))
     return a
 
 #split range in #n consecutive sub-ranges
-def chunkRangeDecay(rnge, n):
-    step = math.ceil( 2 * (rnge.stop - rnge.start) / n / (n + 1))
+def chunkRangeDecay(r, n):
+    if not isinstance(r, range):
+        r = range(r)
+    step = math.ceil( 2 * (r.stop - r.start) / n / (n + 1))
     a = []
-    start = rnge.start
-    for incr in range(step, (n) * step, step):
-        a.append(range(start, start + int(incr)))
+    start = r.start
+    for incr in range(step, n * step, step):
+        a.append(range(start, min(start + int(incr), r.stop)))
         start += int(incr)
-    a.append(range(start, rnge.stop))
+    if start < r.stop:
+        a.append(range(start, r.stop))
 
     return a

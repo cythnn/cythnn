@@ -1,20 +1,16 @@
 import cython
 
-from arch.SkipgramHScached import SkipgramHScached
 from tools.word2vec import createW2V
 from tools.hsoftmax import hsoftmax
 from pipe.cpipe import CPipe
-from numpy import uint64
 from libc.string cimport memset
 from tools.blas cimport sdot, saxpy, scopy
 
-import numpy
-cimport numpy
-
-cdef cULONGLONG rand = uint64(25214903917)
 cdef int iONE = 1
-cdef float fmONE = -1.0
-cdef float fONE = 1.0
+cdef int iZERO = 0
+cdef cREAL fONE = 1.0
+cdef cREAL fZERO = 0.0
+cdef cREAL fmONE = -1.0
 
 # learns embeddings using skipgrams against a hierarchical softmax (binary huffmann tree as output layer)
 cdef class SkipgramHS(CPipe):
@@ -37,12 +33,6 @@ cdef class SkipgramHS(CPipe):
     def build(self):
         hsoftmax(self.learner, self.model)
         createW2V(self.model, self.model.vocsize, self.model.vocsize - 1)
-
-    # replace with cached version when updatecacherate is set > 0
-    def transform(self):
-        if hasattr(self.model, 'updatecacherate') and self.model.updatecacherate > 0:
-            return SkipgramHScached(self.pipeid, self.learner)
-        return self
 
     def feed(self, threadid, task):
         taskid = task.taskid if task.taskid is not None else 0  # only used in split mode

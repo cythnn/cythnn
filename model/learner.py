@@ -1,14 +1,16 @@
 from __future__ import print_function
 from contextlib import contextmanager
 from queue import PriorityQueue
-import time
+from time import time, sleep
 import threading
+
+from datetime import datetime
 import numpy as np
 
 # Orchestrates the learning process, by starting the required number of threads, managing the
 # PriorityQueue that contains the tasks to be processed, and reporting progress.
 from model.task import Task
-
+from tools.priorityQueueSync import PriorityQueueSync
 
 class Learner:
     def __init__(self, model):
@@ -20,18 +22,18 @@ class Learner:
 
     # Builds the vocabulay, then build the learning pipeline, and push the inputs through the pipeline.
     def run(self):
-
+        jobtime = time()
         # queues for the job
         self.queue = [ PriorityQueueSync() for i in range(self.tasks) ]
         self.generalqueue = PriorityQueueSync()
         self.finished = set()
 
-        print("preprocessing start")
         # build the model
         for f in self.model.build:
             f(self, self.model)
 
-        print("preprocessing finished")
+        if self.model.quiet == 0:
+            print("preprocessing finished %0.2f sec"%(time() - jobtime))
 
         # instantiate the processing pipeline
         self.createPipes()
@@ -40,8 +42,9 @@ class Learner:
 
         self.setupTasksIterations()
 
-        print("running multithreadeded threads %d iterations %d" %
-        ( self.threads, self.iterations))
+        if self.model.quiet == 0:
+            print("running multithreadeded threads %d iterations %d" %
+            ( self.threads, self.iterations))
 
         threads = []
         for threadid in range(self.threads):
@@ -51,19 +54,17 @@ class Learner:
             threads.append(t)
             t.start()
 
-        starttime = time.time()
+        starttime = time()
         while len(self.finished) < self.threads:
-            time.sleep(2)   # update every 2 seconds
+            sleep(2)   # update every 2 seconds
             p = solution.getProgressPy();
-            if p > 0:
-                wps = self.getTotalWords() * self.iterations * p / (time.time() - starttime)
+            if p > 0 and self.model.quiet == 0:
+                wps = self.getTotalWords() * self.iterations * p / (time() - starttime)
                 alpha = solution.getCurrentAlpha()
                 print("progress %4.1f%% wps %d alpha %f\n" % (100 * p, int(wps), alpha), end = '')
                 #print(self.activeThreads())
-            else:
-                starttime = time.time()
-                wps = 0
-        print("\ndone")
+        if self.model.quiet == 0:
+            print("\ndone %0.2f sec"%(time() - jobtime))
 
     # fro debugging purposes, see which threads are active
     def activeThreads(self):
@@ -96,10 +97,16 @@ class Learner:
         pipeid = 0
         for i in range(len(self.model.pipeline)):
             p = self.model.pipeline[i](pipeid, self)
-            p = p.transform() # a Pipe may remove or replace itself
+            n = None
+            while p is not None and n != p:
+                n = p
+                p = p.transform() # a Pipe may remove or replace itself
+
             if p is not None:
                 self.pipe[pipeid] = p
                 pipeid += 1
+        if self.model.quiet == 0:
+            print("pipeline", [self.pipe[i].__class__.__name__ for i in range(pipeid)])
 
 # a thread has a designated taskid, and repeatedly picks task (matching its desgnated taskid
 # or a general task), and processes it using the  queue and calls
@@ -113,25 +120,4 @@ def learnThread(threadid, taskid, learner):
             learner.pipe[task.pipeid].feed(threadid, task)
         else:
             learner.finished.add(threadid)
-            time.sleep(0.1)
-
-# helper class to lock a priority queue for the use of empty before get
-class PriorityQueueSync(PriorityQueue):
-    def __init__(self):
-        PriorityQueue.__init__(self)
-        self._lock = threading.Lock()
-
-    # need to lock to use empty on shared priorityqueue
-    def get(self):
-        with self.acquire_timeout():
-            if not self.empty():
-                return PriorityQueue.get(self)
-            else:
-                return None
-
-    @contextmanager
-    def acquire_timeout(self):
-        result = self._lock.acquire()
-        yield result
-        if result:
-            self._lock.release()
+            sleep(0.1)

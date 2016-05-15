@@ -19,6 +19,7 @@ class Model:
                         cachewords=0,        # number of most frequent words to cache to avoid memory collisions between threads
                         cacheinner=0,       # number of most frequent inner nodes to cache to avoid memory collisions between threads
                         downsample=0,        # parameter for downsampling frequent terms (0=no downsampling)
+                        quiet=0,            # set to 1 to supress output
                         **kwargs):
         self.__dict__.update(kwargs)
         self.input = input;
@@ -34,6 +35,7 @@ class Model:
         self.cachewords = cachewords
         self.cacheinner = cacheinner
         self.downsample = downsample        # typical settings: 0, 10e-3 or 10e-5
+        self.quiet = quiet
 
         # number of cores/threads to use in multithreading mode, by default for every core two
         # threads are used to overcome performance loss by memory blocks

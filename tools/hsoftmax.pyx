@@ -49,7 +49,6 @@ cdef void build(object model):
     model.hs_tree_build = True
 
 cdef void build2(object model, cINT *ctable, cINT *ptable, cBYTE *rtable, int taskid, int inneroffset, float wordfactor, int start, int end):
-    print(taskid, start, end, wordfactor, inneroffset)
     cdef int upper = inneroffset + (end - start) - 1
     cdef Solution solution = model.getSolution()
     cdef int root = upper - 1

@@ -8,7 +8,7 @@ import numpy as np
 from numpy cimport *
 from libc.stdio cimport *
 
-cdef cULONGLONG rand = uint64(25214903917)
+cdef uLONG rand = uint64(25214903917)
 
 # for an input array of word id's and a given window size, this determines the context that is considered for every
 # word position, by giving the lower (inclusive) and upper (exclusive) bounds. Corresponding to the orginal Word2Vec code
@@ -27,8 +27,8 @@ cdef class DownSample(CPipe):
                 self.corpusfrequency[i] = self.model.vocab.sorted[i].count
 
     def transform(self): # remove when downsampling is not used
-        if self.downsample > 0:
-            print("downsampling", self.downsample)
+        if self.downsample > 0 and self.model.quiet == 0:
+            print("downsampling %0.6f"%self.downsample)
             return self
         return None
 

@@ -6,7 +6,7 @@ import numpy as np
 cimport numpy as np
 from numpy import uint64
 
-cdef cULONGLONG rand = uint64(25214903917)
+cdef uLONG rand = uint64(25214903917)
 
 # for an input array of word id's and a given window size, this determines the context that is considered for every
 # word position, by giving the lower (inclusive) and upper (exclusive) bounds. Corresponding to the orginal Word2Vec code

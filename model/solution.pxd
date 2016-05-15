@@ -25,7 +25,7 @@ cdef class Solution:
     cdef int MAX_SIGMOID, SIGMOID_TABLE
     cdef cREAL *sigmoidtable    # fast sigmoid lookup table
 
-    cdef cLONG *progress         # progress, per thread
+    cdef uLONG *progress         # progress, per thread
     cdef long totalwords        # to estimate the total number of words to be processed,
     cdef int threads            # number of concurrent threads used for learning
     cdef int tasks              # number of dedicated task ids, equals threads unless multiple threads work the same task id

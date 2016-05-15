@@ -15,3 +15,9 @@ static void * PyCObject_AsVoidPtr(PyObject *obj)
 }
 
 #endif
+
+typedef __uint128_t uint128;
+
+#define sync_bool_compare_and_swap_cluster __sync_bool_compare_and_swap
+#define sync_bool_compare_and_swap_link __sync_bool_compare_and_swap
+#define sync_bool_compare_and_swap_int __sync_bool_compare_and_swap

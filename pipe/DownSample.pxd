@@ -3,7 +3,7 @@ from tools.types cimport *
 from numpy cimport *
 
 cdef class DownSample(CPipe):
-    cdef cULONGLONG random
+    cdef uLONG random
     cdef int vocabularysize
     cdef float downsample           # the downsampling parameter
     cdef long totalwords

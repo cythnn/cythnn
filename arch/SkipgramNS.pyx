@@ -1,17 +1,15 @@
 import cython
-
-from pipe.cpipe cimport *
+from pipe.cpipe cimport CPipe
 from tools.word2vec import createW2V
-from numpy import uint64
 from libc.string cimport memset
 from tools.blas cimport sdot, saxpy
 
-import numpy as np
-cimport numpy as np
-
-cdef cULONGLONG rand = uint64(25214903917)
+cdef uLONG rand_prime = 25214903917
 cdef int iONE = 1
-cdef float fONE = 1.0
+cdef int iZERO = 0
+cdef cREAL fONE = 1.0
+cdef cREAL fZERO = 0.0
+cdef cREAL fmONE = -1.0
 
 # learns embeddings using skipgrams with negative samples
 cdef class SkipgramNS(CPipe):
@@ -64,7 +62,7 @@ cdef class SkipgramNS(CPipe):
                                 word = words[i]
                                 exp = 1
                             else:
-                                self.random = self.random * rand + 11;  # sample a window size b =[0, windowsize]
+                                self.random = self.random * rand_prime + 11;  # sample a window size b =[0, windowsize]
                                 word = words[ self.random % self.vocabularysize ]
                                 exp = 0
 
