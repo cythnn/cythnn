@@ -11,9 +11,8 @@ model(
 	input="data/text8",
 	inputrange=None,
 	build=[ build_vocab ],
-	pipeline=[ createW2VInputTasks, convertWordIds, DownSample, contextWindow, trainSkipgramHS ],
-	mintf=5, cores=2, windowsize=5, iterations=1
-	iterations=1, downsample=0)
+	pipeline=[ createW2VInputTasks, convertWordIds, DownSample, contextWindow, Word2Vec ],
+	mintf=5, cores=2, threads=4, windowsize=5, iterations=1, downsample=0.001)
 ```
 
 - input: a single filename 
@@ -33,6 +32,8 @@ model(
 
 - iterations: the number of times to pass over the corpus for training
 
+- downsample: parameter used by DownSample to reduce word occurrences based on their frequency. When set to 0, DownSample removes itself from the pipeline.
+
 During learning, the model is accompanied by a Solution object, which is accessible from Cython in nogil (for fast parallel processing).
 
 Pipes
@@ -49,8 +50,7 @@ In the example, the following pipes are used:
 - ConvertWordIds (ConvertWordIds.py): transforms the stream of words (strings) to an array of word index numbers by lookup in vocab
 - DownSample.py: reduces the occurrences of frequently occurring terms using the downsample parameter
 - ContextWindow (w2vContextWindows.cy): adds context boundaries to every word position, by sampling a window size from a uniform distribution and taking sentence boundaries and file-part cutoffs into account. 
-- trainSkipgramHS (w2vSkipgramHS.cy): learns the embeddings using Skipgram and Hierarchical Softmax
+- Word2Vec (Word2Vec.cy): a factory that selects the implementation of the appropriate learning architecture, by default Skipgram and Hierarchical Softmax. Configure cbow=1 to use CBOW and negative > 0 to use negative sampling instead of HS. For SkigramHS, when cacheinner > 0 the cached version is selected for faster multithreading using > 8 threads.
 
-he data folder contains a few data samples, of which text8 is a standard collection consisting of a preprocessed for 100M of Wikipedia that can be used to benchmark against other implementations. A learned model can be saved in binary form, you can use with the original evaluation tool written in C (http://http://word2vec.googlecode.com/svn/trunk/) or the evaluation tool in Gensim for Python.
-
-./compute-accuracy saved_model.bin <questions-words.txt 
+The data folder contains text8 which is a standard collection consisting of a preprocessed for 100M of Wikipedia that can be used to benchmark against other implementations. A learned model can be saved in binary form, you can use with the original evaluation tool written in C (http://http://word2vec.googlecode.com/svn/trunk/) or the evaluation tool in Gensim for Python.
+- ./compute-accuracy saved_model.bin <questions-words.txt

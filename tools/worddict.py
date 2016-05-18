@@ -92,13 +92,17 @@ class Vocabulary(defaultdict):
 
         words = [Word(0, word="</s>", index=0)]
         for word, count in vocab:
-            if count >= MIN_TF and word != "</s>":
-                words.append(Word(count, word=word, index=len(words)))
+            if count >= MIN_TF:
+                if word != "</s>":
+                    words.append(Word(count, word=word, index=len(words)))
+                else:
+                    words[0].count = count
 
         totalwords = 0
         for word in words:
             self.__setitem__(word.word, word)
-            totalwords += word.count
+            if word.index != 0:
+                totalwords += word.count
         self.sorted = words
         self.totalwords = totalwords
 

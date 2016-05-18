@@ -14,6 +14,7 @@ ext_modules = [
     Extension("tools.hsoftmax", ["tools/hsoftmax.pyx"],),
     Extension("arch.SkipgramHS", ["arch/SkipgramHS.pyx"]),
     Extension("arch.SkipgramHScached", ["arch/SkipgramHScached.pyx"]),
+    Extension("arch.SkipgramNScached", ["arch/SkipgramNScached.pyx"]),
     Extension("arch.SkipgramNS", ["arch/SkipgramNS.pyx"]),
     Extension("arch.CbowHS", ["arch/CbowHS.pyx"]),
     Extension("arch.CbowNS", ["arch/CbowNS.pyx"]),

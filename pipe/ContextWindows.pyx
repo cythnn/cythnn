@@ -7,6 +7,7 @@ cimport numpy as np
 from numpy import uint64
 
 cdef uLONG rand = uint64(25214903917)
+cdef uLONG eleven = uint64(11)
 
 # for an input array of word id's and a given window size, this determines the context that is considered for every
 # word position, by giving the lower (inclusive) and upper (exclusive) bounds. Corresponding to the orginal Word2Vec code
@@ -16,21 +17,23 @@ cdef class contextWindow(CPipe):
     def __init__(self, pipeid, learner):
         CPipe.__init__(self, pipeid, learner)
         self.windowsize = self.model.windowsize
-        self.random = 1
+        self.random = allocULong(self.model.threads)
+        for i in range(self.model.threads):
+            self.random[i] = i
 
     def feed(self, threadid, task):
-        words = task.words
-        wentback = task.wentback
-        wentpast = task.wentpast
-        length = task.length
+        words = task.words          # wordids
+        wentback = task.wentback    # number of words at start that are only provided as context
+        wentpast = task.wentpast    # number of words at end that are only provided as context
+        length = task.length        # length of task.words
         clower = np.zeros(length)
         cupper = np.zeros(length)
 
-        self.process(threadid, toIArray(task.words), toIArray(clower), toIArray(cupper), length, wentback, wentpast)
+        self.process(threadid, toIntArray(task.words), toIntArray(clower), toIntArray(cupper), length, wentback, wentpast)
 
         newtask = task.nextTask()
         newtask.words = words
-        newtask.clower = clower
+        newtask.clower = clower     # binding to task object helps garbage collection
         newtask.cupper = cupper
         newtask.length = length
         self.addTask(newtask)
@@ -41,8 +44,9 @@ cdef class contextWindow(CPipe):
     @cython.wraparound(False)
     cdef void process(self, int threadid, cINT *words, cINT *clower, cINT *cupper,
                                          int length, int wentback, int wentpast):
-        cdef int b, i, pos, word
-        cdef int first_word = 0, next_newline
+        cdef:
+            int b, i, pos, word
+            int first_word = 0, next_newline
 
         with nogil:
             for i in range(wentback):                         # find the first word in the first sentence
@@ -58,8 +62,8 @@ cdef class contextWindow(CPipe):
                         break;
                 if pos < next_newline and next_newline - first_word > 2: # a sentence of size > 1 is found
                     while pos < next_newline and pos < length - wentpast:
-                        self.random = self.random * rand + 11;   # sample a window size b =[0, windowsize]
-                        b = self.random % self.windowsize
+                        self.random[threadid] = self.random[threadid] * rand + eleven;   # sample a window size b =[0, windowsize]
+                        b = self.random[threadid] % self.windowsize
                         clower[pos] = max_int(first_word, pos - self.windowsize + b) # limit the window with sentence bounaries
                         cupper[pos] = min_int(pos + self.windowsize + 1 - b, next_newline)
                         pos += 1

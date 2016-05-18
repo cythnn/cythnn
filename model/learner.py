@@ -38,8 +38,10 @@ class Learner:
         # instantiate the processing pipeline
         self.createPipes()
 
+        # creates the shared solution space
         solution = self.model.getSolution()
 
+        # creates tasks as input for the first module in the pipeline, given the input and number of threads
         self.setupTasksIterations()
 
         if self.model.quiet == 0:
@@ -61,10 +63,11 @@ class Learner:
             if p > 0 and self.model.quiet == 0:
                 wps = self.getTotalWords() * self.iterations * p / (time() - starttime)
                 alpha = solution.getCurrentAlpha()
-                print("progress %4.1f%% wps %d alpha %f\n" % (100 * p, int(wps), alpha), end = '')
+                if self.model.quiet == 0:
+                    print("progress %4.1f%% wps %d alpha %f\n" % (100 * p, int(wps), alpha), end = '')
                 #print(self.activeThreads())
         if self.model.quiet == 0:
-            print("\ndone %0.2f sec"%(time() - jobtime))
+            print("\ndone %0.1f sec"%(time() - jobtime))
 
     # fro debugging purposes, see which threads are active
     def activeThreads(self):
@@ -97,14 +100,19 @@ class Learner:
         pipeid = 0
         for i in range(len(self.model.pipeline)):
             p = self.model.pipeline[i](pipeid, self)
+
+            # a Pipe may remove (when it is not needed) or replace (e.g. a factory) itself
             n = None
             while p is not None and n != p:
                 n = p
-                p = p.transform() # a Pipe may remove or replace itself
+                p = p.transform()
 
+            # add to pipeline when not removed
             if p is not None:
                 self.pipe[pipeid] = p
                 pipeid += 1
+
+        # print the final pipeline that is used
         if self.model.quiet == 0:
             print("pipeline", [self.pipe[i].__class__.__name__ for i in range(pipeid)])
 

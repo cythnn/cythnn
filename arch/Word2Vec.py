@@ -1,4 +1,5 @@
 from arch.SkipgramHScached import SkipgramHScached
+from arch.SkipgramNScached import SkipgramNScached
 from arch.SkipgramHS import SkipgramHS
 from arch.SkipgramNS import SkipgramNS
 from arch.CbowNS import CbowNS
@@ -17,7 +18,10 @@ class Word2Vec(Pipe):
         if hasattr(self.model, 'cbow') and self.model.cbow == 1:
             return CbowHS(self.pipeid, self.learner)
         if hasattr(self.model, 'negative'):
-            return SkipgramNS(self.pipeid, self.learner)
+            if hasattr(self.model, 'cachewords') and self.model.cachewords > 0:
+                return SkipgramNScached(self.pipeid, self.learner)
+            else:
+                return SkipgramNS(self.pipeid, self.learner)
         if hasattr(self.model, 'cacheinner') and self.model.cacheinner > 0:
             return SkipgramHScached(self.pipeid, self.learner)
         return SkipgramHS(self.pipeid, self.learner)

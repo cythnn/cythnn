@@ -4,12 +4,13 @@ from numpy import float32, int32
 from libc.stdio cimport *
 import numpy as np
 cimport numpy as np
-from tools.types cimport *
+from tools.ctypes cimport *
 
 # The solution is a Cython container that is accessible from Cython modules in the pipeline, allowing nogil Cython modules
-# to process efficiently. Typically the solution contains the model's weight matrices w[0], w[1], etc., can provide temporary
-# thread save layer vectors through getLayerFw and getLayerBw to allow separate computation of feed forward and back propagation.
-# Finally, the solution keeps track of progress, and updates the learning parameter alpha.
+# to process efficiently. Typically the solution contains the model's weight matrices w[0], w[1], etc. which is kept in
+# shared memory (all threads update the same model), and when requested creates local layer vectors for each thread
+# through getLayerFw and getLayerBw to allow thread safe computation of feed forward and back propagation.
+# The solution is also a central location to keeps track of progress, and updates the learning parameter alpha.
 # The solution arbitrarily also contain some shared values for convenient reuse, such as the sigmoid lookup table.
 cdef class Solution:
     def __init__(self, model):
@@ -23,13 +24,13 @@ cdef class Solution:
 
     def setSolution(self, solution):
         self.matrices = len(solution)                   # number of weight matrices in the model
-        self.w = allocRP(self.matrices)                 # references to the weight matrices
-        self.w_input = allocI(self.matrices)            # number of rows in each matrix
-        self.w_output = allocI(self.matrices)           # number of columns in each matrix
-        self.layerfw = allocRP((self.matrices + 1) * self.threads)      # pointers to fw and bw layers, instantiated on request
-        self.layerbw = allocRP((self.matrices + 1) * self.threads)
+        self.w = allocRealP(self.matrices)                 # references to the weight matrices
+        self.w_input = allocInt(self.matrices)            # number of rows in each matrix
+        self.w_output = allocInt(self.matrices)           # number of columns in each matrix
+        self.layerfw = allocRealP((self.matrices + 1) * self.threads)      # pointers to fw and bw layers, instantiated on request
+        self.layerbw = allocRealP((self.matrices + 1) * self.threads)
         for l in range(self.matrices):
-            self.w[l] = toRArray(solution[l]);          # layers are numbered 0,..,n weight matrices 0,..,(n-1)
+            self.w[l] = toRealArray(solution[l]);          # layers are numbered 0,..,n weight matrices 0,..,(n-1)
             self.w_input[l] = solution[l].shape[0]
             self.w_output[l] = solution[l].shape[1]
 
@@ -37,7 +38,7 @@ cdef class Solution:
     cdef cREAL* createSigmoidTable(self):
         self.MAX_SIGMOID = 6
         self.SIGMOID_TABLE = 1000
-        cdef cREAL* table = allocR(self.SIGMOID_TABLE)
+        cdef cREAL* table = allocReal(self.SIGMOID_TABLE)
         for i in range(self.SIGMOID_TABLE):
             e = math.exp(float32(2 * self.MAX_SIGMOID * i / self.SIGMOID_TABLE - self.MAX_SIGMOID))
             table[i] = e / float32(e + 1)
@@ -63,7 +64,7 @@ cdef class Solution:
     # createLayer creates a non-shared layer instance
     cdef cREAL *createWorkLayer(self, int layer):
         size = self.getLayerSize(layer)
-        return allocR(size)
+        return allocReal(size)
 
     # returns the size of layer #layer
     def getLayerSize(self, layer):

@@ -2,7 +2,7 @@ cimport numpy as np
 from libc.stdlib cimport malloc, free
 from libc.stdio cimport printf
 from libc.string cimport memset
-from tools.types cimport *
+from tools.ctypes cimport *
 
 cdef unsigned long long rand = 25214903917
 cdef int ONE = 1

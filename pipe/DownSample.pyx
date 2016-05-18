@@ -2,7 +2,7 @@ import cython
 
 from pipe.cpipe cimport CPipe
 from numpy import uint64
-from tools.types cimport *
+from tools.ctypes cimport *
 from libc.math cimport sqrt
 import numpy as np
 from numpy cimport *
@@ -22,7 +22,7 @@ cdef class DownSample(CPipe):
             self.random = 1
             self.vocabularysize = len(self.model.vocab)
             self.totalwords = self.model.vocab.totalwords
-            self.corpusfrequency = allocI(self.vocabularysize)
+            self.corpusfrequency = allocInt(self.vocabularysize)
             for i in range(1, self.vocabularysize):
                 self.corpusfrequency[i] = self.model.vocab.sorted[i].count
 
@@ -33,10 +33,12 @@ cdef class DownSample(CPipe):
         return None
 
     def feed(self, threadid, task):
-        self.feed2(threadid, task, toIArray(task.words), task.length, task.wentback, task.wentpast)
+        cdef:
+            int length = task.length
+            int wentback = task.wentback
+            int wentpast = task.wentpast
 
-    cdef void feed2(self, int threadid, object task, cINT *words, int length, int wentback, int wentpast):
-        downsampled = self.process(threadid, words, &length, &wentback, &wentpast)
+        downsampled = self.process(threadid, toIntArray(task.words), &length, &wentback, &wentpast)
         newtask = task.nextTask()
         newtask.words = task.words
         newtask.wentback = wentback
@@ -45,16 +47,18 @@ cdef class DownSample(CPipe):
         self.addTask(newtask)
         self.solution.updateProcessed(downsampled)
 
+    # returns the number of items removed from the stream
     cdef int process(self, int threadid, cINT *words, int *length, int *wentback, int *wentpast):
-        cdef int pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
-        cdef float psampledout
+        cdef:
+            int pos, pos_downsampled = 0, word, downsampleback = 0, downsamplelength = 0
+            float psampledout
 
         with nogil:
             # downsample frequent terms
             if self.downsample > 0:
                 for pos in range(length[0]):
                     word = words[pos]
-                    if word > 0: # don't downsample end of sentence, or negative values which paragraoh vector uses as ids
+                    if word > 0: # don't downsample end of sentence, or negative values which paragraph vector uses as movie ids
                         psampledout = (sqrt(self.corpusfrequency[word] / (self.downsample * self.totalwords)) + 1) * \
                                       (self.downsample * self.totalwords) / self.corpusfrequency[word];
                         self.random = self.random * rand + 11;

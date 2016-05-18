@@ -14,7 +14,7 @@ if __name__ == "__main__":
               inputrange=None, # means all
               build=[ buildvocab ],
               pipeline=[ createW2VInputTasks, convertWordIds, DownSample, contextWindow, Word2Vec ],
-              mintf=5, cores=2, threads=2, windowsize=5, iterations=1, downsample=0.001,
+              mintf=5, cores=2, threads=3, windowsize=5, iterations=1, downsample=0.001,
               )
     m.run()
     save("results/vectors.sghs.bin", m, binary=True)

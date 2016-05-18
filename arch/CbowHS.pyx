@@ -1,6 +1,6 @@
 import cython
 from arch.SkipgramHS cimport SkipgramHS
-from tools.types cimport *
+from tools.ctypes cimport *
 from libc.string cimport memset
 from tools.blas cimport sdot, saxpy
 cimport numpy as np
@@ -23,15 +23,16 @@ cdef class CbowHS(SkipgramHS):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int length):
-        cdef int word, last_word, i, j, inner, exp, l0, l1, wordsprocessed = 0
-        cdef cINT *p_inner                                                  # pointers to list of output nodes per wordid
-        cdef cBYTE *p_exp                                                   # expected value per output node
-        cdef float f                                                        # estimated output
-        cdef float g                                                        # gradient
-        cdef float cfrac
-        cdef float alpha = self.solution.updateAlpha(threadid, 0)           # the current learning rate
-        cdef cREAL *hiddenlayer_fw = self.solution.getLayerFw(threadid, 1)  # the hidden layer for feed forward
-        cdef cREAL *hiddenlayer_bw = self.solution.getLayerBw(threadid, 1)  # the hidden layer for back propagation
+        cdef:
+            int word, last_word, i, j, inner, exp, l0, l1, wordsprocessed = 0
+            cINT *p_inner                                                  # pointers to list of output nodes per wordid
+            cBYTE *p_exp                                                   # expected value per output node
+            float f                                                        # estimated output
+            float g                                                        # gradient
+            float cfrac
+            float alpha = self.solution.updateAlpha(threadid, 0)           # the current learning rate
+            cREAL *hiddenlayer_fw = self.solution.getLayerFw(threadid, 1)  # the hidden layer for feed forward
+            cREAL *hiddenlayer_bw = self.solution.getLayerBw(threadid, 1)  # the hidden layer for back propagation
 
         with nogil:
             for i in range(length):

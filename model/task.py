@@ -1,5 +1,5 @@
 # Describe a chunk to be processed by a specific pipe (pipeline module).
-# taskid: when given, assigns the task only to threads that have the same taskid,
+# taskid: not used atm - when given, assigns the task only to threads that have the same taskid,
 #         otherwise, any thread my take the task
 # pipeid: int that identifies the pipe to process
 # priority: a task should have a priority between 0-1 (exclusive), where lower is a higher

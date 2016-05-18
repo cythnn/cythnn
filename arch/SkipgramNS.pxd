@@ -1,19 +1,26 @@
 from pipe.cpipe cimport CPipe
-from tools.types cimport *
+from tools.ctypes cimport *
 
 cdef class SkipgramNS(CPipe):
-    cdef int vectorsize             # size of the hidden layer (=size of the learned embeddings)
-    cdef int vocabularysize         # number of words in the vocabulary
-    cdef int negative               # number of neagtive samples used for regularization
-    cdef unsigned long long random  # for sampling random numbers
+    cdef:
+        int updaterate             # update processed words and alpha after this many processed words
+        int vectorsize             # size of the hidden layer (=size of the learned embeddings)
+        int vocabularysize         # number of words in the vocabulary
+        int negative               # number of negative samples used for regularization
+        uLONG* random  # for sampling random numbers
 
-    # convenient lookup table for sigmoid function
-    cdef int MAX_SIGMOID, SIGMOID_TABLE
-    cdef cREAL *sigmoidtable
+        # convenient lookup table for sigmoid function
+        int MAX_SIGMOID, SIGMOID_TABLE
+        cREAL *sigmoidtable
 
-    # shared weight matrices w0 and w1 and a thread-safe vector for the hidden layer
-    cdef cREAL *w0, *w1
+        # lookup table for negative samples
+        cINT *negativesampletable
+        uLONG negativesampletablesize
 
-    cdef int updaterate
+        # shared weight matrices w0 and w1 and a thread-safe vector for the hidden layer
+        cREAL *w0, *w1
 
-    cdef void process(self, int threadid, cINT *words, cINT *clower, cINT *cupper, int length)
+        # build a table for negative sampling, cf. the original W2V implementation
+        cINT *buildNegativeSampleTable(self)
+
+        void process(self, int threadid, cINT *words, cINT *clower, cINT *cupper, int length)

@@ -1,10 +1,13 @@
 import cython
 from arch.SkipgramNS cimport SkipgramNS
-from tools.types cimport *
+from numpy import uint64
+from tools.ctypes cimport *
+from libc.stdio cimport *
 from libc.string cimport memset
-from tools.blas cimport sdot, saxpy
+from tools.blas cimport sdot, saxpy, sscal
 
-cdef uLONG rand_prime = 25214903917
+cdef uLONG rand_prime = uint64(25214903917)
+cdef uLONG eleven = uint64(11)
 cdef int iONE = 1
 cdef int iZERO = 0
 cdef cREAL fONE = 1.0
@@ -21,18 +24,19 @@ cdef class CbowNS(SkipgramNS):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, int threadid, cINT *words, cINT *clower, cINT *cupper, int length):
-        cdef int word, last_word, i, l0, l1, d, exp, wordsprocessed = 0
-        cdef cREAL f, g, cfrac
-        cdef float alpha = self.solution.updateAlpha(threadid, 0)
-        cdef cREAL *hiddenlayer_fw = self.solution.getLayerFw(threadid, 1)
-        cdef cREAL *hiddenlayer_bw = self.solution.getLayerBw(threadid, 1)
+        cdef:
+            int word, last_word, i, l0, l1, d, exp, wordsprocessed = 0
+            cREAL f, g, cfrac
+            float alpha = self.solution.updateAlpha(threadid, 0)
+            cREAL *hiddenlayer_fw = self.solution.getLayerFw(threadid, 1)
+            cREAL *hiddenlayer_bw = self.solution.getLayerBw(threadid, 1)
 
         with nogil:
             for i in range(length):
                 word = words[i]
+                # self.random[threadid] = self.random[threadid] * rand_prime + eleven; # add this line to align random numbers with original C W2V
                 if cupper[i] > clower[i] + 1:
 
-                    #printf("cbow thread %d pos %d lower %d upper %d\n", self.threadid, i, clower[i], cupper[i])
                     # set hidden layer to average of embeddings of the context words
                     memset(hiddenlayer_fw, 0, self.vectorsize * 4)
                     memset(hiddenlayer_bw, 0, self.vectorsize * 4)
@@ -48,8 +52,12 @@ cdef class CbowNS(SkipgramNS):
                             word = words[i]
                             exp = 1
                         else:
-                            self.random = self.random * rand_prime + 11;  # sample a window size b =[0, windowsize]
-                            word = words[ self.random % self.vocabularysize ]
+                            self.random[threadid] = self.random[threadid] * rand_prime + eleven;
+                            word = self.negativesampletable[(self.random[threadid] >> 16) % self.negativesampletablesize]
+                            if word == 0:
+                                word = self.random[threadid] % (self.vocabularysize - 1) + 1
+                            if word == words[i]:
+                                continue
                             exp = 0
 
                         # index for last_word in weight matrix w0, inner node in w1

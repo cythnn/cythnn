@@ -22,33 +22,35 @@ cdef class SkipgramHScached(SkipgramHS):
     @cython.boundscheck(False)
     @cython.wraparound(False)
     cdef void process(self, int threadid, int taskid, cINT * words, cINT * clower, cINT * cupper, int length):
-        cdef int word, last_word, i, j, inner, exp, wordsprocessed = 0
-        cdef cINT *p_inner                                                  # pointers to list of output nodes per wordid
-        cdef cBYTE *p_exp                                                   # expected value per output node
-        cdef float f                                                        # estimated output
-        cdef float g                                                        # gradient
-        cdef float alpha = self.solution.updateAlpha(threadid, 0)           # learning rate
-        cdef cREAL *hiddenlayer = self.solution.getLayerBw(threadid, 1)
+        cdef:
+            int word, last_word, i, j, inner, exp, wordsprocessed = 0
+            cINT *p_inner                                                  # pointers to list of output nodes per wordid
+            cBYTE *p_exp                                                   # expected value per output node
+            float f                                                        # estimated output
+            float g                                                        # gradient
+            float alpha = self.solution.updateAlpha(threadid, 0)           # learning rate
+            cREAL *hiddenlayer = self.solution.getLayerBw(threadid, 1)
 
-        # setup the caches for frequently used words and inner nodes
-        cdef cREAL **t0 = allocRP(self.model.vocsize)
-        cdef cREAL **t1 = allocRP(self.model.vocsize)
-        cdef cREAL **o0 = allocRP(self.cachewords)
-        cdef cREAL **o1 = allocRP(self.cacheinner)
-        cdef cBYTE * cachedword = allocBZeros(self.cachewords)
-        cdef cBYTE * cachedinner = allocBZeros(self.cacheinner)
-        for i in range(self.cachewords):
-            t0[i] = allocR(self.vectorsize) # t0 transparently points to a cache location for frequent terms
-            o0[i] = allocR(self.vectorsize) # o0 contains the original value when cached, to compute the update
-        for i in range(self.cacheinner):
-            t1[i] = allocR(self.vectorsize) # t1 transparently points to a cache location for frequent inner nodes
-            o1[i] = allocR(self.vectorsize) # o1 contains the original vaue when cacahed, to compute the update
-        for i in range(self.cacheinner, self.model.vocsize - 1):
-            t1[i] = &self.w1[i * self.vectorsize]   # t1 transparently points to w1 for infrequent inner nodes
-        for i in range(self.cachewords, self.model.vocsize):
-            t0[i] = &self.w0[i * self.vectorsize]   # t0 transparently point to w0 for infrequent terms
+            # setup the caches for frequently used words and inner nodes
+            cREAL **t0 = allocRealP(self.model.vocsize)
+            cREAL **t1 = allocRealP(self.model.vocsize)
+            cREAL **o0 = allocRealP(self.cachewords)
+            cREAL **o1 = allocRealP(self.cacheinner)
+            cBYTE * cachedword = allocByteZeros(self.cachewords)
+            cBYTE * cachedinner = allocByteZeros(self.cacheinner)
 
         with nogil:
+            for i in range(self.cachewords):
+                t0[i] = allocReal(self.vectorsize)  # t0 transparently points to a cache location for frequent terms
+                o0[i] = allocReal(self.vectorsize)  # o0 contains the original value when cached, to compute the update
+            for i in range(self.cacheinner):
+                t1[i] = allocReal(self.vectorsize)  # t1 transparently points to a cache location for frequent inner nodes
+                o1[i] = allocReal(self.vectorsize)  # o1 contains the original vaue when cacahed, to compute the update
+            for i in range(self.cacheinner, self.vocabularysize - 1):
+                t1[i] = & self.w1[i * self.vectorsize]  # t1 transparently points to w1 for infrequent inner nodes
+            for i in range(self.cachewords, self.vocabularysize):
+                t0[i] = & self.w0[i * self.vectorsize]  # t0 transparently point to w0 for infrequent terms
+
             for i in range(length):                     # go over all words, and use its tree path in the output layer
                 word = words[i]                         # next center word, whose huffmann tree location is used to learn te context words against
                 for j in range(clower[i], cupper[i]):   # for every word, go over its context window
@@ -101,7 +103,6 @@ cdef class SkipgramHScached(SkipgramHS):
 
                         saxpy(&self.vectorsize, &fONE, hiddenlayer, &iONE, t0[last_word], &iONE)
 
-                wordsprocessed += 1
 
                 # update cached words, number of words processed, and alpha at the given updaterate(default=10k words)
                 if wordsprocessed % self.updatecacherate == 0 or i == length -1:
@@ -116,6 +117,7 @@ cdef class SkipgramHScached(SkipgramHS):
                             saxpy( & self.vectorsize, & fONE, t1[j], & iONE, & self.w1[j * self.vectorsize], & iONE)
                             cachedinner[j] = 0
 
+                wordsprocessed += 1
                 if wordsprocessed > self.updaterate:
                     alpha = self.solution.updateAlpha(threadid, wordsprocessed)  # update words processd and learning rate alpha
                     wordsprocessed = 0

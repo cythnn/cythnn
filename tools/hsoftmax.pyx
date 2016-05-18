@@ -3,7 +3,7 @@ from model.solution cimport *
 from tools.taketime import taketime
 from libc.stdio cimport *
 import heapq, math
-from tools.types cimport *
+from tools.ctypes cimport *
 import numpy as np
 cimport numpy as np
 from queue import PriorityQueue
@@ -27,14 +27,15 @@ def hsoftmax(learner, model):
         model.outputsize = model.vocsize - 1
 
 cdef void build(object model):
-    cdef cINT *ctable = allocI(model.vocsize * 2)   # temp table for the collection frequency of each node
-    cdef cINT *ptable = allocI(model.vocsize * 2)   # pointer for each node to its parent node
-    cdef cBYTE *rtable = allocB(model.vocsize * 2)  # for each node, if it is reach by taking a left (0) or right (1) turn from its parent in the tree
+    cdef:
+        cINT *ctable = allocInt(model.vocsize * 2)   # temp table for the collection frequency of each node
+        cINT *ptable = allocInt(model.vocsize * 2)   # pointer for each node to its parent node
+        cBYTE *rtable = allocByte(model.vocsize * 2)  # for each node, if it is reach by taking a left (0) or right (1) turn from its parent in the tree
+        Solution solution = model.getSolution()
 
-    # store tree in the model
-    cdef Solution solution = model.getSolution()
-    solution.innernodes = allocIP(model.vocsize)
-    solution.exp = allocBP(model.vocsize)
+    # the Huffmann tree is stored in the solution, to allow access to Cython modules
+    solution.innernodes = allocIntP(model.vocsize)
+    solution.exp = allocByteP(model.vocsize)
 
     for i, w in enumerate(model.vocab.sorted):
         ctable[i] = w.count
@@ -49,11 +50,12 @@ cdef void build(object model):
     model.hs_tree_build = True
 
 cdef void build2(object model, cINT *ctable, cINT *ptable, cBYTE *rtable, int taskid, int inneroffset, float wordfactor, int start, int end):
-    cdef int upper = inneroffset + (end - start) - 1
-    cdef Solution solution = model.getSolution()
-    cdef int root = upper - 1
-    cdef int realroot = model.vocsize * 2 - 3
-    cdef int pathlength, t, i
+    cdef:
+        int upper = inneroffset + (end - start) - 1
+        Solution solution = model.getSolution()
+        int root = upper - 1
+        int realroot = model.vocsize * 2 - 3
+        int pathlength, t, i
 
     tree(start, end, inneroffset, wordfactor, ctable, ptable, rtable)
 
@@ -63,8 +65,8 @@ cdef void build2(object model, cINT *ctable, cINT *ptable, cBYTE *rtable, int ta
         while t < root:
             pathlength += 1
             t = ptable[t]
-        solution.innernodes[w] = allocI(pathlength)
-        solution.exp[w] = allocB(pathlength)
+        solution.innernodes[w] = allocInt(pathlength)
+        solution.exp[w] = allocByte(pathlength)
         pathlength = 0
         t = w
         while t < root:

@@ -6,7 +6,6 @@ import os, math, re
 # does not start at the beginning ignores all bytes until the first recordseparator.
 from tools.wordio import size
 
-
 class RecordStream:
     class recorditerator:
         def __init__(self, chunk, input, recordseparator):

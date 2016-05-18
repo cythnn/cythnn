@@ -25,10 +25,11 @@ def createMatrices(sizes, init):
 
 # initializes a weight matrix between layers sized INPUT and OUTPUT with random numbers
 cdef void randomize(ndarray array):
-    cdef float *a = toRArray(array)
-    cdef int i, length = array.shape[0] * array.shape[1]
-    cdef int width = array.shape[1]
-    cdef unsigned long long random = 1
+    cdef:
+        float *a = toRealArray(array)
+        int i, length = array.shape[0] * array.shape[1]
+        int width = array.shape[1]
+        unsigned long long random = 1
 
     with nogil:
         for i in range(length):
@@ -37,9 +38,10 @@ cdef void randomize(ndarray array):
 
 # initializes a weight matrix between layers sized INPUT and OUTPUT with random numbers
 cdef void randomize1(ndarray array):
-    cdef float *a = toRArray(array)
-    cdef int i, length = len(array)
-    cdef unsigned long long random = 1
+    cdef:
+        float *a = toRealArray(array)
+        int i, length = len(array)
+        unsigned long long random = 1
 
     with nogil:
         for i in range(length):
@@ -47,8 +49,9 @@ cdef void randomize1(ndarray array):
             a[i] = ((random & 65535) / 65536.0 - 0.5)
 
 cdef void randomize2(ndarray array, int width):
-    cdef float s, min, *a = toRArray(array)
-    cdef int minj, i, j, length = len(array)
+    cdef:
+        float s, min, *a = toRealArray(array)
+        int minj, i, j, length = len(array)
 
     randomize1(array)
     with nogil:

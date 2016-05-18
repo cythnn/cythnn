@@ -41,7 +41,7 @@ class WordStream:
                     self.wentBack += 1
                     if self.windowsize == self.wentBack:
                         buffer = buffer[pos+1:]
-            if pos == 0:
+            if pos == 0 and start > 0:
                 self.wentBack += 1
         elif bytepos > 0:
             while pos < len(buffer):
@@ -79,9 +79,10 @@ class WordStream:
                         buffer = words[-1]
             newbuf = f.read((self.windowsize + 1) * 100)
             if not newbuf:
-                self.wentPast += 1
                 if len(buffer) > 0:
                     yield buffer
+                if self.inputrange.stop == size(self.file):
+                    yield '</s>'
             else:
                 buffer += newbuf
                 for sentence in re.split('(' + self.eol + ')', buffer):
@@ -96,12 +97,14 @@ class WordStream:
 
 #setup a list of #parts WordStream objects, that cover the given #byterange
 #@taketime("wordstreams")
-def inputUniform(model, parts):
+def inputUniform(model, threads):
     listing = glob.glob(model.input)
     totalsize = 0
     for file in listing:
         totalsize += size(file)
-    partsize = totalsize / parts
+    partsize = max(1000000, math.ceil(totalsize / threads))
+    if partsize > 1000000:
+        partsize = math.ceil((partsize + 1) / 2)
 
     chunks = []
     for file in listing:
@@ -114,13 +117,14 @@ def inputUniform(model, parts):
             chunks.append(model.inputstreamclass(model, inputrange=r, input=file))
     return chunks
 
-def inputDecay(model, parts):
+def inputDecay(model, threads):
     listing = glob.glob(model.input)
     totalsize = 0
     for file in listing:
         totalsize += size(file)
-    partsize = totalsize / parts
-
+    partsize = math.ceil(totalsize / threads)
+    if partsize > 1000000:
+        partsize = math.ceil((partsize + 1) / 2)
     chunks = []
     for file in listing:
         if model.inputrange is None:
