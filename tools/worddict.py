@@ -88,7 +88,7 @@ class Vocabulary(defaultdict):
 
         vocab = sorted(vocab.items(), key=lambda x: -x[1])
 
-        words = [Word(0, word="</s>", index=0)]
+        words = [Word(0, word="</s>", index=0)]     # add </s> as end-of-sentence character to the first position in the vocabulary
         for word, count in vocab:
             if count >= MIN_TF:
                 if word != "</s>":

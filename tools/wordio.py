@@ -110,7 +110,6 @@ def inputUniform(inputfiles, threads, inputrange = None):
     listing = glob.glob(inputfiles)
     totalsize = 0
     for file in listing:
-        print(file)
         totalsize += size(file)
     partsize = max(1000000, math.ceil(totalsize / threads))
     if partsize > 1000000:
