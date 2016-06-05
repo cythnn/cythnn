@@ -36,6 +36,9 @@ cdef class contextWindow(CPipe):
         newtask.clower = clower     # binding to task object helps garbage collection
         newtask.cupper = cupper
         newtask.length = length
+        # when in blockedmode, settings atiteration prevents processing consecutive tasks until the previous iterations was finished
+        if self.model.blockedmode:
+            newtask.atiteration = task.iteration
         self.addTask(newtask)
 
     # for every word position, samples a windowsize and stores the start and end position of the context window

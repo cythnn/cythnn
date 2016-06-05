@@ -7,9 +7,13 @@ class Pipe:
         self.model = learner.model
         self.pipeid = pipeid
         self.solution = self.model.getSolution()
+        self.build()
 
     def feed(self, threadid, task):
         raise NotImplementedError("A Pipe must implement the feed(threadid, task) method.")
+
+    def nextPipeId(self):
+        return self.pipeid + 1
 
     def build(self):
         pass
@@ -19,11 +23,6 @@ class Pipe:
     # return another Pipe instance to serve in its place
     def transform(self):
         return self
-
-    def getTaskids(self, task):
-        if self.model.split == 0 or task.iteration == 0:
-            return self.model.tasks
-        return self.model.tasks - self.solution.singletaskids
 
     def addTask(self, task):
         self.learner.addTask(task)

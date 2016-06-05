@@ -23,6 +23,9 @@ cdef class CPipe:
     def build(self):
         pass
 
+    def nextPipeId(self):
+        return self.pipeid + 1
+
     # allows a Pipe to transform itself, based on the model's configuration it can
     # return None to remove itself from the Pipeline
     # return another Pipe instance to serve in its place
@@ -33,15 +36,8 @@ cdef class CPipe:
     # commonly the parameters are prepared in Python followed by a call to a Cython method
     # optionally followed by pushing new task(s) to the learner for processing by the
     # consecutive Pipe in the pipeline.
-    def feed(self, taskid, task):
-        raise NotImplementedError("A Pipe must implement the feed(taskid, task) method.")
-
-    # the number of unique task id's (when no task ids are used the number of threads)
-    def getTaskids(self, task):
-        if self.model.split == 0 or task.iteration == 0:
-            return self.model.tasks
-        return self.model.tasks - self.solution.singletaskids
-
+    def feed(self, task):
+        raise NotImplementedError("A Pipe must implement the feed(task) method.")
 
     # adds a task to be processed by the consecutive (by default) Pipe in the pipeline
     def addTask(self, task):

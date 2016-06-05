@@ -19,11 +19,13 @@ class RecordStream:
                 if offset > 0:
                     f.seek(offset)
                 lastpos = None
+                lastposstart = None
                 buffer = ""
-                while lastpos is None or lastpos.start() + offset < self.chunk.stop:
+                while lastposstart is None or lastposstart + offset < self.chunk.stop:
                     if lastpos is not None:
-                        buffer = buffer[lastpos.end():]
-                        offset += lastpos.end()
+                        buffer = buffer[lastpos:]
+                        offset += lastpos
+                        lastpos = 0
                     newbuf = f.read(1000000)
                     if not newbuf:
                         if len(buffer) > 0:
@@ -33,9 +35,12 @@ class RecordStream:
                         buffer += newbuf
                         for position in self.recordseparator.finditer(buffer):
                             if lastpos is not None:
-                                yield buffer[lastpos.end():position.start()]
-                            lastpos = position
-                            if offset + lastpos.start() >= self.chunk.stop:
+                                yield buffer[lastpos:position.start()]
+                            elif self.chunk.start == 0:
+                                yield buffer[:position.start()]
+                            lastpos = position.end()
+                            lastposstart = position.start()
+                            if offset + position.start() >= self.chunk.stop:
                                 break
 
     def __init__(self, inputrange=None, input=None, recordseparator=r'\n', fieldseparator=r'\t'):
@@ -50,7 +55,7 @@ class RecordStream:
     def __iter__(self):
         for record in self.recorditerator(self.inputrange, self.input, self.recordseparator):
             recs = self.fieldseparator.split(record)
-            if len(recs) == 6:
-                yield recs
+            yield recs
+
 
 

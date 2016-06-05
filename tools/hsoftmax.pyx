@@ -40,7 +40,7 @@ cdef void build(object model):
     for i, w in enumerate(model.vocab.sorted):
         ctable[i] = w.count
 
-    build2(model, ctable, ptable, rtable, 0, model.vocsize, 1, 1, model.vocsize)
+    build2(model, ctable, ptable, rtable, model.vocsize, 1, 1, model.vocsize)
 
     free(ptable)
     free(rtable)
@@ -49,7 +49,7 @@ cdef void build(object model):
     # The tree is stored in the model, allowing multiple modules to access
     model.hs_tree_build = True
 
-cdef void build2(object model, cINT *ctable, cINT *ptable, cBYTE *rtable, int taskid, int inneroffset, float wordfactor, int start, int end):
+cdef void build2(object model, cINT *ctable, cINT *ptable, cBYTE *rtable, int inneroffset, float wordfactor, int start, int end):
     cdef:
         int upper = inneroffset + (end - start) - 1
         Solution solution = model.getSolution()

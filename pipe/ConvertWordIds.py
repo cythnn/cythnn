@@ -1,6 +1,5 @@
 from numpy import fromiter, int32
 
-from model.learner import Task
 from pipe.pipe import Pipe
 
 

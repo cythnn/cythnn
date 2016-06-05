@@ -36,23 +36,21 @@ cdef class SkipgramHS(CPipe):
         createW2V(self.model, self.model.vocsize, self.model.vocsize - 1)
 
     def feed(self, threadid, task):
-        taskid = task.taskid if task.taskid is not None else 0  # only used in split mode
-        self.process(threadid, taskid, toIntArray(task.words), toIntArray(task.clower), toIntArray(task.cupper), task.length)
+        self.process(threadid, toIntArray(task.words), toIntArray(task.clower), toIntArray(task.cupper), task.length)
 
     # process is called with a center position in words (array of word ids), and clower and
     # cupper define valid window boundaries as training context
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
-    cdef void process(self, int threadid, int taskid, cINT * words, cINT * clower, cINT * cupper, int length):
-        cdef:
-            int word, last_word, i, j, l0, l1, inner, exp, wordsprocessed = 0
-            cINT *p_inner                                                  # pointers to list of output nodes per wordid
-            cBYTE *p_exp                                                   # expected value per output node
-            float f                                                        # estimated output
-            float g                                                        # gradient
-            float alpha = self.solution.updateAlpha(threadid, 0)           # learning rate
-            cREAL *hiddenlayer = self.solution.getLayerBw(threadid, 1)
+    cdef void process(self, int threadid, cINT * words, cINT * clower, cINT * cupper, int length):
+        cdef int word, last_word, i, j, l0, l1, inner, exp, wordsprocessed = 0
+        cdef cINT *p_inner                                                  # pointers to list of output nodes per wordid
+        cdef cBYTE *p_exp                                                   # expected value per output node
+        cdef float f                                                        # estimated output
+        cdef float g                                                        # gradient
+        cdef float alpha = self.solution.updateAlpha(threadid, 0)           # learning rate
+        cdef cREAL *hiddenlayer = self.solution.getLayerBw(threadid, 1)
 
         with nogil:
             for i in range(length):                     # go over all words, and use its tree path in the output layer

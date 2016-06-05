@@ -17,7 +17,7 @@ cdef class SkipgramHS(CPipe):
 
         int updaterate
 
-        void process(self, int threadid, int taskid, cINT *words, cINT *clower, cINT *cupper, int length)
+        void process(self, int threadid, cINT *words, cINT *clower, cINT *cupper, int length)
 
 
 

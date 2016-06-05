@@ -18,17 +18,17 @@ def size(path):
 # the designated byterange, wentBack and wentPast indicate the number of words read before and
 # after the designated boundary (max #window)
 class WordStream:
-    def __init__(self, model, inputrange=None, input=None, eol=r'\n'):
-        self.file = input
+    def __init__(self, file, windowsize, inputrange=None, eol=r'\n'):
+        self.file = file
+        self.windowsize = windowsize
         if input and inputrange is None:
             self.inputrange = range(0, size(input))
         else:
             self.inputrange = inputrange
-        self.windowsize = model.windowsize
         self.eol = eol
 
     def readFirst(self, f, bytepos, end):
-        start = max(0, min(bytepos, bytepos - 100 * self.windowsize))
+        start = max(0, min(bytepos, bytepos - 1000))
         end = min(end, bytepos + 1000000)
         if start > 0:
             f.seek(start)
@@ -95,12 +95,22 @@ class WordStream:
                     yield '</s>'
                     return
 
-#setup a list of #parts WordStream objects, that cover the given #byterange
-#@taketime("wordstreams")
-def inputUniform(model, threads):
-    listing = glob.glob(model.input)
+def loadStopwords(fname):
+    result = set()
+    with open(fname, 'r') as fin:
+        for line in fin.readlines():
+            line = line.strip()
+            if len(line) > 0:
+                result.add(line)
+    return result
+
+
+#setup a list of (file, range) tuples, for the given inputfiles
+def inputUniform(inputfiles, threads, inputrange = None):
+    listing = glob.glob(inputfiles)
     totalsize = 0
     for file in listing:
+        print(file)
         totalsize += size(file)
     partsize = max(1000000, math.ceil(totalsize / threads))
     if partsize > 1000000:
@@ -108,17 +118,15 @@ def inputUniform(model, threads):
 
     chunks = []
     for file in listing:
-        if model.inputrange is None:
-            model.inputrange = range(0, size(file))
-        if not hasattr(model, 'inputstreamclass'):
-            model.inputstreamclass = WordStream
-        subparts = math.ceil(size(file) / partsize)
-        for r in chunkRange(size(file), subparts):
-            chunks.append(model.inputstreamclass(model, inputrange=r, input=file))
+        if inputrange is None:
+            inputrange = range(0, size(file))
+        subparts = math.ceil(len(inputrange) / partsize)
+        for r in chunkRange(inputrange, subparts):
+            chunks.append((file, r))
     return chunks
 
-def inputDecay(model, threads):
-    listing = glob.glob(model.input)
+def inputDecay(inputfiles, threads, inputrange = None):
+    listing = glob.glob(inputfiles)
     totalsize = 0
     for file in listing:
         totalsize += size(file)
@@ -127,13 +135,11 @@ def inputDecay(model, threads):
         partsize = math.ceil((partsize + 1) / 2)
     chunks = []
     for file in listing:
-        if model.inputrange is None:
-            model.inputrange = range(0, size(file))
-        if not hasattr(model, 'inputstreamclass'):
-            model.inputstreamclass = WordStream
-        subparts = math.ceil(size(file) / partsize)
-        for r in chunkRangeDecay(size(file), subparts):
-            chunks.append(model.inputstreamclass(model, inputrange=r, input=file))
+        if inputrange is None:
+            inputrange = range(0, size(file))
+        subparts = math.ceil(len(inputrange) / partsize)
+        for r in chunkRangeDecay(inputrange, subparts):
+            chunks.append((file, r))
     return chunks
 
 def chunkFixedSize(r, size):

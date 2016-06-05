@@ -1,6 +1,8 @@
 cimport numpy as np
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset
+cimport libc.math as math
+from numpy import float32
 
 ctypedef np.int32_t cINT
 ctypedef np.int64_t cLONG
@@ -60,6 +62,11 @@ cdef inline cINT* allocIntZeros(int size) nogil:
     memset(zeros, 0, size * sizeof(cINT))
     return zeros
 
+cdef inline cREAL* allocRealZeros(int size) nogil:
+    cdef cREAL *zeros = allocReal(size)
+    memset(zeros, 0, size * sizeof(cREAL))
+    return zeros
+
 cdef inline uLONG* allocULongZeros(int size) nogil:
     cdef uLONG *zeros = allocULong(size)
     memset(zeros, 0, size * sizeof(uLONG))
@@ -99,6 +106,18 @@ cdef inline void** allocVoidP(int size) nogil:
 # allocate space for an array of void
 cdef inline void* allocVoid(int length, int elementsize) nogil:
     return <void*>malloc(length * elementsize)
+
+# allocate space for an array of void
+cdef inline void* allocPointers(int length) nogil:
+    return <void*>malloc(length * sizeof(void *))
+
+# fast lookup table for sigmoid activation function
+cdef inline cREAL* createSigmoidTable(SIGMOID_TABLE, MAX_SIGMOID):
+    cdef cREAL* table = allocReal(SIGMOID_TABLE)
+    for i in range(SIGMOID_TABLE):
+        e = math.exp(float32(2 * MAX_SIGMOID * i / SIGMOID_TABLE - MAX_SIGMOID))
+        table[i] = e / float32(e + 1)
+    return table
 
 
 

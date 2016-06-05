@@ -18,7 +18,8 @@ from tools.taketime import taketime
 def buildvocab(learner, model):
     if not hasattr(model, 'vocab'):
         pool = Pool(processes=model.cores)
-        tokens = pool.map(countWords, inputUniform(model, model.cores))
+        chunks = [ model.inputstreamclass(c[0], model.windowsize, c[1]) for c in inputUniform(model.input, model.threads) ]
+        tokens = pool.map(countWords, chunks)
         merged = mergeDicts(tokens)
         v = Vocabulary(merged, model.mintf)
         model.setVocab(v)
@@ -27,7 +28,6 @@ def buildvocab(learner, model):
 
 def normalize(w1):
     return (w1 / math.sqrt(sum([w * w for w in w1])))
-
 
 # split the dictionary in #parts, to prepare for parallel processing
 def chunkDict(dict, parts=2):
@@ -43,7 +43,6 @@ def sortTermFreq(terms):
     terms.sort(key=lambda x: -x[1])
     return terms
 
-
 # merge a list of term-frequency dictionaries
 #@taketime("mergedicts")
 def mergeDicts(dicts):
@@ -52,7 +51,6 @@ def mergeDicts(dicts):
     for d in rest:
         first += Counter(d)
     return first
-
 
 # return a term-frequncy dict of the given word-iterable
 def countWords(words):

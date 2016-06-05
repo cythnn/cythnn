@@ -1,8 +1,10 @@
-cimport numpy as np
+from numpy import float32
 from libc.stdlib cimport malloc, free
 from libc.stdio cimport printf
 from libc.string cimport memset
+cimport libc.math as math
 from tools.ctypes cimport *
+
 
 cdef unsigned long long rand = 25214903917
 cdef int ONE = 1
@@ -39,8 +41,6 @@ cdef class Solution:
     cdef float *getLayerBw(self, int thread, int layer)   # returns a vector to be used as backward layer #layer, unique per thread and layer
     #cdef public int getLayerSize(self, int layer) nogil  # returns the size of the given layer, 0=input, ..., |layers|-1=output
     cdef float *createWorkLayer(self, int layer)          # returns a vector to be used as layer #layere, not shared by he thread
-    cdef float *createSigmoidTable(self)                                    # constructs a sigmoid lookup table
     cdef float getProgress(self) nogil                                      # returns a float that indicates the percentage of words processed
     cdef float updateAlpha(self, int threadid, int completed) nogil         # updates the cumber of completed words for the thread and return the new alpha
-
 

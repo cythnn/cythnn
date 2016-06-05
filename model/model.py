@@ -3,9 +3,13 @@ from model.learner import Learner
 from model.solution import Solution
 
 # Contains the configuration for the network, and any module that is used in it
+from tools.wordio import WordStream
+
+
 class Model:
     def __init__(self,  input,              # flat file with text used for learning
-                        inputrange=None,    # uses only the given range in teh input file
+                        inputrange=None,    # uses only the given range in the input file
+                        inputstreamclass=WordStream, # reader for the input files
                         alpha=0.025,        # initial learning rate
                         build=[],           # functions called with (model) to construct the model
                         pipeline=[],        # python Pipe classes that process the input word generator
@@ -16,14 +20,16 @@ class Model:
                         cores=2,            # defines number of threads used for building
                         updatecacherate=0,  # after this number of processed words, the cached vectors and words are updated
                         updaterate=10000,   # after this number of processed words and alpha are updated
-                        cachewords=0,        # number of most frequent words to cache to avoid memory collisions between threads
+                        cachewords=0,       # number of most frequent words to cache to avoid memory collisions between threads
                         cacheinner=0,       # number of most frequent inner nodes to cache to avoid memory collisions between threads
-                        downsample=0,        # parameter for downsampling frequent terms (0=no downsampling)
+                        downsample=0,       # parameter for downsampling frequent terms (0=no downsampling)
                         quiet=0,            # set to 1 to supress output
+                        blockedmode=False,  # set to True to force the model finishing one iteration before continuing to the next
                         **kwargs):
         self.__dict__.update(kwargs)
         self.input = input;
         self.inputrange = inputrange
+        self.inputstreamclass = inputstreamclass
         self.alpha = alpha
         self.build = build
         self.pipeline = pipeline
@@ -36,6 +42,7 @@ class Model:
         self.cacheinner = cacheinner
         self.downsample = downsample        # typical settings: 0, 10e-3 or 10e-5
         self.quiet = quiet
+        self.blockedmode = blockedmode
 
         # number of cores/threads to use in multithreading mode, by default for every core two
         # threads are used to overcome performance loss by memory blocks

@@ -20,7 +20,9 @@ cdef class Solution:
         self.alpha = model.alpha
         self.threads = model.threads
         self.tasks = model.tasks
-        self.sigmoidtable = self.createSigmoidTable()   # used for fast lookup of sigmoid function
+        self.SIGMOID_TABLE = 1000
+        self.MAX_SIGMOID = 6
+        self.sigmoidtable = createSigmoidTable(self.SIGMOID_TABLE, self.MAX_SIGMOID)   # used for fast lookup of sigmoid function
 
     def setSolution(self, solution):
         self.matrices = len(solution)                   # number of weight matrices in the model
@@ -33,16 +35,6 @@ cdef class Solution:
             self.w[l] = toRealArray(solution[l]);          # layers are numbered 0,..,n weight matrices 0,..,(n-1)
             self.w_input[l] = solution[l].shape[0]
             self.w_output[l] = solution[l].shape[1]
-
-    # fast lookup table for sigmoid activation function
-    cdef cREAL* createSigmoidTable(self):
-        self.MAX_SIGMOID = 6
-        self.SIGMOID_TABLE = 1000
-        cdef cREAL* table = allocReal(self.SIGMOID_TABLE)
-        for i in range(self.SIGMOID_TABLE):
-            e = math.exp(float32(2 * self.MAX_SIGMOID * i / self.SIGMOID_TABLE - self.MAX_SIGMOID))
-            table[i] = e / float32(e + 1)
-        return table
 
     # returns a thread-safe vector for the given layer, 0 being the input and |layer|-1 being the output layer
     # getLayer allows the layer to be shared over different pipe modules in the same thread
@@ -100,3 +92,4 @@ cdef class Solution:
     # returns the (estimated) processed percentage
     def getProgressPy(self):
         return self.getProgress()
+

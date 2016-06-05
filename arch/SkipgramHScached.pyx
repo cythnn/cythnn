@@ -21,7 +21,7 @@ cdef class SkipgramHScached(SkipgramHS):
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
-    cdef void process(self, int threadid, int taskid, cINT * words, cINT * clower, cINT * cupper, int length):
+    cdef void process(self, int threadid, cINT * words, cINT * clower, cINT * cupper, int length):
         cdef:
             int word, last_word, i, j, inner, exp, wordsprocessed = 0
             cINT *p_inner                                                  # pointers to list of output nodes per wordid
